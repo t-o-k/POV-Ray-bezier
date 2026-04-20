@@ -807,7 +807,7 @@ which can be found in the LICENSE file.
         )/HH
     }
 
-#end // _Est_Der2W_Function_3A
+#end // Est_Der2W_Function_3A
 
 
 #macro Est_Der2_Functions_3A(_Function_3A)
