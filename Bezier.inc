@@ -6391,6 +6391,17 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
+#declare ElevationCoefficientFn =
+    function(_d, _n, _i, _s) {
+        BinomialFn(_d, _s)
+        *
+        FactRisingFn(_i + 1, _s)
+        *
+        FactRisingFn(_n - _i, _d - _s)
+    }
+;
+
+
 #macro DegElevPoints_I_1N(Points_1N, NoOfDegrees)
 
     #local N = dimensions(Points_1N);
@@ -6410,26 +6421,18 @@ which can be found in the LICENSE file.
     #local PP1N[0] = Points_1N[0];
     #for (I, 1, NewSizeI - 2)
         #local pSum = p0;
-        #for (C, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
-            #local S = I - C;
-            #local M =
-                BinomialFn(
-                    NoOfDegrees,
-                    S
-                )
-                *
-                FactRisingFn(
-                    C + 1,
-                    S
-                )
-                *
-                FactRisingFn(
-                    SizeI - C,
-                    NoOfDegrees - S
-                )
-            ;
+        #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
             #local pSum =
-                pSum + M*Points_1N[C]
+                pSum
+                +
+                ElevationCoefficientFn(
+                    NoOfDegrees,
+                    SizeI,
+                    Io,  // original index
+                    I - Io  // shift
+                )
+                *
+                Points_1N[Io]
             ;
         #end // for
         #local PP1N[I] = pSum/DI;
@@ -6441,7 +6444,7 @@ which can be found in the LICENSE file.
 #end // macro DegElevPoints_I_1N
 
 
-#macro DegElevPoints_I_2N(Points_2N, NoOfDegrees)
+#macro DegreeElevatedPoints_I_2N(Points_2N, NoOfDegrees)
 
     #local N = dimensions(Points_2N);
     #if (N != 2)
@@ -6462,26 +6465,18 @@ which can be found in the LICENSE file.
         #local PP2N[0][J] = Points_2N[0][J];
         #for (I, 1, NewSizeI - 2)
             #local pSum = p0;
-            #for (C, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
-                #local S = I - C;
-                #local M =
-                    BinomialFn(
-                        NoOfDegrees,
-                        S
-                    )
-                    *
-                    FactRisingFn(
-                        C + 1,
-                        S
-                    )
-                    *
-                    FactRisingFn(
-                        SizeI - C,
-                        NoOfDegrees - S
-                    )
-                ;
+            #for (Io, max(0, I - NoOfDegrees), min(SizeI - 1, I))
                 #local pSum =
-                    pSum + M*Points_2N[C][J]
+                    pSum
+                    +
+                    ElevationCoefficientFn(
+                        NoOfDegrees,
+                        SizeI,
+                        Io,  // original index
+                        I - Io  // shift
+                    )
+                    *
+                    Points_2N[Io][J]
                 ;
             #end // for
             #local PP2N[I][J] = pSum/DI;
@@ -6491,10 +6486,10 @@ which can be found in the LICENSE file.
 
     PP2N
 
-#end // macro DegElevPoints_I_2N
+#end // macro DegreeElevatedPoints_I_2N
 
 
-#macro DegElevPoints_J_2N(Points_2N, NoOfDegrees)
+#macro DegreeElevatedPoints_J_2N(Points_2N, NoOfDegrees)
 
     #local N = dimensions(Points_2N);
     #if (N != 2)
@@ -6515,26 +6510,18 @@ which can be found in the LICENSE file.
         #local PP2N[I][0] = Points_2N[I][0];
         #for (J, 1, NewSizeJ - 2)
             #local pSum = p0;
-            #for (C, max(J - NoOfDegrees, 0), min(SizeJ - 1, J))
-                #local S = J - C;
-                #local M =
-                    BinomialFn(
-                        NoOfDegrees,
-                        S
-                    )
-                    *
-                    FactRisingFn(
-                        C + 1,
-                        S
-                    )
-                    *
-                    FactRisingFn(
-                        SizeJ - C,
-                        NoOfDegrees - S
-                    )
-                ;
+            #for (Jo, max(0, J - NoOfDegrees), min(SizeJ - 1, J))
                 #local pSum =
-                    pSum + M*Points_2N[I][C]
+                    pSum
+                    +
+                    ElevationCoefficientFn(
+                        NoOfDegrees,
+                        SizeJ,
+                        Jo,  // original index
+                        J - Jo  // shift
+                    )
+                    *
+                    Points_2N[I][Jo]
                 ;
             #end // for
             #local PP2N[I][J] = pSum/DJ;
@@ -6544,10 +6531,10 @@ which can be found in the LICENSE file.
 
     PP2N
 
-#end // macro DegElevPoints_J_2N
+#end // macro DegreeElevatedPoints_J_2N
 
 
-#macro DegElevPoints_I_3N(Points_3N, NoOfDegrees)
+#macro DegreeElevatedPoints_I_3N(Points_3N, NoOfDegrees)
 
     #local N = dimensions(Points_3N);
     #if (N != 3)
@@ -6570,26 +6557,18 @@ which can be found in the LICENSE file.
             #local PP3N[0][J][K] = Points_3N[0][J][K];
             #for (I, 1, NewSizeI - 2)
                 #local pSum = p0;
-                #for (C, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
-                    #local S = I - C;
-                    #local M =
-                        BinomialFn(
-                            NoOfDegrees,
-                            S
-                        )
-                        *
-                        FactRisingFn(
-                            C + 1,
-                            S
-                        )
-                        *
-                        FactRisingFn(
-                            SizeI - C,
-                            NoOfDegrees - S
-                        )
-                    ;
+                #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
                     #local pSum =
-                        pSum + M*Points_3N[C][J][K]
+                        pSum
+                        +
+                        ElevationCoefficientFn(
+                            NoOfDegrees,
+                            SizeI,
+                            Io,  // original index
+                            I - Io  // shift
+                        )
+                        *
+                        Points_3N[Io][J][K]
                     ;
                 #end // for
                 #local PP3N[I][J][K] = pSum/DI;
@@ -6600,10 +6579,10 @@ which can be found in the LICENSE file.
 
     PP3N
 
-#end // macro DegElevPoints_I_3N
+#end // macro DegreeElevatedPoints_I_3N
 
 
-#macro DegElevPoints_J_3N(Points_3N, NoOfDegrees)
+#macro DegreeElevatedPoints_J_3N(Points_3N, NoOfDegrees)
 
     #local N = dimensions(Points_3N);
     #if (N != 3)
@@ -6626,26 +6605,18 @@ which can be found in the LICENSE file.
             #local PP3N[I][0][K] = Points_3N[I][0][K];
             #for (J, 1, NewSizeJ - 2)
                 #local pSum = p0;
-                #for (C, max(J - NoOfDegrees, 0), min(SizeJ - 1, J))
-                    #local S = J - C;
-                    #local M =
-                        BinomialFn(
-                            NoOfDegrees,
-                            S
-                        )
-                        *
-                        FactRisingFn(
-                            C + 1,
-                            S
-                        )
-                        *
-                        FactRisingFn(
-                            SizeJ - C,
-                            NoOfDegrees - S
-                        )
-                    ;
+                #for (Jo, max(J - NoOfDegrees, 0), min(SizeJ - 1, J))
                     #local pSum =
-                        pSum + M*Points_3N[I][C][K]
+                        pSum
+                        +
+                        ElevationCoefficientFn(
+                            NoOfDegrees,
+                            SizeJ,
+                            Jo,  // original index
+                            J - Jo // shift
+                        )
+                        *
+                        Points_3N[I][Jo][K]
                     ;
                 #end // for
                 #local PP3N[I][J][K] = pSum/DJ;
@@ -6656,10 +6627,10 @@ which can be found in the LICENSE file.
 
     PP3N
 
-#end // macro DegElevPoints_J_3N
+#end // macro DegreeElevatedPoints_J_3N
 
 
-#macro DegElevPoints_K_3N(Points_3N, NoOfDegrees)
+#macro DegreeElevatedPoints_K_3N(Points_3N, NoOfDegrees)
 
     #local N = dimensions(Points_3N);
     #if (N != 3)
@@ -6682,26 +6653,18 @@ which can be found in the LICENSE file.
             #local PP3N[I][J][0] = Points_3N[I][J][0];
             #for (K, 1, NewSizeK - 2)
                 #local pSum = p0;
-                #for (C, max(K - NoOfDegrees, 0), min(SizeK - 1, K))
-                    #local S = K - C;
-                    #local M =
-                        BinomialFn(
-                            NoOfDegrees,
-                            S
-                        )
-                        *
-                        FactRisingFn(
-                            C + 1,
-                            S
-                        )
-                        *
-                        FactRisingFn(
-                            SizeK - C,
-                            NoOfDegrees - S
-                        )
-                    ;
+                #for (Ko, max(K - NoOfDegrees, 0), min(SizeK - 1, K))
                     #local pSum =
-                        pSum + M*Points_3N[I][J][C]
+                        pSum
+                        +
+                        ElevationCoefficientFn(
+                            NoOfDegrees,
+                            SizeK,
+                            Ko,  // original index
+                            K - Ko  // shift
+                        )
+                        *
+                        Points_3N[I][J][Ko]
                     ;
                 #end // for
                 #local PP3N[I][J][K] = pSum/DK;
@@ -6711,11 +6674,11 @@ which can be found in the LICENSE file.
     #end // for
 
     PP3N
+ 
+#end // macro DegreeElevatedPoints_K_3N
 
-#end // macro DegElevPoints_K_3N
 
-
-#macro DegElevPoints_I_4N(Points_4N, NoOfDegrees)
+#macro DegreeElevatedPoints_I_4N(Points_4N, NoOfDegrees)
 
     #local N = dimensions(Points_4N);
     #if (N != 4)
@@ -6740,26 +6703,18 @@ which can be found in the LICENSE file.
                 #local PP4N[0][J][K][L] = Points_4N[0][J][K][L];
                 #for (I, 1, NewSizeI - 2)
                     #local pSum = p0;
-                    #for (C, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
-                        #local S = I - C;
-                        #local M =
-                            BinomialFn(
-                                NoOfDegrees,
-                                S
-                            )
-                            *
-                            FactRisingFn(
-                                C + 1,
-                                S
-                            )
-                            *
-                            FactRisingFn(
-                                SizeI - C,
-                                NoOfDegrees - S
-                            )
-                        ;
+                    #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
                         #local pSum =
-                            pSum + M*Points_4N[C][J][K][L]
+                            pSum
+                            +
+                            ElevationCoefficientFn(
+                                NoOfDegrees,
+                                SizeI,
+                                Io,  // original index
+                                I - Io  // shift
+                            )
+                            *
+                            Points_4N[Io][J][K][L]
                         ;
                     #end // for
                     #local PP4N[I][J][K][L] = pSum/DI;
@@ -6771,10 +6726,10 @@ which can be found in the LICENSE file.
 
     PP4N
 
-#end // macro DegElevPoints_I_4N
+#end // macro DegreeElevatedPoints_I_4N
 
 
-#macro DegElevPoints_J_4N(Points_4N, NoOfDegrees)
+#macro DegreeElevatedPoints_J_4N(Points_4N, NoOfDegrees)
 
     #local N = dimensions(Points_4N);
     #if (N != 4)
@@ -6799,26 +6754,18 @@ which can be found in the LICENSE file.
                 #local PP4N[I][0][K][L] = Points_4N[I][0][K][L];
                 #for (J, 1, NewSizeJ - 2)
                     #local pSum = p0;
-                    #for (C, max(J - NoOfDegrees, 0), min(SizeJ - 1, J))
-                        #local S = J - C;
-                        #local M =
-                            BinomialFn(
-                                NoOfDegrees,
-                                S
-                            )
-                            *
-                            FactRisingFn(
-                                C + 1,
-                                S
-                            )
-                            *
-                            FactRisingFn(
-                                SizeJ - C,
-                                NoOfDegrees - S
-                            )
-                        ;
+                    #for (Jo, max(J - NoOfDegrees, 0), min(SizeJ - 1, J))
                         #local pSum =
-                            pSum + M*Points_4N[I][C][K][L]
+                            pSum
+                            +
+                            ElevationCoefficientFn(
+                                NoOfDegrees,
+                                SizeJ,
+                                Jo,  // original index
+                                J - Jo  // shift
+                            )
+                            *
+                            Points_4N[I][Jo][K][L]
                         ;
                     #end // for
                     #local PP4N[I][J][K][L] = pSum/DJ;
@@ -6830,10 +6777,10 @@ which can be found in the LICENSE file.
 
     PP4N
 
-#end // macro DegElevPoints_J_4N
+#end // macro DegreeElevatedPoints_J_4N
 
 
-#macro DegElevPoints_K_4N(Points_4N, NoOfDegrees)
+#macro DegreeElevatedPoints_K_4N(Points_4N, NoOfDegrees)
 
     #local N = dimensions(Points_4N);
     #if (N != 4)
@@ -6858,26 +6805,18 @@ which can be found in the LICENSE file.
                 #local PP4N[I][J][0][L] = Points_4N[I][J][0][L];
                 #for (K, 1, NewSizeK - 2)
                     #local pSum = p0;
-                    #for (C, max(K - NoOfDegrees, 0), min(SizeK - 1, K))
-                        #local S = K - C;
-                        #local M =
-                            BinomialFn(
-                                NoOfDegrees,
-                                S
-                            )
-                            *
-                            FactRisingFn(
-                                C + 1,
-                                S
-                            )
-                            *
-                            FactRisingFn(
-                                SizeK - C,
-                                NoOfDegrees - S
-                            )
-                        ;
+                    #for (Ko, max(K - NoOfDegrees, 0), min(SizeK - 1, K))
                         #local pSum =
-                            pSum + M*Points_4N[I][J][C][L]
+                            pSum
+                            +
+                            ElevationCoefficientFn(
+                                NoOfDegrees,
+                                SizeK,
+                                Ko,  // original index
+                                K - Ko  // shift
+                            )
+                            *
+                            Points_4N[I][J][Ko][L]
                         ;
                     #end // for
                     #local PP4N[I][J][K][L] = pSum/DK;
@@ -6889,10 +6828,10 @@ which can be found in the LICENSE file.
 
     PP4N
 
-#end // macro DegElevPoints_K_4N
+#end // macro DegreeElevatedPoints_K_4N
 
 
-#macro DegElevPoints_L_4N(Points_4N, NoOfDegrees)
+#macro DegreeElevatedPoints_L_4N(Points_4N, NoOfDegrees)
 
     #local N = dimensions(Points_4N);
     #if (N != 4)
@@ -6917,26 +6856,18 @@ which can be found in the LICENSE file.
                 #local PP4N[I][J][K][0] = Points_4N[I][J][K][0];
                 #for (L, 1, NewSizeL - 2)
                     #local pSum = p0;
-                    #for (C, max(L - NoOfDegrees, 0), min(SizeL - 1, L))
-                        #local S = L - C;
-                        #local M =
-                            BinomialFn(
-                                NoOfDegrees,
-                                S
-                            )
-                            *
-                            FactRisingFn(
-                                C + 1,
-                                S
-                            )
-                            *
-                            FactRisingFn(
-                                SizeL - C,
-                                NoOfDegrees - S
-                            )
-                        ;
+                    #for (Lo, max(L - NoOfDegrees, 0), min(SizeL - 1, L))
                         #local pSum =
-                            pSum + M*Points_4N[I][J][K][C]
+                            pSum
+                            +
+                            ElevationCoefficientFn(
+                                NoOfDegrees,
+                                SizeL,
+                                Lo,  // original index
+                                L - Lo  // shift
+                            )
+                            *
+                            Points_4N[I][J][K][Lo]
                         ;
                     #end // for
                     #local PP4N[I][J][K][L] = pSum/DL;
@@ -6948,7 +6879,7 @@ which can be found in the LICENSE file.
 
     PP4N
 
-#end // macro DegElevPoints_L_4N
+#end // macro DegreeElevatedPoints_L_4N
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
