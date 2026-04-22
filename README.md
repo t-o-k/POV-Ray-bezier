@@ -5,7 +5,7 @@ It is aimed at advanced POV-Ray users who need precise mathematical control over
 
 It requires POV-Ray 3.7
 
-**_NB: It is work in progress, so anything may change at any time._**
+**_NB: This is work in progress, so anything may change at any time._**
 
 Here is what it provides:
 
@@ -22,7 +22,7 @@ Here is what it provides:
 
 ## Differentiation
 
-    Numerical derivatives via central differences (Est_Der1*)
+    Numerical derivatives via central differences (Est_Der*)
     Analytical derivatives via hodograph control polygons (Hodograph_*)
 
 ## Control point manipulation
