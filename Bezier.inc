@@ -6881,7 +6881,7 @@ which can be found in the LICENSE file.
 
 #end // macro DegreeElevate_L_4N
 
-#macro DegreeElevatedWeightedValues_I_1N(Values_1N, Weights_1N, NoOfDegrees)
+#macro RationalDegreeElevate__I_1N(Values_1N, Weights_1N, NoOfDegrees)
 
     #local WeightedValues_1N =
         MultiplyArrays_1N(
@@ -6907,10 +6907,10 @@ which can be found in the LICENSE file.
         ElevatedWeights_1N
     )
 
-#end // macro DegreeElevatedWeightedValues_I_1N
+#end // macro RationalDegreeElevate__I_1N
 
 
-#macro DegreeElevatedWeightedValues_I_2N(Values_2N, Weights_2N, NoOfDegrees)
+#macro RationalDegreeElevate__I_2N(Values_2N, Weights_2N, NoOfDegrees)
 
     #local WeightedValues_2N =
         MultiplyArrays_2N(
@@ -6936,10 +6936,10 @@ which can be found in the LICENSE file.
         ElevatedWeights_2N
     )
 
-#end // macro DegreeElevatedWeightedValues_I_2N
+#end // macro RationalDegreeElevate__I_2N
 
 
-#macro DegreeElevatedWeightedValues_J_2N(Values_2N, Weights_2N, NoOfDegrees)
+#macro RationalDegreeElevate__J_2N(Values_2N, Weights_2N, NoOfDegrees)
 
     #local WeightedValues_2N =
         MultiplyArrays_2N(
@@ -6965,10 +6965,10 @@ which can be found in the LICENSE file.
         ElevatedWeights_2N
     )
 
-#end // macro DegreeElevatedWeightedValues_J_2N
+#end // macro RationalDegreeElevate__J_2N
 
 
-#macro DegreeElevatedWeightedValues_I_3N(Values_3N, Weights_3N, NoOfDegrees)
+#macro RationalDegreeElevate__I_3N(Values_3N, Weights_3N, NoOfDegrees)
 
     #local WeightedValues_3N =
         MultiplyArrays_3N(
@@ -6994,10 +6994,10 @@ which can be found in the LICENSE file.
         ElevatedWeights_3N
     )
 
-#end // macro DegreeElevatedWeightedValues_I_3N
+#end // macro RationalDegreeElevate__I_3N
 
 
-#macro DegreeElevatedWeightedValues_J_3N(Values_3N, Weights_3N, NoOfDegrees)
+#macro RationalDegreeElevate__J_3N(Values_3N, Weights_3N, NoOfDegrees)
 
     #local WeightedValues_3N =
         MultiplyArrays_3N(
@@ -7023,10 +7023,10 @@ which can be found in the LICENSE file.
         ElevatedWeights_3N
     )
 
-#end // macro DegreeElevatedWeightedValues_J_3N
+#end // macro RationalDegreeElevate__J_3N
 
 
-#macro DegreeElevatedWeightedValues_K_3N(Values_3N, Weights_3N, NoOfDegrees)
+#macro RationalDegreeElevate__K_3N(Values_3N, Weights_3N, NoOfDegrees)
 
     #local WeightedValues_3N =
         MultiplyArrays_3N(
@@ -7052,10 +7052,10 @@ which can be found in the LICENSE file.
         ElevatedWeights_3N
     )
 
-#end // macro DegreeElevatedWeightedValues_K_3N
+#end // macro RationalDegreeElevate__K_3N
 
 
-#macro DegreeElevatedWeightedValues_I_4N(Values_4N, Weights_4N, NoOfDegrees)
+#macro RationalDegreeElevate__I_4N(Values_4N, Weights_4N, NoOfDegrees)
 
     #local WeightedValues_4N =
         MultiplyArrays_4N(
@@ -7081,10 +7081,10 @@ which can be found in the LICENSE file.
         ElevatedWeights_4N
     )
 
-#end // macro DegreeElevatedWeightedValues_I_4N
+#end // macro RationalDegreeElevate__I_4N
 
 
-#macro DegreeElevatedWeightedValues_J_4N(Values_4N, Weights_4N, NoOfDegrees)
+#macro RationalDegreeElevate__J_4N(Values_4N, Weights_4N, NoOfDegrees)
 
     #local WeightedValues_4N =
         MultiplyArrays_4N(
@@ -7110,10 +7110,10 @@ which can be found in the LICENSE file.
         ElevatedWeights_4N
     )
 
-#end // macro DegreeElevatedWeightedValues_J_4N
+#end // macro RationalDegreeElevate__J_4N
 
 
-#macro DegreeElevatedWeightedValues_K_4N(Values_4N, Weights_4N, NoOfDegrees)
+#macro RationalDegreeElevate__K_4N(Values_4N, Weights_4N, NoOfDegrees)
 
     #local WeightedValues_4N =
         MultiplyArrays_4N(
@@ -7139,10 +7139,10 @@ which can be found in the LICENSE file.
         ElevatedWeights_4N
     )
 
-#end // macro DegreeElevatedWeightedValues_K_4N
+#end // macro RationalDegreeElevate__K_4N
 
 
-#macro DegreeElevatedWeightedValues_L_4N(Values_4N, Weights_4N, NoOfDegrees)
+#macro RationalDegreeElevate__L_4N(Values_4N, Weights_4N, NoOfDegrees)
 
     #local WeightedValues_4N =
         MultiplyArrays_4N(
@@ -7168,7 +7168,7 @@ which can be found in the LICENSE file.
         ElevatedWeights_4N
     )
 
-#end // macro DegreeElevatedWeightedValues_L_4N
+#end // macro RationalDegreeElevate__L_4N
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
