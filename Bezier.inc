@@ -7172,7 +7172,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro _HodoCoefficients(M)
+#macro _HodographCoefficients(M)
 
     #local CC = array[M+1];
     #for (I, 0, M)
@@ -7183,213 +7183,213 @@ which can be found in the LICENSE file.
 
     CC
 
-#end // macro _HodoCoefficients
+#end // macro _HodographCoefficients
 
 
-#macro HodoPoints_I_1N(Points_1N, M)
+#macro Hodograph_I_1N(Values_1N, M)
 
-    #local N = dimensions(Points_1N);
+    #local N = dimensions(Values_1N);
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #local CC = _HodoCoefficients(M);
-    #local SizeI = dimension_size(Points_1N, 1);
+    #local CC = _HodographCoefficients(M);
+    #local SizeI = dimension_size(Values_1N, 1);
     #local NewSizeI = SizeI - M;   
-    #local PP1N = array[NewSizeI];
-    #local p0 = 0*Points_1N[0];
+    #local VV1N = array[NewSizeI];
+    #local p0 = 0*Values_1N[0];
     #for (I, 0, NewSizeI - 1)
         #local pSum = p0;
         #for (A, 0, M)
             #local pSum =
-                pSum + CC[A]*Points_1N[I+A]
+                pSum + CC[A]*Values_1N[I+A]
             ;
         #end // for
-        #local PP1N[I] = FactFallingFn(SizeI - 1, M)*pSum;
+        #local VV1N[I] = FactFallingFn(SizeI - 1, M)*pSum;
     #end // for
 
-    PP1N
+    VV1N
 
-#end // macro HodoPoints_I_1N
+#end // macro Hodograph_I_1N
 
 
-#macro HodoPoints_I_2N(Points_2N, M)
+#macro Hodograph_I_2N(Values_2N, M)
 
-    #local N = dimensions(Points_2N);
+    #local N = dimensions(Values_2N);
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local CC = _HodoCoefficients(M);
-    #local SizeI = dimension_size(Points_2N, 1);
-    #local SizeJ = dimension_size(Points_2N, 2);
+    #local CC = _HodographCoefficients(M);
+    #local SizeI = dimension_size(Values_2N, 1);
+    #local SizeJ = dimension_size(Values_2N, 2);
     #local NewSizeI = SizeI - M;
-    #local PP2N = array[NewSizeI][SizeJ];
-    #local p0 = 0*Points_2N[0][0];
+    #local VV2N = array[NewSizeI][SizeJ];
+    #local p0 = 0*Values_2N[0][0];
     #for (J, 0, SizeJ - 1)
         #for (I, 0, NewSizeI - 1)
             #local pSum = p0;
             #for (A, 0, M)
                 #local pSum =
-                    pSum + CC[A]*Points_2N[I+A][J]
+                    pSum + CC[A]*Values_2N[I+A][J]
                 ;
             #end // for
-            #local PP2N[I][J] =
+            #local VV2N[I][J] =
                 FactFallingFn(SizeI - 1, M)*pSum
             ;
         #end // for
     #end // for
 
-    PP2N
+    VV2N
 
-#end // macro HodoPoints_I_2N
+#end // macro Hodograph_I_2N
 
 
-#macro HodoPoints_J_2N(Points_2N, M)
+#macro Hodograph_J_2N(Values_2N, M)
 
-    #local N = dimensions(Points_2N);
+    #local N = dimensions(Values_2N);
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local CC = _HodoCoefficients(M);
-    #local SizeI = dimension_size(Points_2N, 1);
-    #local SizeJ = dimension_size(Points_2N, 2);
+    #local CC = _HodographCoefficients(M);
+    #local SizeI = dimension_size(Values_2N, 1);
+    #local SizeJ = dimension_size(Values_2N, 2);
     #local NewSizeJ = SizeJ - M;
-    #local PP2N = array[SizeI][NewSizeJ];
-    #local p0 = 0*Points_2N[0][0];
+    #local VV2N = array[SizeI][NewSizeJ];
+    #local p0 = 0*Values_2N[0][0];
     #for (I, 0, SizeI - 1)
         #for (J, 0, NewSizeJ - 1)
             #local pSum = p0;
             #for (A, 0, M)
                 #local pSum =
-                    pSum + CC[A]*Points_2N[I][J+A]
+                    pSum + CC[A]*Values_2N[I][J+A]
                 ;
             #end // for
-            #local PP2N[I][J] =
+            #local VV2N[I][J] =
                 FactFallingFn(SizeJ - 1, M)*pSum
             ;
         #end // for
     #end // for
 
-    PP2N
+    VV2N
 
-#end // macro HodoPoints_J_2N
+#end // macro Hodograph_J_2N
 
 
-#macro HodoPoints_I_3N(Points_3N, M)
+#macro Hodograph_I_3N(Values_3N, M)
 
-    #local N = dimensions(Points_3N);
+    #local N = dimensions(Values_3N);
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local CC = _HodoCoefficients(M);
-    #local SizeI = dimension_size(Points_3N, 1);
-    #local SizeJ = dimension_size(Points_3N, 2);
-    #local SizeK = dimension_size(Points_3N, 3);
+    #local CC = _HodographCoefficients(M);
+    #local SizeI = dimension_size(Values_3N, 1);
+    #local SizeJ = dimension_size(Values_3N, 2);
+    #local SizeK = dimension_size(Values_3N, 3);
     #local NewSizeI = SizeI - M;
-    #local PP3N = array[NewSizeI][SizeJ][SizeK];
-    #local p0 = 0*Points_3N[0][0][0];
+    #local VV3N = array[NewSizeI][SizeJ][SizeK];
+    #local p0 = 0*Values_3N[0][0][0];
     #for (K, 0, SizeK - 1)
         #for (J, 0, SizeJ - 1)
             #for (I, 0, NewSizeI - 1)
                 #local pSum = p0;
                 #for (A, 0, M)
                     #local pSum =
-                        pSum + CC[A]*Points_3N[I+A][J][K]
+                        pSum + CC[A]*Values_3N[I+A][J][K]
                     ;
                 #end // for
-                #local PP3N[I][J][K] =
+                #local VV3N[I][J][K] =
                     FactFallingFn(SizeI - 1, M)*pSum
                 ;
             #end // for
         #end // for
     #end // for
 
-    PP3N
+    VV3N
 
-#end // macro HodoPoints_I_3N
+#end // macro Hodograph_I_3N
 
 
-#macro HodoPoints_J_3N(Points_3N, M)
+#macro Hodograph_J_3N(Values_3N, M)
 
-    #local N = dimensions(Points_3N);
+    #local N = dimensions(Values_3N);
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local CC = _HodoCoefficients(M);
-    #local SizeI = dimension_size(Points_3N, 1);
-    #local SizeJ = dimension_size(Points_3N, 2);
-    #local SizeK = dimension_size(Points_3N, 3);
+    #local CC = _HodographCoefficients(M);
+    #local SizeI = dimension_size(Values_3N, 1);
+    #local SizeJ = dimension_size(Values_3N, 2);
+    #local SizeK = dimension_size(Values_3N, 3);
     #local NewSizeJ = SizeJ - M;
-    #local PP3N = array[SizeI][NewSizeJ][SizeK];
-    #local p0 = 0*Points_3N[0][0][0];
+    #local VV3N = array[SizeI][NewSizeJ][SizeK];
+    #local p0 = 0*Values_3N[0][0][0];
     #for (I, 0, SizeI - 1)
         #for (K, 0, SizeK - 1)
             #for (J, 0, NewSizeJ - 1)
                 #local pSum = p0;
                 #for (A, 0, M)
                     #local pSum =
-                        pSum + CC[A]*Points_3N[I][J+A][K]
+                        pSum + CC[A]*Values_3N[I][J+A][K]
                     ;
                 #end // for
-                #local PP3N[I][J][K] =
+                #local VV3N[I][J][K] =
                     FactFallingFn(SizeJ - 1, M)*pSum
                 ;
             #end // for
         #end // for
     #end // for
 
-    PP3N
+    VV3N
 
-#end // macro HodoPoints_J_3N
+#end // macro Hodograph_J_3N
 
 
-#macro HodoPoints_K_3N(Points_3N, M)
+#macro Hodograph_K_3N(Values_3N, M)
 
-    #local N = dimensions(Points_3N);
+    #local N = dimensions(Values_3N);
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local CC = _HodoCoefficients(M);
-    #local SizeI = dimension_size(Points_3N, 1);
-    #local SizeJ = dimension_size(Points_3N, 2);
-    #local SizeK = dimension_size(Points_3N, 3);
+    #local CC = _HodographCoefficients(M);
+    #local SizeI = dimension_size(Values_3N, 1);
+    #local SizeJ = dimension_size(Values_3N, 2);
+    #local SizeK = dimension_size(Values_3N, 3);
     #local NewSizeK = SizeK - M;
-    #local PP3N = array[SizeI][SizeJ][NewSizeK];
-    #local p0 = 0*Points_3N[0][0][0];
+    #local VV3N = array[SizeI][SizeJ][NewSizeK];
+    #local p0 = 0*Values_3N[0][0][0];
     #for (J, 0, SizeJ - 1)
         #for (I, 0, SizeI - 1)
             #for (K, 0, NewSizeK - 1)
                 #local pSum = p0;
                 #for (A, 0, M)
                     #local pSum =
-                        pSum + CC[A]*Points_3N[I][J][K+A]
+                        pSum + CC[A]*Values_3N[I][J][K+A]
                     ;
                 #end // for
-                #local PP3N[I][J][K] =
+                #local VV3N[I][J][K] =
                     FactFallingFn(SizeK - 1, M)*pSum
                 ;
             #end // for
         #end // for
     #end // for
 
-    PP3N
+    VV3N
 
-#end // macro HodoPoints_K_3N
+#end // macro Hodograph_K_3N
 
 
-#macro HodoPoints_I_4N(Points_4N, M)
+#macro Hodograph_I_4N(Values_4N, M)
 
-    #local N = dimensions(Points_4N);
+    #local N = dimensions(Values_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local CC = _HodoCoefficients(M);
-    #local SizeI = dimension_size(Points_4N, 1);
-    #local SizeJ = dimension_size(Points_4N, 2);
-    #local SizeK = dimension_size(Points_4N, 3);
-    #local SizeL = dimension_size(Points_4N, 4);
+    #local CC = _HodographCoefficients(M);
+    #local SizeI = dimension_size(Values_4N, 1);
+    #local SizeJ = dimension_size(Values_4N, 2);
+    #local SizeK = dimension_size(Values_4N, 3);
+    #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeI = SizeI - M;
-    #local PP4N = array[NewSizeI][SizeJ][SizeK][SizeL];
-    #local p0 = 0*Points_4N[0][0][0][0];
+    #local VV4N = array[NewSizeI][SizeJ][SizeK][SizeL];
+    #local p0 = 0*Values_4N[0][0][0][0];
     #for (L, 0, SizeL - 1)
         #for (K, 0, SizeK - 1)
             #for (J, 0, SizeJ - 1)
@@ -7397,10 +7397,10 @@ which can be found in the LICENSE file.
                     #local pSum = p0;
                     #for (A, 0, M)
                         #local pSum =
-                            pSum + CC[A]*Points_4N[I+A][J][K][L]
+                            pSum + CC[A]*Values_4N[I+A][J][K][L]
                         ;
                     #end // for
-                    #local PP4N[I][J][K][L] =
+                    #local VV4N[I][J][K][L] =
                         FactFallingFn(SizeI - 1, M)*pSum
                     ;
                 #end // for
@@ -7408,25 +7408,25 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    PP4N
+    VV4N
 
-#end // macro HodoPoints_I_4N
+#end // macro Hodograph_I_4N
 
 
-#macro HodoPoints_J_4N(Points_4N, M)
+#macro Hodograph_J_4N(Values_4N, M)
 
-    #local N = dimensions(Points_4N);
+    #local N = dimensions(Values_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local CC = _HodoCoefficients(M);
-    #local SizeI = dimension_size(Points_4N, 1);
-    #local SizeJ = dimension_size(Points_4N, 2);
-    #local SizeK = dimension_size(Points_4N, 3);
-    #local SizeL = dimension_size(Points_4N, 4);
+    #local CC = _HodographCoefficients(M);
+    #local SizeI = dimension_size(Values_4N, 1);
+    #local SizeJ = dimension_size(Values_4N, 2);
+    #local SizeK = dimension_size(Values_4N, 3);
+    #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeJ = SizeJ - M;
-    #local PP4N = array[SizeI][NewSizeJ][SizeK][SizeL];
-    #local p0 = 0*Points_4N[0][0][0][0];
+    #local VV4N = array[SizeI][NewSizeJ][SizeK][SizeL];
+    #local p0 = 0*Values_4N[0][0][0][0];
     #for (I, 0, SizeI - 1)
         #for (L, 0, SizeL - 1)
             #for (K, 0, SizeK - 1)
@@ -7434,10 +7434,10 @@ which can be found in the LICENSE file.
                     #local pSum = p0;
                     #for (A, 0, M)
                         #local pSum =
-                            pSum + CC[A]*Points_4N[I][J+A][K][L]
+                            pSum + CC[A]*Values_4N[I][J+A][K][L]
                         ;
                     #end // for
-                    #local PP4N[I][J][K][L] =
+                    #local VV4N[I][J][K][L] =
                         FactFallingFn(SizeJ - 1, M)*pSum
                     ;
                 #end // for
@@ -7445,25 +7445,25 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    PP4N
+    VV4N
 
-#end // macro HodoPoints_J_4N
+#end // macro Hodograph_J_4N
 
 
-#macro HodoPoints_K_4N(Points_4N, M)
+#macro Hodograph_K_4N(Values_4N, M)
 
-    #local N = dimensions(Points_4N);
+    #local N = dimensions(Values_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local CC = _HodoCoefficients(M);
-    #local SizeI = dimension_size(Points_4N, 1);
-    #local SizeJ = dimension_size(Points_4N, 2);
-    #local SizeK = dimension_size(Points_4N, 3);
-    #local SizeL = dimension_size(Points_4N, 4);
+    #local CC = _HodographCoefficients(M);
+    #local SizeI = dimension_size(Values_4N, 1);
+    #local SizeJ = dimension_size(Values_4N, 2);
+    #local SizeK = dimension_size(Values_4N, 3);
+    #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeK = SizeK - M;
-    #local PP4N = array[SizeI][SizeJ][NewSizeK][SizeL];
-    #local p0 = 0*Points_4N[0][0][0][0];
+    #local VV4N = array[SizeI][SizeJ][NewSizeK][SizeL];
+    #local p0 = 0*Values_4N[0][0][0][0];
     #for (J, 0, SizeJ - 1)
         #for (I, 0, SizeI - 1)
             #for (L, 0, SizeL - 1)
@@ -7471,10 +7471,10 @@ which can be found in the LICENSE file.
                     #local pSum = p0;
                     #for (A, 0, M)
                         #local pSum =
-                            pSum + CC[A]*Points_4N[I][J][K+A][L]
+                            pSum + CC[A]*Values_4N[I][J][K+A][L]
                         ;
                     #end // for
-                    #local PP4N[I][J][K][L] =
+                    #local VV4N[I][J][K][L] =
                         FactFallingFn(SizeK - 1, M)*pSum
                     ;
                 #end // for
@@ -7482,25 +7482,25 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    PP4N
+    VV4N
 
-#end // macro HodoPoints_K_4N
+#end // macro Hodograph_K_4N
 
 
-#macro HodoPoints_L_4N(Points_4N, M)
+#macro Hodograph_L_4N(Values_4N, M)
 
-    #local N = dimensions(Points_4N);
+    #local N = dimensions(Values_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local CC = _HodoCoefficients(M);
-    #local SizeI = dimension_size(Points_4N, 1);
-    #local SizeJ = dimension_size(Points_4N, 2);
-    #local SizeK = dimension_size(Points_4N, 3);
-    #local SizeL = dimension_size(Points_4N, 4);
+    #local CC = _HodographCoefficients(M);
+    #local SizeI = dimension_size(Values_4N, 1);
+    #local SizeJ = dimension_size(Values_4N, 2);
+    #local SizeK = dimension_size(Values_4N, 3);
+    #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeL = SizeL - M;
-    #local PP4N = array[SizeI][SizeJ][SizeK][NewSizeL];
-    #local p0 = 0*Points_4N[0][0][0][0];
+    #local VV4N = array[SizeI][SizeJ][SizeK][NewSizeL];
+    #local p0 = 0*Values_4N[0][0][0][0];
     #for (K, 0, SizeK - 1)
         #for (J, 0, SizeJ - 1)
             #for (I, 0, SizeI - 1)
@@ -7508,10 +7508,10 @@ which can be found in the LICENSE file.
                     #local pSum = p0;
                     #for (A, 0, M)
                         #local pSum =
-                            pSum + CC[A]*Points_4N[I][J][K][L+A]
+                            pSum + CC[A]*Values_4N[I][J][K][L+A]
                         ;
                     #end // for
-                    #local PP4N[I][J][K][L] =
+                    #local VV4N[I][J][K][L] =
                         FactFallingFn(SizeL - 1, M)*pSum
                     ;
                 #end // for
@@ -7519,9 +7519,9 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    PP4N
+    VV4N
 
-#end // macro HodoPoints_L_4N
+#end // macro Hodograph_L_4N
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
@@ -7536,7 +7536,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_1N_BezierFunction_1A(
-        HodoPoints_I_1N(
+        Hodograph_I_1N(
             Values_1N, 1
         )
     )
@@ -7571,7 +7571,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_2N_BezierFunction_2A(
-        HodoPoints_I_2N(
+        Hodograph_I_2N(
             Values_2N, 1
         )
     )
@@ -7590,7 +7590,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_2N_BezierFunction_2A(
-        HodoPoints_J_2N(
+        Hodograph_J_2N(
             Values_2N, 1
         )
     )
@@ -7628,7 +7628,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_3N_BezierFunction_3A(
-        HodoPoints_I_3N(
+        Hodograph_I_3N(
             Values_3N, 1
         )
     )
@@ -7647,7 +7647,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_3N_BezierFunction_3A(
-        HodoPoints_J_3N(
+        Hodograph_J_3N(
             Values_3N, 1
         )
     )
@@ -7666,7 +7666,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_3N_BezierFunction_3A(
-        HodoPoints_K_3N(
+        Hodograph_K_3N(
             Values_3N, 1
         )
     )
@@ -7707,7 +7707,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_4N_BezierFunction_4A(
-        HodoPoints_I_4N(
+        Hodograph_I_4N(
             Values_4N, 1
         )
     )
@@ -7726,7 +7726,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_4N_BezierFunction_4A(
-        HodoPoints_J_4N(
+        Hodograph_J_4N(
             Values_4N, 1
         )
     )
@@ -7745,7 +7745,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_4N_BezierFunction_4A(
-        HodoPoints_K_4N(
+        Hodograph_K_4N(
             Values_4N, 1
         )
     )
@@ -7764,7 +7764,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_4N_BezierFunction_4A(
-        HodoPoints_L_4N(
+        Hodograph_L_4N(
             Values_4N, 1
         )
     )
@@ -7845,7 +7845,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_1N_BezierFunction_1A(
-        HodoPoints_I_1N(
+        Hodograph_I_1N(
             Values_1N, 2
         )
     )
@@ -7880,7 +7880,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_2N_BezierFunction_2A(
-        HodoPoints_I_2N(
+        Hodograph_I_2N(
             Values_2N, 2
         )
     )
@@ -7899,7 +7899,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_2N_BezierFunction_2A(
-        HodoPoints_J_2N(
+        Hodograph_J_2N(
             Values_2N, 2
         )
     )
@@ -7937,7 +7937,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_3N_BezierFunction_3A(
-        HodoPoints_I_3N(
+        Hodograph_I_3N(
             Values_3N, 2
         )
     )
@@ -7956,7 +7956,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_3N_BezierFunction_3A(
-        HodoPoints_J_3N(
+        Hodograph_J_3N(
             Values_3N, 2
         )
     )
@@ -7975,7 +7975,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_3N_BezierFunction_3A(
-        HodoPoints_K_3N(
+        Hodograph_K_3N(
             Values_3N, 2
         )
     )
@@ -8016,7 +8016,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_4N_BezierFunction_4A(
-        HodoPoints_I_4N(
+        Hodograph_I_4N(
             Values_4N, 2
         )
     )
@@ -8035,7 +8035,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_4N_BezierFunction_4A(
-        HodoPoints_J_4N(
+        Hodograph_J_4N(
             Values_4N, 2
         )
     )
@@ -8054,7 +8054,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_4N_BezierFunction_4A(
-        HodoPoints_K_4N(
+        Hodograph_K_4N(
             Values_4N, 2
         )
     )
@@ -8073,7 +8073,7 @@ which can be found in the LICENSE file.
     #end // if
 
     From_4N_BezierFunction_4A(
-        HodoPoints_L_4N(
+        Hodograph_L_4N(
             Values_4N, 2
         )
     )
@@ -8172,12 +8172,12 @@ which can be found in the LICENSE file.
             Weights_1N
         ),
         From_1N_BezierFunction_1A(
-            HodoPoints_I_1N(
+            Hodograph_I_1N(
                 VVWW1N, 1
             )
         ),
         From_1N_BezierFunction_1A(
-            HodoPoints_I_1N(
+            Hodograph_I_1N(
                 Weights_1N, 1
             )
         )
@@ -8241,12 +8241,12 @@ which can be found in the LICENSE file.
             Weights_2N
         ),
         From_2N_BezierFunction_2A(
-            HodoPoints_I_2N(
+            Hodograph_I_2N(
                 VVWW2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
-            HodoPoints_I_2N(
+            Hodograph_I_2N(
                 Weights_2N, 1
             )
         )
@@ -8287,12 +8287,12 @@ which can be found in the LICENSE file.
             Weights_2N
         ),
         From_2N_BezierFunction_2A(
-            HodoPoints_J_2N(
+            Hodograph_J_2N(
                 VVWW2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
-            HodoPoints_J_2N(
+            Hodograph_J_2N(
                 Weights_2N, 1
             )
         )
@@ -8365,12 +8365,12 @@ which can be found in the LICENSE file.
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_I_3N(
+            Hodograph_I_3N(
                 VVWW3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_I_3N(
+            Hodograph_I_3N(
                 Weights_3N, 1
             )
         )
@@ -8414,12 +8414,12 @@ which can be found in the LICENSE file.
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_J_3N(
+            Hodograph_J_3N(
                 VVWW3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_J_3N(
+            Hodograph_J_3N(
                 Weights_3N, 1
             )
         )
@@ -8463,12 +8463,12 @@ which can be found in the LICENSE file.
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_K_3N(
+            Hodograph_K_3N(
                 VVWW3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_K_3N(
+            Hodograph_K_3N(
                 Weights_3N, 1
             )
         )
@@ -8550,12 +8550,12 @@ which can be found in the LICENSE file.
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_I_4N(
+            Hodograph_I_4N(
                 VVWW4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_I_4N(
+            Hodograph_I_4N(
                 Weights_4N, 1
             )
         )
@@ -8602,12 +8602,12 @@ which can be found in the LICENSE file.
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_J_4N(
+            Hodograph_J_4N(
                 VVWW4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_J_4N(
+            Hodograph_J_4N(
                 Weights_4N, 1
             )
         )
@@ -8654,12 +8654,12 @@ which can be found in the LICENSE file.
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_K_4N(
+            Hodograph_K_4N(
                 VVWW4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_K_4N(
+            Hodograph_K_4N(
                 Weights_4N, 1
             )
         )
@@ -8706,12 +8706,12 @@ which can be found in the LICENSE file.
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_L_4N(
+            Hodograph_L_4N(
                 VVWW4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_L_4N(
+            Hodograph_L_4N(
                 Weights_4N, 1
             )
         )
@@ -8817,22 +8817,22 @@ which can be found in the LICENSE file.
             Weights_1N
         ),
         From_1N_BezierFunction_1A(
-            HodoPoints_I_1N(
+            Hodograph_I_1N(
                 VVWW1N, 1
             )
         ),
         From_1N_BezierFunction_1A(
-            HodoPoints_I_1N(
+            Hodograph_I_1N(
                 Weights_1N, 1
             )
         ),
         From_1N_BezierFunction_1A(
-            HodoPoints_I_1N(
+            Hodograph_I_1N(
                 VVWW1N, 2
             )
         ),
         From_1N_BezierFunction_1A(
-            HodoPoints_I_1N(
+            Hodograph_I_1N(
                 Weights_1N, 2
             )
         )
@@ -8893,22 +8893,22 @@ which can be found in the LICENSE file.
             Weights_2N
         ),
         From_2N_BezierFunction_2A(
-            HodoPoints_I_2N(
+            Hodograph_I_2N(
                 VVWW2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
-            HodoPoints_I_2N(
+            Hodograph_I_2N(
                 Weights_2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
-            HodoPoints_I_2N(
+            Hodograph_I_2N(
                 VVWW2N, 2
             )
         ),
         From_2N_BezierFunction_2A(
-            HodoPoints_I_2N(
+            Hodograph_I_2N(
                 Weights_2N, 2
             )
         )
@@ -8949,22 +8949,22 @@ which can be found in the LICENSE file.
             Weights_2N
         ),
         From_2N_BezierFunction_2A(
-            HodoPoints_J_2N(
+            Hodograph_J_2N(
                 VVWW2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
-            HodoPoints_J_2N(
+            Hodograph_J_2N(
                 Weights_2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
-            HodoPoints_J_2N(
+            Hodograph_J_2N(
                 VVWW2N, 2
             )
         ),
         From_2N_BezierFunction_2A(
-            HodoPoints_J_2N(
+            Hodograph_J_2N(
                 Weights_2N, 2
             )
         )
@@ -9031,22 +9031,22 @@ which can be found in the LICENSE file.
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_I_3N(
+            Hodograph_I_3N(
                 VVWW3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_I_3N(
+            Hodograph_I_3N(
                 Weights_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_I_3N(
+            Hodograph_I_3N(
                 VVWW3N, 2
             )
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_I_3N(
+            Hodograph_I_3N(
                 Weights_3N, 2
             )
         )
@@ -9090,22 +9090,22 @@ which can be found in the LICENSE file.
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_J_3N(
+            Hodograph_J_3N(
                 VVWW3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_J_3N(
+            Hodograph_J_3N(
                 Weights_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_J_3N(
+            Hodograph_J_3N(
                 VVWW3N, 2
             )
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_J_3N(
+            Hodograph_J_3N(
                 Weights_3N, 2
             )
         )
@@ -9149,22 +9149,22 @@ which can be found in the LICENSE file.
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_K_3N(
+            Hodograph_K_3N(
                 VVWW3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_K_3N(
+            Hodograph_K_3N(
                 Weights_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_K_3N(
+            Hodograph_K_3N(
                 VVWW3N, 2
             )
         ),
         From_3N_BezierFunction_3A(
-            HodoPoints_K_3N(
+            Hodograph_K_3N(
                 Weights_3N, 2
             )
         )
@@ -9237,22 +9237,22 @@ which can be found in the LICENSE file.
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_I_4N(
+            Hodograph_I_4N(
                 VVWW4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_I_4N(
+            Hodograph_I_4N(
                 Weights_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_I_4N(
+            Hodograph_I_4N(
                 VVWW4N, 2
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_I_4N(
+            Hodograph_I_4N(
                 Weights_4N, 2
             )
         )
@@ -9299,22 +9299,22 @@ which can be found in the LICENSE file.
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_J_4N(
+            Hodograph_J_4N(
                 VVWW4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_J_4N(
+            Hodograph_J_4N(
                 Weights_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_J_4N(
+            Hodograph_J_4N(
                 VVWW4N, 2
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_J_4N(
+            Hodograph_J_4N(
                 Weights_4N, 2
             )
         )
@@ -9361,22 +9361,22 @@ which can be found in the LICENSE file.
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_K_4N(
+            Hodograph_K_4N(
                 VVWW4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_K_4N(
+            Hodograph_K_4N(
                 Weights_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_K_4N(
+            Hodograph_K_4N(
                 VVWW4N, 2
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_K_4N(
+            Hodograph_K_4N(
                 Weights_4N, 2
             )
         )
@@ -9423,22 +9423,22 @@ which can be found in the LICENSE file.
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_L_4N(
+            Hodograph_L_4N(
                 VVWW4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_L_4N(
+            Hodograph_L_4N(
                 Weights_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_L_4N(
+            Hodograph_L_4N(
                 VVWW4N, 2
             )
         ),
         From_4N_BezierFunction_4A(
-            HodoPoints_L_4N(
+            Hodograph_L_4N(
                 Weights_4N, 2
             )
         )
