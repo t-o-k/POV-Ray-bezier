@@ -6402,7 +6402,7 @@ which can be found in the LICENSE file.
 ;
 
 
-#macro DegElevPoints_I_1N(Points_1N, NoOfDegrees)
+#macro DegreeElevatedPoints_I_1N(Points_1N, NoOfDegrees)
 
     #local N = dimensions(Points_1N);
     #if (N != 1)
@@ -6441,7 +6441,7 @@ which can be found in the LICENSE file.
 
     PP1N
 
-#end // macro DegElevPoints_I_1N
+#end // macro DegreeElevatedPoints_I_1N
 
 
 #macro DegreeElevatedPoints_I_2N(Points_2N, NoOfDegrees)
