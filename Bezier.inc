@@ -6881,6 +6881,295 @@ which can be found in the LICENSE file.
 
 #end // macro DegreeElevatedPoints_L_4N
 
+#macro DegreeElevatedWeightedPoints_I_1N(Points_1N, Weights_1N, NoOfDegrees)
+
+    #local WeightedPoints_1N =
+        MultiplyArrays_1N(
+            Points_1N,
+            Weights_1N
+        )
+    ;
+    #local ElevatedWeightedPoints_1N =
+        DegElevPoints_I_1N(
+            WeightedPoints_1N,
+            NoOfDegrees
+        )
+    ;
+    #local ElevatedWeights_1N =
+        DegElevPoints_I_1N(
+            Weights_1N,
+            NoOfDegrees
+        )
+    ;
+
+    DivideArrays_1N(
+        ElevatedWeightedPoints_1N,
+        ElevatedWeights_1N
+    )
+
+#end // macro DegreeElevatedWeightedPoints_I_1N
+
+
+#macro DegreeElevatedWeightedPoints_I_2N(Points_2N, Weights_2N, NoOfDegrees)
+
+    #local WeightedPoints_2N =
+        MultiplyArrays_2N(
+            Points_2N,
+            Weights_2N
+        )
+    ;
+    #local ElevatedWeightedPoints_2N =
+        DegElevPoints_I_2N(
+            WeightedPoints_2N,
+            NoOfDegrees
+        )
+    ;
+    #local ElevatedWeights_2N =
+        DegElevPoints_I_2N(
+            Weights_2N,
+            NoOfDegrees
+        )
+    ;
+
+    DivideArrays_2N(
+        ElevatedWeightedPoints_2N,
+        ElevatedWeights_2N
+    )
+
+#end // macro DegreeElevatedWeightedPoints_I_2N
+
+
+#macro DegreeElevatedWeightedPoints_J_2N(Points_2N, Weights_2N, NoOfDegrees)
+
+    #local WeightedPoints_2N =
+        MultiplyArrays_2N(
+            Points_2N,
+            Weights_2N
+        )
+    ;
+    #local ElevatedWeightedPoints_2N =
+        DegElevPoints_J_2N(
+            WeightedPoints_2N,
+            NoOfDegrees
+        )
+    ;
+    #local ElevatedWeights_2N =
+        DegElevPoints_J_2N(
+            Weights_2N,
+            NoOfDegrees
+        )
+    ;
+
+    DivideArrays_2N(
+        ElevatedWeightedPoints_2N,
+        ElevatedWeights_2N
+    )
+
+#end // macro DegreeElevatedWeightedPoints_J_2N
+
+
+#macro DegreeElevatedWeightedPoints_I_3N(Points_3N, Weights_3N, NoOfDegrees)
+
+    #local WeightedPoints_3N =
+        MultiplyArrays_3N(
+            Points_3N,
+            Weights_3N
+        )
+    ;
+    #local ElevatedWeightedPoints_3N =
+        DegElevPoints_I_3N(
+            WeightedPoints_3N,
+            NoOfDegrees
+        )
+    ;
+    #local ElevatedWeights_3N =
+        DegElevPoints_I_3N(
+            Weights_3N,
+            NoOfDegrees
+        )
+    ;
+
+    DivideArrays_3N(
+        ElevatedWeightedPoints_3N,
+        ElevatedWeights_3N
+    )
+
+#end // macro DegreeElevatedWeightedPoints_I_3N
+
+
+#macro DegreeElevatedWeightedPoints_J_3N(Points_3N, Weights_3N, NoOfDegrees)
+
+    #local WeightedPoints_3N =
+        MultiplyArrays_3N(
+            Points_3N,
+            Weights_3N
+        )
+    ;
+    #local ElevatedWeightedPoints_3N =
+        DegElevPoints_J_3N(
+            WeightedPoints_3N,
+            NoOfDegrees
+        )
+    ;
+    #local ElevatedWeights_3N =
+        DegElevPoints_J_3N(
+            Weights_3N,
+            NoOfDegrees
+        )
+    ;
+
+    DivideArrays_3N(
+        ElevatedWeightedPoints_3N,
+        ElevatedWeights_3N
+    )
+
+#end // macro DegreeElevatedWeightedPoints_J_3N
+
+
+#macro DegreeElevatedWeightedPoints_K_3N(Points_3N, Weights_3N, NoOfDegrees)
+
+    #local WeightedPoints_3N =
+        MultiplyArrays_3N(
+            Points_3N,
+            Weights_3N
+        )
+    ;
+    #local ElevatedWeightedPoints_3N =
+        DegElevPoints_K_3N(
+            WeightedPoints_3N,
+            NoOfDegrees
+        )
+    ;
+    #local ElevatedWeights_3N =
+        DegElevPoints_K_3N(
+            Weights_3N,
+            NoOfDegrees
+        )
+    ;
+
+    DivideArrays_3N(
+        ElevatedWeightedPoints_3N,
+        ElevatedWeights_3N
+    )
+
+#end // macro DegreeElevatedWeightedPoints_K_3N
+
+
+#macro DegreeElevatedWeightedPoints_I_4N(Points_4N, Weights_4N, NoOfDegrees)
+
+    #local WeightedPoints_4N =
+        MultiplyArrays_4N(
+            Points_4N,
+            Weights_4N
+        )
+    ;
+    #local ElevatedWeightedPoints_4N =
+        DegElevPoints_I_4N(
+            WeightedPoints_4N,
+            NoOfDegrees
+        )
+    ;
+    #local ElevatedWeights_4N =
+        DegElevPoints_I_4N(
+            Weights_4N,
+            NoOfDegrees
+        )
+    ;
+
+    DivideArrays_4N(
+        ElevatedWeightedPoints_4N,
+        ElevatedWeights_4N
+    )
+
+#end // macro DegreeElevatedWeightedPoints_I_4N
+
+
+#macro DegreeElevatedWeightedPoints_J_4N(Points_4N, Weights_4N, NoOfDegrees)
+
+    #local WeightedPoints_4N =
+        MultiplyArrays_4N(
+            Points_4N,
+            Weights_4N
+        )
+    ;
+    #local ElevatedWeightedPoints_4N =
+        DegElevPoints_J_4N(
+            WeightedPoints_4N,
+            NoOfDegrees
+        )
+    ;
+    #local ElevatedWeights_4N =
+        DegElevPoints_J_4N(
+            Weights_4N,
+            NoOfDegrees
+        )
+    ;
+
+    DivideArrays_4N(
+        ElevatedWeightedPoints_4N,
+        ElevatedWeights_4N
+    )
+
+#end // macro DegreeElevatedWeightedPoints_J_4N
+
+
+#macro DegreeElevatedWeightedPoints_K_4N(Points_4N, Weights_4N, NoOfDegrees)
+
+    #local WeightedPoints_4N =
+        MultiplyArrays_4N(
+            Points_4N,
+            Weights_4N
+        )
+    ;
+    #local ElevatedWeightedPoints_4N =
+        DegElevPoints_K_4N(
+            WeightedPoints_4N,
+            NoOfDegrees
+        )
+    ;
+    #local ElevatedWeights_4N =
+        DegElevPoints_K_4N(
+            Weights_4N,
+            NoOfDegrees
+        )
+    ;
+
+    DivideArrays_4N(
+        ElevatedWeightedPoints_4N,
+        ElevatedWeights_4N
+    )
+
+#end // macro DegreeElevatedWeightedPoints_K_4N
+
+
+#macro DegreeElevatedWeightedPoints_L_4N(Points_4N, Weights_4N, NoOfDegrees)
+
+    #local WeightedPoints_4N =
+        MultiplyArrays_4N(
+            Points_4N,
+            Weights_4N
+        )
+    ;
+    #local ElevatedWeightedPoints_4N =
+        DegElevPoints_L_4N(
+            WeightedPoints_4N,
+            NoOfDegrees
+        )
+    ;
+    #local ElevatedWeights_4N =
+        DegElevPoints_L_4N(
+            Weights_4N,
+            NoOfDegrees
+        )
+    ;
+
+    DivideArrays_4N(
+        ElevatedWeightedPoints_4N,
+        ElevatedWeights_4N
+    )
+
+#end // macro DegreeElevatedWeightedPoints_L_4N
+
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
 #macro _HodoCoefficients(M)
