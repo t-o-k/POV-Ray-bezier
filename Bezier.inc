@@ -6410,7 +6410,7 @@ which can be found in the LICENSE file.
     #end // if
     #local SizeI = dimension_size(Values_1N, 1);
     #local NewSizeI = SizeI + NoOfDegrees;
-    #local PP1N = array[NewSizeI];
+    #local VV1N = array[NewSizeI];
     #local DI =
         FactRisingFn(
             SizeI,
@@ -6418,7 +6418,7 @@ which can be found in the LICENSE file.
         )
     ;
     #local p0 = 0*Values_1N[0];
-    #local PP1N[0] = Values_1N[0];
+    #local VV1N[0] = Values_1N[0];
     #for (I, 1, NewSizeI - 2)
         #local pSum = p0;
         #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
@@ -6435,11 +6435,11 @@ which can be found in the LICENSE file.
                 Values_1N[Io]
             ;
         #end // for
-        #local PP1N[I] = pSum/DI;
+        #local VV1N[I] = pSum/DI;
     #end // for
-    #local PP1N[NewSizeI-1] = Values_1N[SizeI-1];
+    #local VV1N[NewSizeI-1] = Values_1N[SizeI-1];
 
-    PP1N
+    VV1N
 
 #end // macro DegreeElevate_I_1N
 
@@ -6453,7 +6453,7 @@ which can be found in the LICENSE file.
     #local SizeI = dimension_size(Values_2N, 1);
     #local SizeJ = dimension_size(Values_2N, 2);
     #local NewSizeI = SizeI + NoOfDegrees;
-    #local PP2N = array[NewSizeI][SizeJ];
+    #local VV2N = array[NewSizeI][SizeJ];
     #local DI =
         FactRisingFn(
             SizeI,
@@ -6462,7 +6462,7 @@ which can be found in the LICENSE file.
     ;
     #local p0 = 0*Values_2N[0][0];
     #for (J, 0, SizeJ - 1)
-        #local PP2N[0][J] = Values_2N[0][J];
+        #local VV2N[0][J] = Values_2N[0][J];
         #for (I, 1, NewSizeI - 2)
             #local pSum = p0;
             #for (Io, max(0, I - NoOfDegrees), min(SizeI - 1, I))
@@ -6479,12 +6479,12 @@ which can be found in the LICENSE file.
                     Values_2N[Io][J]
                 ;
             #end // for
-            #local PP2N[I][J] = pSum/DI;
+            #local VV2N[I][J] = pSum/DI;
         #end // for
-        #local PP2N[NewSizeI-1][J] = Values_2N[SizeI-1][J];
+        #local VV2N[NewSizeI-1][J] = Values_2N[SizeI-1][J];
     #end // for
 
-    PP2N
+    VV2N
 
 #end // macro DegreeElevate_I_2N
 
@@ -6498,7 +6498,7 @@ which can be found in the LICENSE file.
     #local SizeI = dimension_size(Values_2N, 1);
     #local SizeJ = dimension_size(Values_2N, 2);
     #local NewSizeJ = SizeJ + NoOfDegrees;
-    #local PP2N = array[SizeI][NewSizeJ];
+    #local VV2N = array[SizeI][NewSizeJ];
     #local DJ =
         FactRisingFn(
             SizeJ,
@@ -6507,7 +6507,7 @@ which can be found in the LICENSE file.
     ;
     #local p0 = 0*Values_2N[0][0];
     #for (I, 0, SizeI - 1)
-        #local PP2N[I][0] = Values_2N[I][0];
+        #local VV2N[I][0] = Values_2N[I][0];
         #for (J, 1, NewSizeJ - 2)
             #local pSum = p0;
             #for (Jo, max(0, J - NoOfDegrees), min(SizeJ - 1, J))
@@ -6524,12 +6524,12 @@ which can be found in the LICENSE file.
                     Values_2N[I][Jo]
                 ;
             #end // for
-            #local PP2N[I][J] = pSum/DJ;
+            #local VV2N[I][J] = pSum/DJ;
         #end // for
-        #local PP2N[I][NewSizeJ-1] = Values_2N[I][SizeJ-1];
+        #local VV2N[I][NewSizeJ-1] = Values_2N[I][SizeJ-1];
     #end // for
 
-    PP2N
+    VV2N
 
 #end // macro DegreeElevate_J_2N
 
@@ -6544,7 +6544,7 @@ which can be found in the LICENSE file.
     #local SizeJ = dimension_size(Values_3N, 2);
     #local SizeK = dimension_size(Values_3N, 3);
     #local NewSizeI = SizeI + NoOfDegrees;
-    #local PP3N = array[NewSizeI][SizeJ][SizeK];
+    #local VV3N = array[NewSizeI][SizeJ][SizeK];
     #local DI =
         FactRisingFn(
             SizeI,
@@ -6554,7 +6554,7 @@ which can be found in the LICENSE file.
     #local p0 = 0*Values_3N[0][0][0];
     #for (K, 0, SizeK - 1)
         #for (J, 0, SizeJ - 1)
-            #local PP3N[0][J][K] = Values_3N[0][J][K];
+            #local VV3N[0][J][K] = Values_3N[0][J][K];
             #for (I, 1, NewSizeI - 2)
                 #local pSum = p0;
                 #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
@@ -6571,13 +6571,13 @@ which can be found in the LICENSE file.
                         Values_3N[Io][J][K]
                     ;
                 #end // for
-                #local PP3N[I][J][K] = pSum/DI;
+                #local VV3N[I][J][K] = pSum/DI;
             #end // for
-            #local PP3N[NewSizeI-1][J][K] = Values_3N[SizeI-1][J][K];
+            #local VV3N[NewSizeI-1][J][K] = Values_3N[SizeI-1][J][K];
         #end // for
     #end // for
 
-    PP3N
+    VV3N
 
 #end // macro DegreeElevate_I_3N
 
@@ -6592,7 +6592,7 @@ which can be found in the LICENSE file.
     #local SizeJ = dimension_size(Values_3N, 2);
     #local SizeK = dimension_size(Values_3N, 3);
     #local NewSizeJ = SizeJ + NoOfDegrees;
-    #local PP3N = array[SizeI][NewSizeJ][SizeK];
+    #local VV3N = array[SizeI][NewSizeJ][SizeK];
     #local DJ =
         FactRisingFn(
             SizeJ,
@@ -6602,7 +6602,7 @@ which can be found in the LICENSE file.
     #local p0 = 0*Values_3N[0][0][0];
     #for (I, 0, SizeI - 1)
         #for (K, 0, SizeK - 1)
-            #local PP3N[I][0][K] = Values_3N[I][0][K];
+            #local VV3N[I][0][K] = Values_3N[I][0][K];
             #for (J, 1, NewSizeJ - 2)
                 #local pSum = p0;
                 #for (Jo, max(J - NoOfDegrees, 0), min(SizeJ - 1, J))
@@ -6619,13 +6619,13 @@ which can be found in the LICENSE file.
                         Values_3N[I][Jo][K]
                     ;
                 #end // for
-                #local PP3N[I][J][K] = pSum/DJ;
+                #local VV3N[I][J][K] = pSum/DJ;
             #end // for
-            #local PP3N[I][NewSizeJ-1][K] = Values_3N[I][SizeJ-1][K];
+            #local VV3N[I][NewSizeJ-1][K] = Values_3N[I][SizeJ-1][K];
         #end // for
     #end // for
 
-    PP3N
+    VV3N
 
 #end // macro DegreeElevate_J_3N
 
@@ -6640,7 +6640,7 @@ which can be found in the LICENSE file.
     #local SizeJ = dimension_size(Values_3N, 2);
     #local SizeK = dimension_size(Values_3N, 3);
     #local NewSizeK = SizeK + NoOfDegrees;
-    #local PP3N = array[SizeI][SizeJ][NewSizeK];
+    #local VV3N = array[SizeI][SizeJ][NewSizeK];
     #local DK =
         FactRisingFn(
             SizeK,
@@ -6650,7 +6650,7 @@ which can be found in the LICENSE file.
     #local p0 = 0*Values_3N[0][0][0];
     #for (J, 0, SizeJ - 1)
         #for (I, 0, SizeI - 1)
-            #local PP3N[I][J][0] = Values_3N[I][J][0];
+            #local VV3N[I][J][0] = Values_3N[I][J][0];
             #for (K, 1, NewSizeK - 2)
                 #local pSum = p0;
                 #for (Ko, max(K - NoOfDegrees, 0), min(SizeK - 1, K))
@@ -6667,13 +6667,13 @@ which can be found in the LICENSE file.
                         Values_3N[I][J][Ko]
                     ;
                 #end // for
-                #local PP3N[I][J][K] = pSum/DK;
+                #local VV3N[I][J][K] = pSum/DK;
             #end // for
-            #local PP3N[I][J][NewSizeK-1] = Values_3N[I][J][SizeK-1];
+            #local VV3N[I][J][NewSizeK-1] = Values_3N[I][J][SizeK-1];
         #end // for
     #end // for
 
-    PP3N
+    VV3N
  
 #end // macro DegreeElevate_K_3N
 
@@ -6689,7 +6689,7 @@ which can be found in the LICENSE file.
     #local SizeK = dimension_size(Values_4N, 3);
     #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeI = SizeI + NoOfDegrees;
-    #local PP4N = array[NewSizeI][SizeJ][SizeK][SizeL];
+    #local VV4N = array[NewSizeI][SizeJ][SizeK][SizeL];
     #local DI =
         FactRisingFn(
             SizeI,
@@ -6700,7 +6700,7 @@ which can be found in the LICENSE file.
     #for (L, 0, SizeL - 1)
         #for (K, 0, SizeK - 1)
             #for (J, 0, SizeJ - 1)
-                #local PP4N[0][J][K][L] = Values_4N[0][J][K][L];
+                #local VV4N[0][J][K][L] = Values_4N[0][J][K][L];
                 #for (I, 1, NewSizeI - 2)
                     #local pSum = p0;
                     #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
@@ -6717,14 +6717,14 @@ which can be found in the LICENSE file.
                             Values_4N[Io][J][K][L]
                         ;
                     #end // for
-                    #local PP4N[I][J][K][L] = pSum/DI;
+                    #local VV4N[I][J][K][L] = pSum/DI;
                 #end // for
-                #local PP4N[NewSizeI-1][J][K][L] = Values_4N[SizeI-1][J][K][L];
+                #local VV4N[NewSizeI-1][J][K][L] = Values_4N[SizeI-1][J][K][L];
             #end // for
         #end // for
     #end // for
 
-    PP4N
+    VV4N
 
 #end // macro DegreeElevate_I_4N
 
@@ -6740,7 +6740,7 @@ which can be found in the LICENSE file.
     #local SizeK = dimension_size(Values_4N, 3);
     #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeJ = SizeJ + NoOfDegrees;
-    #local PP4N = array[SizeI][NewSizeJ][SizeK][SizeL];
+    #local VV4N = array[SizeI][NewSizeJ][SizeK][SizeL];
     #local DJ =
         FactRisingFn(
             SizeJ,
@@ -6751,7 +6751,7 @@ which can be found in the LICENSE file.
     #for (I, 0, SizeI - 1)
         #for (L, 0, SizeL - 1)
             #for (K, 0, SizeK - 1)
-                #local PP4N[I][0][K][L] = Values_4N[I][0][K][L];
+                #local VV4N[I][0][K][L] = Values_4N[I][0][K][L];
                 #for (J, 1, NewSizeJ - 2)
                     #local pSum = p0;
                     #for (Jo, max(J - NoOfDegrees, 0), min(SizeJ - 1, J))
@@ -6768,14 +6768,14 @@ which can be found in the LICENSE file.
                             Values_4N[I][Jo][K][L]
                         ;
                     #end // for
-                    #local PP4N[I][J][K][L] = pSum/DJ;
+                    #local VV4N[I][J][K][L] = pSum/DJ;
                 #end // for
-                #local PP4N[I][NewSizeJ-1][K][L] = Values_4N[I][SizeJ-1][K][L];
+                #local VV4N[I][NewSizeJ-1][K][L] = Values_4N[I][SizeJ-1][K][L];
             #end // for
         #end // for
     #end // for
 
-    PP4N
+    VV4N
 
 #end // macro DegreeElevate_J_4N
 
@@ -6791,7 +6791,7 @@ which can be found in the LICENSE file.
     #local SizeK = dimension_size(Values_4N, 3);
     #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeK = SizeK + NoOfDegrees;
-    #local PP4N = array[SizeI][SizeJ][NewSizeK][SizeL];
+    #local VV4N = array[SizeI][SizeJ][NewSizeK][SizeL];
     #local DK =
         FactRisingFn(
             SizeK,
@@ -6802,7 +6802,7 @@ which can be found in the LICENSE file.
     #for (J, 0, SizeJ - 1)
         #for (I, 0, SizeI - 1)
             #for (L, 0, SizeL - 1)
-                #local PP4N[I][J][0][L] = Values_4N[I][J][0][L];
+                #local VV4N[I][J][0][L] = Values_4N[I][J][0][L];
                 #for (K, 1, NewSizeK - 2)
                     #local pSum = p0;
                     #for (Ko, max(K - NoOfDegrees, 0), min(SizeK - 1, K))
@@ -6819,14 +6819,14 @@ which can be found in the LICENSE file.
                             Values_4N[I][J][Ko][L]
                         ;
                     #end // for
-                    #local PP4N[I][J][K][L] = pSum/DK;
+                    #local VV4N[I][J][K][L] = pSum/DK;
                 #end // for
-                #local PP4N[I][J][NewSizeK-1][L] = Values_4N[I][J][SizeK-1][L];
+                #local VV4N[I][J][NewSizeK-1][L] = Values_4N[I][J][SizeK-1][L];
             #end // for
         #end // for
     #end // for
 
-    PP4N
+    VV4N
 
 #end // macro DegreeElevate_K_4N
 
@@ -6842,7 +6842,7 @@ which can be found in the LICENSE file.
     #local SizeK = dimension_size(Values_4N, 3);
     #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeL = SizeL + NoOfDegrees;
-    #local PP4N = array[SizeI][SizeJ][SizeK][NewSizeL];
+    #local VV4N = array[SizeI][SizeJ][SizeK][NewSizeL];
     #local DL =
         FactRisingFn(
             SizeL,
@@ -6853,7 +6853,7 @@ which can be found in the LICENSE file.
     #for (K, 0, SizeK - 1)
         #for (J, 0, SizeJ - 1)
             #for (I, 0, SizeI - 1)
-                #local PP4N[I][J][K][0] = Values_4N[I][J][K][0];
+                #local VV4N[I][J][K][0] = Values_4N[I][J][K][0];
                 #for (L, 1, NewSizeL - 2)
                     #local pSum = p0;
                     #for (Lo, max(L - NoOfDegrees, 0), min(SizeL - 1, L))
@@ -6870,14 +6870,14 @@ which can be found in the LICENSE file.
                             Values_4N[I][J][K][Lo]
                         ;
                     #end // for
-                    #local PP4N[I][J][K][L] = pSum/DL;
+                    #local VV4N[I][J][K][L] = pSum/DL;
                 #end // for
-                #local PP4N[I][J][K][NewSizeL-1] = Values_4N[I][J][K][SizeL-1];
+                #local VV4N[I][J][K][NewSizeL-1] = Values_4N[I][J][K][SizeL-1];
             #end // for
         #end // for
     #end // for
 
-    PP4N
+    VV4N
 
 #end // macro DegreeElevate_L_4N
 
