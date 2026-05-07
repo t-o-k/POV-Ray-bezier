@@ -1063,3 +1063,84 @@ which can be found in the LICENSE file.
 #end // macro ShowGrid_3D
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
+#macro DrawPatch_3D(_Functions_3D2A, Min_UV, Max_UV, Div_UV)
+
+    #local M =
+        max(
+            dimensions(_Functions_3D2A),
+            dimensions(Min_UV),
+            dimensions(Max_UV),
+            dimensions(Div_UV)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_3D2A, 1);
+    #if (D != 3)
+        #error "D is not 3"
+    #end // if
+    #if (dimension_size(Min_UV, 1) != 2)
+        #error "Is not 2"
+    #end // if
+    #if (dimension_size(Max_UV, 1) != 2)
+        #error "Is not 2"
+    #end // if
+    #if (dimension_size(Div_UV, 1) != 2)
+        #error "Is not 2"
+    #end // if
+    #local MinU = u_E(Min_UV);
+    #local MinV = v_E(Min_UV);
+    #local MaxU = u_E(Max_UV);
+    #local MaxV = v_E(Max_UV);
+    #local DivU = u_E(Div_UV);
+    #local DivV = v_E(Div_UV);
+    #local dU = (MaxU - MinU)/DivU;
+    #local dV = (MaxV - MinV)/DivV;
+
+    mesh {
+        #local U0 = MinU;
+        #for (I, 0, DivU - 1)
+            #local U1 = U0 + dU;
+            #local V0 = MinV;
+            #for (J, 0, DivV - 1)
+                #local V1 = V0 + dV;
+                #local p00 =
+                    <
+                        x_E(_Functions_3D2A)(U0, V0),
+                        y_E(_Functions_3D2A)(U0, V0),
+                        z_E(_Functions_3D2A)(U0, V0)
+                    >
+                ;
+                #local p10 =
+                    <
+                        x_E(_Functions_3D2A)(U1, V0),
+                        y_E(_Functions_3D2A)(U1, V0),
+                        z_E(_Functions_3D2A)(U1, V0)
+                    >;
+                #local p01 =
+                    <
+                        x_E(_Functions_3D2A)(U0, V1),
+                        y_E(_Functions_3D2A)(U0, V1),
+                        z_E(_Functions_3D2A)(U0, V1)
+                    >
+                ;
+                #local p11 =
+                    <
+                        x_E(_Functions_3D2A)(U1, V1),
+                        y_E(_Functions_3D2A)(U1, V1),
+                        z_E(_Functions_3D2A)(U1, V1)
+                    >
+                ;
+                triangle { p00, p10, p11 }
+                triangle { p11, p01, p00 }
+                #local V0 = V1;
+            #end // for
+            #local U0 = U1;
+        #end // for
+    }
+
+#end // macro DrawPatch_3D
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
