@@ -15,6 +15,64 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
+#macro u_E(Array)
+
+    Array[0]
+
+#end // macro u_E
+
+
+#macro v_E(Array)
+
+    Array[1]
+
+#end // macro v_E
+
+
+#macro w_E(Array)
+
+    Array[2]
+
+#end // macro w_E
+
+
+#macro s_E(Array)
+
+    Array[3]
+
+#end // macro s_E
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
+#macro x_E(Array)
+
+    Array[0]
+
+#end // macro x_E
+
+
+#macro y_E(Array)
+
+    Array[1]
+
+#end // macro y_E
+
+
+#macro z_E(Array)
+
+    Array[2]
+
+#end // macro z_E
+
+
+#macro t_E(Array)
+
+    Array[3]
+
+#end // macro t_E
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
 #macro DivideFunctions_1A(_Num_Function_1A, _Den_Function_1A)
 
     function(_u) {
