@@ -60,6 +60,506 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
+#macro _LengthFunction_1A_1D(_Functions_1A_1D)
+
+    #if (dimensions(_Functions_1A_1D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_1A_1D, 1);
+    #if (D != 1)
+        #error "D is not 1"
+    #end // if
+
+    function(_u) {
+        abs(
+            x_E(_Functions_1A_1D)(_u)
+        )
+    }
+
+#end // _LengthFunction_1A_1D
+
+
+#macro _LengthFunction_1A_2D(_Functions_1A_2D)
+
+    #if (dimensions(_Functions_1A_2D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_1A_2D, 1);
+    #if (D != 2)
+        #error "D is not 2"
+    #end // if
+
+    function(_u) {
+        f_r(
+            x_E(_Functions_1A_2D)(_u),
+            y_E(_Functions_1A_2D)(_u),
+            0.0
+        )
+    }
+
+#end // _LengthFunction_1A_2D
+
+
+#macro _LengthFunction_1A_3D(_Functions_1A_3D)
+
+    #if (dimensions(_Functions_1A_3D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_1A_3D, 1);
+    #if (D != 3)
+        #error "D is not 3"
+    #end // if
+
+    function(_u) {
+        f_r(
+            x_E(_Functions_1A_3D)(_u),
+            y_E(_Functions_1A_3D)(_u),
+            z_E(_Functions_1A_3D)(_u)
+        )
+    }
+
+#end // _LengthFunction_1A_3D
+
+
+#macro _LengthFunction_1A_4D(_Functions_1A_4D)
+
+    #if (dimensions(_Functions_1A_4D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_1A_4D, 1);
+    #if (D != 4)
+        #error "D is not 4"
+    #end // if
+
+    function(_u) {
+        sqrt(
+            pow(x_E(_Functions_1A_4D)(_u), 2)
+            +
+            pow(y_E(_Functions_1A_4D)(_u), 2)
+            +
+            pow(z_E(_Functions_1A_4D)(_u), 2)
+            +
+            pow(t_E(_Functions_1A_4D)(_u), 2)
+        )
+    }
+
+#end // _LengthFunction_1A_4D
+
+
+#macro LengthFunction_1A(_Functions_1A)
+
+    #if (dimensions(_Functions_1A) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_1A, 1);
+    #if (!((D = 1) | (D = 2) | (D = 3) | (D = 4)))
+        #error "D is neither 1, 2, 3 nor 4"
+    #end // if
+
+    #switch (D)
+        #case (1)
+            _LengthFunction_1A_1D(
+                _Functions_1A
+            )
+            #break
+        #case (2)
+            _LengthFunction_1A_2D(
+                _Functions_1A
+            )
+            #break
+        #case (3)
+            _LengthFunction_1A_3D(
+                _Functions_1A
+            )
+            #break
+        #case (4)
+            _LengthFunction_1A_4D(
+                _Functions_1A
+            )
+            #break
+        #else
+            #error "!"
+    #end // switch
+
+#end // LengthFunction_1A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
+#macro _LengthFunction_2A_1D(_Functions_2A_1D)
+
+    #if (dimensions(_Functions_2A_1D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_2A_1D, 1);
+    #if (D != 1)
+        #error "D is not 1"
+    #end // if
+
+    function(_u, _v) {
+        abs(
+            x_E(_Functions_2A_1D)(_u, _v)
+        )
+    }
+
+#end // _LengthFunction_2A_1D
+
+
+#macro _LengthFunction_2A_2D(_Functions_2A_2D)
+
+    #if (dimensions(_Functions_2A_2D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_2A_2D, 1);
+    #if (D != 2)
+        #error "D is not 2"
+    #end // if
+
+    function(_u, _v) {
+        f_r(
+            x_E(_Functions_2A_2D)(_u, _v),
+            y_E(_Functions_2A_2D)(_u, _v),
+            0.0
+        )
+    }
+
+#end // _LengthFunction_2A_2D
+
+
+#macro _LengthFunction_2A_3D(_Functions_2A_3D)
+
+    #if (dimensions(_Functions_2A_3D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_2A_3D, 1);
+    #if (D != 3)
+        #error "D is not 3"
+    #end // if
+
+    function(_u, _v) {
+        f_r(
+            x_E(_Functions_2A_3D)(_u, _v),
+            y_E(_Functions_2A_3D)(_u, _v),
+            z_E(_Functions_2A_3D)(_u, _v)
+        )
+    }
+
+#end // _LengthFunction_2A_3D
+
+
+#macro _LengthFunction_2A_4D(_Functions_2A_4D)
+
+    #if (dimensions(_Functions_2A_4D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_2A_4D, 1);
+    #if (D != 4)
+        #error "D is not 4"
+    #end // if
+
+    function(_u, _v) {
+        sqrt(
+            pow(x_E(_Functions_2A_4D)(_u, _v), 2)
+            +
+            pow(y_E(_Functions_2A_4D)(_u, _v), 2)
+            +
+            pow(z_E(_Functions_2A_4D)(_u, _v), 2)
+            +
+            pow(t_E(_Functions_2A_4D)(_u, _v), 2)
+        )
+    }
+
+#end // _LengthFunction_2A_4D
+
+
+#macro LengthFunction_2A(_Functions_2A)
+
+    #if (dimensions(_Functions_2A) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_2A, 1);
+    #if (!((D = 1) | (D = 2) | (D = 3) | (D = 4)))
+        #error "D is neither 1, 2, 3 nor 4"
+    #end // if
+
+    #switch (D)
+        #case (1)
+            _LengthFunction_2A_1D(
+                _Functions_2A
+            )
+            #break
+        #case (2)
+            _LengthFunction_2A_2D(
+                _Functions_2A
+            )
+            #break
+        #case (3)
+            _LengthFunction_2A_3D(
+                _Functions_2A
+            )
+            #break
+        #case (4)
+            _LengthFunction_2A_4D(
+                _Functions_2A
+            )
+            #break
+        #else
+            #error "!"
+    #end // switch
+
+#end // LengthFunction_2A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
+#macro _LengthFunction_3A_1D(_Functions_3A_1D)
+
+    #if (dimensions(_Functions_3A_1D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_3A_1D, 1);
+    #if (D != 1)
+        #error "D is not 1"
+    #end // if
+
+    function(_u, _v, _w) {
+        abs(
+            x_E(_Functions_3A_1D)(_u, _v, _w)
+        )
+    }
+
+#end // _LengthFunction_3A_1D
+
+
+#macro _LengthFunction_3A_2D(_Functions_3A_2D)
+
+    #if (dimensions(_Functions_3A_2D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_3A_2D, 1);
+    #if (D != 2)
+        #error "D is not 2"
+    #end // if
+
+    function(_u, _v, _w) {
+        f_r(
+            x_E(_Functions_3A_2D)(_u, _v, _w),
+            y_E(_Functions_3A_2D)(_u, _v, _w),
+            0.0
+        )
+    }
+
+#end // _LengthFunction_3A_2D
+
+
+#macro _LengthFunction_3A_3D(_Functions_3A_3D)
+
+    #if (dimensions(_Functions_3A_3D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_3A_3D, 1);
+    #if (D != 3)
+        #error "D is not 3"
+    #end // if
+
+    function(_u, _v, _w) {
+        f_r(
+            x_E(_Functions_3A_3D)(_u, _v, _w),
+            y_E(_Functions_3A_3D)(_u, _v, _w),
+            z_E(_Functions_3A_3D)(_u, _v, _w)
+        )
+    }
+
+#end // _LengthFunction_3A_3D
+
+
+#macro _LengthFunction_3A_4D(_Functions_3A_4D)
+
+    #if (dimensions(_Functions_3A_4D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_3A_4D, 1);
+    #if (D != 4)
+        #error "D is not 4"
+    #end // if
+
+    function(_u, _v, _w) {
+        sqrt(
+            pow(x_E(_Functions_3A_4D)(_u, _v, _w), 2)
+            +
+            pow(y_E(_Functions_3A_4D)(_u, _v, _w), 2)
+            +
+            pow(z_E(_Functions_3A_4D)(_u, _v, _w), 2)
+            +
+            pow(t_E(_Functions_3A_4D)(_u, _v, _w), 2)
+        )
+    }
+
+#end // _LengthFunction_3A_4D
+
+
+#macro LengthFunction_3A(_Functions_3A)
+
+    #if (dimensions(_Functions_3A) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_3A, 1);
+    #if (!((D = 1) | (D = 2) | (D = 3) | (D = 4)))
+        #error "D is neither 1, 2, 3 nor 4"
+    #end // if
+
+    #switch (D)
+        #case (1)
+            _LengthFunction_3A_1D(
+                _Functions_3A
+            )
+            #break
+        #case (2)
+            _LengthFunction_3A_2D(
+                _Functions_3A
+            )
+            #break
+        #case (3)
+            _LengthFunction_3A_3D(
+                _Functions_3A
+            )
+            #break
+        #case (4)
+            _LengthFunction_3A_4D(
+                _Functions_3A
+            )
+            #break
+        #else
+            #error "!"
+    #end // switch
+
+#end // LengthFunction_3A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
+#macro _LengthFunction_4A_1D(_Functions_4A_1D)
+
+    #if (dimensions(_Functions_4A_1D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_4A_1D, 1);
+    #if (D != 1)
+        #error "D is not 1"
+    #end // if
+
+    function(_u, _v, _w, _s) {
+        abs(
+            x_E(_Functions_4A_1D)(_u, _v, _w, _s)
+        )
+    }
+
+#end // _LengthFunction_4A_1D
+
+
+#macro _LengthFunction_4A_2D(_Functions_4A_2D)
+
+    #if (dimensions(_Functions_4A_2D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_4A_2D, 1);
+    #if (D != 2)
+        #error "D is not 2"
+    #end // if
+
+    function(_u, _v, _w, _s) {
+        f_r(
+            x_E(_Functions_4A_2D)(_u, _v, _w, _s),
+            y_E(_Functions_4A_2D)(_u, _v, _w, _s),
+            0.0
+        )
+    }
+
+#end // _LengthFunction_4A_2D
+
+
+#macro _LengthFunction_4A_3D(_Functions_4A_3D)
+
+    #if (dimensions(_Functions_4A_3D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_4A_3D, 1);
+    #if (D != 3)
+        #error "D is not 3"
+    #end // if
+
+    function(_u, _v, _w, _s) {
+        f_r(
+            x_E(_Functions_4A_3D)(_u, _v, _w, _s),
+            y_E(_Functions_4A_3D)(_u, _v, _w, _s),
+            z_E(_Functions_4A_3D)(_u, _v, _w, _s)
+        )
+    }
+
+#end // _LengthFunction_4A_3D
+
+
+#macro _LengthFunction_4A_4D(_Functions_4A_4D)
+
+    #if (dimensions(_Functions_4A_4D) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_4A_4D, 1);
+    #if (D != 4)
+        #error "D is not 4"
+    #end // if
+
+    function(_u, _v, _w, _s) {
+        sqrt(
+            pow(x_E(_Functions_4A_4D)(_u, _v, _w, _s), 2)
+            +
+            pow(y_E(_Functions_4A_4D)(_u, _v, _w, _s), 2)
+            +
+            pow(z_E(_Functions_4A_4D)(_u, _v, _w, _s), 2)
+            +
+            pow(t_E(_Functions_4A_4D)(_u, _v, _w, _s), 2)
+        )
+    }
+
+#end // _LengthFunction_4A_4D
+
+
+#macro LengthFunction_4A(_Functions_4A)
+
+    #if (dimensions(_Functions_4A) != 1)
+        #error "Is not 1"
+    #end // if
+    #local D = dimension_size(_Functions_4A, 1);
+    #if (!((D = 1) | (D = 2) | (D = 3) | (D = 4)))
+        #error "D is neither 1, 2, 3 nor 4"
+    #end // if
+
+    #switch (D)
+        #case (1)
+            _LengthFunction_4A_1D(
+                _Functions_4A
+            )
+            #break
+        #case (2)
+            _LengthFunction_4A_2D(
+                _Functions_4A
+            )
+            #break
+        #case (3)
+            _LengthFunction_4A_3D(
+                _Functions_4A
+            )
+            #break
+        #case (4)
+            _LengthFunction_4A_4D(
+                _Functions_4A
+            )
+            #break
+        #else
+            #error "!"
+    #end // switch
+
+#end // LengthFunction_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
 #macro Der1_RationalFunction_1A(_NumFn1A, _DenFn1A, _D1NumFn1A, _D1DenFn1A)
 
     function(_u) {
