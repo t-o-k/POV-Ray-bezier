@@ -352,7 +352,6 @@ which can be found in the LICENSE file.
     function(_u) {
         (
             _D2NumFn1A(_u)*pow(_DenFn1A(_u), 2)
-
             -
             (
                 2*_D1NumFn1A(_u)*_D1DenFn1A(_u)
