@@ -13,8 +13,6 @@ which can be found in the LICENSE file.
 
 #version 3.7;
 
-#declare NUM_DIFF_STEP_SIZE = 1e-4;
-
 #declare MIN_CYLINDER_LENGTH = 1e-6;
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
