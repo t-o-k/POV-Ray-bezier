@@ -71,7 +71,6 @@ which can be found in the LICENSE file.
 
 #end // macro s_E
 
-
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
 #macro I_E(Array)
