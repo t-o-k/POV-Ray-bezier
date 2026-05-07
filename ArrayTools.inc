@@ -11,6 +11,10 @@ which can be found in the LICENSE file.
 */
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
+#version 3.7;
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
 #macro From_1N_WrapArray(Array_1N, WrapCount)
 
     #local N = dimensions(Array_1N);
