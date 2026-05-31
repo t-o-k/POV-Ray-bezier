@@ -626,7 +626,7 @@ which can be found in the LICENSE file.
                 #case (0.0)
                     #break
                 #case (-1.0)
-                    -_U_Fns_1A1N[I](_u)
+                    - _U_Fns_1A1N[I](_u)
                     #break
                 #case (+1.0)
                     + _U_Fns_1A1N[I](_u)
