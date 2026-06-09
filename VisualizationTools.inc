@@ -169,19 +169,19 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro From_1N_ShowPoints_2D(Points_1N2D, Radius)
+#macro From_1N_ShowPoints_2D(Points_1N_2D, Radius)
 
-    #local N = dimensions(Points_1N2D);
+    #local N = dimensions(Points_1N_2D);
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #local SizeI = dimension_size(Points_1N2D, 1);
+    #local SizeI = dimension_size(Points_1N_2D, 1);
     #local LastI = SizeI - 1;
 
     #if (Radius > 0.0)
         #for (I, 0, LastI)
             Sphere_2D(
-                Points_1N2D[I],
+                Points_1N_2D[I],
                 Radius
             )
         #end // for
@@ -190,15 +190,15 @@ which can be found in the LICENSE file.
 #end // macro From_1N_ShowPoints_2D
 
 
-#macro From_3N_ShowPoints_2D(Points_3N2D, Radius)
+#macro From_3N_ShowPoints_2D(Points_3N_2D, Radius)
 
-    #local N = dimensions(Points_3N2D);
+    #local N = dimensions(Points_3N_2D);
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(Points_3N2D, 1);
-    #local SizeJ = dimension_size(Points_3N2D, 2);
-    #local SizeK = dimension_size(Points_3N2D, 3);
+    #local SizeI = dimension_size(Points_3N_2D, 1);
+    #local SizeJ = dimension_size(Points_3N_2D, 2);
+    #local SizeK = dimension_size(Points_3N_2D, 3);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
@@ -208,7 +208,7 @@ which can be found in the LICENSE file.
             #for (J, 0, LastJ)
                 #for (I, 0, LastI)
                     Sphere_2D(
-                        Points_3N2D[I][J][K],
+                        Points_3N_2D[I][J][K],
                         Radius
                     )
                 #end // for
@@ -219,16 +219,16 @@ which can be found in the LICENSE file.
 #end // macro From_3N_ShowPoints_2D
 
 
-#macro From_4N_ShowPoints_2D(Points_4N2D, Radius)
+#macro From_4N_ShowPoints_2D(Points_4N_2D, Radius)
 
-    #local N = dimensions(Points_4N2D);
+    #local N = dimensions(Points_4N_2D);
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(Points_4N2D, 1);
-    #local SizeJ = dimension_size(Points_4N2D, 2);
-    #local SizeK = dimension_size(Points_4N2D, 3);
-    #local SizeL = dimension_size(Points_4N2D, 4);
+    #local SizeI = dimension_size(Points_4N_2D, 1);
+    #local SizeJ = dimension_size(Points_4N_2D, 2);
+    #local SizeK = dimension_size(Points_4N_2D, 3);
+    #local SizeL = dimension_size(Points_4N_2D, 4);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
@@ -240,7 +240,7 @@ which can be found in the LICENSE file.
                 #for (J, 0, LastJ)
                     #for (I, 0, LastI)
                         Sphere_2D(
-                            Points_4N2D[I][J][K][L],
+                            Points_4N_2D[I][J][K][L],
                             Radius
                         )
                     #end // for
@@ -288,19 +288,19 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
-#macro From_1N_ShowPoints_3D(Points_1N3D, Radius)
+#macro From_1N_ShowPoints_3D(Points_1N_3D, Radius)
 
-    #local N = dimensions(Points_1N3D);
+    #local N = dimensions(Points_1N_3D);
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #local SizeI = dimension_size(Points_1N3D, 1);
+    #local SizeI = dimension_size(Points_1N_3D, 1);
     #local LastI = SizeI - 1;
 
     #if (Radius > 0.0)
         #for (I, 0, LastI)
             sphere {
-                Points_1N3D[I],
+                Points_1N_3D[I],
                 Radius
             }
         #end // for
@@ -309,14 +309,14 @@ which can be found in the LICENSE file.
 #end // macro From_1N_ShowPoints_3D
 
 
-#macro From_2N_ShowPoints_3D(Points_2N3D, Radius)
+#macro From_2N_ShowPoints_3D(Points_2N_3D, Radius)
 
-    #local N = dimensions(Points_2N3D);
+    #local N = dimensions(Points_2N_3D);
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local SizeI = dimension_size(Points_2N3D, 1);
-    #local SizeJ = dimension_size(Points_2N3D, 2);
+    #local SizeI = dimension_size(Points_2N_3D, 1);
+    #local SizeJ = dimension_size(Points_2N_3D, 2);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
 
@@ -324,7 +324,7 @@ which can be found in the LICENSE file.
         #for (J, 0, LastJ)
             #for (I, 0, LastI)
                 sphere {
-                    Points_2N3D[I][J],
+                    Points_2N_3D[I][J],
                     Radius
                 }
             #end // for
@@ -334,15 +334,15 @@ which can be found in the LICENSE file.
 #end // macro From_2N_ShowPoints_3D
 
 
-#macro From_3N_ShowPoints_3D(Points_3N3D, Radius)
+#macro From_3N_ShowPoints_3D(Points_3N_3D, Radius)
 
-    #local N = dimensions(Points_3N3D);
+    #local N = dimensions(Points_3N_3D);
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(Points_3N3D, 1);
-    #local SizeJ = dimension_size(Points_3N3D, 2);
-    #local SizeK = dimension_size(Points_3N3D, 3);
+    #local SizeI = dimension_size(Points_3N_3D, 1);
+    #local SizeJ = dimension_size(Points_3N_3D, 2);
+    #local SizeK = dimension_size(Points_3N_3D, 3);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
@@ -352,7 +352,7 @@ which can be found in the LICENSE file.
             #for (J, 0, LastJ)
                 #for (I, 0, LastI)
                     sphere {
-                        Points_3N3D[I][J][K],
+                        Points_3N_3D[I][J][K],
                         Radius
                     }
                 #end // for
@@ -363,16 +363,16 @@ which can be found in the LICENSE file.
 #end // macro From_3N_ShowPoints_3D
 
 
-#macro From_4N_ShowPoints_3D(Points_4N3D, Radius)
+#macro From_4N_ShowPoints_3D(Points_4N_3D, Radius)
 
-    #local N = dimensions(Points_4N3D);
+    #local N = dimensions(Points_4N_3D);
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(Points_4N3D, 1);
-    #local SizeJ = dimension_size(Points_4N3D, 2);
-    #local SizeK = dimension_size(Points_4N3D, 3);
-    #local SizeL = dimension_size(Points_4N3D, 4);
+    #local SizeI = dimension_size(Points_4N_3D, 1);
+    #local SizeJ = dimension_size(Points_4N_3D, 2);
+    #local SizeK = dimension_size(Points_4N_3D, 3);
+    #local SizeL = dimension_size(Points_4N_3D, 4);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
@@ -384,7 +384,7 @@ which can be found in the LICENSE file.
                 #for (J, 0, LastJ)
                     #for (I, 0, LastI)
                         sphere {
-                            Points_4N3D[I][J][K][L],
+                            Points_4N_3D[I][J][K][L],
                             Radius
                         }
                     #end // for
@@ -432,9 +432,9 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
-#macro From_1N_ShowLines_2D(Points_1N2D, Radius_I)
+#macro From_1N_ShowLines_2D(Points_1N_2D, Radius_I)
 
-    #local N = dimensions(Points_1N2D);
+    #local N = dimensions(Points_1N_2D);
     #if (N != 1)
         #error "N is not 1"
     #end // if
@@ -444,15 +444,15 @@ which can be found in the LICENSE file.
     #if (dimension_size(Radius_I, 1) != 1)
         #error "Is not 1"
     #end // if
-    #local SizeI = dimension_size(Points_1N2D, 1);
+    #local SizeI = dimension_size(Points_1N_2D, 1);
     #local RadiusI = I_E(Radius_I);
     #local LastI = SizeI - 1;
 
     #if (RadiusI > 0.0)
         #for (I, 0, LastI - 1)
             Cylinder_2D(
-                Points_1N2D[I  ],
-                Points_1N2D[I+1],
+                Points_1N_2D[I  ],
+                Points_1N_2D[I+1],
                 RadiusI
             )
         #end // for
@@ -461,9 +461,9 @@ which can be found in the LICENSE file.
 #end // macro From_1N_ShowLines_2D
 
 
-#macro From_2N_ShowLines_2D(Points_2N2D, Radius_IJ)
+#macro From_2N_ShowLines_2D(Points_2N_2D, Radius_IJ)
 
-    #local N = dimensions(Points_2N2D);
+    #local N = dimensions(Points_2N_2D);
     #if (N != 2)
         #error "N is not 2"
     #end // if
@@ -473,8 +473,8 @@ which can be found in the LICENSE file.
     #if (dimension_size(Radius_IJ, 1) != 2)
         #error "Is not 2"
     #end // if
-    #local SizeI = dimension_size(Points_2N2D, 1);
-    #local SizeJ = dimension_size(Points_2N2D, 2);
+    #local SizeI = dimension_size(Points_2N_2D, 1);
+    #local SizeJ = dimension_size(Points_2N_2D, 2);
     #local RadiusI = I_E(Radius_IJ);
     #local RadiusJ = J_E(Radius_IJ);
     #local LastI = SizeI - 1;
@@ -484,8 +484,8 @@ which can be found in the LICENSE file.
         #for (J, 0, LastJ)
             #for (I, 0, LastI - 1)
                 Cylinder_2D(
-                    Points_2N2D[I  ][J],
-                    Points_2N2D[I+1][J],
+                    Points_2N_2D[I  ][J],
+                    Points_2N_2D[I+1][J],
                     RadiusI
                 )
             #end // for
@@ -495,8 +495,8 @@ which can be found in the LICENSE file.
         #for (I, 0, LastI)
             #for (J, 0, LastJ - 1)
                 Cylinder_2D(
-                    Points_2N2D[I][J  ],
-                    Points_2N2D[I][J+1],
+                    Points_2N_2D[I][J  ],
+                    Points_2N_2D[I][J+1],
                     RadiusJ
                 )
             #end // for
@@ -506,9 +506,9 @@ which can be found in the LICENSE file.
 #end // macro From_2N_ShowLines_2D
 
 
-#macro From_3N_ShowLines_2D(Points_3N2D, Radius_IJK)
+#macro From_3N_ShowLines_2D(Points_3N_2D, Radius_IJK)
 
-    #local N = dimensions(Points_3N2D);
+    #local N = dimensions(Points_3N_2D);
     #if (N != 3)
         #error "N is not 3"
     #end // if
@@ -518,9 +518,9 @@ which can be found in the LICENSE file.
     #if (dimension_size(Radius_IJK, 1) != 3)
         #error "Is not 3"
     #end // if
-    #local SizeI = dimension_size(Points_3N2D, 1);
-    #local SizeJ = dimension_size(Points_3N2D, 2);
-    #local SizeK = dimension_size(Points_3N2D, 3);
+    #local SizeI = dimension_size(Points_3N_2D, 1);
+    #local SizeJ = dimension_size(Points_3N_2D, 2);
+    #local SizeK = dimension_size(Points_3N_2D, 3);
     #local RadiusI = I_E(Radius_IJK);
     #local RadiusJ = J_E(Radius_IJK);
     #local RadiusK = K_E(Radius_IJK);
@@ -533,8 +533,8 @@ which can be found in the LICENSE file.
             #for (J, 0, LastJ)
                 #for (I, 0, LastI - 1)
                     Cylinder_2D(
-                        Points_3N2D[I  ][J][K],
-                        Points_3N2D[I+1][J][K],
+                        Points_3N_2D[I  ][J][K],
+                        Points_3N_2D[I+1][J][K],
                         RadiusI
                     )
                 #end // for
@@ -546,8 +546,8 @@ which can be found in the LICENSE file.
             #for (K, 0, LastK)
                 #for (J, 0, LastJ - 1)
                     Cylinder_2D(
-                        Points_3N2D[I][J  ][K],
-                        Points_3N2D[I][J+1][K],
+                        Points_3N_2D[I][J  ][K],
+                        Points_3N_2D[I][J+1][K],
                         RadiusJ
                     )
                 #end // for
@@ -559,8 +559,8 @@ which can be found in the LICENSE file.
             #for (I, 0, LastI)
                 #for (K, 0, LastK - 1)
                     Cylinder_2D(
-                        Points_3N2D[I][J][K  ],
-                        Points_3N2D[I][J][K+1],
+                        Points_3N_2D[I][J][K  ],
+                        Points_3N_2D[I][J][K+1],
                         RadiusK
                     )
                 #end // for
@@ -571,9 +571,9 @@ which can be found in the LICENSE file.
 #end // macro From_3N_ShowLines_2D
 
 
-#macro From_4N_ShowLines_2D(Points_4N2D, Radius_IJKL)
+#macro From_4N_ShowLines_2D(Points_4N_2D, Radius_IJKL)
 
-    #local N = dimensions(Points_4N2D);
+    #local N = dimensions(Points_4N_2D);
     #if (N != 4)
         #error "N is not 4"
     #end // if
@@ -583,10 +583,10 @@ which can be found in the LICENSE file.
     #if (dimension_size(Radius_IJKL, 1) != 4)
         #error "Is not 4"
     #end // if
-    #local SizeI = dimension_size(Points_4N2D, 1);
-    #local SizeJ = dimension_size(Points_4N2D, 2);
-    #local SizeK = dimension_size(Points_4N2D, 3);
-    #local SizeL = dimension_size(Points_4N2D, 4);
+    #local SizeI = dimension_size(Points_4N_2D, 1);
+    #local SizeJ = dimension_size(Points_4N_2D, 2);
+    #local SizeK = dimension_size(Points_4N_2D, 3);
+    #local SizeL = dimension_size(Points_4N_2D, 4);
     #local RadiusI = I_E(Radius_IJKL);
     #local RadiusJ = J_E(Radius_IJKL);
     #local RadiusK = K_E(Radius_IJKL);
@@ -602,8 +602,8 @@ which can be found in the LICENSE file.
                 #for (J, 0, LastJ)
                     #for (I, 0, LastI - 1)
                         Cylinder_2D(
-                            Points_4N2D[I  ][J][K][L],
-                            Points_4N2D[I+1][J][K][L],
+                            Points_4N_2D[I  ][J][K][L],
+                            Points_4N_2D[I+1][J][K][L],
                             RadiusI
                         )
                     #end // for
@@ -617,8 +617,8 @@ which can be found in the LICENSE file.
                 #for (K, 0, LastK)
                     #for (J, 0, LastJ - 1)
                         Cylinder_2D(
-                            Points_4N2D[I][J  ][K][L],
-                            Points_4N2D[I][J+1][K][L],
+                            Points_4N_2D[I][J  ][K][L],
+                            Points_4N_2D[I][J+1][K][L],
                             RadiusJ
                         )
                     #end // for
@@ -632,8 +632,8 @@ which can be found in the LICENSE file.
                 #for (L, 0, LastL)
                     #for (K, 0, LastK - 1)
                         Cylinder_2D(
-                            Points_4N2D[I][J][K  ][L],
-                            Points_4N2D[I][J][K+1][L],
+                            Points_4N_2D[I][J][K  ][L],
+                            Points_4N_2D[I][J][K+1][L],
                             RadiusK
                         )
                     #end // for
@@ -647,8 +647,8 @@ which can be found in the LICENSE file.
                 #for (I, 0, LastI)
                     #for (L, 0, LastL - 1)
                         Cylinder_2D(
-                            Points_4N2D[I][J][K][L  ],
-                            Points_4N2D[I][J][K][L+1],
+                            Points_4N_2D[I][J][K][L  ],
+                            Points_4N_2D[I][J][K][L+1],
                             RadiusL
                         )
                     #end // for
@@ -702,9 +702,9 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
-#macro From_1N_ShowLines_3D(Points_1N3D, Radius_I)
+#macro From_1N_ShowLines_3D(Points_1N_3D, Radius_I)
 
-    #local N = dimensions(Points_1N3D);
+    #local N = dimensions(Points_1N_3D);
     #if (N != 1)
         #error "N is not 1"
     #end // if
@@ -714,15 +714,15 @@ which can be found in the LICENSE file.
     #if (dimension_size(Radius_I, 1) != 1)
         #error "Is not 1"
     #end // if
-    #local SizeI = dimension_size(Points_1N3D, 1);
+    #local SizeI = dimension_size(Points_1N_3D, 1);
     #local RadiusI = I_E(Radius_I);
     #local LastI = SizeI - 1;
 
     #if (RadiusI > 0.0)
         #for (I, 0, LastI - 1)
             Cylinder_3D(
-                Points_1N3D[I  ],
-                Points_1N3D[I+1],
+                Points_1N_3D[I  ],
+                Points_1N_3D[I+1],
                 RadiusI
             )
         #end // for
@@ -731,9 +731,9 @@ which can be found in the LICENSE file.
 #end // macro From_1N_ShowLines_3D
 
 
-#macro From_2N_ShowLines_3D(Points_2N3D, Radius_IJ)
+#macro From_2N_ShowLines_3D(Points_2N_3D, Radius_IJ)
 
-    #local N = dimensions(Points_2N3D);
+    #local N = dimensions(Points_2N_3D);
     #if (N != 2)
         #error "N is not 2"
     #end // if
@@ -743,8 +743,8 @@ which can be found in the LICENSE file.
     #if (dimension_size(Radius_IJ, 1) != 2)
         #error "Is not 2"
     #end // if
-    #local SizeI = dimension_size(Points_2N3D, 1);
-    #local SizeJ = dimension_size(Points_2N3D, 2);
+    #local SizeI = dimension_size(Points_2N_3D, 1);
+    #local SizeJ = dimension_size(Points_2N_3D, 2);
     #local RadiusI = I_E(Radius_IJ);
     #local RadiusJ = J_E(Radius_IJ);
     #local LastI = SizeI - 1;
@@ -754,8 +754,8 @@ which can be found in the LICENSE file.
         #for (J, 0, LastJ)
             #for (I, 0, LastI - 1)
                 Cylinder_3D(
-                    Points_2N3D[I  ][J],
-                    Points_2N3D[I+1][J],
+                    Points_2N_3D[I  ][J],
+                    Points_2N_3D[I+1][J],
                     RadiusI
                 )
             #end // for
@@ -765,8 +765,8 @@ which can be found in the LICENSE file.
         #for (I, 0, LastI)
             #for (J, 0, LastJ - 1)
                 Cylinder_3D(
-                    Points_2N3D[I][J  ],
-                    Points_2N3D[I][J+1],
+                    Points_2N_3D[I][J  ],
+                    Points_2N_3D[I][J+1],
                     RadiusJ
                 )
             #end // for
@@ -776,9 +776,9 @@ which can be found in the LICENSE file.
 #end // macro From_2N_ShowLines_3D
 
 
-#macro From_3N_ShowLines_3D(Points_3N3D, Radius_IJK)
+#macro From_3N_ShowLines_3D(Points_3N_3D, Radius_IJK)
 
-    #local N = dimensions(Points_3N3D);
+    #local N = dimensions(Points_3N_3D);
     #if (N != 3)
         #error "N is not 3"
     #end // if
@@ -788,9 +788,9 @@ which can be found in the LICENSE file.
     #if (dimension_size(Radius_IJK, 1) != 3)
         #error "Is not 3"
     #end // if
-    #local SizeI = dimension_size(Points_3N3D, 1);
-    #local SizeJ = dimension_size(Points_3N3D, 2);
-    #local SizeK = dimension_size(Points_3N3D, 3);
+    #local SizeI = dimension_size(Points_3N_3D, 1);
+    #local SizeJ = dimension_size(Points_3N_3D, 2);
+    #local SizeK = dimension_size(Points_3N_3D, 3);
     #local RadiusI = I_E(Radius_IJK);
     #local RadiusJ = J_E(Radius_IJK);
     #local RadiusK = K_E(Radius_IJK);
@@ -803,8 +803,8 @@ which can be found in the LICENSE file.
             #for (J, 0, LastJ)
                 #for (I, 0, LastI - 1)
                     Cylinder_3D(
-                        Points_3N3D[I  ][J][K],
-                        Points_3N3D[I+1][J][K],
+                        Points_3N_3D[I  ][J][K],
+                        Points_3N_3D[I+1][J][K],
                         RadiusI
                     )
                 #end // for
@@ -816,8 +816,8 @@ which can be found in the LICENSE file.
             #for (K, 0, LastK)
                 #for (J, 0, LastJ - 1)
                     Cylinder_3D(
-                        Points_3N3D[I][J  ][K],
-                        Points_3N3D[I][J+1][K],
+                        Points_3N_3D[I][J  ][K],
+                        Points_3N_3D[I][J+1][K],
                         RadiusJ
                     )
                 #end // for
@@ -829,8 +829,8 @@ which can be found in the LICENSE file.
             #for (I, 0, LastI)
                 #for (K, 0, LastK - 1)
                     Cylinder_3D(
-                        Points_3N3D[I][J][K  ],
-                        Points_3N3D[I][J][K+1],
+                        Points_3N_3D[I][J][K  ],
+                        Points_3N_3D[I][J][K+1],
                         RadiusK
                     )
                 #end // for
@@ -841,9 +841,9 @@ which can be found in the LICENSE file.
 #end // macro From_3N_ShowLines_3D
 
 
-#macro From_4N_ShowLines_3D(Points_4N3D, Radius_IJKL)
+#macro From_4N_ShowLines_3D(Points_4N_3D, Radius_IJKL)
 
-    #local N = dimensions(Points_4N3D);
+    #local N = dimensions(Points_4N_3D);
     #if (N != 4)
         #error "N is not 4"
     #end // if
@@ -853,10 +853,10 @@ which can be found in the LICENSE file.
     #if (dimension_size(Radius_IJKL, 1) != 4)
         #error "Is not 4"
     #end // if
-    #local SizeI = dimension_size(Points_4N3D, 1);
-    #local SizeJ = dimension_size(Points_4N3D, 2);
-    #local SizeK = dimension_size(Points_4N3D, 3);
-    #local SizeL = dimension_size(Points_4N3D, 4);
+    #local SizeI = dimension_size(Points_4N_3D, 1);
+    #local SizeJ = dimension_size(Points_4N_3D, 2);
+    #local SizeK = dimension_size(Points_4N_3D, 3);
+    #local SizeL = dimension_size(Points_4N_3D, 4);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
@@ -872,8 +872,8 @@ which can be found in the LICENSE file.
                 #for (J, 0, LastJ)
                     #for (I, 0, LastI - 1)
                         Cylinder_3D(
-                            Points_4N3D[I  ][J][K][L],
-                            Points_4N3D[I+1][J][K][L],
+                            Points_4N_3D[I  ][J][K][L],
+                            Points_4N_3D[I+1][J][K][L],
                             RadiusI
                         )
                     #end // for
@@ -887,8 +887,8 @@ which can be found in the LICENSE file.
                 #for (K, 0, LastK)
                     #for (J, 0, LastJ - 1)
                         Cylinder_3D(
-                            Points_4N3D[I][J  ][K][L],
-                            Points_4N3D[I][J+1][K][L],
+                            Points_4N_3D[I][J  ][K][L],
+                            Points_4N_3D[I][J+1][K][L],
                             RadiusJ
                         )
                     #end // for
@@ -902,8 +902,8 @@ which can be found in the LICENSE file.
                 #for (L, 0, LastL)
                     #for (K, 0, LastK - 1)
                         Cylinder_3D(
-                            Points_4N3D[I][J][K  ][L],
-                            Points_4N3D[I][J][K+1][L],
+                            Points_4N_3D[I][J][K  ][L],
+                            Points_4N_3D[I][J][K+1][L],
                             RadiusK
                         )
                     #end // for
@@ -917,8 +917,8 @@ which can be found in the LICENSE file.
                 #for (I, 0, LastI)
                     #for (L, 0, LastL - 1)
                         Cylinder_3D(
-                            Points_4N3D[I][J][K][L  ],
-                            Points_4N3D[I][J][K][L+1],
+                            Points_4N_3D[I][J][K][L  ],
+                            Points_4N_3D[I][J][K][L+1],
                             RadiusL
                         )
                     #end // for
@@ -972,69 +972,69 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro From_1N_ShowGrid_2D(Points_1N2D, Radius)
+#macro From_1N_ShowGrid_2D(Points_1N_2D, Radius)
 
-    #local N = dimensions(Points_1N2D);
+    #local N = dimensions(Points_1N_2D);
     #if (N != 1)
         #error "N is not 1"
     #end // if
 
     From_1N_ShowPoints_2D(
-        Points_1N2D, Radius
+        Points_1N_2D, Radius
     )
     From_1N_ShowLines_2D(
-        Points_1N2D, Arr_1E(Radius)
+        Points_1N_2D, Arr_1E(Radius)
     )
 
 #end // macro From_1N_ShowGrid_2D
 
 
-#macro From_2N_ShowGrid_2D(Points_2N2D, Radius)
+#macro From_2N_ShowGrid_2D(Points_2N_2D, Radius)
 
-    #local N = dimensions(Points_2N2D);
+    #local N = dimensions(Points_2N_2D);
     #if (N != 2)
         #error "N is not 2"
     #end // if
 
     From_2N_ShowPoints_2D(
-        Points_2N2D, Radius
+        Points_2N_2D, Radius
      )
     From_2N_ShowLines_2D(
-        Points_2N2D, Arr_2E(Radius, Radius)
+        Points_2N_2D, Arr_2E(Radius, Radius)
     )
 
 #end // macro From_2N_ShowGrid_2D
 
 
-#macro From_3N_ShowGrid_2D(Points_3N2D, Radius)
+#macro From_3N_ShowGrid_2D(Points_3N_2D, Radius)
 
-    #local N = dimensions(Points_3N2D);
+    #local N = dimensions(Points_3N_2D);
     #if (N != 3)
         #error "N is not 3"
     #end // if
 
     From_3N_ShowPoints_2D(
-        Points_3N2D, Radius
+        Points_3N_2D, Radius
      )
     From_3N_ShowLines_2D(
-        Points_3N2D, Arr_3E(Radius, Radius, Radius)
+        Points_3N_2D, Arr_3E(Radius, Radius, Radius)
     )
 
 #end // macro From_3N_ShowGrid_2D
 
 
-#macro From_4N_ShowGrid_2D(Points_4N2D, Radius)
+#macro From_4N_ShowGrid_2D(Points_4N_2D, Radius)
 
-    #local N = dimensions(Points_4N2D);
+    #local N = dimensions(Points_4N_2D);
     #if (N != 4)
         #error "N is not 4"
     #end // if
 
     From_4N_ShowPoints_2D(
-        Points_4N2D, Radius
+        Points_4N_2D, Radius
      )
     From_4N_ShowLines_2D(
-        Points_4N2D, Arr_4E(Radius, Radius, Radius, Radius)
+        Points_4N_2D, Arr_4E(Radius, Radius, Radius, Radius)
      )
 
 #end // macro From_4N_ShowGrid_2D
@@ -1076,69 +1076,69 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro From_1N_ShowGrid_3D(Points_1N3D, Radius)
+#macro From_1N_ShowGrid_3D(Points_1N_3D, Radius)
 
-    #local N = dimensions(Points_1N3D);
+    #local N = dimensions(Points_1N_3D);
     #if (N != 1)
         #error "N is not 1"
     #end // if
 
     From_1N_ShowPoints_3D(
-        Points_1N3D, Radius
+        Points_1N_3D, Radius
     )
     From_1N_ShowLines_3D(
-        Points_1N3D, Arr_1E(Radius)
+        Points_1N_3D, Arr_1E(Radius)
     )
 
 #end // macro From_1N_ShowGrid_3D
 
 
-#macro From_2N_ShowGrid_3D(Points_2N3D, Radius)
+#macro From_2N_ShowGrid_3D(Points_2N_3D, Radius)
 
-    #local N = dimensions(Points_2N3D);
+    #local N = dimensions(Points_2N_3D);
     #if (N != 2)
         #error "N is not 2"
     #end // if
 
     From_2N_ShowPoints_3D(
-        Points_2N3D, Radius
+        Points_2N_3D, Radius
     )
     From_2N_ShowLines_3D(
-        Points_2N3D, Arr_2E(Radius, Radius)
+        Points_2N_3D, Arr_2E(Radius, Radius)
     )
 
 #end // macro From_2N_ShowGrid_3D
 
 
-#macro From_3N_ShowGrid_3D(Points_3N3D, Radius)
+#macro From_3N_ShowGrid_3D(Points_3N_3D, Radius)
 
-    #local N = dimensions(Points_3N3D);
+    #local N = dimensions(Points_3N_3D);
     #if (N != 3)
         #error "N is not 3"
     #end // if
 
     From_3N_ShowPoints_3D(
-        Points_3N3D, Radius
+        Points_3N_3D, Radius
     )
     From_3N_ShowLines_3D(
-        Points_3N3D, Arr_3E(Radius, Radius, Radius)
+        Points_3N_3D, Arr_3E(Radius, Radius, Radius)
     )
 
 #end // macro From_3N_ShowGrid_3D
 
 
-#macro From_4N_ShowGrid_3D(Points_4N3D, Radius)
+#macro From_4N_ShowGrid_3D(Points_4N_3D, Radius)
 
-    #local N = dimensions(Points_4N3D);
+    #local N = dimensions(Points_4N_3D);
     #if (N != 4)
         #error "N is not 4"
     #end // if
 
     From_4N_ShowPoints_3D(
-        Points_4N3D, Radius
+        Points_4N_3D, Radius
     )
     From_4N_ShowLines_3D(
-        Points_4N3D, Arr_4E(Radius, Radius, Radius, Radius)
+        Points_4N_3D, Arr_4E(Radius, Radius, Radius, Radius)
     )
 
 #end // macro From_4N_ShowGrid_3D
@@ -1180,11 +1180,11 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro From_1A_ShowFunctions_2D(_Functions_2D1A, Min_U, Max_U, Res_U, Radius_U)
+#macro From_1A_ShowFunctions_2D(_Functions_1A_2D, Min_U, Max_U, Res_U, Radius_U)
 
     #local M =
         max(
-            dimensions(_Functions_2D1A),
+            dimensions(_Functions_1A_2D),
             dimensions(Min_U),
             dimensions(Max_U),
             dimensions(Res_U),
@@ -1194,7 +1194,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_2D1A, 1);
+    #local D = dimension_size(_Functions_1A_2D, 1);
     #if (D != 2)
         #error "D is not 2"
     #end // if
@@ -1225,8 +1225,8 @@ which can be found in the LICENSE file.
         #local U = MinU;
         #local p0 =
             <
-                x_E(_Functions_2D1A)(U),
-                y_E(_Functions_2D1A)(U)
+                x_E(_Functions_1A_2D)(U),
+                y_E(_Functions_1A_2D)(U)
             >
         ;
         Sphere_2D(p0, RadiusU)
@@ -1235,8 +1235,8 @@ which can be found in the LICENSE file.
                 #local U = U + dU;
                 #local p1 =
                     <
-                        x_E(_Functions_2D1A)(U),
-                        y_E(_Functions_2D1A)(U)
+                        x_E(_Functions_1A_2D)(U),
+                        y_E(_Functions_1A_2D)(U)
                     >
                 ;
                 Cylinder_2D(p0, p1, RadiusU)
@@ -1249,11 +1249,11 @@ which can be found in the LICENSE file.
 #end // macro From_1A_ShowFunctions_2D
 
 
-#macro From_2A_ShowFunctions_2D(_Functions_2D2A, Min_UV, Max_UV, Div_UV, Res_UV, Radius_UV)
+#macro From_2A_ShowFunctions_2D(_Functions_2A_2D, Min_UV, Max_UV, Div_UV, Res_UV, Radius_UV)
 
     #local M =
         max(
-            dimensions(_Functions_2D2A),
+            dimensions(_Functions_2A_2D),
             dimensions(Min_UV),
             dimensions(Max_UV),
             dimensions(Div_UV),
@@ -1264,7 +1264,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_2D2A, 1);
+    #local D = dimension_size(_Functions_2A_2D, 1);
     #if (D != 2)
         #error "D is not 2"
     #end // if
@@ -1311,8 +1311,8 @@ which can be found in the LICENSE file.
         #for (J, 1, NoJ)
             From_1A_ShowFunctions_2D(
                 Arr_2E(
-                    function(_u) { x_E(_Functions_2D2A)(_u, V) },
-                    function(_u) { y_E(_Functions_2D2A)(_u, V) }
+                    function(_u) { x_E(_Functions_2A_2D)(_u, V) },
+                    function(_u) { y_E(_Functions_2A_2D)(_u, V) }
                 ),
                 Arr_1E(MinU),
                 Arr_1E(MaxU),
@@ -1327,8 +1327,8 @@ which can be found in the LICENSE file.
         #for (I, 1, NoI)
             From_1A_ShowFunctions_2D(
                 Arr_2E(
-                    function(_v) { x_E(_Functions_2D2A)(U, _v) },
-                    function(_v) { y_E(_Functions_2D2A)(U, _v) }
+                    function(_v) { x_E(_Functions_2A_2D)(U, _v) },
+                    function(_v) { y_E(_Functions_2A_2D)(U, _v) }
                 ),
                 Arr_1E(MinV),
                 Arr_1E(MaxV),
@@ -1342,11 +1342,11 @@ which can be found in the LICENSE file.
 #end // macro From_2A_ShowFunctions_2D
 
 
-#macro From_3A_ShowFunctions_2D(_Functions_2D3A, Min_UVW, Max_UVW, Div_UVW, Res_UVW, Radius_UVW)
+#macro From_3A_ShowFunctions_2D(_Functions_3A_2D, Min_UVW, Max_UVW, Div_UVW, Res_UVW, Radius_UVW)
 
     #local M =
         max(
-            dimensions(_Functions_2D3A),
+            dimensions(_Functions_3A_2D),
             dimensions(Min_UVW),
             dimensions(Max_UVW),
             dimensions(Div_UVW),
@@ -1357,7 +1357,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_2D3A, 1);
+    #local D = dimension_size(_Functions_3A_2D, 1);
     #if (D != 2)
         #error "D is not 2"
     #end // if
@@ -1417,8 +1417,8 @@ which can be found in the LICENSE file.
             #while (J, 1, NoJ)
                 From_1A_ShowFunctions_2D(
                     Arr_2E(
-                        function(_u) { x_E(_Functions_2D3A)(_u, V, W) },
-                        function(_u) { y_E(_Functions_2D3A)(_u, V, W) }
+                        function(_u) { x_E(_Functions_3A_2D)(_u, V, W) },
+                        function(_u) { y_E(_Functions_3A_2D)(_u, V, W) }
                     ),
                     Arr_1E(MinU),
                     Arr_1E(MaxU),
@@ -1437,8 +1437,8 @@ which can be found in the LICENSE file.
             #for (K, 1, NoK)
                 From_1A_ShowFunctions_2D(
                     Arr_2E(
-                        function(_v) { x_E(_Functions_2D3A)(U, _v, W) },
-                        function(_v) { y_E(_Functions_2D3A)(U, _v, W) }
+                        function(_v) { x_E(_Functions_3A_2D)(U, _v, W) },
+                        function(_v) { y_E(_Functions_3A_2D)(U, _v, W) }
                     ),
                     Arr_1E(MinV),
                     Arr_1E(MaxV),
@@ -1457,8 +1457,8 @@ which can be found in the LICENSE file.
             #for (I, 1, NoI)
                 From_1A_ShowFunctions_2D(
                     Arr_2E(
-                        function(_w) { x_E(_Functions_2D3A)(U, V, _w) },
-                        function(_w) { y_E(_Functions_2D3A)(U, V, _w) }
+                        function(_w) { x_E(_Functions_3A_2D)(U, V, _w) },
+                        function(_w) { y_E(_Functions_3A_2D)(U, V, _w) }
                     ),
                     Arr_1E(MinW),
                     Arr_1E(MaxW),
@@ -1474,11 +1474,11 @@ which can be found in the LICENSE file.
 #end // macro From_3A_ShowFunctions_2D
 
 
-#macro From_4A_ShowFunctions_2D(_Functions_2D4A, Min_UVWS, Max_UVWS, Div_UVWS, Res_UVWS, Radius_UVWS)
+#macro From_4A_ShowFunctions_2D(_Functions_4A_2D, Min_UVWS, Max_UVWS, Div_UVWS, Res_UVWS, Radius_UVWS)
 
     #local M =
         max(
-            dimensions(_Functions_2D4A),
+            dimensions(_Functions_4A_2D),
             dimensions(Min_UVWS),
             dimensions(Max_UVWS),
             dimensions(Div_UVWS),
@@ -1489,7 +1489,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_2D4A, 1);
+    #local D = dimension_size(_Functions_4A_2D, 1);
     #if (D != 2)
         #error "D is not 2"
     #end // if
@@ -1562,8 +1562,8 @@ which can be found in the LICENSE file.
                 #for (J, 1, NoJ)
                     From_1A_ShowFunctions_2D(
                         Arr_2E(
-                            function(_u) { x_E(_Functions_2D4A)(_u, V, W, S) },
-                            function(_u) { y_E(_Functions_2D4A)(_u, V, W, S) }
+                            function(_u) { x_E(_Functions_4A_2D)(_u, V, W, S) },
+                            function(_u) { y_E(_Functions_4A_2D)(_u, V, W, S) }
                         ),
                         Arr_1E(MinU),
                         Arr_1E(MaxU),
@@ -1586,8 +1586,8 @@ which can be found in the LICENSE file.
                 #for (K, 1, NoK)
                     From_1A_ShowFunctions_2D(
                         Arr_2E(
-                            function(_v) { x_E(_Functions_2D4A)(U, _v, W, S) },
-                            function(_v) { y_E(_Functions_2D4A)(U, _v, W, S) }
+                            function(_v) { x_E(_Functions_4A_2D)(U, _v, W, S) },
+                            function(_v) { y_E(_Functions_4A_2D)(U, _v, W, S) }
                         ),
                         Arr_1E(MinV),
                         Arr_1E(MaxV),
@@ -1610,8 +1610,8 @@ which can be found in the LICENSE file.
                 #for (L, 1, NoL)
                     From_1A_ShowFunctions_2D(
                         Arr_2E(
-                            function(_w) { x_E(_Functions_2D4A)(U, V, _w, S) },
-                            function(_w) { y_E(_Functions_2D4A)(U, V, _w, S) }
+                            function(_w) { x_E(_Functions_4A_2D)(U, V, _w, S) },
+                            function(_w) { y_E(_Functions_4A_2D)(U, V, _w, S) }
                         ),
                         Arr_1E(MinW),
                         Arr_1E(MaxW),
@@ -1634,8 +1634,8 @@ which can be found in the LICENSE file.
                 #for (I, 1, NoI)
                     From_1A_ShowFunctions_2D(
                         Arr_2E(
-                            function(_s) { x_E(_Functions_2D4A)(U, V, W, _s) },
-                            function(_s) { y_E(_Functions_2D4A)(U, V, W, _s) }
+                            function(_s) { x_E(_Functions_4A_2D)(U, V, W, _s) },
+                            function(_s) { y_E(_Functions_4A_2D)(U, V, W, _s) }
                         ),
                         Arr_1E(MinS),
                         Arr_1E(MaxS),
@@ -1726,11 +1726,11 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro From_1A_ShowFunctions_3D(_Functions_3D1A, Min_U, Max_U, Res_U, Radius_U)
+#macro From_1A_ShowFunctions_3D(_Functions_1A_3D, Min_U, Max_U, Res_U, Radius_U)
 
     #local M =
         max(
-            dimensions(_Functions_3D1A),
+            dimensions(_Functions_1A_3D),
             dimensions(Min_U),
             dimensions(Max_U),
             dimensions(Res_U),
@@ -1740,7 +1740,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_3D1A, 1);
+    #local D = dimension_size(_Functions_1A_3D, 1);
     #if (D != 3)
         #error "D is not 3"
     #end // if
@@ -1771,9 +1771,9 @@ which can be found in the LICENSE file.
         #local U = MinU;
         #local p0 =
             <
-                x_E(_Functions_3D1A)(U),
-                y_E(_Functions_3D1A)(U),
-                z_E(_Functions_3D1A)(U)
+                x_E(_Functions_1A_3D)(U),
+                y_E(_Functions_1A_3D)(U),
+                z_E(_Functions_1A_3D)(U)
             >
         ;
         sphere { p0, RadiusU }
@@ -1782,9 +1782,9 @@ which can be found in the LICENSE file.
                 #local U = U + dU;
                 #local p1 =
                     <
-                        x_E(_Functions_3D1A)(U),
-                        y_E(_Functions_3D1A)(U),
-                        z_E(_Functions_3D1A)(U)
+                        x_E(_Functions_1A_3D)(U),
+                        y_E(_Functions_1A_3D)(U),
+                        z_E(_Functions_1A_3D)(U)
                     >
                 ;
                 Cylinder_3D(p0, p1, RadiusU)
@@ -1797,11 +1797,11 @@ which can be found in the LICENSE file.
 #end // macro From_1A_ShowFunctions_3D
 
 
-#macro From_2A_ShowFunctions_3D(_Functions_3D2A, Min_UV, Max_UV, Div_UV, Res_UV, Radius_UV)
+#macro From_2A_ShowFunctions_3D(_Functions_2A_3D, Min_UV, Max_UV, Div_UV, Res_UV, Radius_UV)
 
     #local M =
         max(
-            dimensions(_Functions_3D2A),
+            dimensions(_Functions_2A_3D),
             dimensions(Min_UV),
             dimensions(Max_UV),
             dimensions(Div_UV),
@@ -1812,7 +1812,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_3D2A, 1);
+    #local D = dimension_size(_Functions_2A_3D, 1);
     #if (D != 3)
         #error "D is not 3"
     #end // if
@@ -1859,9 +1859,9 @@ which can be found in the LICENSE file.
         #for (J, 1, NoJ)
             From_1A_ShowFunctions_3D(
                 Arr_3E(
-                    function(_u) { x_E(_Functions_3D2A)(_u, V) },
-                    function(_u) { y_E(_Functions_3D2A)(_u, V) },
-                    function(_u) { z_E(_Functions_3D2A)(_u, V) }
+                    function(_u) { x_E(_Functions_2A_3D)(_u, V) },
+                    function(_u) { y_E(_Functions_2A_3D)(_u, V) },
+                    function(_u) { z_E(_Functions_2A_3D)(_u, V) }
                 ),
                 Arr_1E(MinU),
                 Arr_1E(MaxU),
@@ -1876,9 +1876,9 @@ which can be found in the LICENSE file.
         #for (I, 1, NoI)
             From_1A_ShowFunctions_3D(
                 Arr_3E(
-                    function(_v) { x_E(_Functions_3D2A)(U, _v) },
-                    function(_v) { y_E(_Functions_3D2A)(U, _v) },
-                    function(_v) { z_E(_Functions_3D2A)(U, _v) }
+                    function(_v) { x_E(_Functions_2A_3D)(U, _v) },
+                    function(_v) { y_E(_Functions_2A_3D)(U, _v) },
+                    function(_v) { z_E(_Functions_2A_3D)(U, _v) }
                 ),
                 Arr_1E(MinV),
                 Arr_1E(MaxV),
@@ -1892,11 +1892,11 @@ which can be found in the LICENSE file.
 #end // macro From_2A_ShowFunctions_3D
 
 
-#macro From_3A_ShowFunctions_3D(_Functions_3D3A, Min_UVW, Max_UVW, Div_UVW, Res_UVW, Radius_UVW)
+#macro From_3A_ShowFunctions_3D(_Functions_3A_3D, Min_UVW, Max_UVW, Div_UVW, Res_UVW, Radius_UVW)
 
     #local M =
         max(
-            dimensions(_Functions_3D3A),
+            dimensions(_Functions_3A_3D),
             dimensions(Min_UVW),
             dimensions(Max_UVW),
             dimensions(Div_UVW),
@@ -1907,7 +1907,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_3D3A, 1);
+    #local D = dimension_size(_Functions_3A_3D, 1);
     #if (D != 3)
         #error "D is not 3"
     #end // if
@@ -1967,9 +1967,9 @@ which can be found in the LICENSE file.
             #for (J, 1, NoJ)
                 From_1A_ShowFunctions_3D(
                     Arr_3E(
-                        function(_u) { x_E(_Functions_3D3A)(_u, V, W) },
-                        function(_u) { y_E(_Functions_3D3A)(_u, V, W) },
-                        function(_u) { z_E(_Functions_3D3A)(_u, V, W) }
+                        function(_u) { x_E(_Functions_3A_3D)(_u, V, W) },
+                        function(_u) { y_E(_Functions_3A_3D)(_u, V, W) },
+                        function(_u) { z_E(_Functions_3A_3D)(_u, V, W) }
                     ),
                     Arr_1E(MinU),
                     Arr_1E(MaxU),
@@ -1988,9 +1988,9 @@ which can be found in the LICENSE file.
             #for (K, 1, NoK)
                 From_1A_ShowFunctions_3D(
                     Arr_3E(
-                        function(_v) { x_E(_Functions_3D3A)(U, _v, W) },
-                        function(_v) { y_E(_Functions_3D3A)(U, _v, W) },
-                        function(_v) { z_E(_Functions_3D3A)(U, _v, W) }
+                        function(_v) { x_E(_Functions_3A_3D)(U, _v, W) },
+                        function(_v) { y_E(_Functions_3A_3D)(U, _v, W) },
+                        function(_v) { z_E(_Functions_3A_3D)(U, _v, W) }
                     ),
                     Arr_1E(MinV),
                     Arr_1E(MaxV),
@@ -2009,9 +2009,9 @@ which can be found in the LICENSE file.
             #for (I, 1, NoI)
                 From_1A_ShowFunctions_3D(
                     Arr_3E(
-                        function(_w) { x_E(_Functions_3D3A)(U, V, _w) },
-                        function(_w) { y_E(_Functions_3D3A)(U, V, _w) },
-                        function(_w) { z_E(_Functions_3D3A)(U, V, _w) }
+                        function(_w) { x_E(_Functions_3A_3D)(U, V, _w) },
+                        function(_w) { y_E(_Functions_3A_3D)(U, V, _w) },
+                        function(_w) { z_E(_Functions_3A_3D)(U, V, _w) }
                     ),
                     Arr_1E(MinW),
                     Arr_1E(MaxW),
@@ -2027,11 +2027,11 @@ which can be found in the LICENSE file.
 #end // macro From_3A_ShowFunctions_3D
 
 
-#macro From_4A_ShowFunctions_3D(_Functions_3D4A, Min_UVWS, Max_UVWS, Div_UVWS, Res_UVWS, Radius_UVWS)
+#macro From_4A_ShowFunctions_3D(_Functions_4A_3D, Min_UVWS, Max_UVWS, Div_UVWS, Res_UVWS, Radius_UVWS)
 
     #local M =
         max(
-            dimensions(_Functions_3D4A),
+            dimensions(_Functions_4A_3D),
             dimensions(Min_UVWS),
             dimensions(Max_UVWS),
             dimensions(Div_UVWS),
@@ -2042,7 +2042,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_3D4A, 1);
+    #local D = dimension_size(_Functions_4A_3D, 1);
     #if (D != 3)
         #error "D is not 3"
     #end // if
@@ -2115,9 +2115,9 @@ which can be found in the LICENSE file.
                 #for (J, 1, NoJ)
                     From_1A_ShowFunctions_3D(
                         Arr_3E(
-                            function(_u) { x_E(_Functions_3D4A)(_u, V, W, S) },
-                            function(_u) { y_E(_Functions_3D4A)(_u, V, W, S) },
-                            function(_u) { z_E(_Functions_3D4A)(_u, V, W, S) }
+                            function(_u) { x_E(_Functions_4A_3D)(_u, V, W, S) },
+                            function(_u) { y_E(_Functions_4A_3D)(_u, V, W, S) },
+                            function(_u) { z_E(_Functions_4A_3D)(_u, V, W, S) }
                         ),
                         Arr_1E(MinU),
                         Arr_1E(MaxU),
@@ -2140,9 +2140,9 @@ which can be found in the LICENSE file.
                 #for (K, 1, NoK)
                     From_1A_ShowFunctions_3D(
                         Arr_3E(
-                            function(_v) { x_E(_Functions_3D4A)(U, _v, W, S) },
-                            function(_v) { y_E(_Functions_3D4A)(U, _v, W, S) },
-                            function(_v) { z_E(_Functions_3D4A)(U, _v, W, S) }
+                            function(_v) { x_E(_Functions_4A_3D)(U, _v, W, S) },
+                            function(_v) { y_E(_Functions_4A_3D)(U, _v, W, S) },
+                            function(_v) { z_E(_Functions_4A_3D)(U, _v, W, S) }
                         ),
                         Arr_1E(MinV),
                         Arr_1E(MaxV),
@@ -2165,9 +2165,9 @@ which can be found in the LICENSE file.
                 #for (L, 1, NoL)
                     From_1A_ShowFunctions_3D(
                         Arr_3E(
-                            function(_w) { x_E(_Functions_3D4A)(U, V, _w, S) },
-                            function(_w) { y_E(_Functions_3D4A)(U, V, _w, S) },
-                            function(_w) { z_E(_Functions_3D4A)(U, V, _w, S) }
+                            function(_w) { x_E(_Functions_4A_3D)(U, V, _w, S) },
+                            function(_w) { y_E(_Functions_4A_3D)(U, V, _w, S) },
+                            function(_w) { z_E(_Functions_4A_3D)(U, V, _w, S) }
                         ),
                         Arr_1E(MinW),
                         Arr_1E(MaxW),
@@ -2190,9 +2190,9 @@ which can be found in the LICENSE file.
                 #for (I, 1, NoI)
                     From_1A_ShowFunctions_3D(
                         Arr_3E(
-                            function(_s) { x_E(_Functions_3D4A)(U, V, W, _s) },
-                            function(_s) { y_E(_Functions_3D4A)(U, V, W, _s) },
-                            function(_s) { z_E(_Functions_3D4A)(U, V, W, _s) }
+                            function(_s) { x_E(_Functions_4A_3D)(U, V, W, _s) },
+                            function(_s) { y_E(_Functions_4A_3D)(U, V, W, _s) },
+                            function(_s) { z_E(_Functions_4A_3D)(U, V, W, _s) }
                         ),
                         Arr_1E(MinS),
                         Arr_1E(MaxS),
@@ -2283,11 +2283,11 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro DrawPatch_3D(_Functions_3D2A, Min_UV, Max_UV, Div_UV)
+#macro DrawPatch_3D(_Functions_2A_3D, Min_UV, Max_UV, Div_UV)
 
     #local M =
         max(
-            dimensions(_Functions_3D2A),
+            dimensions(_Functions_2A_3D),
             dimensions(Min_UV),
             dimensions(Max_UV),
             dimensions(Div_UV)
@@ -2296,7 +2296,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_3D2A, 1);
+    #local D = dimension_size(_Functions_2A_3D, 1);
     #if (D != 3)
         #error "D is not 3"
     #end // if
@@ -2327,29 +2327,29 @@ which can be found in the LICENSE file.
                 #local V1 = V0 + dV;
                 #local p00 =
                     <
-                        x_E(_Functions_3D2A)(U0, V0),
-                        y_E(_Functions_3D2A)(U0, V0),
-                        z_E(_Functions_3D2A)(U0, V0)
+                        x_E(_Functions_2A_3D)(U0, V0),
+                        y_E(_Functions_2A_3D)(U0, V0),
+                        z_E(_Functions_2A_3D)(U0, V0)
                     >
                 ;
                 #local p10 =
                     <
-                        x_E(_Functions_3D2A)(U1, V0),
-                        y_E(_Functions_3D2A)(U1, V0),
-                        z_E(_Functions_3D2A)(U1, V0)
+                        x_E(_Functions_2A_3D)(U1, V0),
+                        y_E(_Functions_2A_3D)(U1, V0),
+                        z_E(_Functions_2A_3D)(U1, V0)
                     >;
                 #local p01 =
                     <
-                        x_E(_Functions_3D2A)(U0, V1),
-                        y_E(_Functions_3D2A)(U0, V1),
-                        z_E(_Functions_3D2A)(U0, V1)
+                        x_E(_Functions_2A_3D)(U0, V1),
+                        y_E(_Functions_2A_3D)(U0, V1),
+                        z_E(_Functions_2A_3D)(U0, V1)
                     >
                 ;
                 #local p11 =
                     <
-                        x_E(_Functions_3D2A)(U1, V1),
-                        y_E(_Functions_3D2A)(U1, V1),
-                        z_E(_Functions_3D2A)(U1, V1)
+                        x_E(_Functions_2A_3D)(U1, V1),
+                        y_E(_Functions_2A_3D)(U1, V1),
+                        z_E(_Functions_2A_3D)(U1, V1)
                     >
                 ;
                 triangle { p00, p10, p11 }
