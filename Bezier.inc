@@ -586,7 +586,7 @@ which can be found in the LICENSE file.
 #end // macro BernsteinBasisFunction_1A
 
 
-#macro BernsteinBasisFunctions_1N1A(Degree)
+#macro BernsteinBasisFunctions_1A_1N(Degree)
 
     #local _Fns1N1A = array[Degree+1];
     #for (I, 0, Degree)
@@ -599,7 +599,7 @@ which can be found in the LICENSE file.
 
     _Fns1N1A
 
-#end // macro BernsteinBasisFunctions_1N1A
+#end // macro BernsteinBasisFunctions_1A_1N
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
@@ -845,7 +845,7 @@ which can be found in the LICENSE file.
     #local SizeI = dimension_size(Values_1N, 1);
 
     WeightedFunction_1A(
-        BernsteinBasisFunctions_1N1A(SizeI - 1),
+        BernsteinBasisFunctions_1A_1N(SizeI - 1),
         Values_1N
     )
 
@@ -862,8 +862,8 @@ which can be found in the LICENSE file.
     #local SizeJ = dimension_size(Values_2N, 2);
 
     WeightedFunction_2A(
-        BernsteinBasisFunctions_1N1A(SizeI - 1),
-        BernsteinBasisFunctions_1N1A(SizeJ - 1),
+        BernsteinBasisFunctions_1A_1N(SizeI - 1),
+        BernsteinBasisFunctions_1A_1N(SizeJ - 1),
         Values_2N
     )
 
@@ -881,9 +881,9 @@ which can be found in the LICENSE file.
     #local SizeK = dimension_size(Values_3N, 3);
 
     WeightedFunction_3A(
-        BernsteinBasisFunctions_1N1A(SizeI - 1),
-        BernsteinBasisFunctions_1N1A(SizeJ - 1),
-        BernsteinBasisFunctions_1N1A(SizeK - 1),
+        BernsteinBasisFunctions_1A_1N(SizeI - 1),
+        BernsteinBasisFunctions_1A_1N(SizeJ - 1),
+        BernsteinBasisFunctions_1A_1N(SizeK - 1),
         Values_3N
     )
 
@@ -902,10 +902,10 @@ which can be found in the LICENSE file.
     #local SizeL = dimension_size(Values_4N, 4);
 
     WeightedFunction_4A(
-        BernsteinBasisFunctions_1N1A(SizeI - 1),
-        BernsteinBasisFunctions_1N1A(SizeJ - 1),
-        BernsteinBasisFunctions_1N1A(SizeK - 1),
-        BernsteinBasisFunctions_1N1A(SizeL - 1),
+        BernsteinBasisFunctions_1A_1N(SizeI - 1),
+        BernsteinBasisFunctions_1A_1N(SizeJ - 1),
+        BernsteinBasisFunctions_1A_1N(SizeK - 1),
+        BernsteinBasisFunctions_1A_1N(SizeL - 1),
         Values_4N
     )
 
@@ -920,22 +920,22 @@ which can be found in the LICENSE file.
     #end // if
 
     #switch (N)
-        #case (1)  // 1N1A
+        #case (1)  // 1A_1N
             From_1N_BezierFunction_1A(
                 Values
             )
             #break
-        #case (2)  // 2N2A
+        #case (2)  // 2A_2N
             From_2N_BezierFunction_2A(
                 Values
             )
             #break
-        #case (3)  // 3N3A
+        #case (3)  // 3A_3N
             From_3N_BezierFunction_3A(
                 Values
             )
             #break
-        #case (4)  // 4N4A
+        #case (4)  // 4A_4N
             From_4N_BezierFunction_4A(
                 Values
             )
