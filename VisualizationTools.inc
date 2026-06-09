@@ -190,6 +190,31 @@ which can be found in the LICENSE file.
 #end // macro From_1N_ShowPoints_2D
 
 
+#macro From_2N_ShowPoints_2D(Points_2N_2D, Radius)
+
+    #local N = dimensions(Points_2N_2D);
+    #if (N != 2)
+        #error "N is not 2"
+    #end // if
+    #local SizeI = dimension_size(Points_2N_2D, 1);
+    #local SizeJ = dimension_size(Points_2N_2D, 2);
+    #local LastI = SizeI - 1;
+    #local LastJ = SizeJ - 1;
+
+    #if (Radius > 0.0)
+        #for (J, 0, LastJ)
+            #for (I, 0, LastI)
+                Sphere_2D(
+                    Points_2N_2D[I][J],
+                    Radius
+                )
+            #end // for
+        #end // for
+    #end // if
+
+#end // macro From_2N_ShowPoints_2D
+
+
 #macro From_3N_ShowPoints_2D(Points_3N_2D, Radius)
 
     #local N = dimensions(Points_3N_2D);
