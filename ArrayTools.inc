@@ -58,17 +58,17 @@ which can be found in the LICENSE file.
     #if (dimension_size(Array1_1N, 1) != SizeI)
         #error "Is not equal to SizeI"
     #end // if
-    #local AA1N = array[SizeI];
+    #local AA_1N = array[SizeI];
     #local LastI = SizeI - 1;
     #for (I, 0, LastI)
-        #local AA1N[I] =
+        #local AA_1N[I] =
             Array0_1N[I]
             *
             Array1_1N[I]
         ;
     #end // for
 
-    AA1N
+    AA_1N
 
 #end // macro MultiplyArrays_1N
 
@@ -91,12 +91,12 @@ which can be found in the LICENSE file.
     #if (dimension_size(Array1_2N, 2) != SizeJ)
         #error "Is not equal to SizeJ"
     #end // if
-    #local AA2N = array[SizeI][SizeJ];
+    #local AA_2N = array[SizeI][SizeJ];
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #for (J, 0, LastJ)
         #for (I, 0, LastI)
-            #local AA2N[I][J] =
+            #local AA_2N[I][J] =
                 Array0_2N[I][J]
                 *
                 Array1_2N[I][J]
@@ -104,7 +104,7 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    AA2N
+    AA_2N
 
 #end // macro MultiplyArrays_2N
 
@@ -131,14 +131,14 @@ which can be found in the LICENSE file.
     #if (dimension_size(Array1_3N, 3) != SizeK)
         #error "Is not equal to SizeK"
     #end // if
-    #local AA3N = array[SizeI][SizeJ][SizeK];
+    #local AA_3N = array[SizeI][SizeJ][SizeK];
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
     #for (K, 0, LastK)
         #for (J, 0, LastJ)
             #for (I, 0, LastI)
-                #local AA3N[I][J][K] =
+                #local AA_3N[I][J][K] =
                     Array0_3N[I][J][K]
                     *
                     Array1_3N[I][J][K]
@@ -147,7 +147,7 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    AA3N
+    AA_3N
 
 #end // macro MultiplyArrays_3N
 
@@ -178,7 +178,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Array1_4N, 4) != SizeL)
         #error "Is not equal to SizeL"
     #end // if
-    #local AA4N = array[SizeI][SizeJ][SizeK][SizeL];
+    #local AA_4N = array[SizeI][SizeJ][SizeK][SizeL];
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
@@ -187,7 +187,7 @@ which can be found in the LICENSE file.
         #for (K, 0, LastK)
             #for (J, 0, LastJ)
                 #for (I, 0, LastI)
-                    #local AA4N =
+                    #local AA_4N =
                         Array0_4N[I][J][K][L]
                         *
                         Array1_4N[I][J][K][L]
@@ -197,7 +197,7 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    AA4N
+    AA_4N
 
 #end // macro MultiplyArrays_4N
 
@@ -266,17 +266,17 @@ which can be found in the LICENSE file.
     #if (dimension_size(Array1_1N, 1) != SizeI)
         #error "Is not equal to SizeI"
     #end // if
-    #local AA1N = array[SizeI];
+    #local AA_1N = array[SizeI];
     #local LastI = SizeI - 1;
     #for (I, 0, LastI)
-        #local AA1N[I] =
+        #local AA_1N[I] =
             Array0_1N[I]
             /
             Array1_1N[I]
         ;
     #end // for
 
-    AA1N
+    AA_1N
 
 #end // macro DivideArrays_1N
 
@@ -299,12 +299,12 @@ which can be found in the LICENSE file.
     #if (dimension_size(Array1_2N, 2) != SizeJ)
         #error "Is not equal to SizeJ"
     #end // if
-    #local AA2N = array[SizeI][SizeJ];
+    #local AA_2N = array[SizeI][SizeJ];
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #for (J, 0, LastJ)
         #for (I, 0, LastI)
-            #local AA2N[I][J] =
+            #local AA_2N[I][J] =
                 Array0_2N[I][J]
                 /
                 Array1_2N[I][J]
@@ -312,7 +312,7 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    AA2N
+    AA_2N
 
 #end // macro DivideArrays_2N
 
@@ -339,14 +339,14 @@ which can be found in the LICENSE file.
     #if (dimension_size(Array1_3N, 3) != SizeK)
         #error "Is not equal to SizeK"
     #end // if
-    #local AA3N = array[SizeI][SizeJ][SizeK];
+    #local AA_3N = array[SizeI][SizeJ][SizeK];
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
     #for (K, 0, LastK)
         #for (J, 0, LastJ)
             #for (I, 0, LastI)
-                #local AA3N[I][J][K] =
+                #local AA_3N[I][J][K] =
                     Array0_3N[I][J][K]
                     /
                     Array1_3N[I][J][K]
@@ -355,7 +355,7 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    AA3N
+    AA_3N
 
 #end // macro DivideArrays_3N
 
@@ -386,7 +386,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Array1_4N, 4) != SizeL)
         #error "Is not equal to SizeL"
     #end // if
-    #local AA4N = array[SizeI][SizeJ][SizeK][SizeL];
+    #local AA_4N = array[SizeI][SizeJ][SizeK][SizeL];
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
@@ -395,7 +395,7 @@ which can be found in the LICENSE file.
         #for (K, 0, LastK)
             #for (J, 0, LastJ)
                 #for (I, 0, LastI)
-                    #local AA4N[I][J][K][L] =
+                    #local AA_4N[I][J][K][L] =
                         Array0_4N[I][J][K][L]
                         /
                         Array1_4N[I][J][K][L]
@@ -405,7 +405,7 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    AA4N
+    AA_4N
 
 #end // macro DivideArrays_4N
 
@@ -475,15 +475,15 @@ which can be found in the LICENSE file.
     #local SizeI = dimension_size(Array_1N, 1);
     #local WrapCountI = I_E(WrapCount);
     #local NewSizeI = SizeI + WrapCountI;
-    #local AA1N = array[NewSizeI];
+    #local AA_1N = array[NewSizeI];
     #for (I, 0, NewSizeI - 1)
         #local IM = mod(I, SizeI);
-        #local AA1N[I] =
+        #local AA_1N[I] =
             Array_1N[IM]
         ;
     #end // for
 
-    AA1N
+    AA_1N
 
 #end // macro From_1N_WrapArray
 
@@ -506,18 +506,18 @@ which can be found in the LICENSE file.
     #local WrapCountJ = J_E(WrapCount);
     #local NewSizeI = SizeI + WrapCountI;
     #local NewSizeJ = SizeJ + WrapCountJ;
-    #local AA2N = array[NewSizeI][NewSizeJ];
+    #local AA_2N = array[NewSizeI][NewSizeJ];
     #for (J, 0, NewSizeJ - 1)
         #local JM = mod(J, SizeJ);
         #for (I, 0, NewSizeI - 1)
             #local IM = mod(I, SizeI);
-            #local AA2N[I][J] =
+            #local AA_2N[I][J] =
                 Array_2N[IM][JM]
             ;
         #end // for
     #end // for
 
-    AA2N
+    AA_2N
 
 #end // macro From_2N_WrapArray
 
@@ -543,21 +543,21 @@ which can be found in the LICENSE file.
     #local NewSizeI = SizeI + WrapCountI;
     #local NewSizeJ = SizeJ + WrapCountJ;
     #local NewSizeK = SizeK + WrapCountK;
-    #local AA3N = array[NewSizeI][NewSizeJ][NewSizeK];
+    #local AA_3N = array[NewSizeI][NewSizeJ][NewSizeK];
     #for (K, 0, NewSizeK - 1)
         #local KM = mod(K, SizeK);
         #for (J, 0, NewSizeJ - 1)
             #local JM = mod(J, SizeJ);
             #for (I, 0, NewSizeI - 1)
                 #local IM = mod(I, SizeI);
-                #local AA3N[I][J][K] =
+                #local AA_3N[I][J][K] =
                     Array_3N[IM][JM][KM]
                 ;
             #end // for
         #end // for
     #end // for
 
-    AA3N
+    AA_3N
 
 #end // macro From_3N_WrapArray
 
@@ -586,7 +586,7 @@ which can be found in the LICENSE file.
     #local NewSizeJ = SizeJ + WrapCountJ;
     #local NewSizeK = SizeK + WrapCountK;
     #local NewSizeL = SizeL + WrapCountL;
-    #local AA4N = array[NewSizeI][NewSizeJ][NewSizeK][NewSizeL];
+    #local AA_4N = array[NewSizeI][NewSizeJ][NewSizeK][NewSizeL];
     #for (L, 0, NewSizeL - 1)
         #local LM = mod(L, SizeL);
         #for (K, 0, NewSizeK - 1)
@@ -595,7 +595,7 @@ which can be found in the LICENSE file.
                 #local JM = mod(J, SizeJ);
                 #for (I, 0, NewSizeI - 1)
                     #local IM = mod(I, SizeI);
-                    #local AA4N[I][J][K][L] =
+                    #local AA_4N[I][J][K][L] =
                         Array_4N[IM][JM][KM][LM]
                     ;
                 #end // for
@@ -603,7 +603,7 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    AA4N
+    AA_4N
 
 #end // macro From_4N_WrapArray
 
