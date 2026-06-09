@@ -618,165 +618,165 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Der1_RationalFunction_1A(_NumFn1A, _DenFn1A, _D1NumFn1A, _D1DenFn1A)
+#macro Der1_RationalFunction_1A(_NumFn_1A, _DenFn_1A, _D1NumFn_1A, _D1DenFn_1A)
 
     function(_u) {
         (
-            _D1NumFn1A(_u)
+            _D1NumFn_1A(_u)
             -
-            _D1DenFn1A(_u)
+            _D1DenFn_1A(_u)
             *
-            _NumFn1A(_u)
+            _NumFn_1A(_u)
             /
-            _DenFn1A(_u)
+            _DenFn_1A(_u)
         )
         /
-        _DenFn1A(_u)
+        _DenFn_1A(_u)
     }
 
 #end // macro Der1_RationalFunction_1A
 
 
-#macro Der1_RationalFunction_2A(_NumFn2A, _DenFn2A, _D1NumFn2A, _D1DenFn2A)
+#macro Der1_RationalFunction_2A(_NumFn_2A, _DenFn_2A, _D1NumFn_2A, _D1DenFn_2A)
 
     function(_u, _v) {
         (
-            _D1NumFn2A(_u, _v)
+            _D1NumFn_2A(_u, _v)
             -
-            _D1DenFn2A(_u, _v)
+            _D1DenFn_2A(_u, _v)
             *
-            _NumFn2A(_u, _v)
+            _NumFn_2A(_u, _v)
             /
-            _DenFn2A(_u, _v)
+            _DenFn_2A(_u, _v)
         )
         /
-        _DenFn2A(_u, _v)
+        _DenFn_2A(_u, _v)
     }
 
 #end // macro Der1_RationalFunction_2A
 
 
-#macro Der1_RationalFunction_3A(_NumFn3A, _DenFn3A, _D1NumFn3A, _D1DenFn3A)
+#macro Der1_RationalFunction_3A(_NumFn_3A, _DenFn_3A, _D1NumFn_3A, _D1DenFn_3A)
 
     function(_u, _v, _w) {
         (
-            _D1NumFn3A(_u, _v, _w)
+            _D1NumFn_3A(_u, _v, _w)
             -
-            _D1DenFn3A(_u, _v, _w)
+            _D1DenFn_3A(_u, _v, _w)
             *
-            _NumFn3A(_u, _v, _w)
+            _NumFn_3A(_u, _v, _w)
             /
-            _DenFn3A(_u, _v, _w)
+            _DenFn_3A(_u, _v, _w)
         )
         /
-        _DenFn3A(_u, _v, _w)
+        _DenFn_3A(_u, _v, _w)
     }
 
 #end // macro Der1_RationalFunction_3A
 
 
-#macro Der1_RationalFunction_4A(_NumFn4A, _DenFn4A, _D1NumFn4A, _D1DenFn4A)
+#macro Der1_RationalFunction_4A(_NumFn_4A, _DenFn_4A, _D1NumFn_4A, _D1DenFn_4A)
 
     function(_u, _v, _w, _s) {
         (
-            _D1NumFn4A(_u, _v, _w, _s)
+            _D1NumFn_4A(_u, _v, _w, _s)
             -
-            _D1DenFn4A(_u, _v, _w, _s)
+            _D1DenFn_4A(_u, _v, _w, _s)
             *
-            _NumFn4A(_u, _v, _w, _s)
+            _NumFn_4A(_u, _v, _w, _s)
             /
-            _DenFn4A(_u, _v, _w, _s)
+            _DenFn_4A(_u, _v, _w, _s)
         )
         /
-        _DenFn4A(_u, _v, _w, _s)
+        _DenFn_4A(_u, _v, _w, _s)
     }
 
 #end // macro Der1_RationalFunction_4A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Der2_RationalFunction_1A(_NumFn1A, _DenFn1A, _D1NumFn1A, _D1DenFn1A, _D2NumFn1A, _D2DenFn1A)
+#macro Der2_RationalFunction_1A(_NumFn_1A, _DenFn_1A, _D1NumFn_1A, _D1DenFn_1A, _D2NumFn_1A, _D2DenFn_1A)
 
     function(_u) {
         (
-            _D2NumFn1A(_u)*pow(_DenFn1A(_u), 2)
+            _D2NumFn_1A(_u)*pow(_DenFn_1A(_u), 2)
             -
             (
-                2*_D1NumFn1A(_u)*_D1DenFn1A(_u)
+                2*_D1NumFn_1A(_u)*_D1DenFn_1A(_u)
                 +
-                _NumFn1A(_u)*_D2DenFn1A(_u)
-            )*_DenFn1A(_u)
+                _NumFn_1A(_u)*_D2DenFn_1A(_u)
+            )*_DenFn_1A(_u)
             +
-            2*_NumFn1A(_u)*pow(_D1DenFn1A(_u), 2)
-        )/pow(_DenFn1A(_u), 3)
+            2*_NumFn_1A(_u)*pow(_D1DenFn_1A(_u), 2)
+        )/pow(_DenFn_1A(_u), 3)
     }
 
 #end // macro Der2_RationalFunction_1A
 
 
-#macro Der2_RationalFunction_2A(_NumFn2A, _DenFn2A, _D1NumFn2A, _D1DenFn2A, _D2NumFn2A, _D2DenFn2A)
+#macro Der2_RationalFunction_2A(_NumFn_2A, _DenFn_2A, _D1NumFn_2A, _D1DenFn_2A, _D2NumFn_2A, _D2DenFn_2A)
 
     function(_u, _v) {
         (
-            _D2NumFn2A(_u, _v)*pow(_DenFn2A(_u, _v), 2)
+            _D2NumFn_2A(_u, _v)*pow(_DenFn_2A(_u, _v), 2)
             -
             (
-                2*_D1NumFn2A(_u, _v)*_D1DenFn2A(_u, _v)
+                2*_D1NumFn_2A(_u, _v)*_D1DenFn_2A(_u, _v)
                 +
-                _NumFn2A(_u, _v)*_D2DenFn2A(_u, _v)
-            )*_DenFn2A(_u, _v)
+                _NumFn_2A(_u, _v)*_D2DenFn_2A(_u, _v)
+            )*_DenFn_2A(_u, _v)
             + 
-            2*_NumFn2A(_u, _v)*pow(_D1DenFn2A(_u, _v), 2)
-        )/pow(_DenFn2A(_u, _v), 3)
+            2*_NumFn_2A(_u, _v)*pow(_D1DenFn_2A(_u, _v), 2)
+        )/pow(_DenFn_2A(_u, _v), 3)
     }
 
 #end // macro Der2_RationalFunction_2A
 
 
-#macro Der2_RationalFunction_3A(_NumFn3A, _DenFn3A, _D1NumFn3A, _D1DenFn3A, _D2NumFn3A, _D2DenFn3A)
+#macro Der2_RationalFunction_3A(_NumFn_3A, _DenFn_3A, _D1NumFn_3A, _D1DenFn_3A, _D2NumFn_3A, _D2DenFn_3A)
 
     function(_u, _v, _w) {
         (
-            _D2NumFn3A(_u, _v, _w)*pow(_DenFn3A(_u, _v, _w), 2)
+            _D2NumFn_3A(_u, _v, _w)*pow(_DenFn_3A(_u, _v, _w), 2)
             -
             (
-                2*_D1NumFn3A(_u, _v, _w)*_D1DenFn3A(_u, _v, _w)
+                2*_D1NumFn_3A(_u, _v, _w)*_D1DenFn_3A(_u, _v, _w)
                 +
-                _NumFn3A(_u, _v, _w)*_D2DenFn3A(_u, _v, _w)
-            )*_DenFn3A(_u, _v, _w)
+                _NumFn_3A(_u, _v, _w)*_D2DenFn_3A(_u, _v, _w)
+            )*_DenFn_3A(_u, _v, _w)
             + 
-            2*_NumFn3A(_u, _v, _w)*pow(_D1DenFn3A(_u, _v, _w), 2)
-        )/pow(_DenFn3A(_u, _v, _w), 3)
+            2*_NumFn_3A(_u, _v, _w)*pow(_D1DenFn_3A(_u, _v, _w), 2)
+        )/pow(_DenFn_3A(_u, _v, _w), 3)
     }
 
 #end // macro Der2_RationalFunction_3A
 
 
-#macro Der2_RationalFunction_4A(_NumFn4A, _DenFn4A, _D1NumFn4A, _D1DenFn4A, _D2NumFn4A, _D2DenFn4A)
+#macro Der2_RationalFunction_4A(_NumFn_4A, _DenFn_4A, _D1NumFn_4A, _D1DenFn_4A, _D2NumFn_4A, _D2DenFn_4A)
 
     function(_u, _v, _w, _s) {
         (
-            _D2NumFn4A(_u, _v, _w, _s)*pow(_DenFn4A(_u, _v, _w, _s), 2)
+            _D2NumFn_4A(_u, _v, _w, _s)*pow(_DenFn_4A(_u, _v, _w, _s), 2)
             -
             (
-                2*_D1NumFn4A(_u, _v, _w, _s)*_D1DenFn4A(_u, _v, _w, _s)
+                2*_D1NumFn_4A(_u, _v, _w, _s)*_D1DenFn_4A(_u, _v, _w, _s)
                 +
-                _NumFn4A(_u, _v, _w, _s)*_D2DenFn4A(_u, _v, _w, _s)
-            )*_DenFn4A(_u, _v, _w, _s)
+                _NumFn_4A(_u, _v, _w, _s)*_D2DenFn_4A(_u, _v, _w, _s)
+            )*_DenFn_4A(_u, _v, _w, _s)
             + 
-            2*_NumFn4A(_u, _v, _w, _s)*pow(_D1DenFn4A(_u, _v, _w, _s), 2)
-        )/pow(_DenFn4A(_u, _v, _w, _s), 3)
+            2*_NumFn_4A(_u, _v, _w, _s)*pow(_D1DenFn_4A(_u, _v, _w, _s), 2)
+        )/pow(_DenFn_4A(_u, _v, _w, _s), 3)
     }
 
 #end // macro Der2_RationalFunction_4A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro From_1A_SampleFunctions_1N1D(_Functions_1D1A, Min_U, Max_U, Res_U)
+#macro From_1A_SampleFunctions_1N1D(_Functions_1A_1D, Min_U, Max_U, Res_U)
 
     #local M =
         max(
-            dimensions(_Functions_1D1A),
+            dimensions(_Functions_1A_1D),
             dimensions(Min_U),
             dimensions(Max_U),
             dimensions(Res_U)
@@ -785,7 +785,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_1D1A, 1);
+    #local D = dimension_size(_Functions_1A_1D, 1);
     #if (D != 1)
         #error "D is not 1"
     #end // if
@@ -807,7 +807,7 @@ which can be found in the LICENSE file.
     #local U = MinU;
     #for (I, 0, ResU - 1)
         #local PP1N1D[I] =
-            x_E(_Functions_1D1A)(U)
+            x_E(_Functions_1A_1D)(U)
         ;
         #local U = U + dU;
     #end // for
@@ -817,11 +817,11 @@ which can be found in the LICENSE file.
 #end // From_1A_SampleFunctions_1N1D
 
 
-#macro From_1A_SampleFunctions_1N2D(_Functions_2D1A, Min_U, Max_U, Res_U)
+#macro From_1A_SampleFunctions_1N2D(_Functions_1A_2D, Min_U, Max_U, Res_U)
 
     #local M =
         max(
-            dimensions(_Functions_2D1A),
+            dimensions(_Functions_1A_2D),
             dimensions(Min_U),
             dimensions(Max_U),
             dimensions(Res_U)
@@ -830,7 +830,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_2D1A, 1);
+    #local D = dimension_size(_Functions_1A_2D, 1);
     #if (D != 2)
         #error "D is not 2"
     #end // if
@@ -853,8 +853,8 @@ which can be found in the LICENSE file.
     #for (I, 0, ResU - 1)
         #local PP1N2D[I] =
             <
-                x_E(_Functions_2D1A)(U),
-                y_E(_Functions_2D1A)(U)
+                x_E(_Functions_1A_2D)(U),
+                y_E(_Functions_1A_2D)(U)
             >
         ;
         #local U = U + dU;
@@ -865,11 +865,11 @@ which can be found in the LICENSE file.
 #end // From_1A_SampleFunctions_1N2D
 
 
-#macro From_1A_SampleFunctions_1N3D(_Functions_3D1A, Min_U, Max_U, Res_U)
+#macro From_1A_SampleFunctions_1N3D(_Functions_1A_3D, Min_U, Max_U, Res_U)
 
     #local M =
         max(
-            dimensions(_Functions_3D1A),
+            dimensions(_Functions_1A_3D),
             dimensions(Min_U),
             dimensions(Max_U),
             dimensions(Res_U)
@@ -878,7 +878,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_3D1A, 1);
+    #local D = dimension_size(_Functions_1A_3D, 1);
     #if (D != 3)
         #error "D is not 3"
     #end // if
@@ -901,9 +901,9 @@ which can be found in the LICENSE file.
     #for (I, 0, ResU - 1)
         #local PP1N3D[I] =
             <
-                x_E(_Functions_3D1A)(U),
-                y_E(_Functions_3D1A)(U),
-                z_E(_Functions_3D1A)(U)
+                x_E(_Functions_1A_3D)(U),
+                y_E(_Functions_1A_3D)(U),
+                z_E(_Functions_1A_3D)(U)
             >
         ;
         #local U = U + dU;
@@ -914,11 +914,11 @@ which can be found in the LICENSE file.
 #end // From_1A_SampleFunctions_1N3D
 
 
-#macro From_1A_SampleFunctions_1N4D(_Functions_4D1A, Min_U, Max_U, Res_U)
+#macro From_1A_SampleFunctions_1N4D(_Functions_1A_4D, Min_U, Max_U, Res_U)
 
     #local M =
         max(
-            dimensions(_Functions_4D1A),
+            dimensions(_Functions_1A_4D),
             dimensions(Min_U),
             dimensions(Max_U),
             dimensions(Res_U)
@@ -927,7 +927,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_4D1A, 1);
+    #local D = dimension_size(_Functions_1A_4D, 1);
     #if (D != 4)
         #error "D is not 4"
     #end // if
@@ -950,10 +950,10 @@ which can be found in the LICENSE file.
     #for (I, 0, ResU - 1)
         #local PP1N4D[I] =
             <
-                x_E(_Functions_4D1A)(U),
-                y_E(_Functions_4D1A)(U),
-                z_E(_Functions_4D1A)(U),
-                t_E(_Functions_4D1A)(U)
+                x_E(_Functions_1A_4D)(U),
+                y_E(_Functions_1A_4D)(U),
+                z_E(_Functions_1A_4D)(U),
+                t_E(_Functions_1A_4D)(U)
             >
         ;
         #local U = U + dU;
@@ -964,11 +964,11 @@ which can be found in the LICENSE file.
 #end // From_1A_SampleFunctions_1N4D
 
 
-#macro From_2A_SampleFunctions_2N1D(_Functions_1D2A, Min_UV, Max_UV, Res_UV)
+#macro From_2A_SampleFunctions_2N1D(_Functions_2A_1D, Min_UV, Max_UV, Res_UV)
 
     #local M =
         max(
-            dimensions(_Functions_1D2A),
+            dimensions(_Functions_2A_1D),
             dimensions(Min_UV),
             dimensions(Max_UV),
             dimensions(Res_UV)
@@ -977,7 +977,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_1D2A, 1);
+    #local D = dimension_size(_Functions_2A_1D, 1);
     #if (D != 1)
         #error "D is not 1"
     #end // if
@@ -1006,7 +1006,7 @@ which can be found in the LICENSE file.
         #local U = MinU;
         #for (I, 0, ResU - 1)
             #local PP2N1D[I][J] =
-                x_E(_Functions_1D2A)(U, V)
+                x_E(_Functions_2A_1D)(U, V)
             ;
             #local U = U + dU;
         #end // for
@@ -1018,11 +1018,11 @@ which can be found in the LICENSE file.
 #end // From_2A_SampleFunctions_2N1D
 
 
-#macro From_2A_SampleFunctions_2N2D(_Functions_2D2A, Min_UV, Max_UV, Res_UV)
+#macro From_2A_SampleFunctions_2N2D(_Functions_2A_2D, Min_UV, Max_UV, Res_UV)
 
     #local M =
         max(
-            dimensions(_Functions_2D2A),
+            dimensions(_Functions_2A_2D),
             dimensions(Min_UV),
             dimensions(Max_UV),
             dimensions(Res_UV)
@@ -1031,7 +1031,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_2D2A, 1);
+    #local D = dimension_size(_Functions_2A_2D, 1);
     #if (D != 2)
         #error "D is not 2"
     #end // if
@@ -1061,8 +1061,8 @@ which can be found in the LICENSE file.
         #for (I, 0, ResU - 1)
             #local PP2N2D[I][J] =
                 <
-                    x_E(_Functions_2D2A)(U, V),
-                    y_E(_Functions_2D2A)(U, V)
+                    x_E(_Functions_2A_2D)(U, V),
+                    y_E(_Functions_2A_2D)(U, V)
                 >
             ;
             #local U = U + dU;
@@ -1075,11 +1075,11 @@ which can be found in the LICENSE file.
 #end // From_2A_SampleFunctions_2N2D
 
 
-#macro From_2A_SampleFunctions_2N3D(_Functions_3D2A, Min_UV, Max_UV, Res_UV)
+#macro From_2A_SampleFunctions_2N3D(_Functions_2A_3D, Min_UV, Max_UV, Res_UV)
 
     #local M =
         max(
-            dimensions(_Functions_3D2A),
+            dimensions(_Functions_2A_3D),
             dimensions(Min_UV),
             dimensions(Max_UV),
             dimensions(Res_UV)
@@ -1088,7 +1088,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_3D2A, 1);
+    #local D = dimension_size(_Functions_2A_3D, 1);
     #if (D != 3)
         #error "D is not 3"
     #end // if
@@ -1118,9 +1118,9 @@ which can be found in the LICENSE file.
         #for (I, 0, ResU - 1)
             #local PP2N3D[I][J] =
                 <
-                    x_E(_Functions_3D2A)(U, V),
-                    y_E(_Functions_3D2A)(U, V),
-                    z_E(_Functions_3D2A)(U, V)
+                    x_E(_Functions_2A_3D)(U, V),
+                    y_E(_Functions_2A_3D)(U, V),
+                    z_E(_Functions_2A_3D)(U, V)
                 >
             ;
             #local U = U + dU;
@@ -1133,11 +1133,11 @@ which can be found in the LICENSE file.
 #end // From_2A_SampleFunctions_2N3D
 
 
-#macro From_2A_SampleFunctions_2N4D(_Functions_4D2A, Min_UV, Max_UV, Res_UV)
+#macro From_2A_SampleFunctions_2N4D(_Functions_2A_4D, Min_UV, Max_UV, Res_UV)
 
     #local M =
         max(
-            dimensions(_Functions_4D2A),
+            dimensions(_Functions_2A_4D),
             dimensions(Min_UV),
             dimensions(Max_UV),
             dimensions(Res_UV)
@@ -1146,7 +1146,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_4D2A, 1);
+    #local D = dimension_size(_Functions_2A_4D, 1);
     #if (D != 4)
         #error "D is not 4"
     #end // if
@@ -1176,10 +1176,10 @@ which can be found in the LICENSE file.
         #for (I, 0, ResU - 1)
             #local PP2N4D[I][J] =
                 <
-                    x_E(_Functions_4D2A)(U, V),
-                    y_E(_Functions_4D2A)(U, V),
-                    z_E(_Functions_4D2A)(U, V),
-                    t_E(_Functions_4D2A)(U, V)
+                    x_E(_Functions_2A_4D)(U, V),
+                    y_E(_Functions_2A_4D)(U, V),
+                    z_E(_Functions_2A_4D)(U, V),
+                    t_E(_Functions_2A_4D)(U, V)
                 >
             ;
             #local U = U + dU;
@@ -1192,11 +1192,11 @@ which can be found in the LICENSE file.
 #end // From_2A_SampleFunctions_2N4D
 
 
-#macro From_3A_SampleFunctions_3N1D(_Functions_1D3A, Min_UVW, Max_UVW, Res_UVW)
+#macro From_3A_SampleFunctions_3N1D(_Functions_3A_1D, Min_UVW, Max_UVW, Res_UVW)
 
     #local M =
         max(
-            dimensions(_Functions_1D3A),
+            dimensions(_Functions_3A_1D),
             dimensions(Min_UVW),
             dimensions(Max_UVW),
             dimensions(Res_UVW)
@@ -1205,7 +1205,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_1D3A, 1);
+    #local D = dimension_size(_Functions_3A_1D, 1);
     #if (D != 1)
         #error "D is not 1"
     #end // if
@@ -1241,7 +1241,7 @@ which can be found in the LICENSE file.
             #local U = MinU;
             #for (I, 0, ResU - 1)
                 #local PP3N1D[I][J][K] =
-                    x_E(_Functions_1D3A)(U, V, W)
+                    x_E(_Functions_3A_1D)(U, V, W)
                 ;
                 #local U = U + dU;
             #end // for
@@ -1255,11 +1255,11 @@ which can be found in the LICENSE file.
 #end // From_3A_SampleFunctions_3N1D
 
 
-#macro From_3A_SampleFunctions_3N2D(_Functions_2D3A, Min_UVW, Max_UVW, Res_UVW)
+#macro From_3A_SampleFunctions_3N2D(_Functions_3A_2D, Min_UVW, Max_UVW, Res_UVW)
 
     #local M =
         max(
-            dimensions(_Functions_2D3A),
+            dimensions(_Functions_3A_2D),
             dimensions(Min_UVW),
             dimensions(Max_UVW),
             dimensions(Res_UVW)
@@ -1268,7 +1268,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_2D3A, 1);
+    #local D = dimension_size(_Functions_3A_2D, 1);
     #if (D != 2)
         #error "D is not 2"
     #end // if
@@ -1305,8 +1305,8 @@ which can be found in the LICENSE file.
             #for (I, 0, ResU - 1)
                 #local PP3N2D[I][J][K] =
                     <
-                        x_E(_Functions_2D3A)(U, V, W),
-                        y_E(_Functions_2D3A)(U, V, W)
+                        x_E(_Functions_3A_2D)(U, V, W),
+                        y_E(_Functions_3A_2D)(U, V, W)
                     >
                 ;
                 #local U = U + dU;
@@ -1321,11 +1321,11 @@ which can be found in the LICENSE file.
 #end // From_3A_SampleFunctions_3N2D
 
 
-#macro From_3A_SampleFunctions_3N3D(_Functions_3D3A, Min_UVW, Max_UVW, Res_UVW)
+#macro From_3A_SampleFunctions_3N3D(_Functions_3A_3D, Min_UVW, Max_UVW, Res_UVW)
 
     #local M =
         max(
-            dimensions(_Functions_3D3A),
+            dimensions(_Functions_3A_3D),
             dimensions(Min_UVW),
             dimensions(Max_UVW),
             dimensions(Res_UVW)
@@ -1334,7 +1334,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_3D3A, 1);
+    #local D = dimension_size(_Functions_3A_3D, 1);
     #if (D != 3)
         #error "D is not 3"
     #end // if
@@ -1371,9 +1371,9 @@ which can be found in the LICENSE file.
             #for (I, 0, ResU - 1)
                 #local PP3N3D[I][J][K] =
                     <
-                        x_E(_Functions_3D3A)(U, V, W),
-                        y_E(_Functions_3D3A)(U, V, W),
-                        z_E(_Functions_3D3A)(U, V, W)
+                        x_E(_Functions_3A_3D)(U, V, W),
+                        y_E(_Functions_3A_3D)(U, V, W),
+                        z_E(_Functions_3A_3D)(U, V, W)
                     >
                 ;
                 #local U = U + dU;
@@ -1388,11 +1388,11 @@ which can be found in the LICENSE file.
 #end // From_3A_SampleFunctions_3N3D
 
 
-#macro From_3A_SampleFunctions_3N4D(_Functions_4D3A, Min_UVW, Max_UVW, Res_UVW)
+#macro From_3A_SampleFunctions_3N4D(_Functions_3A_4D, Min_UVW, Max_UVW, Res_UVW)
 
     #local M =
         max(
-            dimensions(_Functions_4D3A),
+            dimensions(_Functions_3A_4D),
             dimensions(Min_UVW),
             dimensions(Max_UVW),
             dimensions(Res_UVW)
@@ -1401,7 +1401,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_4D3A, 1);
+    #local D = dimension_size(_Functions_3A_4D, 1);
     #if (D != 4)
         #error "D is not 4"
     #end // if
@@ -1438,10 +1438,10 @@ which can be found in the LICENSE file.
             #for (I, 0, ResU - 1)
                 #local PP3N4D[I][J][K] =
                     <
-                        x_E(_Functions_4D3A)(U, V, W),
-                        y_E(_Functions_4D3A)(U, V, W),
-                        z_E(_Functions_4D3A)(U, V, W),
-                        t_E(_Functions_4D3A)(U, V, W)
+                        x_E(_Functions_3A_4D)(U, V, W),
+                        y_E(_Functions_3A_4D)(U, V, W),
+                        z_E(_Functions_3A_4D)(U, V, W),
+                        t_E(_Functions_3A_4D)(U, V, W)
                     >
                 ;
                 #local U = U + dU;
@@ -1456,11 +1456,11 @@ which can be found in the LICENSE file.
 #end // From_3A_SampleFunctions_3N4D
 
 
-#macro From_4A_SampleFunctions_4N1D(_Functions_1D4A, Min_UVWS, Max_UVWS, Res_UVWS)
+#macro From_4A_SampleFunctions_4N1D(_Functions_4A_1D, Min_UVWS, Max_UVWS, Res_UVWS)
 
     #local M =
         max(
-            dimensions(_Functions_1D4A),
+            dimensions(_Functions_4A_1D),
             dimensions(Min_UVWS),
             dimensions(Max_UVWS),
             dimensions(Res_UVWS)
@@ -1469,7 +1469,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_1D4A, 1);
+    #local D = dimension_size(_Functions_4A_1D, 1);
     #if (D != 1)
         #error "D is not 1"
     #end // if
@@ -1512,7 +1512,7 @@ which can be found in the LICENSE file.
                 #local U = MinU;
                 #for (I, 0, ResU - 1)
                     #local PP4N1D[I][J][K][L] =
-                        x_E(_Functions_1D4A)(U, V, W, S)
+                        x_E(_Functions_4A_1D)(U, V, W, S)
                     ;
                     #local U = U + dU;
                 #end // for
@@ -1528,11 +1528,11 @@ which can be found in the LICENSE file.
 #end // From_4A_SampleFunctions_4N1D
 
 
-#macro From_4A_SampleFunctions_4N2D(_Functions_2D4A, Min_UVWS, Max_UVWS, Res_UVWS)
+#macro From_4A_SampleFunctions_4N2D(_Functions_4A_2D, Min_UVWS, Max_UVWS, Res_UVWS)
 
     #local M =
         max(
-            dimensions(_Functions_2D4A),
+            dimensions(_Functions_4A_2D),
             dimensions(Min_UVWS),
             dimensions(Max_UVWS),
             dimensions(Res_UVWS)
@@ -1541,7 +1541,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_2D4A, 1);
+    #local D = dimension_size(_Functions_4A_2D, 1);
     #if (D != 2)
         #error "D is not 2"
     #end // if
@@ -1585,8 +1585,8 @@ which can be found in the LICENSE file.
                 #for (I, 0, ResU - 1)
                     #local PP4N2D[I][J][K][L] =
                         <
-                            x_E(_Functions_2D4A)(U, V, W, S),
-                            y_E(_Functions_2D4A)(U, V, W, S)
+                            x_E(_Functions_4A_2D)(U, V, W, S),
+                            y_E(_Functions_4A_2D)(U, V, W, S)
                         >
                     ;
                     #local U = U + dU;
@@ -1603,11 +1603,11 @@ which can be found in the LICENSE file.
 #end // From_4A_SampleFunctions_4N2D
 
 
-#macro From_4A_SampleFunctions_4N3D(_Functions_3D4A, Min_UVWS, Max_UVWS, Res_UVWS)
+#macro From_4A_SampleFunctions_4N3D(_Functions_4A_3D, Min_UVWS, Max_UVWS, Res_UVWS)
 
     #local M =
         max(
-            dimensions(_Functions_3D4A),
+            dimensions(_Functions_4A_3D),
             dimensions(Min_UVWS),
             dimensions(Max_UVWS),
             dimensions(Res_UVWS)
@@ -1616,7 +1616,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_3D4A, 1);
+    #local D = dimension_size(_Functions_4A_3D, 1);
     #if (D != 3)
         #error "D is not 3"
     #end // if
@@ -1660,9 +1660,9 @@ which can be found in the LICENSE file.
                 #for (I, 0, ResU - 1)
                     #local PP4N3D[I][J][K][L] =
                         <
-                            x_E(_Functions_3D4A)(U, V, W, S),
-                            y_E(_Functions_3D4A)(U, V, W, S),
-                            z_E(_Functions_3D4A)(U, V, W, S)
+                            x_E(_Functions_4A_3D)(U, V, W, S),
+                            y_E(_Functions_4A_3D)(U, V, W, S),
+                            z_E(_Functions_4A_3D)(U, V, W, S)
                         >
                     ;
                     #local U = U + dU;
@@ -1679,11 +1679,11 @@ which can be found in the LICENSE file.
 #end // From_4A_SampleFunctions_4N3D
 
 
-#macro From_4A_SampleFunctions_4N4D(_Functions_4D4A, Min_UVWS, Max_UVWS, Res_UVWS)
+#macro From_4A_SampleFunctions_4N4D(_Functions_4A_4D, Min_UVWS, Max_UVWS, Res_UVWS)
 
     #local M =
         max(
-            dimensions(_Functions_4D4A),
+            dimensions(_Functions_4A_4D),
             dimensions(Min_UVWS),
             dimensions(Max_UVWS),
             dimensions(Res_UVWS)
@@ -1692,7 +1692,7 @@ which can be found in the LICENSE file.
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_Functions_4D4A, 1);
+    #local D = dimension_size(_Functions_4A_4D, 1);
     #if (D != 4)
         #error "D is not 4"
     #end // if
@@ -1736,10 +1736,10 @@ which can be found in the LICENSE file.
                 #for (I, 0, ResU - 1)
                     #local PP4N4D[I][J][K][L] =
                         <
-                            x_E(_Functions_4D4A)(U, V, W, S),
-                            y_E(_Functions_4D4A)(U, V, W, S),
-                            z_E(_Functions_4D4A)(U, V, W, S),
-                            t_E(_Functions_4D4A)(U, V, W, S)
+                            x_E(_Functions_4A_4D)(U, V, W, S),
+                            y_E(_Functions_4A_4D)(U, V, W, S),
+                            z_E(_Functions_4A_4D)(U, V, W, S),
+                            t_E(_Functions_4A_4D)(U, V, W, S)
                         >
                     ;
                     #local U = U + dU;
