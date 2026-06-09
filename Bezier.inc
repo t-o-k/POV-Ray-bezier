@@ -258,14 +258,14 @@ which can be found in the LICENSE file.
     #end // if
     #local SizeI = dimension_size(VV_1N, 1);
     #local LastI = SizeI - 1;
-    #local CC1N = array[SizeI];
+    #local CC_1N = array[SizeI];
     #for (I, 0, LastI)
-        #local CC1N[I] =
+        #local CC_1N[I] =
             vdot(VV_1N[I], vC)
         ;
     #end // for
 
-    CC1N
+    CC_1N
 
 #end // macro ExtractComponent_1N
 
@@ -280,16 +280,16 @@ which can be found in the LICENSE file.
     #local SizeJ = dimension_size(VV_2N, 2);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
-    #local CC2N = array[SizeI][SizeJ];
+    #local CC_2N = array[SizeI][SizeJ];
     #for (J, 0, LastJ)
         #for (I, 0, LastI)
-            #local CC2N[I][J] =
+            #local CC_2N[I][J] =
                 vdot(VV_2N[I][J], vC)
             ;
         #end // for
     #end // for
 
-    CC2N
+    CC_2N
 
 #end // macro ExtractComponent_2N
 
@@ -306,18 +306,18 @@ which can be found in the LICENSE file.
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
-    #local CC3N = array[SizeI][SizeJ][SizeK];
+    #local CC_3N = array[SizeI][SizeJ][SizeK];
     #for (K, 0, LastK)
         #for (J, 0, LastJ)
             #for (I, 0, LastI)
-                #local CC3N[I][J][K] =
+                #local CC_3N[I][J][K] =
                     vdot(VV_3N[I][J][K], vC)
                 ;
             #end // for
         #end // for
     #end // for
 
-    CC3N
+    CC_3N
 
 #end // macro ExtractComponent_3N
 
@@ -336,12 +336,12 @@ which can be found in the LICENSE file.
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
     #local LastL = SizeL - 1;
-    #local CC4N = array[SizeI][SizeJ][SizeK][SizeL];
+    #local CC_4N = array[SizeI][SizeJ][SizeK][SizeL];
     #for (L, 0, LastL)
         #for (K, 0, LastK)
             #for (J, 0, LastJ)
                 #for (I, 0, LastI)
-                    #local CC4N[I][J][K][L] =
+                    #local CC_4N[I][J][K][L] =
                         vdot(VV_4N[I][J][K][L], vC)
                     ;
                 #end // for
@@ -349,7 +349,7 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    CC4N
+    CC_4N
 
 #end // macro ExtractComponent_4N
 
@@ -431,12 +431,12 @@ which can be found in the LICENSE file.
     #end // if
     #local SizeI = I_E(DimensionsSizes_I);
     #local LastI = SizeI - 1;
-    #local WW1N = array[SizeI];
+    #local WW_1N = array[SizeI];
     #for (I, 0, LastI)
-        #local WW1N[I] = Constant;
+        #local WW_1N[I] = Constant;
     #end // for
 
-    WW1N
+    WW_1N
 
 #end // macro UniformWeights_1N
 
@@ -454,14 +454,14 @@ which can be found in the LICENSE file.
     #local SizeJ = J_E(DimensionsSizes_IJ);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
-    #local WW2N = array[SizeI][SizeJ];
+    #local WW_2N = array[SizeI][SizeJ];
     #for (J, 0, LastJ)
         #for (I, 0, LastI)
-            #local WW2N[I][J] = Constant;
+            #local WW_2N[I][J] = Constant;
         #end // for
     #end // for
 
-    WW2N
+    WW_2N
 
 #end // macro UniformWeights_2N
 
@@ -481,16 +481,16 @@ which can be found in the LICENSE file.
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
-    #local WW3N = array[SizeI][SizeJ][SizeK];
+    #local WW_3N = array[SizeI][SizeJ][SizeK];
     #for (K, 0, LastK)
         #for (J, 0, LastJ)
             #for (I, 0, LastI)
-                #local WW3N[I][J][K] = Constant;
+                #local WW_3N[I][J][K] = Constant;
             #end // for
         #end // for
     #end // for
 
-    WW3N
+    WW_3N
 
 #end // macro UniformWeights_3N
 
@@ -512,18 +512,18 @@ which can be found in the LICENSE file.
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
     #local LastL = SizeL - 1;
-    #local WW4N = array[SizeI][SizeJ][SizeK][SizeL];
+    #local WW_4N = array[SizeI][SizeJ][SizeK][SizeL];
     #for (L, 0, LastL)
         #for (K, 0, LastK)
             #for (J, 0, LastJ)
                 #for (I, 0, LastI)
-                    #local WW4N[I][J][K][L] = Constant;
+                    #local WW_4N[I][J][K][L] = Constant;
                 #end // for
             #end // for
         #end // for
     #end // for
 
-    WW4N
+    WW_4N
 
 #end // macro UniformWeights_4N
 
@@ -1192,7 +1192,7 @@ which can be found in the LICENSE file.
     #end // if
     #local SizeI = dimension_size(Values_1N, 1);
     #local NewSizeI = SizeI + NoOfDegrees;
-    #local VV1N = array[NewSizeI];
+    #local VV_1N = array[NewSizeI];
     #local DI =
         FactRisingFn(
             SizeI,
@@ -1200,7 +1200,7 @@ which can be found in the LICENSE file.
         )
     ;
     #local p0 = 0*Values_1N[0];
-    #local VV1N[0] = Values_1N[0];
+    #local VV_1N[0] = Values_1N[0];
     #for (I, 1, NewSizeI - 2)
         #local pSum = p0;
         #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
@@ -1217,11 +1217,11 @@ which can be found in the LICENSE file.
                 Values_1N[Io]
             ;
         #end // for
-        #local VV1N[I] = pSum/DI;
+        #local VV_1N[I] = pSum/DI;
     #end // for
-    #local VV1N[NewSizeI-1] = Values_1N[SizeI-1];
+    #local VV_1N[NewSizeI-1] = Values_1N[SizeI-1];
 
-    VV1N
+    VV_1N
 
 #end // macro DegreeElevate_I_1N
 
@@ -1235,7 +1235,7 @@ which can be found in the LICENSE file.
     #local SizeI = dimension_size(Values_2N, 1);
     #local SizeJ = dimension_size(Values_2N, 2);
     #local NewSizeI = SizeI + NoOfDegrees;
-    #local VV2N = array[NewSizeI][SizeJ];
+    #local VV_2N = array[NewSizeI][SizeJ];
     #local DI =
         FactRisingFn(
             SizeI,
@@ -1244,7 +1244,7 @@ which can be found in the LICENSE file.
     ;
     #local p0 = 0*Values_2N[0][0];
     #for (J, 0, SizeJ - 1)
-        #local VV2N[0][J] = Values_2N[0][J];
+        #local VV_2N[0][J] = Values_2N[0][J];
         #for (I, 1, NewSizeI - 2)
             #local pSum = p0;
             #for (Io, max(0, I - NoOfDegrees), min(SizeI - 1, I))
@@ -1261,12 +1261,12 @@ which can be found in the LICENSE file.
                     Values_2N[Io][J]
                 ;
             #end // for
-            #local VV2N[I][J] = pSum/DI;
+            #local VV_2N[I][J] = pSum/DI;
         #end // for
-        #local VV2N[NewSizeI-1][J] = Values_2N[SizeI-1][J];
+        #local VV_2N[NewSizeI-1][J] = Values_2N[SizeI-1][J];
     #end // for
 
-    VV2N
+    VV_2N
 
 #end // macro DegreeElevate_I_2N
 
@@ -1280,7 +1280,7 @@ which can be found in the LICENSE file.
     #local SizeI = dimension_size(Values_2N, 1);
     #local SizeJ = dimension_size(Values_2N, 2);
     #local NewSizeJ = SizeJ + NoOfDegrees;
-    #local VV2N = array[SizeI][NewSizeJ];
+    #local VV_2N = array[SizeI][NewSizeJ];
     #local DJ =
         FactRisingFn(
             SizeJ,
@@ -1289,7 +1289,7 @@ which can be found in the LICENSE file.
     ;
     #local p0 = 0*Values_2N[0][0];
     #for (I, 0, SizeI - 1)
-        #local VV2N[I][0] = Values_2N[I][0];
+        #local VV_2N[I][0] = Values_2N[I][0];
         #for (J, 1, NewSizeJ - 2)
             #local pSum = p0;
             #for (Jo, max(0, J - NoOfDegrees), min(SizeJ - 1, J))
@@ -1306,12 +1306,12 @@ which can be found in the LICENSE file.
                     Values_2N[I][Jo]
                 ;
             #end // for
-            #local VV2N[I][J] = pSum/DJ;
+            #local VV_2N[I][J] = pSum/DJ;
         #end // for
-        #local VV2N[I][NewSizeJ-1] = Values_2N[I][SizeJ-1];
+        #local VV_2N[I][NewSizeJ-1] = Values_2N[I][SizeJ-1];
     #end // for
 
-    VV2N
+    VV_2N
 
 #end // macro DegreeElevate_J_2N
 
@@ -1326,7 +1326,7 @@ which can be found in the LICENSE file.
     #local SizeJ = dimension_size(Values_3N, 2);
     #local SizeK = dimension_size(Values_3N, 3);
     #local NewSizeI = SizeI + NoOfDegrees;
-    #local VV3N = array[NewSizeI][SizeJ][SizeK];
+    #local VV_3N = array[NewSizeI][SizeJ][SizeK];
     #local DI =
         FactRisingFn(
             SizeI,
@@ -1336,7 +1336,7 @@ which can be found in the LICENSE file.
     #local p0 = 0*Values_3N[0][0][0];
     #for (K, 0, SizeK - 1)
         #for (J, 0, SizeJ - 1)
-            #local VV3N[0][J][K] = Values_3N[0][J][K];
+            #local VV_3N[0][J][K] = Values_3N[0][J][K];
             #for (I, 1, NewSizeI - 2)
                 #local pSum = p0;
                 #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
@@ -1353,13 +1353,13 @@ which can be found in the LICENSE file.
                         Values_3N[Io][J][K]
                     ;
                 #end // for
-                #local VV3N[I][J][K] = pSum/DI;
+                #local VV_3N[I][J][K] = pSum/DI;
             #end // for
-            #local VV3N[NewSizeI-1][J][K] = Values_3N[SizeI-1][J][K];
+            #local VV_3N[NewSizeI-1][J][K] = Values_3N[SizeI-1][J][K];
         #end // for
     #end // for
 
-    VV3N
+    VV_3N
 
 #end // macro DegreeElevate_I_3N
 
@@ -1374,7 +1374,7 @@ which can be found in the LICENSE file.
     #local SizeJ = dimension_size(Values_3N, 2);
     #local SizeK = dimension_size(Values_3N, 3);
     #local NewSizeJ = SizeJ + NoOfDegrees;
-    #local VV3N = array[SizeI][NewSizeJ][SizeK];
+    #local VV_3N = array[SizeI][NewSizeJ][SizeK];
     #local DJ =
         FactRisingFn(
             SizeJ,
@@ -1384,7 +1384,7 @@ which can be found in the LICENSE file.
     #local p0 = 0*Values_3N[0][0][0];
     #for (I, 0, SizeI - 1)
         #for (K, 0, SizeK - 1)
-            #local VV3N[I][0][K] = Values_3N[I][0][K];
+            #local VV_3N[I][0][K] = Values_3N[I][0][K];
             #for (J, 1, NewSizeJ - 2)
                 #local pSum = p0;
                 #for (Jo, max(J - NoOfDegrees, 0), min(SizeJ - 1, J))
@@ -1401,13 +1401,13 @@ which can be found in the LICENSE file.
                         Values_3N[I][Jo][K]
                     ;
                 #end // for
-                #local VV3N[I][J][K] = pSum/DJ;
+                #local VV_3N[I][J][K] = pSum/DJ;
             #end // for
-            #local VV3N[I][NewSizeJ-1][K] = Values_3N[I][SizeJ-1][K];
+            #local VV_3N[I][NewSizeJ-1][K] = Values_3N[I][SizeJ-1][K];
         #end // for
     #end // for
 
-    VV3N
+    VV_3N
 
 #end // macro DegreeElevate_J_3N
 
@@ -1422,7 +1422,7 @@ which can be found in the LICENSE file.
     #local SizeJ = dimension_size(Values_3N, 2);
     #local SizeK = dimension_size(Values_3N, 3);
     #local NewSizeK = SizeK + NoOfDegrees;
-    #local VV3N = array[SizeI][SizeJ][NewSizeK];
+    #local VV_3N = array[SizeI][SizeJ][NewSizeK];
     #local DK =
         FactRisingFn(
             SizeK,
@@ -1432,7 +1432,7 @@ which can be found in the LICENSE file.
     #local p0 = 0*Values_3N[0][0][0];
     #for (J, 0, SizeJ - 1)
         #for (I, 0, SizeI - 1)
-            #local VV3N[I][J][0] = Values_3N[I][J][0];
+            #local VV_3N[I][J][0] = Values_3N[I][J][0];
             #for (K, 1, NewSizeK - 2)
                 #local pSum = p0;
                 #for (Ko, max(K - NoOfDegrees, 0), min(SizeK - 1, K))
@@ -1449,13 +1449,13 @@ which can be found in the LICENSE file.
                         Values_3N[I][J][Ko]
                     ;
                 #end // for
-                #local VV3N[I][J][K] = pSum/DK;
+                #local VV_3N[I][J][K] = pSum/DK;
             #end // for
-            #local VV3N[I][J][NewSizeK-1] = Values_3N[I][J][SizeK-1];
+            #local VV_3N[I][J][NewSizeK-1] = Values_3N[I][J][SizeK-1];
         #end // for
     #end // for
 
-    VV3N
+    VV_3N
  
 #end // macro DegreeElevate_K_3N
 
@@ -1471,7 +1471,7 @@ which can be found in the LICENSE file.
     #local SizeK = dimension_size(Values_4N, 3);
     #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeI = SizeI + NoOfDegrees;
-    #local VV4N = array[NewSizeI][SizeJ][SizeK][SizeL];
+    #local VV_4N = array[NewSizeI][SizeJ][SizeK][SizeL];
     #local DI =
         FactRisingFn(
             SizeI,
@@ -1482,7 +1482,7 @@ which can be found in the LICENSE file.
     #for (L, 0, SizeL - 1)
         #for (K, 0, SizeK - 1)
             #for (J, 0, SizeJ - 1)
-                #local VV4N[0][J][K][L] = Values_4N[0][J][K][L];
+                #local VV_4N[0][J][K][L] = Values_4N[0][J][K][L];
                 #for (I, 1, NewSizeI - 2)
                     #local pSum = p0;
                     #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
@@ -1499,14 +1499,14 @@ which can be found in the LICENSE file.
                             Values_4N[Io][J][K][L]
                         ;
                     #end // for
-                    #local VV4N[I][J][K][L] = pSum/DI;
+                    #local VV_4N[I][J][K][L] = pSum/DI;
                 #end // for
-                #local VV4N[NewSizeI-1][J][K][L] = Values_4N[SizeI-1][J][K][L];
+                #local VV_4N[NewSizeI-1][J][K][L] = Values_4N[SizeI-1][J][K][L];
             #end // for
         #end // for
     #end // for
 
-    VV4N
+    VV_4N
 
 #end // macro DegreeElevate_I_4N
 
@@ -1522,7 +1522,7 @@ which can be found in the LICENSE file.
     #local SizeK = dimension_size(Values_4N, 3);
     #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeJ = SizeJ + NoOfDegrees;
-    #local VV4N = array[SizeI][NewSizeJ][SizeK][SizeL];
+    #local VV_4N = array[SizeI][NewSizeJ][SizeK][SizeL];
     #local DJ =
         FactRisingFn(
             SizeJ,
@@ -1533,7 +1533,7 @@ which can be found in the LICENSE file.
     #for (I, 0, SizeI - 1)
         #for (L, 0, SizeL - 1)
             #for (K, 0, SizeK - 1)
-                #local VV4N[I][0][K][L] = Values_4N[I][0][K][L];
+                #local VV_4N[I][0][K][L] = Values_4N[I][0][K][L];
                 #for (J, 1, NewSizeJ - 2)
                     #local pSum = p0;
                     #for (Jo, max(J - NoOfDegrees, 0), min(SizeJ - 1, J))
@@ -1550,14 +1550,14 @@ which can be found in the LICENSE file.
                             Values_4N[I][Jo][K][L]
                         ;
                     #end // for
-                    #local VV4N[I][J][K][L] = pSum/DJ;
+                    #local VV_4N[I][J][K][L] = pSum/DJ;
                 #end // for
-                #local VV4N[I][NewSizeJ-1][K][L] = Values_4N[I][SizeJ-1][K][L];
+                #local VV_4N[I][NewSizeJ-1][K][L] = Values_4N[I][SizeJ-1][K][L];
             #end // for
         #end // for
     #end // for
 
-    VV4N
+    VV_4N
 
 #end // macro DegreeElevate_J_4N
 
@@ -1573,7 +1573,7 @@ which can be found in the LICENSE file.
     #local SizeK = dimension_size(Values_4N, 3);
     #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeK = SizeK + NoOfDegrees;
-    #local VV4N = array[SizeI][SizeJ][NewSizeK][SizeL];
+    #local VV_4N = array[SizeI][SizeJ][NewSizeK][SizeL];
     #local DK =
         FactRisingFn(
             SizeK,
@@ -1584,7 +1584,7 @@ which can be found in the LICENSE file.
     #for (J, 0, SizeJ - 1)
         #for (I, 0, SizeI - 1)
             #for (L, 0, SizeL - 1)
-                #local VV4N[I][J][0][L] = Values_4N[I][J][0][L];
+                #local VV_4N[I][J][0][L] = Values_4N[I][J][0][L];
                 #for (K, 1, NewSizeK - 2)
                     #local pSum = p0;
                     #for (Ko, max(K - NoOfDegrees, 0), min(SizeK - 1, K))
@@ -1601,14 +1601,14 @@ which can be found in the LICENSE file.
                             Values_4N[I][J][Ko][L]
                         ;
                     #end // for
-                    #local VV4N[I][J][K][L] = pSum/DK;
+                    #local VV_4N[I][J][K][L] = pSum/DK;
                 #end // for
-                #local VV4N[I][J][NewSizeK-1][L] = Values_4N[I][J][SizeK-1][L];
+                #local VV_4N[I][J][NewSizeK-1][L] = Values_4N[I][J][SizeK-1][L];
             #end // for
         #end // for
     #end // for
 
-    VV4N
+    VV_4N
 
 #end // macro DegreeElevate_K_4N
 
@@ -1624,7 +1624,7 @@ which can be found in the LICENSE file.
     #local SizeK = dimension_size(Values_4N, 3);
     #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeL = SizeL + NoOfDegrees;
-    #local VV4N = array[SizeI][SizeJ][SizeK][NewSizeL];
+    #local VV_4N = array[SizeI][SizeJ][SizeK][NewSizeL];
     #local DL =
         FactRisingFn(
             SizeL,
@@ -1635,7 +1635,7 @@ which can be found in the LICENSE file.
     #for (K, 0, SizeK - 1)
         #for (J, 0, SizeJ - 1)
             #for (I, 0, SizeI - 1)
-                #local VV4N[I][J][K][0] = Values_4N[I][J][K][0];
+                #local VV_4N[I][J][K][0] = Values_4N[I][J][K][0];
                 #for (L, 1, NewSizeL - 2)
                     #local pSum = p0;
                     #for (Lo, max(L - NoOfDegrees, 0), min(SizeL - 1, L))
@@ -1652,14 +1652,14 @@ which can be found in the LICENSE file.
                             Values_4N[I][J][K][Lo]
                         ;
                     #end // for
-                    #local VV4N[I][J][K][L] = pSum/DL;
+                    #local VV_4N[I][J][K][L] = pSum/DL;
                 #end // for
-                #local VV4N[I][J][K][NewSizeL-1] = Values_4N[I][J][K][SizeL-1];
+                #local VV_4N[I][J][K][NewSizeL-1] = Values_4N[I][J][K][SizeL-1];
             #end // for
         #end // for
     #end // for
 
-    VV4N
+    VV_4N
 
 #end // macro DegreeElevate_L_4N
 
@@ -1977,7 +1977,7 @@ which can be found in the LICENSE file.
     #local CC = _HodographCoefficients(M);
     #local SizeI = dimension_size(Values_1N, 1);
     #local NewSizeI = SizeI - M;   
-    #local VV1N = array[NewSizeI];
+    #local VV_1N = array[NewSizeI];
     #local p0 = 0*Values_1N[0];
     #for (I, 0, NewSizeI - 1)
         #local pSum = p0;
@@ -1986,10 +1986,10 @@ which can be found in the LICENSE file.
                 pSum + CC[A]*Values_1N[I+A]
             ;
         #end // for
-        #local VV1N[I] = FactFallingFn(SizeI - 1, M)*pSum;
+        #local VV_1N[I] = FactFallingFn(SizeI - 1, M)*pSum;
     #end // for
 
-    VV1N
+    VV_1N
 
 #end // macro Hodograph_I_1N
 
@@ -2004,7 +2004,7 @@ which can be found in the LICENSE file.
     #local SizeI = dimension_size(Values_2N, 1);
     #local SizeJ = dimension_size(Values_2N, 2);
     #local NewSizeI = SizeI - M;
-    #local VV2N = array[NewSizeI][SizeJ];
+    #local VV_2N = array[NewSizeI][SizeJ];
     #local p0 = 0*Values_2N[0][0];
     #for (J, 0, SizeJ - 1)
         #for (I, 0, NewSizeI - 1)
@@ -2014,13 +2014,13 @@ which can be found in the LICENSE file.
                     pSum + CC[A]*Values_2N[I+A][J]
                 ;
             #end // for
-            #local VV2N[I][J] =
+            #local VV_2N[I][J] =
                 FactFallingFn(SizeI - 1, M)*pSum
             ;
         #end // for
     #end // for
 
-    VV2N
+    VV_2N
 
 #end // macro Hodograph_I_2N
 
@@ -2035,7 +2035,7 @@ which can be found in the LICENSE file.
     #local SizeI = dimension_size(Values_2N, 1);
     #local SizeJ = dimension_size(Values_2N, 2);
     #local NewSizeJ = SizeJ - M;
-    #local VV2N = array[SizeI][NewSizeJ];
+    #local VV_2N = array[SizeI][NewSizeJ];
     #local p0 = 0*Values_2N[0][0];
     #for (I, 0, SizeI - 1)
         #for (J, 0, NewSizeJ - 1)
@@ -2045,13 +2045,13 @@ which can be found in the LICENSE file.
                     pSum + CC[A]*Values_2N[I][J+A]
                 ;
             #end // for
-            #local VV2N[I][J] =
+            #local VV_2N[I][J] =
                 FactFallingFn(SizeJ - 1, M)*pSum
             ;
         #end // for
     #end // for
 
-    VV2N
+    VV_2N
 
 #end // macro Hodograph_J_2N
 
@@ -2067,7 +2067,7 @@ which can be found in the LICENSE file.
     #local SizeJ = dimension_size(Values_3N, 2);
     #local SizeK = dimension_size(Values_3N, 3);
     #local NewSizeI = SizeI - M;
-    #local VV3N = array[NewSizeI][SizeJ][SizeK];
+    #local VV_3N = array[NewSizeI][SizeJ][SizeK];
     #local p0 = 0*Values_3N[0][0][0];
     #for (K, 0, SizeK - 1)
         #for (J, 0, SizeJ - 1)
@@ -2078,14 +2078,14 @@ which can be found in the LICENSE file.
                         pSum + CC[A]*Values_3N[I+A][J][K]
                     ;
                 #end // for
-                #local VV3N[I][J][K] =
+                #local VV_3N[I][J][K] =
                     FactFallingFn(SizeI - 1, M)*pSum
                 ;
             #end // for
         #end // for
     #end // for
 
-    VV3N
+    VV_3N
 
 #end // macro Hodograph_I_3N
 
@@ -2101,7 +2101,7 @@ which can be found in the LICENSE file.
     #local SizeJ = dimension_size(Values_3N, 2);
     #local SizeK = dimension_size(Values_3N, 3);
     #local NewSizeJ = SizeJ - M;
-    #local VV3N = array[SizeI][NewSizeJ][SizeK];
+    #local VV_3N = array[SizeI][NewSizeJ][SizeK];
     #local p0 = 0*Values_3N[0][0][0];
     #for (I, 0, SizeI - 1)
         #for (K, 0, SizeK - 1)
@@ -2112,14 +2112,14 @@ which can be found in the LICENSE file.
                         pSum + CC[A]*Values_3N[I][J+A][K]
                     ;
                 #end // for
-                #local VV3N[I][J][K] =
+                #local VV_3N[I][J][K] =
                     FactFallingFn(SizeJ - 1, M)*pSum
                 ;
             #end // for
         #end // for
     #end // for
 
-    VV3N
+    VV_3N
 
 #end // macro Hodograph_J_3N
 
@@ -2135,7 +2135,7 @@ which can be found in the LICENSE file.
     #local SizeJ = dimension_size(Values_3N, 2);
     #local SizeK = dimension_size(Values_3N, 3);
     #local NewSizeK = SizeK - M;
-    #local VV3N = array[SizeI][SizeJ][NewSizeK];
+    #local VV_3N = array[SizeI][SizeJ][NewSizeK];
     #local p0 = 0*Values_3N[0][0][0];
     #for (J, 0, SizeJ - 1)
         #for (I, 0, SizeI - 1)
@@ -2146,14 +2146,14 @@ which can be found in the LICENSE file.
                         pSum + CC[A]*Values_3N[I][J][K+A]
                     ;
                 #end // for
-                #local VV3N[I][J][K] =
+                #local VV_3N[I][J][K] =
                     FactFallingFn(SizeK - 1, M)*pSum
                 ;
             #end // for
         #end // for
     #end // for
 
-    VV3N
+    VV_3N
 
 #end // macro Hodograph_K_3N
 
@@ -2170,7 +2170,7 @@ which can be found in the LICENSE file.
     #local SizeK = dimension_size(Values_4N, 3);
     #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeI = SizeI - M;
-    #local VV4N = array[NewSizeI][SizeJ][SizeK][SizeL];
+    #local VV_4N = array[NewSizeI][SizeJ][SizeK][SizeL];
     #local p0 = 0*Values_4N[0][0][0][0];
     #for (L, 0, SizeL - 1)
         #for (K, 0, SizeK - 1)
@@ -2182,7 +2182,7 @@ which can be found in the LICENSE file.
                             pSum + CC[A]*Values_4N[I+A][J][K][L]
                         ;
                     #end // for
-                    #local VV4N[I][J][K][L] =
+                    #local VV_4N[I][J][K][L] =
                         FactFallingFn(SizeI - 1, M)*pSum
                     ;
                 #end // for
@@ -2190,7 +2190,7 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    VV4N
+    VV_4N
 
 #end // macro Hodograph_I_4N
 
@@ -2207,7 +2207,7 @@ which can be found in the LICENSE file.
     #local SizeK = dimension_size(Values_4N, 3);
     #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeJ = SizeJ - M;
-    #local VV4N = array[SizeI][NewSizeJ][SizeK][SizeL];
+    #local VV_4N = array[SizeI][NewSizeJ][SizeK][SizeL];
     #local p0 = 0*Values_4N[0][0][0][0];
     #for (I, 0, SizeI - 1)
         #for (L, 0, SizeL - 1)
@@ -2219,7 +2219,7 @@ which can be found in the LICENSE file.
                             pSum + CC[A]*Values_4N[I][J+A][K][L]
                         ;
                     #end // for
-                    #local VV4N[I][J][K][L] =
+                    #local VV_4N[I][J][K][L] =
                         FactFallingFn(SizeJ - 1, M)*pSum
                     ;
                 #end // for
@@ -2227,7 +2227,7 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    VV4N
+    VV_4N
 
 #end // macro Hodograph_J_4N
 
@@ -2244,7 +2244,7 @@ which can be found in the LICENSE file.
     #local SizeK = dimension_size(Values_4N, 3);
     #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeK = SizeK - M;
-    #local VV4N = array[SizeI][SizeJ][NewSizeK][SizeL];
+    #local VV_4N = array[SizeI][SizeJ][NewSizeK][SizeL];
     #local p0 = 0*Values_4N[0][0][0][0];
     #for (J, 0, SizeJ - 1)
         #for (I, 0, SizeI - 1)
@@ -2256,7 +2256,7 @@ which can be found in the LICENSE file.
                             pSum + CC[A]*Values_4N[I][J][K+A][L]
                         ;
                     #end // for
-                    #local VV4N[I][J][K][L] =
+                    #local VV_4N[I][J][K][L] =
                         FactFallingFn(SizeK - 1, M)*pSum
                     ;
                 #end // for
@@ -2264,7 +2264,7 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    VV4N
+    VV_4N
 
 #end // macro Hodograph_K_4N
 
@@ -2281,7 +2281,7 @@ which can be found in the LICENSE file.
     #local SizeK = dimension_size(Values_4N, 3);
     #local SizeL = dimension_size(Values_4N, 4);
     #local NewSizeL = SizeL - M;
-    #local VV4N = array[SizeI][SizeJ][SizeK][NewSizeL];
+    #local VV_4N = array[SizeI][SizeJ][SizeK][NewSizeL];
     #local p0 = 0*Values_4N[0][0][0][0];
     #for (K, 0, SizeK - 1)
         #for (J, 0, SizeJ - 1)
@@ -2293,7 +2293,7 @@ which can be found in the LICENSE file.
                             pSum + CC[A]*Values_4N[I][J][K][L+A]
                         ;
                     #end // for
-                    #local VV4N[I][J][K][L] =
+                    #local VV_4N[I][J][K][L] =
                         FactFallingFn(SizeL - 1, M)*pSum
                     ;
                 #end // for
@@ -2301,7 +2301,7 @@ which can be found in the LICENSE file.
         #end // for
     #end // for
 
-    VV4N
+    VV_4N
 
 #end // macro Hodograph_L_4N
 
@@ -2940,7 +2940,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_1N, 1) < 2)
         #error "Is less than 2"
     #end // if
-    #local VVWW1N =
+    #local VV_WW_1N =
         MultiplyArrays_1N(
             Values_1N, Weights_1N
         )
@@ -2948,14 +2948,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_1A(
         From_1N_BezierFunction_1A(
-            VVWW1N
+            VV_WW_1N
         ),
         From_1N_BezierFunction_1A(
             Weights_1N
         ),
         From_1N_BezierFunction_1A(
             Hodograph_I_1N(
-                VVWW1N, 1
+                VV_WW_1N, 1
             )
         ),
         From_1N_BezierFunction_1A(
@@ -3009,7 +3009,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_2N, 1) < 2)
         #error "Is less than 2"
     #end // if
-    #local VVWW2N =
+    #local VV_WW_2N =
         MultiplyArrays_2N(
             Values_2N, Weights_2N
         )
@@ -3017,14 +3017,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_2A(
         From_2N_BezierFunction_2A(
-            VVWW2N
+            VV_WW_2N
         ),
         From_2N_BezierFunction_2A(
             Weights_2N
         ),
         From_2N_BezierFunction_2A(
             Hodograph_I_2N(
-                VVWW2N, 1
+                VV_WW_2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
@@ -3055,7 +3055,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_2N, 2) < 2)
         #error "Is less than 2"
     #end // if
-    #local VVWW2N =
+    #local VV_WW_2N =
         MultiplyArrays_2N(
             Values_2N, Weights_2N
         )
@@ -3063,14 +3063,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_2A(
         From_2N_BezierFunction_2A(
-            VVWW2N
+            VV_WW_2N
         ),
         From_2N_BezierFunction_2A(
             Weights_2N
         ),
         From_2N_BezierFunction_2A(
             Hodograph_J_2N(
-                VVWW2N, 1
+                VV_WW_2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
@@ -3133,7 +3133,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_3N, 1) < 2)
         #error "Is less than 2"
     #end // if
-    #local VVWW3N =
+    #local VV_WW_3N =
         MultiplyArrays_3N(
             Values_3N, Weights_3N
         )
@@ -3141,14 +3141,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_3A(
         From_3N_BezierFunction_3A(
-            VVWW3N
+            VV_WW_3N
         ),
         From_3N_BezierFunction_3A(
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
             Hodograph_I_3N(
-                VVWW3N, 1
+                VV_WW_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3182,7 +3182,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_3N, 2) < 2)
         #error "Is less than 2"
     #end // if
-    #local VVWW3N =
+    #local VV_WW_3N =
         MultiplyArrays_3N(
             Values_3N, Weights_3N
         )
@@ -3190,14 +3190,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_3A(
         From_3N_BezierFunction_3A(
-            VVWW3N
+            VV_WW_3N
         ),
         From_3N_BezierFunction_3A(
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
             Hodograph_J_3N(
-                VVWW3N, 1
+                VV_WW_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3231,7 +3231,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_3N, 3) < 2)
         #error "Is less than 2"
     #end // if
-    #local VVWW3N =
+    #local VV_WW_3N =
         MultiplyArrays_3N(
             Values_3N, Weights_3N
         )
@@ -3239,14 +3239,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_3A(
         From_3N_BezierFunction_3A(
-            VVWW3N
+            VV_WW_3N
         ),
         From_3N_BezierFunction_3A(
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
             Hodograph_K_3N(
-                VVWW3N, 1
+                VV_WW_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3318,7 +3318,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 1) < 2)
         #error "Is less than 2"
     #end // if
-    #local VVWW4N =
+    #local VV_WW_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -3326,14 +3326,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VVWW4N
+            VV_WW_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_I_4N(
-                VVWW4N, 1
+                VV_WW_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -3370,7 +3370,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 2) < 2)
         #error "Is less than 2"
     #end // if
-    #local VVWW4N =
+    #local VV_WW_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -3378,14 +3378,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VVWW4N
+            VV_WW_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_J_4N(
-                VVWW4N, 1
+                VV_WW_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -3422,7 +3422,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 3) < 2)
         #error "Is less than 2"
     #end // if
-    #local VVWW4N =
+    #local VV_WW_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -3430,14 +3430,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VVWW4N
+            VV_WW_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_K_4N(
-                VVWW4N, 1
+                VV_WW_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -3474,7 +3474,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 4) < 2)
         #error "Is less than 2"
     #end // if
-    #local VVWW4N =
+    #local VV_WW_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -3482,14 +3482,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VVWW4N
+            VV_WW_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_L_4N(
-                VVWW4N, 1
+                VV_WW_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -3585,7 +3585,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_1N, 1) < 3)
         #error "Is less than 3"
     #end // if
-    #local VVWW1N =
+    #local VV_WW_1N =
         MultiplyArrays_1N(
             Values_1N, Weights_1N
         )
@@ -3593,14 +3593,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_1A(
         From_1N_BezierFunction_1A(
-            VVWW1N
+            VV_WW_1N
         ),
         From_1N_BezierFunction_1A(
             Weights_1N
         ),
         From_1N_BezierFunction_1A(
             Hodograph_I_1N(
-                VVWW1N, 1
+                VV_WW_1N, 1
             )
         ),
         From_1N_BezierFunction_1A(
@@ -3610,7 +3610,7 @@ which can be found in the LICENSE file.
         ),
         From_1N_BezierFunction_1A(
             Hodograph_I_1N(
-                VVWW1N, 2
+                VV_WW_1N, 2
             )
         ),
         From_1N_BezierFunction_1A(
@@ -3661,7 +3661,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_2N, 1) < 3)
         #error "Is less than 3"
     #end // if
-    #local VVWW2N =
+    #local VV_WW_2N =
         MultiplyArrays_2N(
             Values_2N, Weights_2N
         )
@@ -3669,14 +3669,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_2A(
         From_2N_BezierFunction_2A(
-            VVWW2N
+            VV_WW_2N
         ),
         From_2N_BezierFunction_2A(
             Weights_2N
         ),
         From_2N_BezierFunction_2A(
             Hodograph_I_2N(
-                VVWW2N, 1
+                VV_WW_2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
@@ -3686,7 +3686,7 @@ which can be found in the LICENSE file.
         ),
         From_2N_BezierFunction_2A(
             Hodograph_I_2N(
-                VVWW2N, 2
+                VV_WW_2N, 2
             )
         ),
         From_2N_BezierFunction_2A(
@@ -3717,7 +3717,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_2N, 2) < 3)
         #error "Is less than 3"
     #end // if
-    #local VVWW2N =
+    #local VV_WW_2N =
         MultiplyArrays_2N(
             Values_2N, Weights_2N
         )
@@ -3725,14 +3725,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_2A(
         From_2N_BezierFunction_2A(
-            VVWW2N
+            VV_WW_2N
         ),
         From_2N_BezierFunction_2A(
             Weights_2N
         ),
         From_2N_BezierFunction_2A(
             Hodograph_J_2N(
-                VVWW2N, 1
+                VV_WW_2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
@@ -3742,7 +3742,7 @@ which can be found in the LICENSE file.
         ),
         From_2N_BezierFunction_2A(
             Hodograph_J_2N(
-                VVWW2N, 2
+                VV_WW_2N, 2
             )
         ),
         From_2N_BezierFunction_2A(
@@ -3799,7 +3799,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_3N, 1) < 3)
         #error "Is less than 3"
     #end // if
-    #local VVWW3N =
+    #local VV_WW_3N =
         MultiplyArrays_3N(
             Values_3N, Weights_3N
         )
@@ -3807,14 +3807,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_3A(
         From_3N_BezierFunction_3A(
-            VVWW3N
+            VV_WW_3N
         ),
         From_3N_BezierFunction_3A(
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
             Hodograph_I_3N(
-                VVWW3N, 1
+                VV_WW_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3824,7 +3824,7 @@ which can be found in the LICENSE file.
         ),
         From_3N_BezierFunction_3A(
             Hodograph_I_3N(
-                VVWW3N, 2
+                VV_WW_3N, 2
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3858,7 +3858,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_3N, 2) < 3)
         #error "Is less than 3"
     #end // if
-    #local VVWW3N =
+    #local VV_WW_3N =
         MultiplyArrays_3N(
             Values_3N, Weights_3N
         )
@@ -3866,14 +3866,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_3A(
         From_3N_BezierFunction_3A(
-            VVWW3N
+            VV_WW_3N
         ),
         From_3N_BezierFunction_3A(
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
             Hodograph_J_3N(
-                VVWW3N, 1
+                VV_WW_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3883,7 +3883,7 @@ which can be found in the LICENSE file.
         ),
         From_3N_BezierFunction_3A(
             Hodograph_J_3N(
-                VVWW3N, 2
+                VV_WW_3N, 2
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3917,7 +3917,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_3N, 3) < 3)
         #error "Is less than 3"
     #end // if
-    #local VVWW3N =
+    #local VV_WW_3N =
         MultiplyArrays_3N(
             Values_3N, Weights_3N
         )
@@ -3925,14 +3925,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_3A(
         From_3N_BezierFunction_3A(
-            VVWW3N
+            VV_WW_3N
         ),
         From_3N_BezierFunction_3A(
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
             Hodograph_K_3N(
-                VVWW3N, 1
+                VV_WW_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3942,7 +3942,7 @@ which can be found in the LICENSE file.
         ),
         From_3N_BezierFunction_3A(
             Hodograph_K_3N(
-                VVWW3N, 2
+                VV_WW_3N, 2
             )
         ),
         From_3N_BezierFunction_3A(
@@ -4005,7 +4005,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 1) < 3)
         #error "Is less than 3"
     #end // if
-    #local VVWW4N =
+    #local VV_WW_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -4013,14 +4013,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VVWW4N
+            VV_WW_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_I_4N(
-                VVWW4N, 1
+                VV_WW_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4030,7 +4030,7 @@ which can be found in the LICENSE file.
         ),
         From_4N_BezierFunction_4A(
             Hodograph_I_4N(
-                VVWW4N, 2
+                VV_WW_4N, 2
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4067,7 +4067,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 2) < 3)
         #error "Is less than 3"
     #end // if
-    #local VVWW4N =
+    #local VV_WW_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -4075,14 +4075,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VVWW4N
+            VV_WW_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_J_4N(
-                VVWW4N, 1
+                VV_WW_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4092,7 +4092,7 @@ which can be found in the LICENSE file.
         ),
         From_4N_BezierFunction_4A(
             Hodograph_J_4N(
-                VVWW4N, 2
+                VV_WW_4N, 2
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4129,7 +4129,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 3) < 3)
         #error "Is less than 3"
     #end // if
-    #local VVWW4N =
+    #local VV_WW_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -4137,14 +4137,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VVWW4N
+            VV_WW_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_K_4N(
-                VVWW4N, 1
+                VV_WW_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4154,7 +4154,7 @@ which can be found in the LICENSE file.
         ),
         From_4N_BezierFunction_4A(
             Hodograph_K_4N(
-                VVWW4N, 2
+                VV_WW_4N, 2
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4191,7 +4191,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 4) < 3)
         #error "Is less than 3"
     #end // if
-    #local VVWW4N =
+    #local VV_WW_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -4199,14 +4199,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VVWW4N
+            VV_WW_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_L_4N(
-                VVWW4N, 1
+                VV_WW_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4216,7 +4216,7 @@ which can be found in the LICENSE file.
         ),
         From_4N_BezierFunction_4A(
             Hodograph_L_4N(
-                VVWW4N, 2
+                VV_WW_4N, 2
             )
         ),
         From_4N_BezierFunction_4A(
