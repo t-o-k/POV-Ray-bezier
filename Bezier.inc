@@ -403,18 +403,18 @@ which can be found in the LICENSE file.
     #end // if
     #local SizeI = dimension_size(ArrayI_1N, 1);
     #local SizeJ = dimension_size(ArrayJ_1N, 1);
-    #local AA2N = array[SizeI][SizeJ];
+    #local OO_2N = array[SizeI][SizeJ];
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #for (J, 0, LastJ)
         #for (I, 0, LastI)
-            #local AA2N[I][J] =
+            #local OO_2N[I][J] =
                 ArrayI_1N[I]*ArrayJ_1N[J]
             ;
         #end // for
     #end // for
 
-    AA2N
+    OO_2N
 
 #end // macro From_1N_OuterProduct_2N
 
