@@ -588,16 +588,16 @@ which can be found in the LICENSE file.
 
 #macro BernsteinBasisFunctions_1A_1N(Degree)
 
-    #local _Fns1N1A = array[Degree+1];
+    #local _Fns_1A_1N = array[Degree+1];
     #for (I, 0, Degree)
-        #local _Fns1N1A[I] =
+        #local _Fns_1A_1N[I] =
             BernsteinBasisFunction_1A(
                 Degree, I
             )
         ;
     #end // for
 
-    _Fns1N1A
+    _Fns_1A_1N
 
 #end // macro BernsteinBasisFunctions_1A_1N
 
