@@ -772,7 +772,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro From_1A_SampleFunctions_1N1D(_Functions_1A_1D, Min_U, Max_U, Res_U)
+#macro From_1A_SampleFunctions_1N_1D(_Functions_1A_1D, Min_U, Max_U, Res_U)
 
     #local M =
         max(
@@ -814,7 +814,7 @@ which can be found in the LICENSE file.
 
     PP1N1D
 
-#end // From_1A_SampleFunctions_1N1D
+#end // From_1A_SampleFunctions_1N_1D
 
 
 #macro From_1A_SampleFunctions_1N2D(_Functions_1A_2D, Min_U, Max_U, Res_U)
@@ -865,7 +865,7 @@ which can be found in the LICENSE file.
 #end // From_1A_SampleFunctions_1N2D
 
 
-#macro From_1A_SampleFunctions_1N3D(_Functions_1A_3D, Min_U, Max_U, Res_U)
+#macro From_1A_SampleFunctions_1N_3D(_Functions_1A_3D, Min_U, Max_U, Res_U)
 
     #local M =
         max(
@@ -911,10 +911,10 @@ which can be found in the LICENSE file.
 
     PP1N3D
 
-#end // From_1A_SampleFunctions_1N3D
+#end // From_1A_SampleFunctions_1N_3D
 
 
-#macro From_1A_SampleFunctions_1N4D(_Functions_1A_4D, Min_U, Max_U, Res_U)
+#macro From_1A_SampleFunctions_1N_4D(_Functions_1A_4D, Min_U, Max_U, Res_U)
 
     #local M =
         max(
@@ -961,10 +961,10 @@ which can be found in the LICENSE file.
 
     PP1N4D
 
-#end // From_1A_SampleFunctions_1N4D
+#end // From_1A_SampleFunctions_1N_4D
 
 
-#macro From_2A_SampleFunctions_2N1D(_Functions_2A_1D, Min_UV, Max_UV, Res_UV)
+#macro From_2A_SampleFunctions_2N_1D(_Functions_2A_1D, Min_UV, Max_UV, Res_UV)
 
     #local M =
         max(
@@ -1015,7 +1015,7 @@ which can be found in the LICENSE file.
 
     PP2N1D
 
-#end // From_2A_SampleFunctions_2N1D
+#end // From_2A_SampleFunctions_2N_1D
 
 
 #macro From_2A_SampleFunctions_2N2D(_Functions_2A_2D, Min_UV, Max_UV, Res_UV)
@@ -1075,7 +1075,7 @@ which can be found in the LICENSE file.
 #end // From_2A_SampleFunctions_2N2D
 
 
-#macro From_2A_SampleFunctions_2N3D(_Functions_2A_3D, Min_UV, Max_UV, Res_UV)
+#macro From_2A_SampleFunctions_2N_3D(_Functions_2A_3D, Min_UV, Max_UV, Res_UV)
 
     #local M =
         max(
@@ -1130,10 +1130,10 @@ which can be found in the LICENSE file.
 
     PP2N3D
 
-#end // From_2A_SampleFunctions_2N3D
+#end // From_2A_SampleFunctions_2N_3D
 
 
-#macro From_2A_SampleFunctions_2N4D(_Functions_2A_4D, Min_UV, Max_UV, Res_UV)
+#macro From_2A_SampleFunctions_2N_4D(_Functions_2A_4D, Min_UV, Max_UV, Res_UV)
 
     #local M =
         max(
@@ -1189,10 +1189,10 @@ which can be found in the LICENSE file.
 
     PP2N4D
 
-#end // From_2A_SampleFunctions_2N4D
+#end // From_2A_SampleFunctions_2N_4D
 
 
-#macro From_3A_SampleFunctions_3N1D(_Functions_3A_1D, Min_UVW, Max_UVW, Res_UVW)
+#macro From_3A_SampleFunctions_3N_1D(_Functions_3A_1D, Min_UVW, Max_UVW, Res_UVW)
 
     #local M =
         max(
@@ -1252,10 +1252,10 @@ which can be found in the LICENSE file.
 
     PP3N1D
 
-#end // From_3A_SampleFunctions_3N1D
+#end // From_3A_SampleFunctions_3N_1D
 
 
-#macro From_3A_SampleFunctions_3N2D(_Functions_3A_2D, Min_UVW, Max_UVW, Res_UVW)
+#macro From_3A_SampleFunctions_3N_2D(_Functions_3A_2D, Min_UVW, Max_UVW, Res_UVW)
 
     #local M =
         max(
@@ -1318,10 +1318,10 @@ which can be found in the LICENSE file.
 
     PP3N2D
 
-#end // From_3A_SampleFunctions_3N2D
+#end // From_3A_SampleFunctions_3N_2D
 
 
-#macro From_3A_SampleFunctions_3N3D(_Functions_3A_3D, Min_UVW, Max_UVW, Res_UVW)
+#macro From_3A_SampleFunctions_3N_3D(_Functions_3A_3D, Min_UVW, Max_UVW, Res_UVW)
 
     #local M =
         max(
@@ -1385,10 +1385,10 @@ which can be found in the LICENSE file.
 
     PP3N3D
 
-#end // From_3A_SampleFunctions_3N3D
+#end // From_3A_SampleFunctions_3N_3D
 
 
-#macro From_3A_SampleFunctions_3N4D(_Functions_3A_4D, Min_UVW, Max_UVW, Res_UVW)
+#macro From_3A_SampleFunctions_3N_4D(_Functions_3A_4D, Min_UVW, Max_UVW, Res_UVW)
 
     #local M =
         max(
@@ -1453,10 +1453,10 @@ which can be found in the LICENSE file.
 
     PP3N4D
 
-#end // From_3A_SampleFunctions_3N4D
+#end // From_3A_SampleFunctions_3N_4D
 
 
-#macro From_4A_SampleFunctions_4N1D(_Functions_4A_1D, Min_UVWS, Max_UVWS, Res_UVWS)
+#macro From_4A_SampleFunctions_4N_1D(_Functions_4A_1D, Min_UVWS, Max_UVWS, Res_UVWS)
 
     #local M =
         max(
@@ -1525,10 +1525,10 @@ which can be found in the LICENSE file.
 
     PP4N1D
 
-#end // From_4A_SampleFunctions_4N1D
+#end // From_4A_SampleFunctions_4N_1D
 
 
-#macro From_4A_SampleFunctions_4N2D(_Functions_4A_2D, Min_UVWS, Max_UVWS, Res_UVWS)
+#macro From_4A_SampleFunctions_4N_2D(_Functions_4A_2D, Min_UVWS, Max_UVWS, Res_UVWS)
 
     #local M =
         max(
@@ -1600,10 +1600,10 @@ which can be found in the LICENSE file.
 
     PP4N2D
 
-#end // From_4A_SampleFunctions_4N2D
+#end // From_4A_SampleFunctions_4N_2D
 
 
-#macro From_4A_SampleFunctions_4N3D(_Functions_4A_3D, Min_UVWS, Max_UVWS, Res_UVWS)
+#macro From_4A_SampleFunctions_4N_3D(_Functions_4A_3D, Min_UVWS, Max_UVWS, Res_UVWS)
 
     #local M =
         max(
@@ -1676,10 +1676,10 @@ which can be found in the LICENSE file.
 
     PP4N3D
 
-#end // From_4A_SampleFunctions_4N3D
+#end // From_4A_SampleFunctions_4N_3D
 
 
-#macro From_4A_SampleFunctions_4N4D(_Functions_4A_4D, Min_UVWS, Max_UVWS, Res_UVWS)
+#macro From_4A_SampleFunctions_4N_4D(_Functions_4A_4D, Min_UVWS, Max_UVWS, Res_UVWS)
 
     #local M =
         max(
@@ -1753,7 +1753,7 @@ which can be found in the LICENSE file.
 
     PP4N4D
 
-#end // From_4A_SampleFunctions_4N4D
+#end // From_4A_SampleFunctions_4N_4D
 
 
 #macro SampleFunctions(_Functions, Min, Max, Res)
@@ -1799,28 +1799,28 @@ which can be found in the LICENSE file.
             #switch (A)
                 #case (1)  // 1A (1N)
                     #local PP =
-                        From_1A_SampleFunctions_1N1D(
+                        From_1A_SampleFunctions_1N_1D(
                             _Functions, Min, Max, Res
                         )
                     ;
                     #break
                 #case (2)  // 2A (2N)
                     #local PP =
-                        From_2A_SampleFunctions_2N1D(
+                        From_2A_SampleFunctions_2N_1D(
                             _Functions, Min, Max, Res
                         )
                     ;
                     #break
                 #case (3)  // 3A (3N)
                     #local PP =
-                        From_3A_SampleFunctions_3N1D(
+                        From_3A_SampleFunctions_3N_1D(
                             _Functions, Min, Max, Res
                         )
                     ;
                     #break
                 #case (4)  // 4A (4N)
                     #local PP =
-                        From_4A_SampleFunctions_4N1D(
+                        From_4A_SampleFunctions_4N_1D(
                             _Functions, Min, Max, Res
                         )
                     ;
@@ -1847,14 +1847,14 @@ which can be found in the LICENSE file.
                     #break
                 #case (3)  // 3A (3N)
                     #local PP =
-                        From_3A_SampleFunctions_3N2D(
+                        From_3A_SampleFunctions_3N_2D(
                             _Functions, Min, Max, Res
                         )
                     ;
                     #break
                 #case (4)  // 4A (4N)
                     #local PP =
-                        From_4A_SampleFunctions_4N2D(
+                        From_4A_SampleFunctions_4N_2D(
                             _Functions, Min, Max, Res
                         )
                     ;
@@ -1867,28 +1867,28 @@ which can be found in the LICENSE file.
             #switch (A)
                 #case (1)  // 1A (1N)
                     #local PP =
-                        From_1A_SampleFunctions_1N3D(
+                        From_1A_SampleFunctions_1N_3D(
                             _Functions, Min, Max, Res
                         )
                     ;
                     #break
                 #case (2)  // 2A (2N)
                     #local PP =
-                        From_2A_SampleFunctions_2N3D(
+                        From_2A_SampleFunctions_2N_3D(
                             _Functions, Min, Max, Res
                         )
                     ;
                     #break
                 #case (3)  // 3A (3N)
                     #local PP =
-                        From_3A_SampleFunctions_3N3D(
+                        From_3A_SampleFunctions_3N_3D(
                             _Functions, Min, Max, Res
                         )
                     ;
                     #break
                 #case (4)  // 4A (4N)
                     #local PP =
-                        From_4A_SampleFunctions_4N3D(
+                        From_4A_SampleFunctions_4N_3D(
                             _Functions, Min, Max, Res
                         )
                     ;
@@ -1901,28 +1901,28 @@ which can be found in the LICENSE file.
             #switch (A)
                 #case (1)  // 1A (1N)
                     #local PP =
-                        From_1A_SampleFunctions_1N4D(
+                        From_1A_SampleFunctions_1N_4D(
                             _Functions, Min, Max, Res
                         )
                     ;
                     #break
                 #case (2)  // 2A (2N)
                     #local PP =
-                        From_2A_SampleFunctions_2N4D(
+                        From_2A_SampleFunctions_2N_4D(
                             _Functions, Min, Max, Res
                         )
                     ;
                     #break
                 #case (3)  // 3A (3N)
                     #local PP =
-                        From_3A_SampleFunctions_3N4D(
+                        From_3A_SampleFunctions_3N_4D(
                             _Functions, Min, Max, Res
                         )
                     ;
                     #break
                 #case (4)  // 4A (4N)
                     #local PP =
-                        From_4A_SampleFunctions_4N4D(
+                        From_4A_SampleFunctions_4N_4D(
                             _Functions, Min, Max, Res
                         )
                     ;
