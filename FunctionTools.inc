@@ -803,16 +803,16 @@ which can be found in the LICENSE file.
     #local ResU = u_E(Res_U);
     #local IntervalsU = ResU - 1;
     #local dU = (MaxU - MinU)/IntervalsU;
-    #local PP1N1D = array[ResU];
+    #local PP_1N_1D = array[ResU];
     #local U = MinU;
     #for (I, 0, ResU - 1)
-        #local PP1N1D[I] =
+        #local PP_1N_1D[I] =
             x_E(_Functions_1A_1D)(U)
         ;
         #local U = U + dU;
     #end // for
 
-    PP1N1D
+    PP_1N_1D
 
 #end // From_1A_SampleFunctions_1N_1D
 
@@ -848,10 +848,10 @@ which can be found in the LICENSE file.
     #local ResU = u_E(Res_U);
     #local IntervalsU = ResU - 1;
     #local dU = (MaxU - MinU)/IntervalsU;
-    #local PP1N2D = array[ResU];
+    #local PP_1N_2D = array[ResU];
     #local U = MinU;
     #for (I, 0, ResU - 1)
-        #local PP1N2D[I] =
+        #local PP_1N_2D[I] =
             <
                 x_E(_Functions_1A_2D)(U),
                 y_E(_Functions_1A_2D)(U)
@@ -860,7 +860,7 @@ which can be found in the LICENSE file.
         #local U = U + dU;
     #end // for
 
-    PP1N2D
+    PP_1N_2D
 
 #end // From_1A_SampleFunctions_1N2D
 
@@ -896,10 +896,10 @@ which can be found in the LICENSE file.
     #local ResU = u_E(Res_U);
     #local IntervalsU = ResU - 1;
     #local dU = (MaxU - MinU)/IntervalsU;
-    #local PP1N3D = array[ResU];
+    #local PP_1N_3D = array[ResU];
     #local U = MinU;
     #for (I, 0, ResU - 1)
-        #local PP1N3D[I] =
+        #local PP_1N_3D[I] =
             <
                 x_E(_Functions_1A_3D)(U),
                 y_E(_Functions_1A_3D)(U),
@@ -909,7 +909,7 @@ which can be found in the LICENSE file.
         #local U = U + dU;
     #end // for
 
-    PP1N3D
+    PP_1N_3D
 
 #end // From_1A_SampleFunctions_1N_3D
 
@@ -945,10 +945,10 @@ which can be found in the LICENSE file.
     #local ResU = u_E(Res_U);
     #local IntervalsU = ResU - 1;
     #local dU = (MaxU - MinU)/IntervalsU;
-    #local PP1N4D = array[ResU];
+    #local PP_1N_4D = array[ResU];
     #local U = MinU;
     #for (I, 0, ResU - 1)
-        #local PP1N4D[I] =
+        #local PP_1N_4D[I] =
             <
                 x_E(_Functions_1A_4D)(U),
                 y_E(_Functions_1A_4D)(U),
@@ -959,7 +959,7 @@ which can be found in the LICENSE file.
         #local U = U + dU;
     #end // for
 
-    PP1N4D
+    PP_1N_4D
 
 #end // From_1A_SampleFunctions_1N_4D
 
@@ -1000,12 +1000,12 @@ which can be found in the LICENSE file.
     #local IntervalsV = ResV - 1;
     #local dU = (MaxU - MinU)/IntervalsU;
     #local dV = (MaxV - MinV)/IntervalsV;
-    #local PP2N1D = array[ResU][ResV];
+    #local PP_2N_1D = array[ResU][ResV];
     #local V = MinV;
     #for (J, 0, ResV - 1)
         #local U = MinU;
         #for (I, 0, ResU - 1)
-            #local PP2N1D[I][J] =
+            #local PP_2N_1D[I][J] =
                 x_E(_Functions_2A_1D)(U, V)
             ;
             #local U = U + dU;
@@ -1013,7 +1013,7 @@ which can be found in the LICENSE file.
         #local V = V + dV;
     #end // for
 
-    PP2N1D
+    PP_2N_1D
 
 #end // From_2A_SampleFunctions_2N_1D
 
@@ -1054,12 +1054,12 @@ which can be found in the LICENSE file.
     #local IntervalsV = ResV - 1;
     #local dU = (MaxU - MinU)/IntervalsU;
     #local dV = (MaxV - MinV)/IntervalsV;
-    #local PP2N2D = array[ResU][ResV];
+    #local PP_2N_2D = array[ResU][ResV];
     #local V = MinV;
     #for (J, 0, ResV - 1)
         #local U = MinU;
         #for (I, 0, ResU - 1)
-            #local PP2N2D[I][J] =
+            #local PP_2N_2D[I][J] =
                 <
                     x_E(_Functions_2A_2D)(U, V),
                     y_E(_Functions_2A_2D)(U, V)
@@ -1070,7 +1070,7 @@ which can be found in the LICENSE file.
         #local V = V + dV;
     #end // for
 
-    PP2N2D
+    PP_2N_2D
 
 #end // From_2A_SampleFunctions_2N2D
 
@@ -1111,12 +1111,12 @@ which can be found in the LICENSE file.
     #local IntervalsV = ResV - 1;
     #local dU = (MaxU - MinU)/IntervalsU;
     #local dV = (MaxV - MinV)/IntervalsV;
-    #local PP2N3D = array[ResU][ResV];
+    #local PP_2N_3D = array[ResU][ResV];
     #local V = MinV;
     #for (J, 0, ResV - 1)
         #local U = MinU;
         #for (I, 0, ResU - 1)
-            #local PP2N3D[I][J] =
+            #local PP_2N_3D[I][J] =
                 <
                     x_E(_Functions_2A_3D)(U, V),
                     y_E(_Functions_2A_3D)(U, V),
@@ -1128,7 +1128,7 @@ which can be found in the LICENSE file.
         #local V = V + dV;
     #end // for
 
-    PP2N3D
+    PP_2N_3D
 
 #end // From_2A_SampleFunctions_2N_3D
 
@@ -1169,12 +1169,12 @@ which can be found in the LICENSE file.
     #local IntervalsV = ResV - 1;
     #local dU = (MaxU - MinU)/IntervalsU;
     #local dV = (MaxV - MinV)/IntervalsV;
-    #local PP2N4D = array[ResU][ResV];
+    #local PP_2N_4D = array[ResU][ResV];
     #local V = MinV;
     #for (J, 0, ResV - 1)
         #local U = MinU;
         #for (I, 0, ResU - 1)
-            #local PP2N4D[I][J] =
+            #local PP_2N_4D[I][J] =
                 <
                     x_E(_Functions_2A_4D)(U, V),
                     y_E(_Functions_2A_4D)(U, V),
@@ -1187,7 +1187,7 @@ which can be found in the LICENSE file.
         #local V = V + dV;
     #end // for
 
-    PP2N4D
+    PP_2N_4D
 
 #end // From_2A_SampleFunctions_2N_4D
 
@@ -1233,14 +1233,14 @@ which can be found in the LICENSE file.
     #local dU = (MaxU - MinU)/IntervalsU;
     #local dV = (MaxV - MinV)/IntervalsV;
     #local dW = (MaxW - MinW)/IntervalsW;
-    #local PP3N1D = array[ResU][ResV][ResW];
+    #local PP_3N_1D = array[ResU][ResV][ResW];
     #local W = MinW;
     #for (K, 0, ResW - 1)
         #local V = MinV;
         #for (J, 0, ResV - 1)
             #local U = MinU;
             #for (I, 0, ResU - 1)
-                #local PP3N1D[I][J][K] =
+                #local PP_3N_1D[I][J][K] =
                     x_E(_Functions_3A_1D)(U, V, W)
                 ;
                 #local U = U + dU;
@@ -1250,7 +1250,7 @@ which can be found in the LICENSE file.
         #local W = W + dW;
     #end // for
 
-    PP3N1D
+    PP_3N_1D
 
 #end // From_3A_SampleFunctions_3N_1D
 
@@ -1296,14 +1296,14 @@ which can be found in the LICENSE file.
     #local dU = (MaxU - MinU)/IntervalsU;
     #local dV = (MaxV - MinV)/IntervalsV;
     #local dW = (MaxW - MinW)/IntervalsW;
-    #local PP3N2D = array[ResU][ResV][ResW];
+    #local PP_3N_2D = array[ResU][ResV][ResW];
     #local W = MinW;
     #for (K, 0, ResW - 1)
         #local V = MinV;
         #for (J, 0, ResV - 1)
             #local U = MinU;
             #for (I, 0, ResU - 1)
-                #local PP3N2D[I][J][K] =
+                #local PP_3N_2D[I][J][K] =
                     <
                         x_E(_Functions_3A_2D)(U, V, W),
                         y_E(_Functions_3A_2D)(U, V, W)
@@ -1316,7 +1316,7 @@ which can be found in the LICENSE file.
         #local W = W + dW;
     #end // for
 
-    PP3N2D
+    PP_3N_2D
 
 #end // From_3A_SampleFunctions_3N_2D
 
@@ -1362,14 +1362,14 @@ which can be found in the LICENSE file.
     #local dU = (MaxU - MinU)/IntervalsU;
     #local dV = (MaxV - MinV)/IntervalsV;
     #local dW = (MaxW - MinW)/IntervalsW;
-    #local PP3N3D = array[ResU][ResV][ResW];
+    #local PP_3N_3D = array[ResU][ResV][ResW];
     #local W = MinW;
     #for (K, 0, ResW - 1)
         #local V = MinV;
         #for (J, 0, ResV - 1)
             #local U = MinU;
             #for (I, 0, ResU - 1)
-                #local PP3N3D[I][J][K] =
+                #local PP_3N_3D[I][J][K] =
                     <
                         x_E(_Functions_3A_3D)(U, V, W),
                         y_E(_Functions_3A_3D)(U, V, W),
@@ -1383,7 +1383,7 @@ which can be found in the LICENSE file.
         #local W = W + dW;
     #end // for
 
-    PP3N3D
+    PP_3N_3D
 
 #end // From_3A_SampleFunctions_3N_3D
 
@@ -1429,14 +1429,14 @@ which can be found in the LICENSE file.
     #local dU = (MaxU - MinU)/IntervalsU;
     #local dV = (MaxV - MinV)/IntervalsV;
     #local dW = (MaxW - MinW)/IntervalsW;
-    #local PP3N4D = array[ResU][ResV][ResW];
+    #local PP_3N_4D = array[ResU][ResV][ResW];
     #local W = MinW;
     #for (K, 0, ResW - 1)
         #local V = MinV;
         #for (J, 0, ResV - 1)
             #local U = MinU;
             #for (I, 0, ResU - 1)
-                #local PP3N4D[I][J][K] =
+                #local PP_3N_4D[I][J][K] =
                     <
                         x_E(_Functions_3A_4D)(U, V, W),
                         y_E(_Functions_3A_4D)(U, V, W),
@@ -1451,7 +1451,7 @@ which can be found in the LICENSE file.
         #local W = W + dW;
     #end // for
 
-    PP3N4D
+    PP_3N_4D
 
 #end // From_3A_SampleFunctions_3N_4D
 
@@ -1502,7 +1502,7 @@ which can be found in the LICENSE file.
     #local dV = (MaxV - MinV)/IntervalsV;
     #local dW = (MaxW - MinW)/IntervalsW;
     #local dS = (MaxS - MinS)/IntervalsS;
-    #local PP4N1D = array[ResU][ResV][ResW][ResS];
+    #local PP_4N_1D = array[ResU][ResV][ResW][ResS];
     #local S = MinS;
     #for (L, 0, ResS - 1)
         #local W = MinW;
@@ -1511,7 +1511,7 @@ which can be found in the LICENSE file.
             #for (J, 0, ResV - 1)
                 #local U = MinU;
                 #for (I, 0, ResU - 1)
-                    #local PP4N1D[I][J][K][L] =
+                    #local PP_4N_1D[I][J][K][L] =
                         x_E(_Functions_4A_1D)(U, V, W, S)
                     ;
                     #local U = U + dU;
@@ -1523,7 +1523,7 @@ which can be found in the LICENSE file.
         #local S = S + dS;
     #end // for
 
-    PP4N1D
+    PP_4N_1D
 
 #end // From_4A_SampleFunctions_4N_1D
 
@@ -1574,7 +1574,7 @@ which can be found in the LICENSE file.
     #local dV = (MaxV - MinV)/IntervalsV;
     #local dW = (MaxW - MinW)/IntervalsW;
     #local dS = (MaxS - MinS)/IntervalsS;
-    #local PP4N2D = array[ResU][ResV][ResW][ResS];
+    #local PP_4N_2D = array[ResU][ResV][ResW][ResS];
     #local S = MinS;
     #for (L, 0, ResS - 1)
         #local W = MinW;
@@ -1583,7 +1583,7 @@ which can be found in the LICENSE file.
             #for (J, 0, ResV - 1)
                 #local U = MinU;
                 #for (I, 0, ResU - 1)
-                    #local PP4N2D[I][J][K][L] =
+                    #local PP_4N_2D[I][J][K][L] =
                         <
                             x_E(_Functions_4A_2D)(U, V, W, S),
                             y_E(_Functions_4A_2D)(U, V, W, S)
@@ -1598,7 +1598,7 @@ which can be found in the LICENSE file.
         #local S = S + dS;
     #end // for
 
-    PP4N2D
+    PP_4N_2D
 
 #end // From_4A_SampleFunctions_4N_2D
 
@@ -1649,7 +1649,7 @@ which can be found in the LICENSE file.
     #local dV = (MaxV - MinV)/IntervalsV;
     #local dW = (MaxW - MinW)/IntervalsW;
     #local dS = (MaxS - MinS)/IntervalsS;
-    #local PP4N3D = array[ResU][ResV][ResW][ResS];
+    #local PP_4N_3D = array[ResU][ResV][ResW][ResS];
     #local S = MinS;
     #for (L, 0, ResS - 1)
         #local W = MinW;
@@ -1658,7 +1658,7 @@ which can be found in the LICENSE file.
             #for (J, 0, ResV - 1)
                 #local U = MinU;
                 #for (I, 0, ResU - 1)
-                    #local PP4N3D[I][J][K][L] =
+                    #local PP_4N_3D[I][J][K][L] =
                         <
                             x_E(_Functions_4A_3D)(U, V, W, S),
                             y_E(_Functions_4A_3D)(U, V, W, S),
@@ -1674,7 +1674,7 @@ which can be found in the LICENSE file.
         #local S = S + dS;
     #end // for
 
-    PP4N3D
+    PP_4N_3D
 
 #end // From_4A_SampleFunctions_4N_3D
 
@@ -1725,7 +1725,7 @@ which can be found in the LICENSE file.
     #local dV = (MaxV - MinV)/IntervalsV;
     #local dW = (MaxW - MinW)/IntervalsW;
     #local dS = (MaxS - MinS)/IntervalsS;
-    #local PP4N4D = array[ResU][ResV][ResW][ResS];
+    #local PP_4N_4D = array[ResU][ResV][ResW][ResS];
     #local S = MinS;
     #for (L, 0, ResS - 1)
         #local W = MinW;
@@ -1734,7 +1734,7 @@ which can be found in the LICENSE file.
             #for (J, 0, ResV - 1)
                 #local U = MinU;
                 #for (I, 0, ResU - 1)
-                    #local PP4N4D[I][J][K][L] =
+                    #local PP_4N_4D[I][J][K][L] =
                         <
                             x_E(_Functions_4A_4D)(U, V, W, S),
                             y_E(_Functions_4A_4D)(U, V, W, S),
@@ -1751,7 +1751,7 @@ which can be found in the LICENSE file.
         #local S = S + dS;
     #end // for
 
-    PP4N4D
+    PP_4N_4D
 
 #end // From_4A_SampleFunctions_4N_4D
 
