@@ -3,7 +3,7 @@
 The `Bezier.inc` library is a POV-Ray SDL toolkit for working with Bézier curves, surfaces, and higher-dimensional analogues.
 It is aimed at advanced POV-Ray users who need precise mathematical control over curved geometry.
 
-It requires POV-Ray v3.7.
+It works with POV-Ray v3.7. It may also work with POV-Ray v3.8, but that has not been tested. 
 
 **_NB: This is work in progress, so anything may change at any time._**
 
