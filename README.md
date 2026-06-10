@@ -37,7 +37,7 @@ Here is what it provides:
 
 - Renders control cages as spheres and cylinders: From_?N_ShowPoints_*D, From_?N_ShowLines_*D, From_?N_ShowGrid_3D
 - Renders sampled meshes: DrawPatch_3D
-- Sampling: From_?A_SampleFunctions_?N?D
+- Sampling: From_?A_SampleFunctions_?N_?D
 
 ## Naming conventions
 
