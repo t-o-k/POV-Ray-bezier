@@ -638,6 +638,1251 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
+#macro DotFunction_1A_2D(_Fns0_1A_2D, _Fns1_1A_2D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_1A_2D),
+            dimensions(_Fns1_1A_2D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_1A_2D, 1);
+    #if (D1 != 2)
+        #error "D1 is not 2"
+    #end // if
+    #local D2 = dimension_size(_Fns1_1A_2D, 1);
+    #if (D2 != 2)
+        #error "D2 is not 2"
+    #end // if
+
+    function(_u) {
+        x_E(_Fns0_1A_2D)(_u)*x_E(_Fns1_1A_2D)(_u)
+        +
+        y_E(_Fns0_1A_2D)(_u)*y_E(_Fns1_1A_2D)(_u)
+    }
+
+#end // macro DotFunction_1A_2D
+
+
+#macro DotFunction_1A_3D(_Fns0_1A_3D, _Fns1_1A_3D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_1A_3D),
+            dimensions(_Fns1_1A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_1A_3D, 1);
+    #if (D1 != 3)
+        #error "D1 is not 3"
+    #end // if
+    #local D2 = dimension_size(_Fns1_1A_3D, 1);
+    #if (D2 != 3)
+        #error "D2 is not 3"
+    #end // if
+
+    function(_u) {
+        x_E(_Fns0_1A_3D)(_u)*x_E(_Fns1_1A_3D)(_u)
+        +
+        y_E(_Fns0_1A_3D)(_u)*y_E(_Fns1_1A_3D)(_u)
+        +
+        z_E(_Fns0_1A_3D)(_u)*z_E(_Fns1_1A_3D)(_u)
+    }
+
+#end // macro DotFunction_1A_3D
+
+
+#macro DotFunction_1A_4D(_Fns0_1A_4D, _Fns1_1A_4D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_1A_4D),
+            dimensions(_Fns1_1A_4D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_1A_4D, 1);
+    #if (D1 != 4)
+        #error "D1 is not 4"
+    #end // if
+    #local D2 = dimension_size(_Fns1_1A_4D, 1);
+    #if (D2 != 4)
+        #error "D2 is not 4"
+    #end // if
+
+    function(_u) {
+        x_E(_Fns0_1A_4D)(_u)*x_E(_Fns1_1A_4D)(_u)
+        +
+        y_E(_Fns0_1A_4D)(_u)*y_E(_Fns1_1A_4D)(_u)
+        +
+        z_E(_Fns0_1A_4D)(_u)*z_E(_Fns1_1A_4D)(_u)
+        +
+        t_E(_Fns0_1A_4D)(_u)*t_E(_Fns1_1A_4D)(_u)
+    }
+
+#end // macro DotFunction_1A_4D
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro DotFunction_2A_2D(_Fns0_2A_2D, _Fns1_2A_2D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_2A_2D),
+            dimensions(_Fns1_2A_2D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_2A_2D, 1);
+    #if (D1 != 2)
+        #error "D1 is not 2"
+    #end // if
+    #local D2 = dimension_size(_Fns1_2A_2D, 1);
+    #if (D2 != 2)
+        #error "D2 is not 2"
+    #end // if
+
+    function(_u, _v) {
+        x_E(_Fns0_2A_2D)(_u, _v)*x_E(_Fns1_2A_2D)(_u, _v)
+        +
+        y_E(_Fns0_2A_2D)(_u, _v)*y_E(_Fns1_2A_2D)(_u, _v)
+    }
+
+#end // macro DotFunction_2A_2D
+
+
+#macro DotFunction_2A_3D(_Fns0_2A_3D, _Fns1_2A_3D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_2A_3D),
+            dimensions(_Fns1_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_2A_3D, 1);
+    #if (D1 != 3)
+        #error "D1 is not 3"
+    #end // if
+    #local D2 = dimension_size(_Fns1_2A_3D, 1);
+    #if (D2 != 3)
+        #error "D2 is not 3"
+    #end // if
+
+    function(_u, _v) {
+        x_E(_Fns0_2A_3D)(_u, _v)*x_E(_Fns1_2A_3D)(_u, _v)
+        +
+        y_E(_Fns0_2A_3D)(_u, _v)*y_E(_Fns1_2A_3D)(_u, _v)
+        +
+        z_E(_Fns0_2A_3D)(_u, _v)*z_E(_Fns1_2A_3D)(_u, _v)
+    }
+
+#end // macro DotFunction_2A_3D
+
+
+#macro DotFunction_2A_4D(_Fns0_2A_4D, _Fns1_2A_4D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_2A_4D),
+            dimensions(_Fns1_2A_4D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_2A_4D, 1);
+    #if (D1 != 4)
+        #error "D1 is not 4"
+    #end // if
+    #local D2 = dimension_size(_Fns1_2A_4D, 1);
+    #if (D2 != 4)
+        #error "D2 is not 4"
+    #end // if
+
+    function(_u, _v) {
+        x_E(_Fns0_2A_4D)(_u, _v)*x_E(_Fns1_2A_4D)(_u, _v)
+        +
+        y_E(_Fns0_2A_4D)(_u, _v)*y_E(_Fns1_2A_4D)(_u, _v)
+        +
+        z_E(_Fns0_2A_4D)(_u, _v)*z_E(_Fns1_2A_4D)(_u, _v)
+        +
+        t_E(_Fns0_2A_4D)(_u, _v)*t_E(_Fns1_2A_4D)(_u, _v)
+    }
+
+#end // macro DotFunction_2A_4D
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro DotFunction_3A_2D(_Fns0_3A_2D, _Fns1_3A_2D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_3A_2D),
+            dimensions(_Fns1_3A_2D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_3A_2D, 1);
+    #if (D1 != 2)
+        #error "D1 is not 2"
+    #end // if
+    #local D2 = dimension_size(_Fns1_3A_2D, 1);
+    #if (D2 != 2)
+        #error "D2 is not 2"
+    #end // if
+
+    function(_u, _v, _w) {
+        x_E(_Fns0_3A_2D)(_u, _v, _w)*x_E(_Fns1_3A_2D)(_u, _v, _w)
+        +
+        y_E(_Fns0_3A_2D)(_u, _v, _w)*y_E(_Fns1_3A_2D)(_u, _v, _w)
+    }
+
+#end // macro DotFunction_3A_2D
+
+
+#macro DotFunction_3A_3D(_Fns0_3A_3D, _Fns1_3A_3D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_3A_3D),
+            dimensions(_Fns1_3A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_3A_3D, 1);
+    #if (D1 != 3)
+        #error "D1 is not 3"
+    #end // if
+    #local D2 = dimension_size(_Fns1_3A_3D, 1);
+    #if (D2 != 3)
+        #error "D2 is not 3"
+    #end // if
+
+    function(_u, _v, _w) {
+        x_E(_Fns0_3A_3D)(_u, _v, _w)*x_E(_Fns1_3A_3D)(_u, _v, _w)
+        +
+        y_E(_Fns0_3A_3D)(_u, _v, _w)*y_E(_Fns1_3A_3D)(_u, _v, _w)
+        +
+        z_E(_Fns0_3A_3D)(_u, _v, _w)*z_E(_Fns1_3A_3D)(_u, _v, _w)
+    }
+
+#end // macro DotFunction_3A_3D
+
+
+#macro DotFunction_3A_4D(_Fns0_3A_4D, _Fns1_3A_4D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_3A_4D),
+            dimensions(_Fns1_3A_4D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_3A_4D, 1);
+    #if (D1 != 4)
+        #error "D1 is not 4"
+    #end // if
+    #local D2 = dimension_size(_Fns1_3A_4D, 1);
+    #if (D2 != 4)
+        #error "D2 is not 4"
+    #end // if
+
+    function(_u, _v, _w) {
+        x_E(_Fns0_3A_4D)(_u, _v, _w)*x_E(_Fns1_3A_4D)(_u, _v, _w)
+        +
+        y_E(_Fns0_3A_4D)(_u, _v, _w)*y_E(_Fns1_3A_4D)(_u, _v, _w)
+        +
+        z_E(_Fns0_3A_4D)(_u, _v, _w)*z_E(_Fns1_3A_4D)(_u, _v, _w)
+        +
+        t_E(_Fns0_3A_4D)(_u, _v, _w)*t_E(_Fns1_3A_4D)(_u, _v, _w)
+    }
+
+#end // macro DotFunction_3A_4D
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro DotFunction_4A_2D(_Fns0_4A_2D, _Fns1_4A_2D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_4A_2D),
+            dimensions(_Fns1_4A_2D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_4A_2D, 1);
+    #if (D1 != 2)
+        #error "D1 is not 2"
+    #end // if
+    #local D2 = dimension_size(_Fns1_4A_2D, 1);
+    #if (D2 != 2)
+        #error "D2 is not 2"
+    #end // if
+
+    function(_u, _v, _w, _s) {
+        x_E(_Fns0_4A_2D)(_u, _v, _w, _s)*x_E(_Fns1_4A_2D)(_u, _v, _w, _s)
+        +
+        y_E(_Fns0_4A_2D)(_u, _v, _w, _s)*y_E(_Fns1_4A_2D)(_u, _v, _w, _s)
+    }
+
+#end // macro DotFunction_4A_2D
+
+
+#macro DotFunction_4A_3D(_Fns0_4A_3D, _Fns1_4A_3D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_4A_3D),
+            dimensions(_Fns1_4A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_4A_3D, 1);
+    #if (D1 != 3)
+        #error "D1 is not 3"
+    #end // if
+    #local D2 = dimension_size(_Fns1_4A_3D, 1);
+    #if (D2 != 3)
+        #error "D2 is not 3"
+    #end // if
+
+    function(_u, _v, _w, _s) {
+        x_E(_Fns0_4A_3D)(_u, _v, _w, _s)*x_E(_Fns1_4A_3D)(_u, _v, _w, _s)
+        +
+        y_E(_Fns0_4A_3D)(_u, _v, _w, _s)*y_E(_Fns1_4A_3D)(_u, _v, _w, _s)
+        +
+        z_E(_Fns0_4A_3D)(_u, _v, _w, _s)*z_E(_Fns1_4A_3D)(_u, _v, _w, _s)
+    }
+
+#end // macro DotFunction_4A_3D
+
+
+#macro DotFunction_4A_4D(_Fns0_4A_4D, _Fns1_4A_4D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_4A_4D),
+            dimensions(_Fns1_4A_4D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_4A_4D, 1);
+    #if (D1 != 4)
+        #error "D1 is not 4"
+    #end // if
+    #local D2 = dimension_size(_Fns1_4A_4D, 1);
+    #if (D2 != 4)
+        #error "D2 is not 4"
+    #end // if
+
+    function(_u, _v, _w, _s) {
+        x_E(_Fns0_4A_4D)(_u, _v, _w, _s)*x_E(_Fns1_4A_4D)(_u, _v, _w, _s)
+        +
+        y_E(_Fns0_4A_4D)(_u, _v, _w, _s)*y_E(_Fns1_4A_4D)(_u, _v, _w, _s)
+        +
+        z_E(_Fns0_4A_4D)(_u, _v, _w, _s)*z_E(_Fns1_4A_4D)(_u, _v, _w, _s)
+        +
+        t_E(_Fns0_4A_4D)(_u, _v, _w, _s)*t_E(_Fns1_4A_4D)(_u, _v, _w, _s)
+    }
+
+#end // macro DotFunction_4A_4D
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro CrossFunctions_1A_3D(_Fns0_1A_3D, _Fns1_1A_3D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_1A_3D),
+            dimensions(_Fns1_1A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_1A_3D, 1);
+    #if (D1 != 3)
+        #error "D1 is not 3"
+    #end // if
+    #local D2 = dimension_size(_Fns1_1A_3D, 1);
+    #if (D2 != 3)
+        #error "D2 is not 3"
+    #end // if
+
+    Arr_3E(
+        function(_u) {
+            y_E(_Fns0_1A_3D)(_u)*z_E(_Fns1_1A_3D)(_u)
+            -
+            z_E(_Fns0_1A_3D)(_u)*y_E(_Fns1_1A_3D)(_u)
+        },
+        function(_u) {
+            z_E(_Fns0_1A_3D)(_u)*x_E(_Fns1_1A_3D)(_u)
+            -
+            x_E(_Fns0_1A_3D)(_u)*z_E(_Fns1_1A_3D)(_u)
+        },
+        function(_u) {
+            x_E(_Fns0_1A_3D)(_u)*y_E(_Fns1_1A_3D)(_u)
+            -
+            y_E(_Fns0_1A_3D)(_u)*x_E(_Fns1_1A_3D)(_u)
+        }
+    )
+
+#end // macro CrossFunctions_1A_3D
+
+
+#macro CrossFunctions_2A_3D(_Fns0_2A_3D, _Fns1_2A_3D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_2A_3D),
+            dimensions(_Fns1_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_2A_3D, 1);
+    #if (D1 != 3)
+        #error "D1 is not 3"
+    #end // if
+    #local D2 = dimension_size(_Fns1_2A_3D, 1);
+    #if (D2 != 3)
+        #error "D2 is not 3"
+    #end // if
+
+    Arr_3E(
+        function(_u, _v) {
+            y_E(_Fns0_2A_3D)(_u, _v)*z_E(_Fns1_2A_3D)(_u, _v)
+            -
+            z_E(_Fns0_2A_3D)(_u, _v)*y_E(_Fns1_2A_3D)(_u, _v)
+        },
+        function(_u, _v) {
+            z_E(_Fns0_2A_3D)(_u, _v)*x_E(_Fns1_2A_3D)(_u, _v)
+            -
+            x_E(_Fns0_2A_3D)(_u, _v)*z_E(_Fns1_2A_3D)(_u, _v)
+        },
+        function(_u, _v) {
+            x_E(_Fns0_2A_3D)(_u, _v)*y_E(_Fns1_2A_3D)(_u, _v)
+            -
+            y_E(_Fns0_2A_3D)(_u, _v)*x_E(_Fns1_2A_3D)(_u, _v)
+        }
+    )
+
+#end // macro CrossFunctions_2A_3D
+
+
+#macro CrossFunctions_3A_3D(_Fns0_3A_3D, _Fns1_3A_3D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_3A_3D),
+            dimensions(_Fns1_3A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_3A_3D, 1);
+    #if (D1 != 3)
+        #error "D1 is not 3"
+    #end // if
+    #local D2 = dimension_size(_Fns1_3A_3D, 1);
+    #if (D2 != 3)
+        #error "D2 is not 3"
+    #end // if
+
+    Arr_3E(
+        function(_u, _v, _w) {
+            y_E(_Fns0_3A_3D)(_u, _v, _w)*z_E(_Fns1_3A_3D)(_u, _v, _w)
+            -
+            z_E(_Fns0_3A_3D)(_u, _v, _w)*y_E(_Fns1_3A_3D)(_u, _v, _w)
+        },
+        function(_u, _v, _w) {
+            z_E(_Fns0_3A_3D)(_u, _v, _w)*x_E(_Fns1_3A_3D)(_u, _v, _w)
+            -
+            x_E(_Fns0_3A_3D)(_u, _v, _w)*z_E(_Fns1_3A_3D)(_u, _v, _w)
+        },
+        function(_u, _v, _w) {
+            x_E(_Fns0_3A_3D)(_u, _v, _w)*y_E(_Fns1_3A_3D)(_u, _v, _w)
+            -
+            y_E(_Fns0_3A_3D)(_u, _v, _w)*x_E(_Fns1_3A_3D)(_u, _v, _w)
+        }
+    )
+
+#end // macro CrossFunctions_3A_3D
+
+
+#macro CrossFunctions_4A_3D(_Fns0_4A_3D, _Fns1_4A_3D)
+
+    #local M =
+        max(
+            dimensions(_Fns0_4A_3D),
+            dimensions(_Fns1_4A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D1 = dimension_size(_Fns0_4A_3D, 1);
+    #if (D1 != 3)
+        #error "D1 is not 3"
+    #end // if
+    #local D2 = dimension_size(_Fns1_4A_3D, 1);
+    #if (D2 != 3)
+        #error "D2 is not 3"
+    #end // if
+
+    Arr_3E(
+        function(_u, _v, _w, _s) {
+            y_E(_Fns0_4A_3D)(_u, _v, _w, _s)*z_E(_Fns1_4A_3D)(_u, _v, _w, _s)
+            -
+            z_E(_Fns0_4A_3D)(_u, _v, _w, _s)*y_E(_Fns1_4A_3D)(_u, _v, _w, _s)
+        },
+        function(_u, _v, _w, _s) {
+            z_E(_Fns0_4A_3D)(_u, _v, _w, _s)*x_E(_Fns1_4A_3D)(_u, _v, _w, _s)
+            -
+            x_E(_Fns0_4A_3D)(_u, _v, _w, _s)*z_E(_Fns1_4A_3D)(_u, _v, _w, _s)
+        },
+        function(_u, _v, _w, _s) {
+            x_E(_Fns0_4A_3D)(_u, _v, _w, _s)*y_E(_Fns1_4A_3D)(_u, _v, _w, _s)
+            -
+            y_E(_Fns0_4A_3D)(_u, _v, _w, _s)*x_E(_Fns1_4A_3D)(_u, _v, _w, _s)
+        }
+    )
+
+#end // macro CrossFunctions_4A_3D
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro NormalizedFunctions_1A_2D(_Fns_1A_2D)
+
+    #local M = dimensions(_Fns_1A_2D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_Fns_1A_2D, 1);
+    #if (D != 2)
+        #error "D is not 2"
+    #end // if
+
+    Arr_2E(
+        function(_u) {
+            x_E(_Fns_1A_2D)(_u)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_1A_2D)(_u),
+                    y_E(_Fns_1A_2D)(_u),
+                    0
+                )
+            )
+        },
+        function(_u) {
+            y_E(_Fns_1A_2D)(_u)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_1A_2D)(_u),
+                    y_E(_Fns_1A_2D)(_u),
+                    0
+                )
+            )
+        }
+    )
+
+#end // macro NormalizedFunctions_1A_2D
+
+
+#macro NormalizedFunctions_1A_3D(_Fns_1A_3D)
+
+    #local M = dimensions(_Fns_1A_3D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_Fns_1A_3D, 1);
+    #if (D != 3)
+        #error "D is not 3"
+    #end // if
+
+    Arr_3E(
+        function(_u) {
+            x_E(_Fns_1A_3D)(_u)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_1A_3D)(_u),
+                    y_E(_Fns_1A_3D)(_u),
+                    z_E(_Fns_1A_3D)(_u)
+                )
+            )
+        },
+        function(_u) {
+            y_E(_Fns_1A_3D)(_u)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_1A_3D)(_u),
+                    y_E(_Fns_1A_3D)(_u),
+                    z_E(_Fns_1A_3D)(_u)
+                )
+            )
+        },
+        function(_u) {
+            z_E(_Fns_1A_3D)(_u)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_1A_3D)(_u),
+                    y_E(_Fns_1A_3D)(_u),
+                    z_E(_Fns_1A_3D)(_u)
+                )
+            )
+        }
+    )
+
+#end // macro NormalizedFunctions_1A_3D
+
+
+#macro NormalizedFunctions_1A_4D(_Fns_1A_4D)
+
+    #local M = dimensions(_Fns_1A_4D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_Fns_1A_4D, 1);
+    #if (D != 4)
+        #error "D is not 4"
+    #end // if
+
+    Arr_4E(
+        function(_u) {
+            x_E(_Fns_1A_4D)(_u)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_1A_4D)(_u), 2)
+                    +
+                    pow(y_E(_Fns_1A_4D)(_u), 2)
+                    +
+                    pow(z_E(_Fns_1A_4D)(_u), 2)
+                    +
+                    pow(t_E(_Fns_1A_4D)(_u), 2)
+                )
+            )
+        },
+        function(_u) {
+            y_E(_Fns_1A_4D)(_u)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_1A_4D)(_u), 2)
+                    +
+                    pow(y_E(_Fns_1A_4D)(_u), 2)
+                    +
+                    pow(z_E(_Fns_1A_4D)(_u), 2)
+                    +
+                    pow(t_E(_Fns_1A_4D)(_u), 2)
+                )
+            )
+        },
+        function(_u) {
+            z_E(_Fns_1A_4D)(_u)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_1A_4D)(_u), 2)
+                    +
+                    pow(y_E(_Fns_1A_4D)(_u), 2)
+                    +
+                    pow(z_E(_Fns_1A_4D)(_u), 2)
+                    +
+                    pow(t_E(_Fns_1A_4D)(_u), 2)
+                )
+            )
+        },
+        function(_u) {
+            t_E(_Fns_1A_4D)(_u)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_1A_4D)(_u), 2)
+                    +
+                    pow(y_E(_Fns_1A_4D)(_u), 2)
+                    +
+                    pow(z_E(_Fns_1A_4D)(_u), 2)
+                    +
+                    pow(t_E(_Fns_1A_4D)(_u), 2)
+                )
+            )
+        }
+    )
+
+#end // macro NormalizedFunctions_1A_4D
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro NormalizedFunctions_2A_2D(_Fns_2A_2D)
+
+    #local M = dimensions(_Fns_2A_2D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_Fns_2A_2D, 1);
+    #if (D != 2)
+        #error "D is not 2"
+    #end // if
+
+    Arr_2E(
+        function(_u, _v) {
+            x_E(_Fns_2A_2D)(_u, _v)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_2A_2D)(_u, _v),
+                    y_E(_Fns_2A_2D)(_u, _v),
+                    0
+                )
+            )
+        },
+        function(_u, _v) {
+            y_E(_Fns_2A_2D)(_u, _v)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_2A_2D)(_u, _v),
+                    y_E(_Fns_2A_2D)(_u, _v),
+                    0
+                )
+            )
+        }
+    )
+
+#end // macro NormalizedFunctions_2A_2D
+
+
+#macro NormalizedFunctions_2A_3D(_Fns_2A_3D)
+
+    #local M = dimensions(_Fns_2A_3D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_Fns_2A_3D, 1);
+    #if (D != 3)
+        #error "D is not 3"
+    #end // if
+
+    Arr_3E(
+        function(_u, _v) {
+            x_E(_Fns_2A_3D)(_u, _v)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_2A_3D)(_u, _v),
+                    y_E(_Fns_2A_3D)(_u, _v),
+                    z_E(_Fns_2A_3D)(_u, _v)
+                )
+            )
+        },
+        function(_u, _v) {
+            y_E(_Fns_2A_3D)(_u, _v)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_2A_3D)(_u, _v),
+                    y_E(_Fns_2A_3D)(_u, _v),
+                    z_E(_Fns_2A_3D)(_u, _v)
+                )
+            )
+        },
+        function(_u, _v) {
+            z_E(_Fns_2A_3D)(_u, _v)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_2A_3D)(_u, _v),
+                    y_E(_Fns_2A_3D)(_u, _v),
+                    z_E(_Fns_2A_3D)(_u, _v)
+                )
+            )
+        }
+    )
+
+#end // macro NormalizedFunctions_2A_3D
+
+
+#macro NormalizedFunctions_2A_4D(_Fns_2A_4D)
+
+    #local M = dimensions(_Fns_2A_4D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_Fns_2A_4D, 1);
+    #if (D != 4)
+        #error "D is not 4"
+    #end // if
+
+    Arr_4E(
+        function(_u, _v) {
+            x_E(_Fns_2A_4D)(_u, _v)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_2A_4D)(_u, _v), 2)
+                    +
+                    pow(y_E(_Fns_2A_4D)(_u, _v), 2)
+                    +
+                    pow(z_E(_Fns_2A_4D)(_u, _v), 2)
+                    +
+                    pow(t_E(_Fns_2A_4D)(_u, _v), 2)
+                )
+            )
+        },
+        function(_u, _v) {
+            y_E(_Fns_2A_4D)(_u, _v)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_2A_4D)(_u, _v), 2)
+                    +
+                    pow(y_E(_Fns_2A_4D)(_u, _v), 2)
+                    +
+                    pow(z_E(_Fns_2A_4D)(_u, _v), 2)
+                    +
+                    pow(t_E(_Fns_2A_4D)(_u, _v), 2)
+                )
+            )
+        },
+        function(_u, _v) {
+            z_E(_Fns_2A_4D)(_u, _v)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_2A_4D)(_u, _v), 2)
+                    +
+                    pow(y_E(_Fns_2A_4D)(_u, _v), 2)
+                    +
+                    pow(z_E(_Fns_2A_4D)(_u, _v), 2)
+                    +
+                    pow(t_E(_Fns_2A_4D)(_u, _v), 2)
+                )
+            )
+        },
+        function(_u, _v) {
+            t_E(_Fns_2A_4D)(_u, _v)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_2A_4D)(_u, _v), 2)
+                    +
+                    pow(y_E(_Fns_2A_4D)(_u, _v), 2)
+                    +
+                    pow(z_E(_Fns_2A_4D)(_u, _v), 2)
+                    +
+                    pow(t_E(_Fns_2A_4D)(_u, _v), 2)
+                )
+            )
+        }
+    )
+
+#end // macro NormalizedFunctions_2A_4D
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro NormalizedFunctions_3A_2D(_Fns_3A_2D)
+
+    #local M = dimensions(_Fns_3A_2D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_Fns_3A_2D, 1);
+    #if (D != 2)
+        #error "D is not 2"
+    #end // if
+
+    Arr_2E(
+        function(_u, _v, _w) {
+            x_E(_Fns_3A_2D)(_u, _v, _w)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_3A_2D)(_u, _v, _w),
+                    y_E(_Fns_3A_2D)(_u, _v, _w),
+                    0
+                )
+            )
+        },
+        function(_u, _v, _w) {
+            y_E(_Fns_3A_2D)(_u, _v, _w)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_3A_2D)(_u, _v, _w),
+                    y_E(_Fns_3A_2D)(_u, _v, _w),
+                    0
+                )
+            )
+        }
+    )
+
+#end // macro NormalizedFunctions_3A_2D
+
+
+#macro NormalizedFunctions_3A_3D(_Fns_3A_3D)
+
+    #local M = dimensions(_Fns_3A_3D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_Fns_3A_3D, 1);
+    #if (D != 3)
+        #error "D is not 3"
+    #end // if
+
+    Arr_3E(
+        function(_u, _v, _w) {
+            x_E(_Fns_3A_3D)(_u, _v, _w)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_3A_3D)(_u, _v, _w),
+                    y_E(_Fns_3A_3D)(_u, _v, _w),
+                    z_E(_Fns_3A_3D)(_u, _v, _w)
+                )
+            )
+        },
+        function(_u, _v, _w) {
+            y_E(_Fns_3A_3D)(_u, _v, _w)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_3A_3D)(_u, _v, _w),
+                    y_E(_Fns_3A_3D)(_u, _v, _w),
+                    z_E(_Fns_3A_3D)(_u, _v, _w)
+                )
+            )
+        },
+        function(_u, _v, _w) {
+            z_E(_Fns_3A_3D)(_u, _v, _w)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_3A_3D)(_u, _v, _w),
+                    y_E(_Fns_3A_3D)(_u, _v, _w),
+                    z_E(_Fns_3A_3D)(_u, _v, _w)
+                )
+            )
+        }
+    )
+
+#end // macro NormalizedFunctions_3A_3D
+
+
+#macro NormalizedFunctions_3A_4D(_Fns_3A_4D)
+
+    #local M = dimensions(_Fns_3A_4D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_Fns_3A_4D, 1);
+    #if (D != 4)
+        #error "D is not 4"
+    #end // if
+
+    Arr_4E(
+        function(_u, _v, _w) {
+            x_E(_Fns_3A_4D)(_u, _v, _w)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                    +
+                    pow(y_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                    +
+                    pow(z_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                    +
+                    pow(t_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                )
+            )
+        },
+        function(_u, _v, _w) {
+            y_E(_Fns_3A_4D)(_u, _v, _w)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                    +
+                    pow(y_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                    +
+                    pow(z_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                    +
+                    pow(t_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                )
+            )
+        },
+        function(_u, _v, _w) {
+            z_E(_Fns_3A_4D)(_u, _v, _w)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                    +
+                    pow(y_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                    +
+                    pow(z_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                    +
+                    pow(t_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                )
+            )
+        },
+        function(_u, _v, _w) {
+            t_E(_Fns_3A_4D)(_u, _v, _w)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                    +
+                    pow(y_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                    +
+                    pow(z_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                    +
+                    pow(t_E(_Fns_3A_4D)(_u, _v, _w), 2)
+                )
+            )
+        }
+    )
+
+#end // macro NormalizedFunctions_3A_4D
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro NormalizedFunctions_4A_2D(_Fns_4A_2D)
+
+    #local M = dimensions(_Fns_4A_2D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_Fns_4A_2D, 1);
+    #if (D != 2)
+        #error "D is not 2"
+    #end // if
+
+    Arr_2E(
+        function(_u, _v, _w, _s) {
+            x_E(_Fns_4A_2D)(_u, _v, _w, _s)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_4A_2D)(_u, _v, _w, _s),
+                    y_E(_Fns_4A_2D)(_u, _v, _w, _s),
+                    0
+                )
+            )
+        },
+        function(_u, _v, _w, _s) {
+            y_E(_Fns_4A_2D)(_u, _v, _w, _s)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_4A_2D)(_u, _v, _w, _s),
+                    y_E(_Fns_4A_2D)(_u, _v, _w, _s),
+                    0
+                )
+            )
+        }
+    )
+
+#end // macro NormalizedFunctions_4A_2D
+
+
+#macro NormalizedFunctions_4A_3D(_Fns_4A_3D)
+
+    #local M = dimensions(_Fns_4A_3D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_Fns_4A_3D, 1);
+    #if (D != 3)
+        #error "D is not 3"
+    #end // if
+
+    Arr_3E(
+        function(_u, _v, _w, _s) {
+            x_E(_Fns_4A_3D)(_u, _v, _w, _s)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_4A_3D)(_u, _v, _w, _s),
+                    y_E(_Fns_4A_3D)(_u, _v, _w, _s),
+                    z_E(_Fns_4A_3D)(_u, _v, _w, _s)
+                )
+            )
+        },
+        function(_u, _v, _w, _s) {
+            y_E(_Fns_4A_3D)(_u, _v, _w, _s)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_4A_3D)(_u, _v, _w, _s),
+                    y_E(_Fns_4A_3D)(_u, _v, _w, _s),
+                    z_E(_Fns_4A_3D)(_u, _v, _w, _s)
+                )
+            )
+        },
+        function(_u, _v, _w, _s) {
+            z_E(_Fns_4A_3D)(_u, _v, _w, _s)
+            /
+            max(
+                Nil,
+                f_r(
+                    x_E(_Fns_4A_3D)(_u, _v, _w, _s),
+                    y_E(_Fns_4A_3D)(_u, _v, _w, _s),
+                    z_E(_Fns_4A_3D)(_u, _v, _w, _s)
+                )
+            )
+        }
+    )
+
+#end // macro NormalizedFunctions_4A_3D
+
+
+#macro NormalizedFunctions_4A_4D(_Fns_4A_4D)
+
+    #local M = dimensions(_Fns_4A_4D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_Fns_4A_4D, 1);
+    #if (D != 4)
+        #error "D is not 4"
+    #end // if
+
+    Arr_4E(
+        function(_u, _v, _w, _s) {
+            x_E(_Fns_4A_4D)(_u, _v, _w, _s)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                    +
+                    pow(y_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                    +
+                    pow(z_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                    +
+                    pow(t_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                )
+            )
+        },
+        function(_u, _v, _w, _s) {
+            y_E(_Fns_4A_4D)(_u, _v, _w, _s)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                    +
+                    pow(y_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                    +
+                    pow(z_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                    +
+                    pow(t_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                )
+            )
+        },
+        function(_u, _v, _w, _s) {
+            z_E(_Fns_4A_4D)(_u, _v, _w, _s)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                    +
+                    pow(y_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                    +
+                    pow(z_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                    +
+                    pow(t_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                )
+            )
+        },
+        function(_u, _v, _w, _s) {
+            t_E(_Fns_4A_4D)(_u, _v, _w, _s)
+            /
+            max(
+                Nil,
+                sqrt(
+                    pow(x_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                    +
+                    pow(y_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                    +
+                    pow(z_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                    +
+                    pow(t_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
+                )
+            )
+        }
+    )
+
+#end // macro NormalizedFunctions_4A_4D
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
 #macro Der1_RationalFunction_1A(_NumFn_1A, _DenFn_1A, _D1NumFn_1A, _D1DenFn_1A)
 
     function(_u) {
