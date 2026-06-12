@@ -75,6 +75,30 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
+#declare DotFn =
+    function(_x0, _y0, _z0, _x1, _y1, _z1) {
+        _x0*_x1 + _y0*_y1 + _z0*_z1
+    }
+;
+
+#declare CrossFnX =
+    function(_x0, _y0, _z0, _x1, _y1, _z1) {
+        _y0*_z1 - _z0*_y1
+    }
+;
+#declare CrossFnY =
+    function(_x0, _y0, _z0, _x1, _y1, _z1) {
+        _z0*_x1 - _x0*_z1
+    }
+;
+#declare CrossFnZ =
+    function(_x0, _y0, _z0, _x1, _y1, _z1) {
+        _x0*_y1 - _y0*_x1
+    }
+;
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
 #macro DivideFunctions_1A(_Num_Function_1A, _Den_Function_1A)
 
     function(_u) {
