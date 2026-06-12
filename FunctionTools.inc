@@ -118,7 +118,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro _LengthFunction_1A_1D(_Fns_1A_1D)
+#macro LengthFunction_1A_1D(_Fns_1A_1D)
 
     #if (dimensions(_Fns_1A_1D) != 1)
         #error "Is not 1"
@@ -134,10 +134,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_1A_1D
+#end // LengthFunction_1A_1D
 
 
-#macro _LengthFunction_1A_2D(_Fns_1A_2D)
+#macro LengthFunction_1A_2D(_Fns_1A_2D)
 
     #if (dimensions(_Fns_1A_2D) != 1)
         #error "Is not 1"
@@ -155,10 +155,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_1A_2D
+#end // LengthFunction_1A_2D
 
 
-#macro _LengthFunction_1A_3D(_Fns_1A_3D)
+#macro LengthFunction_1A_3D(_Fns_1A_3D)
 
     #if (dimensions(_Fns_1A_3D) != 1)
         #error "Is not 1"
@@ -176,10 +176,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_1A_3D
+#end // LengthFunction_1A_3D
 
 
-#macro _LengthFunction_1A_4D(_Fns_1A_4D)
+#macro LengthFunction_1A_4D(_Fns_1A_4D)
 
     #if (dimensions(_Fns_1A_4D) != 1)
         #error "Is not 1"
@@ -201,7 +201,7 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_1A_4D
+#end // LengthFunction_1A_4D
 
 
 #macro LengthFunction_1A(_Fns_1A)
@@ -216,22 +216,22 @@ which can be found in the LICENSE file.
 
     #switch (D)
         #case (1)
-            _LengthFunction_1A_1D(
+            LengthFunction_1A_1D(
                 _Fns_1A
             )
             #break
         #case (2)
-            _LengthFunction_1A_2D(
+            LengthFunction_1A_2D(
                 _Fns_1A
             )
             #break
         #case (3)
-            _LengthFunction_1A_3D(
+            LengthFunction_1A_3D(
                 _Fns_1A
             )
             #break
         #case (4)
-            _LengthFunction_1A_4D(
+            LengthFunction_1A_4D(
                 _Fns_1A
             )
             #break
@@ -243,7 +243,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro _LengthFunction_2A_1D(_Fns_2A_1D)
+#macro LengthFunction_2A_1D(_Fns_2A_1D)
 
     #if (dimensions(_Fns_2A_1D) != 1)
         #error "Is not 1"
@@ -259,10 +259,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_2A_1D
+#end // LengthFunction_2A_1D
 
 
-#macro _LengthFunction_2A_2D(_Fns_2A_2D)
+#macro LengthFunction_2A_2D(_Fns_2A_2D)
 
     #if (dimensions(_Fns_2A_2D) != 1)
         #error "Is not 1"
@@ -280,10 +280,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_2A_2D
+#end // LengthFunction_2A_2D
 
 
-#macro _LengthFunction_2A_3D(_Fns_2A_3D)
+#macro LengthFunction_2A_3D(_Fns_2A_3D)
 
     #if (dimensions(_Fns_2A_3D) != 1)
         #error "Is not 1"
@@ -301,10 +301,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_2A_3D
+#end // LengthFunction_2A_3D
 
 
-#macro _LengthFunction_2A_4D(_Fns_2A_4D)
+#macro LengthFunction_2A_4D(_Fns_2A_4D)
 
     #if (dimensions(_Fns_2A_4D) != 1)
         #error "Is not 1"
@@ -326,7 +326,7 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_2A_4D
+#end // LengthFunction_2A_4D
 
 
 #macro LengthFunction_2A(_Fns_2A)
@@ -341,22 +341,22 @@ which can be found in the LICENSE file.
 
     #switch (D)
         #case (1)
-            _LengthFunction_2A_1D(
+            LengthFunction_2A_1D(
                 _Fns_2A
             )
             #break
         #case (2)
-            _LengthFunction_2A_2D(
+            LengthFunction_2A_2D(
                 _Fns_2A
             )
             #break
         #case (3)
-            _LengthFunction_2A_3D(
+            LengthFunction_2A_3D(
                 _Fns_2A
             )
             #break
         #case (4)
-            _LengthFunction_2A_4D(
+            LengthFunction_2A_4D(
                 _Fns_2A
             )
             #break
@@ -368,7 +368,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro _LengthFunction_3A_1D(_Fns_3A_1D)
+#macro LengthFunction_3A_1D(_Fns_3A_1D)
 
     #if (dimensions(_Fns_3A_1D) != 1)
         #error "Is not 1"
@@ -384,10 +384,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_3A_1D
+#end // LengthFunction_3A_1D
 
 
-#macro _LengthFunction_3A_2D(_Fns_3A_2D)
+#macro LengthFunction_3A_2D(_Fns_3A_2D)
 
     #if (dimensions(_Fns_3A_2D) != 1)
         #error "Is not 1"
@@ -405,10 +405,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_3A_2D
+#end // LengthFunction_3A_2D
 
 
-#macro _LengthFunction_3A_3D(_Fns_3A_3D)
+#macro LengthFunction_3A_3D(_Fns_3A_3D)
 
     #if (dimensions(_Fns_3A_3D) != 1)
         #error "Is not 1"
@@ -426,10 +426,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_3A_3D
+#end // LengthFunction_3A_3D
 
 
-#macro _LengthFunction_3A_4D(_Fns_3A_4D)
+#macro LengthFunction_3A_4D(_Fns_3A_4D)
 
     #if (dimensions(_Fns_3A_4D) != 1)
         #error "Is not 1"
@@ -451,7 +451,7 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_3A_4D
+#end // LengthFunction_3A_4D
 
 
 #macro LengthFunction_3A(_Fns_3A)
@@ -466,22 +466,22 @@ which can be found in the LICENSE file.
 
     #switch (D)
         #case (1)
-            _LengthFunction_3A_1D(
+            LengthFunction_3A_1D(
                 _Fns_3A
             )
             #break
         #case (2)
-            _LengthFunction_3A_2D(
+            LengthFunction_3A_2D(
                 _Fns_3A
             )
             #break
         #case (3)
-            _LengthFunction_3A_3D(
+            LengthFunction_3A_3D(
                 _Fns_3A
             )
             #break
         #case (4)
-            _LengthFunction_3A_4D(
+            LengthFunction_3A_4D(
                 _Fns_3A
             )
             #break
@@ -493,7 +493,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro _LengthFunction_4A_1D(_Fns_4A_1D)
+#macro LengthFunction_4A_1D(_Fns_4A_1D)
 
     #if (dimensions(_Fns_4A_1D) != 1)
         #error "Is not 1"
@@ -509,10 +509,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_4A_1D
+#end // LengthFunction_4A_1D
 
 
-#macro _LengthFunction_4A_2D(_Fns_4A_2D)
+#macro LengthFunction_4A_2D(_Fns_4A_2D)
 
     #if (dimensions(_Fns_4A_2D) != 1)
         #error "Is not 1"
@@ -530,10 +530,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_4A_2D
+#end // LengthFunction_4A_2D
 
 
-#macro _LengthFunction_4A_3D(_Fns_4A_3D)
+#macro LengthFunction_4A_3D(_Fns_4A_3D)
 
     #if (dimensions(_Fns_4A_3D) != 1)
         #error "Is not 1"
@@ -551,10 +551,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_4A_3D
+#end // LengthFunction_4A_3D
 
 
-#macro _LengthFunction_4A_4D(_Fns_4A_4D)
+#macro LengthFunction_4A_4D(_Fns_4A_4D)
 
     #if (dimensions(_Fns_4A_4D) != 1)
         #error "Is not 1"
@@ -576,7 +576,7 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // _LengthFunction_4A_4D
+#end // LengthFunction_4A_4D
 
 
 #macro LengthFunction_4A(_Fns_4A)
@@ -591,22 +591,22 @@ which can be found in the LICENSE file.
 
     #switch (D)
         #case (1)
-            _LengthFunction_4A_1D(
+            LengthFunction_4A_1D(
                 _Fns_4A
             )
             #break
         #case (2)
-            _LengthFunction_4A_2D(
+            LengthFunction_4A_2D(
                 _Fns_4A
             )
             #break
         #case (3)
-            _LengthFunction_4A_3D(
+            LengthFunction_4A_3D(
                 _Fns_4A
             )
             #break
         #case (4)
-            _LengthFunction_4A_4D(
+            LengthFunction_4A_4D(
                 _Fns_4A
             )
             #break
