@@ -13,6 +13,8 @@ which can be found in the LICENSE file.
 
 #version 3.7;
 
+#declare NIL = 1e-12; // Used to prevent division by zero in functions made by some macros 
+
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
 #macro u_E(Array)
@@ -1195,7 +1197,7 @@ which can be found in the LICENSE file.
             x_E(_Fns_1A_2D)(_u)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_1A_2D)(_u),
                     y_E(_Fns_1A_2D)(_u),
@@ -1207,7 +1209,7 @@ which can be found in the LICENSE file.
             y_E(_Fns_1A_2D)(_u)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_1A_2D)(_u),
                     y_E(_Fns_1A_2D)(_u),
@@ -1236,7 +1238,7 @@ which can be found in the LICENSE file.
             x_E(_Fns_1A_3D)(_u)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_1A_3D)(_u),
                     y_E(_Fns_1A_3D)(_u),
@@ -1248,7 +1250,7 @@ which can be found in the LICENSE file.
             y_E(_Fns_1A_3D)(_u)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_1A_3D)(_u),
                     y_E(_Fns_1A_3D)(_u),
@@ -1260,7 +1262,7 @@ which can be found in the LICENSE file.
             z_E(_Fns_1A_3D)(_u)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_1A_3D)(_u),
                     y_E(_Fns_1A_3D)(_u),
@@ -1289,7 +1291,7 @@ which can be found in the LICENSE file.
             x_E(_Fns_1A_4D)(_u)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_1A_4D)(_u), 2)
                     +
@@ -1305,7 +1307,7 @@ which can be found in the LICENSE file.
             y_E(_Fns_1A_4D)(_u)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_1A_4D)(_u), 2)
                     +
@@ -1321,7 +1323,7 @@ which can be found in the LICENSE file.
             z_E(_Fns_1A_4D)(_u)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_1A_4D)(_u), 2)
                     +
@@ -1337,7 +1339,7 @@ which can be found in the LICENSE file.
             t_E(_Fns_1A_4D)(_u)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_1A_4D)(_u), 2)
                     +
@@ -1371,7 +1373,7 @@ which can be found in the LICENSE file.
             x_E(_Fns_2A_2D)(_u, _v)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_2A_2D)(_u, _v),
                     y_E(_Fns_2A_2D)(_u, _v),
@@ -1383,7 +1385,7 @@ which can be found in the LICENSE file.
             y_E(_Fns_2A_2D)(_u, _v)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_2A_2D)(_u, _v),
                     y_E(_Fns_2A_2D)(_u, _v),
@@ -1412,7 +1414,7 @@ which can be found in the LICENSE file.
             x_E(_Fns_2A_3D)(_u, _v)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_2A_3D)(_u, _v),
                     y_E(_Fns_2A_3D)(_u, _v),
@@ -1424,7 +1426,7 @@ which can be found in the LICENSE file.
             y_E(_Fns_2A_3D)(_u, _v)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_2A_3D)(_u, _v),
                     y_E(_Fns_2A_3D)(_u, _v),
@@ -1436,7 +1438,7 @@ which can be found in the LICENSE file.
             z_E(_Fns_2A_3D)(_u, _v)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_2A_3D)(_u, _v),
                     y_E(_Fns_2A_3D)(_u, _v),
@@ -1465,7 +1467,7 @@ which can be found in the LICENSE file.
             x_E(_Fns_2A_4D)(_u, _v)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_2A_4D)(_u, _v), 2)
                     +
@@ -1481,7 +1483,7 @@ which can be found in the LICENSE file.
             y_E(_Fns_2A_4D)(_u, _v)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_2A_4D)(_u, _v), 2)
                     +
@@ -1497,7 +1499,7 @@ which can be found in the LICENSE file.
             z_E(_Fns_2A_4D)(_u, _v)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_2A_4D)(_u, _v), 2)
                     +
@@ -1513,7 +1515,7 @@ which can be found in the LICENSE file.
             t_E(_Fns_2A_4D)(_u, _v)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_2A_4D)(_u, _v), 2)
                     +
@@ -1547,7 +1549,7 @@ which can be found in the LICENSE file.
             x_E(_Fns_3A_2D)(_u, _v, _w)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_3A_2D)(_u, _v, _w),
                     y_E(_Fns_3A_2D)(_u, _v, _w),
@@ -1559,7 +1561,7 @@ which can be found in the LICENSE file.
             y_E(_Fns_3A_2D)(_u, _v, _w)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_3A_2D)(_u, _v, _w),
                     y_E(_Fns_3A_2D)(_u, _v, _w),
@@ -1588,7 +1590,7 @@ which can be found in the LICENSE file.
             x_E(_Fns_3A_3D)(_u, _v, _w)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_3A_3D)(_u, _v, _w),
                     y_E(_Fns_3A_3D)(_u, _v, _w),
@@ -1600,7 +1602,7 @@ which can be found in the LICENSE file.
             y_E(_Fns_3A_3D)(_u, _v, _w)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_3A_3D)(_u, _v, _w),
                     y_E(_Fns_3A_3D)(_u, _v, _w),
@@ -1612,7 +1614,7 @@ which can be found in the LICENSE file.
             z_E(_Fns_3A_3D)(_u, _v, _w)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_3A_3D)(_u, _v, _w),
                     y_E(_Fns_3A_3D)(_u, _v, _w),
@@ -1641,7 +1643,7 @@ which can be found in the LICENSE file.
             x_E(_Fns_3A_4D)(_u, _v, _w)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_3A_4D)(_u, _v, _w), 2)
                     +
@@ -1657,7 +1659,7 @@ which can be found in the LICENSE file.
             y_E(_Fns_3A_4D)(_u, _v, _w)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_3A_4D)(_u, _v, _w), 2)
                     +
@@ -1673,7 +1675,7 @@ which can be found in the LICENSE file.
             z_E(_Fns_3A_4D)(_u, _v, _w)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_3A_4D)(_u, _v, _w), 2)
                     +
@@ -1689,7 +1691,7 @@ which can be found in the LICENSE file.
             t_E(_Fns_3A_4D)(_u, _v, _w)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_3A_4D)(_u, _v, _w), 2)
                     +
@@ -1723,7 +1725,7 @@ which can be found in the LICENSE file.
             x_E(_Fns_4A_2D)(_u, _v, _w, _s)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_4A_2D)(_u, _v, _w, _s),
                     y_E(_Fns_4A_2D)(_u, _v, _w, _s),
@@ -1735,7 +1737,7 @@ which can be found in the LICENSE file.
             y_E(_Fns_4A_2D)(_u, _v, _w, _s)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_4A_2D)(_u, _v, _w, _s),
                     y_E(_Fns_4A_2D)(_u, _v, _w, _s),
@@ -1764,7 +1766,7 @@ which can be found in the LICENSE file.
             x_E(_Fns_4A_3D)(_u, _v, _w, _s)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_4A_3D)(_u, _v, _w, _s),
                     y_E(_Fns_4A_3D)(_u, _v, _w, _s),
@@ -1776,7 +1778,7 @@ which can be found in the LICENSE file.
             y_E(_Fns_4A_3D)(_u, _v, _w, _s)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_4A_3D)(_u, _v, _w, _s),
                     y_E(_Fns_4A_3D)(_u, _v, _w, _s),
@@ -1788,7 +1790,7 @@ which can be found in the LICENSE file.
             z_E(_Fns_4A_3D)(_u, _v, _w, _s)
             /
             max(
-                Nil,
+                NIL,
                 f_r(
                     x_E(_Fns_4A_3D)(_u, _v, _w, _s),
                     y_E(_Fns_4A_3D)(_u, _v, _w, _s),
@@ -1817,7 +1819,7 @@ which can be found in the LICENSE file.
             x_E(_Fns_4A_4D)(_u, _v, _w, _s)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
                     +
@@ -1833,7 +1835,7 @@ which can be found in the LICENSE file.
             y_E(_Fns_4A_4D)(_u, _v, _w, _s)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
                     +
@@ -1849,7 +1851,7 @@ which can be found in the LICENSE file.
             z_E(_Fns_4A_4D)(_u, _v, _w, _s)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
                     +
@@ -1865,7 +1867,7 @@ which can be found in the LICENSE file.
             t_E(_Fns_4A_4D)(_u, _v, _w, _s)
             /
             max(
-                Nil,
+                NIL,
                 sqrt(
                     pow(x_E(_Fns_4A_4D)(_u, _v, _w, _s), 2)
                     +
