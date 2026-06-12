@@ -120,8 +120,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_1A_1D(_Fns_1A_1D)
 
-    #if (dimensions(_Fns_1A_1D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_1A_1D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_1A_1D, 1);
     #if (D != 1)
@@ -139,8 +140,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_1A_2D(_Fns_1A_2D)
 
-    #if (dimensions(_Fns_1A_2D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_1A_2D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_1A_2D, 1);
     #if (D != 2)
@@ -160,8 +162,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_1A_3D(_Fns_1A_3D)
 
-    #if (dimensions(_Fns_1A_3D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_1A_3D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_1A_3D, 1);
     #if (D != 3)
@@ -181,8 +184,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_1A_4D(_Fns_1A_4D)
 
-    #if (dimensions(_Fns_1A_4D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_1A_4D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_1A_4D, 1);
     #if (D != 4)
@@ -206,8 +210,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_1A(_Fns_1A)
 
-    #if (dimensions(_Fns_1A) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_1A);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_1A, 1);
     #if (!((D = 1) | (D = 2) | (D = 3) | (D = 4)))
@@ -245,8 +250,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_2A_1D(_Fns_2A_1D)
 
-    #if (dimensions(_Fns_2A_1D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_2A_1D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_2A_1D, 1);
     #if (D != 1)
@@ -264,8 +270,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_2A_2D(_Fns_2A_2D)
 
-    #if (dimensions(_Fns_2A_2D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_2A_2D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_2A_2D, 1);
     #if (D != 2)
@@ -285,8 +292,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_2A_3D(_Fns_2A_3D)
 
-    #if (dimensions(_Fns_2A_3D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_2A_3D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_2A_3D, 1);
     #if (D != 3)
@@ -306,8 +314,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_2A_4D(_Fns_2A_4D)
 
-    #if (dimensions(_Fns_2A_4D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_2A_4D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_2A_4D, 1);
     #if (D != 4)
@@ -331,8 +340,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_2A(_Fns_2A)
 
-    #if (dimensions(_Fns_2A) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_2A);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_2A, 1);
     #if (!((D = 1) | (D = 2) | (D = 3) | (D = 4)))
@@ -370,8 +380,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_3A_1D(_Fns_3A_1D)
 
-    #if (dimensions(_Fns_3A_1D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_3A_1D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_3A_1D, 1);
     #if (D != 1)
@@ -389,8 +400,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_3A_2D(_Fns_3A_2D)
 
-    #if (dimensions(_Fns_3A_2D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_3A_2D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_3A_2D, 1);
     #if (D != 2)
@@ -410,8 +422,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_3A_3D(_Fns_3A_3D)
 
-    #if (dimensions(_Fns_3A_3D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_3A_3D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_3A_3D, 1);
     #if (D != 3)
@@ -431,8 +444,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_3A_4D(_Fns_3A_4D)
 
-    #if (dimensions(_Fns_3A_4D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_3A_4D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_3A_4D, 1);
     #if (D != 4)
@@ -456,8 +470,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_3A(_Fns_3A)
 
-    #if (dimensions(_Fns_3A) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_3A);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_3A, 1);
     #if (!((D = 1) | (D = 2) | (D = 3) | (D = 4)))
@@ -495,8 +510,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_4A_1D(_Fns_4A_1D)
 
-    #if (dimensions(_Fns_4A_1D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_4A_1D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_4A_1D, 1);
     #if (D != 1)
@@ -514,8 +530,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_4A_2D(_Fns_4A_2D)
 
-    #if (dimensions(_Fns_4A_2D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_4A_2D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_4A_2D, 1);
     #if (D != 2)
@@ -535,8 +552,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_4A_3D(_Fns_4A_3D)
 
-    #if (dimensions(_Fns_4A_3D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_4A_3D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_4A_3D, 1);
     #if (D != 3)
@@ -556,8 +574,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_4A_4D(_Fns_4A_4D)
 
-    #if (dimensions(_Fns_4A_4D) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_4A_4D);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_4A_4D, 1);
     #if (D != 4)
@@ -581,8 +600,9 @@ which can be found in the LICENSE file.
 
 #macro LengthFunction_4A(_Fns_4A)
 
-    #if (dimensions(_Fns_4A) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_Fns_4A);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_4A, 1);
     #if (!((D = 1) | (D = 2) | (D = 3) | (D = 4)))
