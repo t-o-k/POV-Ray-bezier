@@ -603,9 +603,9 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro WeightedFunction_1A(_U_Fns_1A1N, Weights_1N)
+#macro WeightedFunction_1A(_U_Fns_1A_1N, Weights_1N)
 
-    #if (dimensions(_U_Fns_1A1N) != 1)
+    #if (dimensions(_U_Fns_1A_1N) != 1)
         #error "Is not 1"
     #end // if
     #local N = dimensions(Weights_1N);
@@ -613,7 +613,7 @@ which can be found in the LICENSE file.
         #error "N is not 1"
     #end // if
     #local SizeI = dimension_size(Weights_1N, 1);
-    #if (dimension_size(_U_Fns_1A1N, 1) != SizeI)
+    #if (dimension_size(_U_Fns_1A_1N, 1) != SizeI)
         #error "Is not equal to SizeI"
     #end // if
     #local LastI = SizeI - 1;
@@ -626,13 +626,13 @@ which can be found in the LICENSE file.
                 #case (0.0)
                     #break
                 #case (-1.0)
-                    - _U_Fns_1A1N[I](_u)
+                    - _U_Fns_1A_1N[I](_u)
                     #break
                 #case (+1.0)
-                    + _U_Fns_1A1N[I](_u)
+                    + _U_Fns_1A_1N[I](_u)
                     #break
                 #else
-                    + Q*_U_Fns_1A1N[I](_u)
+                    + Q*_U_Fns_1A_1N[I](_u)
             #end // switch
         #end // for
     }
@@ -640,12 +640,12 @@ which can be found in the LICENSE file.
 #end // macro WeightedFunction_1A
 
 
-#macro WeightedFunction_2A(_U_Fns_1A1N, _V_Fns_1A1N, Weights_2N)
+#macro WeightedFunction_2A(_U_Fns_1A_1N, _V_Fns_1A_1N, Weights_2N)
 
-    #if (dimensions(_U_Fns_1A1N) != 1)
+    #if (dimensions(_U_Fns_1A_1N) != 1)
         #error "Is not 1"
     #end // if
-    #if (dimensions(_V_Fns_1A1N) != 1)
+    #if (dimensions(_V_Fns_1A_1N) != 1)
         #error "Is not 1"
     #end // if
     #local N = dimensions(Weights_2N);
@@ -654,10 +654,10 @@ which can be found in the LICENSE file.
     #end // if
     #local SizeI = dimension_size(Weights_2N, 1);
     #local SizeJ = dimension_size(Weights_2N, 2);
-    #if (dimension_size(_U_Fns_1A1N, 1) != SizeI)
+    #if (dimension_size(_U_Fns_1A_1N, 1) != SizeI)
         #error "Is not equal to SizeI"
     #end // if
-    #if (dimension_size(_V_Fns_1A1N, 1) != SizeJ)
+    #if (dimension_size(_V_Fns_1A_1N, 1) != SizeJ)
         #error "Is not equal to SizeJ"
     #end // if
     #local LastI = SizeI - 1;
@@ -666,7 +666,7 @@ which can be found in the LICENSE file.
     function(_u, _v) {
         0.0
         #for (J, 0, LastJ)
-            + _V_Fns_1A1N[J](_v)*
+            + _V_Fns_1A_1N[J](_v)*
             (
                 0.0
                 #for (I, 0, LastI)
@@ -675,13 +675,13 @@ which can be found in the LICENSE file.
                         #case (0.0)
                             #break
                         #case (-1.0)
-                            - _U_Fns_1A1N[I](_u)
+                            - _U_Fns_1A_1N[I](_u)
                             #break
                         #case (+1.0)
-                            + _U_Fns_1A1N[I](_u)
+                            + _U_Fns_1A_1N[I](_u)
                             #break
                         #else
-                            + Q*_U_Fns_1A1N[I](_u)
+                            + Q*_U_Fns_1A_1N[I](_u)
                     #end // switch
                 #end // for
             )
@@ -691,15 +691,15 @@ which can be found in the LICENSE file.
 #end // macro WeightedFunction_2A
 
 
-#macro WeightedFunction_3A(_U_Fns_1A1N, _V_Fns_1A1N, _W_Fns_1A1N, Weights_3N)
+#macro WeightedFunction_3A(_U_Fns_1A_1N, _V_Fns_1A_1N, _W_Fns_1A_1N, Weights_3N)
 
-    #if (dimensions(_U_Fns_1A1N) != 1)
+    #if (dimensions(_U_Fns_1A_1N) != 1)
         #error "Is not 1"
     #end // if
-    #if (dimensions(_V_Fns_1A1N) != 1)
+    #if (dimensions(_V_Fns_1A_1N) != 1)
         #error "Is not 1"
     #end // if
-    #if (dimensions(_W_Fns_1A1N) != 1)
+    #if (dimensions(_W_Fns_1A_1N) != 1)
         #error "Is not 1"
     #end // if
     #local N = dimensions(Weights_3N);
@@ -709,13 +709,13 @@ which can be found in the LICENSE file.
     #local SizeI = dimension_size(Weights_3N, 1);
     #local SizeJ = dimension_size(Weights_3N, 2);
     #local SizeK = dimension_size(Weights_3N, 3);
-    #if (dimension_size(_U_Fns_1A1N, 1) != SizeI)
+    #if (dimension_size(_U_Fns_1A_1N, 1) != SizeI)
         #error "Is not equal to SizeI"
     #end // if
-    #if (dimension_size(_V_Fns_1A1N, 1) != SizeJ)
+    #if (dimension_size(_V_Fns_1A_1N, 1) != SizeJ)
         #error "Is not equal to SizeJ"
     #end // if
-    #if (dimension_size(_W_Fns_1A1N, 1) != SizeK)
+    #if (dimension_size(_W_Fns_1A_1N, 1) != SizeK)
         #error "Is not equal to SizeK"
     #end // if
     #local LastI = SizeI - 1;
@@ -725,11 +725,11 @@ which can be found in the LICENSE file.
     function(_u, _v, _w) {
         0.0
         #for (K, 0, LastK)
-            + _W_Fns_1A1N[K](_w)*
+            + _W_Fns_1A_1N[K](_w)*
             (
                 0.0
                 #for (J, 0, LastJ)
-                    + _V_Fns_1A1N[J](_v)*
+                    + _V_Fns_1A_1N[J](_v)*
                     (
                         0.0
                         #for (I, 0, LastI)
@@ -738,13 +738,13 @@ which can be found in the LICENSE file.
                                 #case (0.0)
                                     #break
                                 #case (-1.0)
-                                    - _U_Fns_1A1N[I](_u)
+                                    - _U_Fns_1A_1N[I](_u)
                                     #break
                                 #case (+1.0)
-                                    + _U_Fns_1A1N[I](_u)
+                                    + _U_Fns_1A_1N[I](_u)
                                     #break
                                 #else
-                                    + Q*_U_Fns_1A1N[I](_u)
+                                    + Q*_U_Fns_1A_1N[I](_u)
                             #end // switch
                         #end // for
                     )
@@ -756,18 +756,18 @@ which can be found in the LICENSE file.
 #end // macro WeightedFunction_3A
 
 
-#macro WeightedFunction_4A(_U_Fns_1A1N, _V_Fns_1A1N, _W_Fns_1A1N, _S_Fns_1A1N, Weights_4N)
+#macro WeightedFunction_4A(_U_Fns_1A_1N, _V_Fns_1A_1N, _W_Fns_1A_1N, _S_Fns_1A_1N, Weights_4N)
 
-    #if (dimensions(_U_Fns_1A1N) != 1)
+    #if (dimensions(_U_Fns_1A_1N) != 1)
         #error "Is not 1"
     #end // if
-    #if (dimensions(_V_Fns_1A1N) != 1)
+    #if (dimensions(_V_Fns_1A_1N) != 1)
         #error "Is not 1"
     #end // if
-    #if (dimensions(_W_Fns_1A1N) != 1)
+    #if (dimensions(_W_Fns_1A_1N) != 1)
         #error "Is not 1"
     #end // if
-    #if (dimensions(_S_Fns_1A1N) != 1)
+    #if (dimensions(_S_Fns_1A_1N) != 1)
         #error "Is not 1"
     #end // if
     #local N = dimensions(Weights_4N);
@@ -778,16 +778,16 @@ which can be found in the LICENSE file.
     #local SizeJ = dimension_size(Weights_4N, 2);
     #local SizeK = dimension_size(Weights_4N, 3);
     #local SizeL = dimension_size(Weights_4N, 4);
-    #if (dimension_size(_U_Fns_1A1N, 1) != SizeI)
+    #if (dimension_size(_U_Fns_1A_1N, 1) != SizeI)
         #error "Is not equal to SizeI"
     #end // if
-    #if (dimension_size(_V_Fns_1A1N, 1) != SizeJ)
+    #if (dimension_size(_V_Fns_1A_1N, 1) != SizeJ)
         #error "Is not equal to SizeJ"
     #end // if
-    #if (dimension_size(_W_Fns_1A1N, 1) != SizeK)
+    #if (dimension_size(_W_Fns_1A_1N, 1) != SizeK)
         #error "Is not equal to SizeK"
     #end // if
-    #if (dimension_size(_S_Fns_1A1N, 1) != SizeL)
+    #if (dimension_size(_S_Fns_1A_1N, 1) != SizeL)
         #error "Is not equal to SizeL"
     #end // if
     #local LastI = SizeI - 1;
@@ -798,15 +798,15 @@ which can be found in the LICENSE file.
     function(_u, _v, _w, _s) {
         0.0
         #for (L, 0, LastL)
-            + _S_Fns_1A1N[L](_s)*
+            + _S_Fns_1A_1N[L](_s)*
             (
                 0.0
                 #for (K, 0, LastK)
-                    + _W_Fns_1A1N[K](_w)*
+                    + _W_Fns_1A_1N[K](_w)*
                     (
                         0.0
                         #for (J, 0, LastJ)
-                            + _V_Fns_1A1N[J](_v)*
+                            + _V_Fns_1A_1N[J](_v)*
                             (
                                 0.0
                                 #for (I, 0, LastI)
@@ -815,13 +815,13 @@ which can be found in the LICENSE file.
                                         #case (0.0)
                                             #break
                                         #case (-1.0)
-                                            - _U_Fns_1A1N[I](_u)
+                                            - _U_Fns_1A_1N[I](_u)
                                             #break
                                         #case (+1.0)
-                                            + _U_Fns_1A1N[I](_u)
+                                            + _U_Fns_1A_1N[I](_u)
                                             #break
                                         #else
-                                            + Q*_U_Fns_1A1N[I](_u)
+                                            + Q*_U_Fns_1A_1N[I](_u)
                                     #end // switch
                                 #end // for
                             )
