@@ -99,45 +99,45 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro DivideFunctions_1A(_Num_Function_1A, _Den_Function_1A)
+#macro DivideFunctions_1A(_Num_Fn_1A, _Den_Fn_1A)
 
     function(_u) {
-        _Num_Function_1A(_u)
+        _Num_Fn_1A(_u)
         /
-        _Den_Function_1A(_u)
+        _Den_Fn_1A(_u)
     }
 
 #end // macro DivideFunctions_1A
 
 
-#macro DivideFunctions_2A(_Num_Function_2A, _Den_Function_2A)
+#macro DivideFunctions_2A(_Num_Fn_2A, _Den_Fn_2A)
 
     function(_u, _v) {
-        _Num_Function_2A(_u, _v)
+        _Num_Fn_2A(_u, _v)
         /
-        _Den_Function_2A(_u, _v)
+        _Den_Fn_2A(_u, _v)
     }
 
 #end // macro DivideFunctions_2A
 
 
-#macro DivideFunctions_3A(_Num_Function_3A, _Den_Function_3A)
+#macro DivideFunctions_3A(_Num_Fn_3A, _Den_Fn_3A)
 
     function(_u, _v, _w) {
-        _Num_Function_3A(_u, _v, _w)
+        _Num_Fn_3A(_u, _v, _w)
         /
-        _Den_Function_3A(_u, _v, _w)
+        _Den_Fn_3A(_u, _v, _w)
     }
 
 #end // macro DivideFunctions_3A
 
 
-#macro DivideFunctions_4A(_Num_Function_4A, _Den_Function_4A)
+#macro DivideFunctions_4A(_Num_Fn_4A, _Den_Fn_4A)
 
     function(_u, _v, _w, _s) {
-        _Num_Function_4A(_u, _v, _w, _s)
+        _Num_Fn_4A(_u, _v, _w, _s)
         /
-        _Den_Function_4A(_u, _v, _w, _s)
+        _Den_Fn_4A(_u, _v, _w, _s)
     }
 
 #end // macro DivideFunctions_4A
