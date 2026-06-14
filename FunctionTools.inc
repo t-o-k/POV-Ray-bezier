@@ -2108,7 +2108,7 @@ which can be found in the LICENSE file.
 #end // From_1A_SampleFunctions_1N_1D
 
 
-#macro From_1A_SampleFunctions_1N2D(_Fns_1A_2D, Min_U, Max_U, Res_U)
+#macro From_1A_SampleFunctions_1N_2D(_Fns_1A_2D, Min_U, Max_U, Res_U)
 
     #local M =
         max(
@@ -2153,7 +2153,7 @@ which can be found in the LICENSE file.
 
     PP_1N_2D
 
-#end // From_1A_SampleFunctions_1N2D
+#end // From_1A_SampleFunctions_1N_2D
 
 
 #macro From_1A_SampleFunctions_1N_3D(_Fns_1A_3D, Min_U, Max_U, Res_U)
@@ -3124,7 +3124,7 @@ which can be found in the LICENSE file.
             #switch (A)
                 #case (1)  // 1A (1N)
                     #local PP =
-                        From_1A_SampleFunctions_1N2D(
+                        From_1A_SampleFunctions_1N_2D(
                             _Functions, Min, Max, Res
                         )
                     ;
