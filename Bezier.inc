@@ -3993,7 +3993,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 1) != dimension_size(Weights_4N, 1))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 2) != dimension_size(Weights_4N, 1))
+    #if (dimension_size(Values_4N, 2) != dimension_size(Weights_4N, 2))
         #error "Are not equal"
     #end // if
     #if (dimension_size(Values_4N, 3) != dimension_size(Weights_4N, 3))
