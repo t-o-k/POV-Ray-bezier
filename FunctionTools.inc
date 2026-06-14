@@ -75,6 +75,19 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
+#declare AvoidZeroFn =
+    function(_a) {
+        select(
+            _a,
+            min(_a, -NIL),
+            +NIL,
+            max(+NIL, _a)
+        )
+    }
+;
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
 #declare DotFn =
     function(_x0, _y0, _z0, _x1, _y1, _z1) {
         _x0*_x1 + _y0*_y1 + _z0*_z1
@@ -141,6 +154,58 @@ which can be found in the LICENSE file.
     }
 
 #end // macro DivideFunctions_4A
+
+
+#macro DivideFunctions_Safe_1A(_Num_Fn_1A, _Den_Fn_1A)
+
+    function(_u) {
+        _Num_Fn_1A(_u)
+        /
+        AvoidZeroFn(
+            _Den_Fn_1A(_u)
+        )
+    }
+
+#end // macro DivideFunctions_Safe_1A
+
+
+#macro DivideFunctions_Safe_2A(_Num_Fn_2A, _Den_Fn_2A)
+
+    function(_u, _v) {
+        _Num_Fn_2A(_u, _v)
+        /
+        AvoidZeroFn(
+            _Den_Fn_2A(_u, _v)
+        )
+    }
+
+#end // macro DivideFunctions_Safe_2A
+
+
+#macro DivideFunctions_Safe_3A(_Num_Fn_3A, _Den_Fn_3A)
+
+    function(_u, _v, _w) {
+        _Num_Fn_3A(_u, _v, _w)
+        /
+        AvoidZeroFn(
+            _Den_Fn_3A(_u, _v, _w)
+        )
+    }
+
+#end // macro DivideFunctions_Safe_3A
+
+
+#macro DivideFunctions_Safe_4A(_Num_Fn_4A, _Den_Fn_4A)
+
+    function(_u, _v, _w, _s) {
+        _Num_Fn_4A(_u, _v, _w, _s)
+        /
+        AvoidZeroFn(
+            _Den_Fn_4A(_u, _v, _w, _s)
+        )
+    }
+
+#end // macro DivideFunctions_Safe_4A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
