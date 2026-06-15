@@ -112,6 +112,51 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
+#macro MultiplyFunctions_1A(_Fn0_1A, _Fn1_1A)
+
+    function(_u) {
+        _Fn0_1A(_u)
+        *
+        _Fn1_1A(_u)
+    }
+
+#end // macro MultiplyFunctions_1A
+
+
+#macro MultiplyFunctions_2A(_Fn0_2A, _Fn1_2A)
+
+    function(_u, _v) {
+        _Fn0_2A(_u, _v)
+        *
+        _Fn1_2A(_u, _v)
+    }
+
+#end // macro MultiplyFunctions_2A
+
+
+#macro MultiplyFunctions_3A(_Fn0_3A, _Fn1_3A)
+
+    function(_u, _v, _w) {
+        _Fn0_3A(_u, _v, _w)
+        *
+        _Fn1_3A(_u, _v, _w)
+    }
+
+#end // macro MultiplyFunctions_3A
+
+
+#macro MultiplyFunctions_4A(_Fn0_4A, _Fn1_4A)
+
+    function(_u, _v, _w, _s) {
+        _Fn0_4A(_u, _v, _w, _s)
+        *
+        _Fn1_4A(_u, _v, _w, _s)
+    }
+
+#end // macro MultiplyFunctions_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
 #macro DivideFunctions_1A(_Num_Fn_1A, _Den_Fn_1A)
 
     function(_u) {
