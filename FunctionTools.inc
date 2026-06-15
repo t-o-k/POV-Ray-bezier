@@ -112,6 +112,96 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
+#macro SubtractFunction_1A(_Fn0_1A, _Fn1_1A)
+
+    function(_u) {
+        _Fn0_1A(_u)
+        -
+        _Fn1_1A(_u)
+    }
+
+#end // macro SubtractFunction_1A
+
+
+#macro SubtractFunction_2A(_Fn0_2A, _Fn1_2A)
+
+    function(_u, _v) {
+        _Fn0_2A(_u, _v)
+        -
+        _Fn1_2A(_u, _v)
+    }
+
+#end // macro SubtractFunction_2A
+
+
+#macro SubtractFunction_3A(_Fn0_3A, _Fn1_3A)
+
+    function(_u, _v, _w) {
+        _Fn0_3A(_u, _v, _w)
+        -
+        _Fn1_3A(_u, _v, _w)
+    }
+
+#end // macro SubtractFunction_3A
+
+
+#macro SubtractFunction_4A(_Fn0_4A, _Fn1_4A)
+
+    function(_u, _v, _w, _s) {
+        _Fn0_4A(_u, _v, _w, _s)
+        -
+        _Fn1_4A(_u, _v, _w, _s)
+    }
+
+#end // macro SubtractFunction_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro AddFunction_1A(_Fn0_1A, _Fn1_1A)
+
+    function(_u) {
+        _Fn0_1A(_u)
+        +
+        _Fn1_1A(_u)
+    }
+
+#end // macro AddFunction_1A
+
+
+#macro AddFunction_2A(_Fn0_2A, _Fn1_2A)
+
+    function(_u, _v) {
+        _Fn0_2A(_u, _v)
+        +
+        _Fn1_2A(_u, _v)
+    }
+
+#end // macro AddFunction_2A
+
+
+#macro AddFunction_3A(_Fn0_3A, _Fn1_3A)
+
+    function(_u, _v, _w) {
+        _Fn0_3A(_u, _v, _w)
+        +
+        _Fn1_3A(_u, _v, _w)
+    }
+
+#end // macro AddFunction_3A
+
+
+#macro AddFunction_4A(_Fn0_4A, _Fn1_4A)
+
+    function(_u, _v, _w, _s) {
+        _Fn0_4A(_u, _v, _w, _s)
+        +
+        _Fn1_4A(_u, _v, _w, _s)
+    }
+
+#end // macro AddFunction_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
 #macro MultiplyFunctions_1A(_Fn0_1A, _Fn1_1A)
 
     function(_u) {
