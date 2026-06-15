@@ -112,6 +112,108 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
+#macro MultiplyFunction_Constant_1A(_Fn_1A, Const)
+
+    function(_u) {
+        _Fn_1A(_u)
+        *
+        Const
+    }
+
+#end // macro MultiplyFunction_Constant_1A
+
+
+#macro MultiplyFunction_Constant_2A(_Fn_2A, Const)
+
+    function(_u, _v) {
+        _Fn_2A(_u, _v)
+        *
+        Const
+    }
+
+#end // macro MultiplyFunction_Constant_2A
+
+
+#macro MultiplyFunction_Constant_3A(_Fn_3A, Const)
+
+    function(_u, _v, _w) {
+        _Fn_3A(_u, _v, _w)
+        *
+        Const
+    }
+
+#end // macro MultiplyFunction_Constant_3A
+
+
+#macro MultiplyFunction_Constant_4A(_Fn_4A, Const)
+
+    function(_u, _v, _w, _s) {
+        _Fn_4A(_u, _v, _w, _s)
+        *
+        Const
+    }
+
+#end // macro MultiplyFunction_Constant_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro DivideFunction_Constant_1A(_Fn_1A, Const)
+
+    #if (Const = 0)
+        #error "Const is zero"
+    #end
+    function(_u) {
+        _Fn_1A(_u)
+        /
+        Const
+    }
+
+#end // macro DivideFunction_Constant_1A
+
+
+#macro DivideFunction_Constant_2A(_Fn_2A, Const)
+
+    #if (Const = 0)
+        #error "Const is zero"
+    #end
+    function(_u, _v) {
+        _Fn_2A(_u, _v)
+        /
+        Const
+    }
+
+#end // macro DivideFunction_Constant_2A
+
+
+#macro DivideFunction_Constant_3A(_Fn_3A, Const)
+
+    #if (Const = 0.0)
+        #error "Const is zero"
+    #end
+    function(_u, _v, _w) {
+        _Fn_3A(_u, _v, _w)
+        /
+        Const
+    }
+
+#end // macro DivideFunction_Constant_3A
+
+
+#macro DivideFunction_Constant_4A(_Fn_4A, Const)
+
+    #if (Const = 0.0)
+        #error "Const is zero"
+    #end
+    function(_u, _v, _w, _s) {
+        _Fn_4A(_u, _v, _w, _s)
+        /
+        Const
+    }
+
+#end // macro DivideFunction_Constant_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
 #macro SubtractFunction_1A(_Fn0_1A, _Fn1_1A)
 
     function(_u) {
