@@ -214,6 +214,43 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
+#macro PowFunction_Constant_1A(_Fn_1A, Const)
+
+    function(_u) {
+        PowFn(_Fn_1A(_u), Const)
+    }
+
+#end // macro PowFunction_Constant_1A
+
+
+#macro PowFunction_Constant_2A(_Fn_2A, Const)
+
+    function(_u, _v) {
+        PowFn(_Fn_2A(_u, _v), Const)
+    }
+
+#end // macro PowFunction_Constant_2A
+
+
+#macro PowFunction_Constant_3A(_Fn_3A, Const)
+
+    function(_u, _v, _w) {
+        PowFn(_Fn_3A(_u, _v, _w), Const)
+    }
+
+#end // macro PowFunction_Constant_3A
+
+
+#macro PowFunction_Constant_4A(_Fn_4A, Const)
+
+    function(_u, _v, _w, _s) {
+        PowFn(_Fn_4A(_u, _v, _w, _s), Const)
+    }
+
+#end // macro PowFunction_Constant_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
 #macro SubtractFunction_1A(_Fn0_1A, _Fn1_1A)
 
     function(_u) {
