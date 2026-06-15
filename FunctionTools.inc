@@ -202,7 +202,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro MultiplyFunctions_1A(_Fn0_1A, _Fn1_1A)
+#macro MultiplyFunction_1A(_Fn0_1A, _Fn1_1A)
 
     function(_u) {
         _Fn0_1A(_u)
@@ -210,10 +210,10 @@ which can be found in the LICENSE file.
         _Fn1_1A(_u)
     }
 
-#end // macro MultiplyFunctions_1A
+#end // macro MultiplyFunction_1A
 
 
-#macro MultiplyFunctions_2A(_Fn0_2A, _Fn1_2A)
+#macro MultiplyFunction_2A(_Fn0_2A, _Fn1_2A)
 
     function(_u, _v) {
         _Fn0_2A(_u, _v)
@@ -221,10 +221,10 @@ which can be found in the LICENSE file.
         _Fn1_2A(_u, _v)
     }
 
-#end // macro MultiplyFunctions_2A
+#end // macro MultiplyFunction_2A
 
 
-#macro MultiplyFunctions_3A(_Fn0_3A, _Fn1_3A)
+#macro MultiplyFunction_3A(_Fn0_3A, _Fn1_3A)
 
     function(_u, _v, _w) {
         _Fn0_3A(_u, _v, _w)
@@ -232,10 +232,10 @@ which can be found in the LICENSE file.
         _Fn1_3A(_u, _v, _w)
     }
 
-#end // macro MultiplyFunctions_3A
+#end // macro MultiplyFunction_3A
 
 
-#macro MultiplyFunctions_4A(_Fn0_4A, _Fn1_4A)
+#macro MultiplyFunction_4A(_Fn0_4A, _Fn1_4A)
 
     function(_u, _v, _w, _s) {
         _Fn0_4A(_u, _v, _w, _s)
@@ -243,11 +243,11 @@ which can be found in the LICENSE file.
         _Fn1_4A(_u, _v, _w, _s)
     }
 
-#end // macro MultiplyFunctions_4A
+#end // macro MultiplyFunction_4A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro DivideFunctions_1A(_Num_Fn_1A, _Den_Fn_1A)
+#macro DivideFunction_1A(_Num_Fn_1A, _Den_Fn_1A)
 
     function(_u) {
         _Num_Fn_1A(_u)
@@ -255,10 +255,10 @@ which can be found in the LICENSE file.
         _Den_Fn_1A(_u)
     }
 
-#end // macro DivideFunctions_1A
+#end // macro DivideFunction_1A
 
 
-#macro DivideFunctions_2A(_Num_Fn_2A, _Den_Fn_2A)
+#macro DivideFunction_2A(_Num_Fn_2A, _Den_Fn_2A)
 
     function(_u, _v) {
         _Num_Fn_2A(_u, _v)
@@ -266,10 +266,10 @@ which can be found in the LICENSE file.
         _Den_Fn_2A(_u, _v)
     }
 
-#end // macro DivideFunctions_2A
+#end // macro DivideFunction_2A
 
 
-#macro DivideFunctions_3A(_Num_Fn_3A, _Den_Fn_3A)
+#macro DivideFunction_3A(_Num_Fn_3A, _Den_Fn_3A)
 
     function(_u, _v, _w) {
         _Num_Fn_3A(_u, _v, _w)
@@ -277,10 +277,10 @@ which can be found in the LICENSE file.
         _Den_Fn_3A(_u, _v, _w)
     }
 
-#end // macro DivideFunctions_3A
+#end // macro DivideFunction_3A
 
 
-#macro DivideFunctions_4A(_Num_Fn_4A, _Den_Fn_4A)
+#macro DivideFunction_4A(_Num_Fn_4A, _Den_Fn_4A)
 
     function(_u, _v, _w, _s) {
         _Num_Fn_4A(_u, _v, _w, _s)
@@ -288,10 +288,10 @@ which can be found in the LICENSE file.
         _Den_Fn_4A(_u, _v, _w, _s)
     }
 
-#end // macro DivideFunctions_4A
+#end // macro DivideFunction_4A
 
 
-#macro DivideFunctions_Safe_1A(_Num_Fn_1A, _Den_Fn_1A)
+#macro DivideFunction_Safe_1A(_Num_Fn_1A, _Den_Fn_1A)
 
     function(_u) {
         _Num_Fn_1A(_u)
@@ -301,10 +301,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // macro DivideFunctions_Safe_1A
+#end // macro DivideFunction_Safe_1A
 
 
-#macro DivideFunctions_Safe_2A(_Num_Fn_2A, _Den_Fn_2A)
+#macro DivideFunction_Safe_2A(_Num_Fn_2A, _Den_Fn_2A)
 
     function(_u, _v) {
         _Num_Fn_2A(_u, _v)
@@ -314,10 +314,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // macro DivideFunctions_Safe_2A
+#end // macro DivideFunction_Safe_2A
 
 
-#macro DivideFunctions_Safe_3A(_Num_Fn_3A, _Den_Fn_3A)
+#macro DivideFunction_Safe_3A(_Num_Fn_3A, _Den_Fn_3A)
 
     function(_u, _v, _w) {
         _Num_Fn_3A(_u, _v, _w)
@@ -327,10 +327,10 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // macro DivideFunctions_Safe_3A
+#end // macro DivideFunction_Safe_3A
 
 
-#macro DivideFunctions_Safe_4A(_Num_Fn_4A, _Den_Fn_4A)
+#macro DivideFunction_Safe_4A(_Num_Fn_4A, _Den_Fn_4A)
 
     function(_u, _v, _w, _s) {
         _Num_Fn_4A(_u, _v, _w, _s)
@@ -340,7 +340,7 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // macro DivideFunctions_Safe_4A
+#end // macro DivideFunction_Safe_4A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
