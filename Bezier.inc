@@ -958,7 +958,7 @@ which can be found in the LICENSE file.
         #error "Is not 1"
     #end // if
 
-    DivideFunctions_1A(
+    DivideFunction_1A(
         From_1N_BezierFunction_1A(
             MultiplyArrays_1N(
                 Weights_1N, Values_1N
@@ -982,7 +982,7 @@ which can be found in the LICENSE file.
         #error "Is not 2"
     #end // if
 
-    DivideFunctions_2A(
+    DivideFunction_2A(
         From_2N_BezierFunction_2A(
             MultiplyArrays_2N(
                 Weights_2N, Values_2N
@@ -1006,7 +1006,7 @@ which can be found in the LICENSE file.
         #error "Is not 3"
     #end // if
 
-    DivideFunctions_3A(
+    DivideFunction_3A(
         From_3N_BezierFunction_3A(
             MultiplyArrays_3N(
                 Weights_3N, Values_3N
@@ -1030,7 +1030,7 @@ which can be found in the LICENSE file.
         #error "Is not 4"
     #end // if
 
-    DivideFunctions_4A(
+    DivideFunction_4A(
         From_4N_BezierFunction_4A(
             MultiplyArrays_4N(
                 Weights_4N, Values_4N
