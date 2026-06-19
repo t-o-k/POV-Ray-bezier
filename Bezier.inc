@@ -2940,7 +2940,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_1N, 1) < 2)
         #error "Is less than 2"
     #end // if
-    #local VV_WW_1N =
+    #local WeightedValues_1N =
         MultiplyArrays_1N(
             Values_1N, Weights_1N
         )
@@ -2948,14 +2948,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_1A(
         From_1N_BezierFunction_1A(
-            VV_WW_1N
+            WeightedValues_1N
         ),
         From_1N_BezierFunction_1A(
             Weights_1N
         ),
         From_1N_BezierFunction_1A(
             Hodograph_I_1N(
-                VV_WW_1N, 1
+                WeightedValues_1N, 1
             )
         ),
         From_1N_BezierFunction_1A(
@@ -3009,7 +3009,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_2N, 1) < 2)
         #error "Is less than 2"
     #end // if
-    #local VV_WW_2N =
+    #local WeightedValues_2N =
         MultiplyArrays_2N(
             Values_2N, Weights_2N
         )
@@ -3017,14 +3017,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_2A(
         From_2N_BezierFunction_2A(
-            VV_WW_2N
+            WeightedValues_2N
         ),
         From_2N_BezierFunction_2A(
             Weights_2N
         ),
         From_2N_BezierFunction_2A(
             Hodograph_I_2N(
-                VV_WW_2N, 1
+                WeightedValues_2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
@@ -3055,7 +3055,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_2N, 2) < 2)
         #error "Is less than 2"
     #end // if
-    #local VV_WW_2N =
+    #local WeightedValues_2N =
         MultiplyArrays_2N(
             Values_2N, Weights_2N
         )
@@ -3063,14 +3063,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_2A(
         From_2N_BezierFunction_2A(
-            VV_WW_2N
+            WeightedValues_2N
         ),
         From_2N_BezierFunction_2A(
             Weights_2N
         ),
         From_2N_BezierFunction_2A(
             Hodograph_J_2N(
-                VV_WW_2N, 1
+                WeightedValues_2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
@@ -3133,7 +3133,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_3N, 1) < 2)
         #error "Is less than 2"
     #end // if
-    #local VV_WW_3N =
+    #local WeightedValues_3N =
         MultiplyArrays_3N(
             Values_3N, Weights_3N
         )
@@ -3141,14 +3141,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_3A(
         From_3N_BezierFunction_3A(
-            VV_WW_3N
+            WeightedValues_3N
         ),
         From_3N_BezierFunction_3A(
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
             Hodograph_I_3N(
-                VV_WW_3N, 1
+                WeightedValues_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3182,7 +3182,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_3N, 2) < 2)
         #error "Is less than 2"
     #end // if
-    #local VV_WW_3N =
+    #local WeightedValues_3N =
         MultiplyArrays_3N(
             Values_3N, Weights_3N
         )
@@ -3190,14 +3190,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_3A(
         From_3N_BezierFunction_3A(
-            VV_WW_3N
+            WeightedValues_3N
         ),
         From_3N_BezierFunction_3A(
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
             Hodograph_J_3N(
-                VV_WW_3N, 1
+                WeightedValues_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3231,7 +3231,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_3N, 3) < 2)
         #error "Is less than 2"
     #end // if
-    #local VV_WW_3N =
+    #local WeightedValues_3N =
         MultiplyArrays_3N(
             Values_3N, Weights_3N
         )
@@ -3239,14 +3239,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_3A(
         From_3N_BezierFunction_3A(
-            VV_WW_3N
+            WeightedValues_3N
         ),
         From_3N_BezierFunction_3A(
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
             Hodograph_K_3N(
-                VV_WW_3N, 1
+                WeightedValues_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3318,7 +3318,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 1) < 2)
         #error "Is less than 2"
     #end // if
-    #local VV_WW_4N =
+    #local WeightedValues_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -3326,14 +3326,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VV_WW_4N
+            WeightedValues_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_I_4N(
-                VV_WW_4N, 1
+                WeightedValues_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -3370,7 +3370,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 2) < 2)
         #error "Is less than 2"
     #end // if
-    #local VV_WW_4N =
+    #local WeightedValues_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -3378,14 +3378,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VV_WW_4N
+            WeightedValues_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_J_4N(
-                VV_WW_4N, 1
+                WeightedValues_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -3422,7 +3422,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 3) < 2)
         #error "Is less than 2"
     #end // if
-    #local VV_WW_4N =
+    #local WeightedValues_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -3430,14 +3430,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VV_WW_4N
+            WeightedValues_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_K_4N(
-                VV_WW_4N, 1
+                WeightedValues_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -3474,7 +3474,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 4) < 2)
         #error "Is less than 2"
     #end // if
-    #local VV_WW_4N =
+    #local WeightedValues_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -3482,14 +3482,14 @@ which can be found in the LICENSE file.
 
     Der1_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VV_WW_4N
+            WeightedValues_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_L_4N(
-                VV_WW_4N, 1
+                WeightedValues_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -3585,7 +3585,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_1N, 1) < 3)
         #error "Is less than 3"
     #end // if
-    #local VV_WW_1N =
+    #local WeightedValues_1N =
         MultiplyArrays_1N(
             Values_1N, Weights_1N
         )
@@ -3593,14 +3593,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_1A(
         From_1N_BezierFunction_1A(
-            VV_WW_1N
+            WeightedValues_1N
         ),
         From_1N_BezierFunction_1A(
             Weights_1N
         ),
         From_1N_BezierFunction_1A(
             Hodograph_I_1N(
-                VV_WW_1N, 1
+                WeightedValues_1N, 1
             )
         ),
         From_1N_BezierFunction_1A(
@@ -3610,7 +3610,7 @@ which can be found in the LICENSE file.
         ),
         From_1N_BezierFunction_1A(
             Hodograph_I_1N(
-                VV_WW_1N, 2
+                WeightedValues_1N, 2
             )
         ),
         From_1N_BezierFunction_1A(
@@ -3661,7 +3661,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_2N, 1) < 3)
         #error "Is less than 3"
     #end // if
-    #local VV_WW_2N =
+    #local WeightedValues_2N =
         MultiplyArrays_2N(
             Values_2N, Weights_2N
         )
@@ -3669,14 +3669,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_2A(
         From_2N_BezierFunction_2A(
-            VV_WW_2N
+            WeightedValues_2N
         ),
         From_2N_BezierFunction_2A(
             Weights_2N
         ),
         From_2N_BezierFunction_2A(
             Hodograph_I_2N(
-                VV_WW_2N, 1
+                WeightedValues_2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
@@ -3686,7 +3686,7 @@ which can be found in the LICENSE file.
         ),
         From_2N_BezierFunction_2A(
             Hodograph_I_2N(
-                VV_WW_2N, 2
+                WeightedValues_2N, 2
             )
         ),
         From_2N_BezierFunction_2A(
@@ -3717,7 +3717,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_2N, 2) < 3)
         #error "Is less than 3"
     #end // if
-    #local VV_WW_2N =
+    #local WeightedValues_2N =
         MultiplyArrays_2N(
             Values_2N, Weights_2N
         )
@@ -3725,14 +3725,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_2A(
         From_2N_BezierFunction_2A(
-            VV_WW_2N
+            WeightedValues_2N
         ),
         From_2N_BezierFunction_2A(
             Weights_2N
         ),
         From_2N_BezierFunction_2A(
             Hodograph_J_2N(
-                VV_WW_2N, 1
+                WeightedValues_2N, 1
             )
         ),
         From_2N_BezierFunction_2A(
@@ -3742,7 +3742,7 @@ which can be found in the LICENSE file.
         ),
         From_2N_BezierFunction_2A(
             Hodograph_J_2N(
-                VV_WW_2N, 2
+                WeightedValues_2N, 2
             )
         ),
         From_2N_BezierFunction_2A(
@@ -3799,7 +3799,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_3N, 1) < 3)
         #error "Is less than 3"
     #end // if
-    #local VV_WW_3N =
+    #local WeightedValues_3N =
         MultiplyArrays_3N(
             Values_3N, Weights_3N
         )
@@ -3807,14 +3807,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_3A(
         From_3N_BezierFunction_3A(
-            VV_WW_3N
+            WeightedValues_3N
         ),
         From_3N_BezierFunction_3A(
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
             Hodograph_I_3N(
-                VV_WW_3N, 1
+                WeightedValues_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3824,7 +3824,7 @@ which can be found in the LICENSE file.
         ),
         From_3N_BezierFunction_3A(
             Hodograph_I_3N(
-                VV_WW_3N, 2
+                WeightedValues_3N, 2
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3858,7 +3858,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_3N, 2) < 3)
         #error "Is less than 3"
     #end // if
-    #local VV_WW_3N =
+    #local WeightedValues_3N =
         MultiplyArrays_3N(
             Values_3N, Weights_3N
         )
@@ -3866,14 +3866,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_3A(
         From_3N_BezierFunction_3A(
-            VV_WW_3N
+            WeightedValues_3N
         ),
         From_3N_BezierFunction_3A(
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
             Hodograph_J_3N(
-                VV_WW_3N, 1
+                WeightedValues_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3883,7 +3883,7 @@ which can be found in the LICENSE file.
         ),
         From_3N_BezierFunction_3A(
             Hodograph_J_3N(
-                VV_WW_3N, 2
+                WeightedValues_3N, 2
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3917,7 +3917,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_3N, 3) < 3)
         #error "Is less than 3"
     #end // if
-    #local VV_WW_3N =
+    #local WeightedValues_3N =
         MultiplyArrays_3N(
             Values_3N, Weights_3N
         )
@@ -3925,14 +3925,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_3A(
         From_3N_BezierFunction_3A(
-            VV_WW_3N
+            WeightedValues_3N
         ),
         From_3N_BezierFunction_3A(
             Weights_3N
         ),
         From_3N_BezierFunction_3A(
             Hodograph_K_3N(
-                VV_WW_3N, 1
+                WeightedValues_3N, 1
             )
         ),
         From_3N_BezierFunction_3A(
@@ -3942,7 +3942,7 @@ which can be found in the LICENSE file.
         ),
         From_3N_BezierFunction_3A(
             Hodograph_K_3N(
-                VV_WW_3N, 2
+                WeightedValues_3N, 2
             )
         ),
         From_3N_BezierFunction_3A(
@@ -4005,7 +4005,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 1) < 3)
         #error "Is less than 3"
     #end // if
-    #local VV_WW_4N =
+    #local WeightedValues_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -4013,14 +4013,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VV_WW_4N
+            WeightedValues_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_I_4N(
-                VV_WW_4N, 1
+                WeightedValues_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4030,7 +4030,7 @@ which can be found in the LICENSE file.
         ),
         From_4N_BezierFunction_4A(
             Hodograph_I_4N(
-                VV_WW_4N, 2
+                WeightedValues_4N, 2
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4067,7 +4067,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 2) < 3)
         #error "Is less than 3"
     #end // if
-    #local VV_WW_4N =
+    #local WeightedValues_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -4075,14 +4075,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VV_WW_4N
+            WeightedValues_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_J_4N(
-                VV_WW_4N, 1
+                WeightedValues_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4092,7 +4092,7 @@ which can be found in the LICENSE file.
         ),
         From_4N_BezierFunction_4A(
             Hodograph_J_4N(
-                VV_WW_4N, 2
+                WeightedValues_4N, 2
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4129,7 +4129,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 3) < 3)
         #error "Is less than 3"
     #end // if
-    #local VV_WW_4N =
+    #local WeightedValues_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -4137,14 +4137,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VV_WW_4N
+            WeightedValues_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_K_4N(
-                VV_WW_4N, 1
+                WeightedValues_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4154,7 +4154,7 @@ which can be found in the LICENSE file.
         ),
         From_4N_BezierFunction_4A(
             Hodograph_K_4N(
-                VV_WW_4N, 2
+                WeightedValues_4N, 2
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4191,7 +4191,7 @@ which can be found in the LICENSE file.
     #if (dimension_size(Values_4N, 4) < 3)
         #error "Is less than 3"
     #end // if
-    #local VV_WW_4N =
+    #local WeightedValues_4N =
         MultiplyArrays_4N(
             Values_4N, Weights_4N
         )
@@ -4199,14 +4199,14 @@ which can be found in the LICENSE file.
 
     Der2_RationalFunction_4A(
         From_4N_BezierFunction_4A(
-            VV_WW_4N
+            WeightedValues_4N
         ),
         From_4N_BezierFunction_4A(
             Weights_4N
         ),
         From_4N_BezierFunction_4A(
             Hodograph_L_4N(
-                VV_WW_4N, 1
+                WeightedValues_4N, 1
             )
         ),
         From_4N_BezierFunction_4A(
@@ -4216,7 +4216,7 @@ which can be found in the LICENSE file.
         ),
         From_4N_BezierFunction_4A(
             Hodograph_L_4N(
-                VV_WW_4N, 2
+                WeightedValues_4N, 2
             )
         ),
         From_4N_BezierFunction_4A(
