@@ -2292,6 +2292,34 @@ which can be found in the LICENSE file.
 
 #macro FirstFundamentalFormFunctions_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D)
 
+    #local M =
+        max(
+            dimensions(_D1_U_Fns_2A_3D),
+            dimensions(_D1_V_Fns_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local MinD =
+        min(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MinD != 3)
+        #error "MinD is not 3"
+    #end // if
+    #local MaxD =
+        max(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MaxD != 3)
+        #error "MaxD is not 3"
+    #end // if
+
     Arr_3E(
         DotFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_U_Fns_2A_3D), // E
         DotFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D), // F
@@ -2300,7 +2328,42 @@ which can be found in the LICENSE file.
 
 #end // macro FirstFundamentalFormFunctions_2A_3D
 
+
 #macro _SecondFundamentalFormFunctions_2A_3D(_D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
+
+    #local M =
+        max(
+            dimensions(_D2_UU_Fns_2A_3D),
+            dimensions(_D2_UV_Fns_2A_3D),
+            dimensions(_D2_VV_Fns_2A_3D),
+            dimensions(_Normal_Fns_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local MinD =
+        min(
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1),
+            dimension_size(_Normal_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MinD != 3)
+        #error "MinD is not 3"
+    #end // if
+    #local MaxD =
+        max(
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1),
+            dimension_size(_Normal_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MaxD != 3)
+        #error "MaxD is not 3"
+    #end // if
 
     Arr_3E(
         DotFunction_2A_3D(_D2_UU_Fns_2A_3D, _Normal_Fns_2A_3D), // L
@@ -2312,6 +2375,43 @@ which can be found in the LICENSE file.
 
 
 #macro SecondFundamentalFormFunctions_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
+
+    #local M =
+        max(
+            dimensions(_D1_U_Fns_2A_3D),
+            dimensions(_D1_V_Fns_2A_3D),
+            dimensions(_D2_UU_Fns_2A_3D),
+            dimensions(_D2_UV_Fns_2A_3D),
+            dimensions(_D2_VV_Fns_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local MinD =
+        min(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MinD != 3)
+        #error "MinD is not 3"
+    #end // if
+    #local MaxD =
+        max(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MaxD != 3)
+        #error "MaxD is not 3"
+    #end // if
 
     _SecondFundamentalFormFunctions_2A_3D(
         _D2_UU_Fns_2A_3D,
@@ -2329,6 +2429,15 @@ which can be found in the LICENSE file.
 
 
 #macro FundamentalForm1st_Determinant_2A_3D(_FundamentalForm1st_Fns_2A_3D)
+
+    #local M = dimensions(_FundamentalForm1st_Fns_2A_3D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_FundamentalForm1st_Fns_2A_3D, 1);
+    #if (D != 3)
+        #error "D is not 3"
+    #end // if
 
     // Formula: E*G - F^2
 
@@ -2348,6 +2457,15 @@ which can be found in the LICENSE file.
 
 #macro FundamentalForm2nd_Determinant_2A_3D(_FundamentalForm2nd_Fns_2A_3D)
 
+    #local M = dimensions(_FundamentalForm2nd_Fns_2A_3D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1);
+    #if (D != 3)
+        #error "D is not 3"
+    #end // if
+
     // Formula: L*N - M^2
 
     SubtractFunction_2A(
@@ -2366,6 +2484,34 @@ which can be found in the LICENSE file.
 
 #macro _AltGaussianCurvatureFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D, _FundamentalForm2nd_Fns_2A_3D)
 
+    #local M =
+        max(
+            dimensions(_FundamentalForm1st_Fns_2A_3D),
+            dimensions(_FundamentalForm2nd_Fns_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local MinD =
+        min(
+            dimension_size(_FundamentalForm1st_Fns_2A_3D, 1),
+            dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MinD != 3)
+        #error "MinD is not 3"
+    #end // if
+    #local MaxD =
+        max(
+            dimension_size(_FundamentalForm1st_Fns_2A_3D, 1),
+            dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MaxD != 3)
+        #error "MaxD is not 3"
+    #end // if
+
     // Formula: (L*N - M^2)/(E*G - F^2)
 
     DivideFunction_Safe_2A(
@@ -2377,6 +2523,43 @@ which can be found in the LICENSE file.
 
 
 #macro AltGaussianCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
+
+    #local M =
+        max(
+            dimensions(_D1_U_Fns_2A_3D),
+            dimensions(_D1_V_Fns_2A_3D),
+            dimensions(_D2_UU_Fns_2A_3D),
+            dimensions(_D2_UV_Fns_2A_3D),
+            dimensions(_D2_VV_Fns_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local MinD =
+        min(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MinD != 3)
+        #error "MinD is not 3"
+    #end // if
+    #local MaxD =
+        max(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MaxD != 3)
+        #error "MaxD is not 3"
+    #end // if
 
     _AltGaussianCurvatureFunction_2A_3D(
         FirstFundamentalFormFunctions_2A_3D(
@@ -2396,6 +2579,40 @@ which can be found in the LICENSE file.
 
 
 #macro _GaussianCurvatureFunction_2A_3D(_D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
+
+    #local M =
+        max(
+            dimensions(_D2_UU_Fns_2A_3D),
+            dimensions(_D2_UV_Fns_2A_3D),
+            dimensions(_D2_VV_Fns_2A_3D),
+            dimensions(_Normal_Fns_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local MinD =
+        min(
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1),
+            dimension_size(_Normal_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MinD != 3)
+        #error "MinD is not 3"
+    #end // if
+    #local MaxD =
+        max(
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1),
+            dimension_size(_Normal_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MaxD != 3)
+        #error "MaxD is not 3"
+    #end // if
 
     DivideFunction_Safe_2A(
         SubtractFunction_2A(
@@ -2418,6 +2635,43 @@ which can be found in the LICENSE file.
 
 
 #macro GaussianCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
+
+    #local M =
+        max(
+            dimensions(_D1_U_Fns_2A_3D),
+            dimensions(_D1_V_Fns_2A_3D),
+            dimensions(_D2_UU_Fns_2A_3D),
+            dimensions(_D2_UV_Fns_2A_3D),
+            dimensions(_D2_VV_Fns_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local MinD =
+        min(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MinD != 3)
+        #error "MinD is not 3"
+    #end // if
+    #local MaxD =
+        max(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MaxD != 3)
+        #error "MaxD is not 3"
+    #end // if
 
     _GaussianCurvatureFunction_2A_3D(
         _D2_UU_Fns_2A_3D,
