@@ -201,7 +201,7 @@ which can be found in the LICENSE file.
 
 #macro DivideFunction_Constant_1A(_Fn_1A, Const)
 
-    #if (Const = 0)
+    #if (Const = 0.0)
         #error "Const is zero"
     #end
     function(_u) {
@@ -215,7 +215,7 @@ which can be found in the LICENSE file.
 
 #macro DivideFunction_Constant_2A(_Fn_2A, Const)
 
-    #if (Const = 0)
+    #if (Const = 0.0)
         #error "Const is zero"
     #end
     function(_u, _v) {
