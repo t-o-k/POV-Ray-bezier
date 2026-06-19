@@ -75,6 +75,48 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
+#macro E_FundamentalFn(Array)
+
+    Array[0]
+
+#end // macro E_FundamentalFn
+
+
+#macro F_FundamentalFn(Array)
+
+    Array[1]
+
+#end // macro F_FundamentalFn
+
+
+#macro G_FundamentalFn(Array)
+
+    Array[2]
+
+#end // macro G_FundamentalFn
+
+
+#macro L_FundamentalFn(Array)
+
+    Array[0]
+
+#end // L_FundamentalFn
+
+
+#macro M_FundamentalFn(Array)
+
+    Array[1]
+
+#end // M_FundamentalFn
+
+#macro N_FundamentalFn(Array)
+
+    Array[2]
+
+#end // N_FundamentalFn
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
 #declare AvoidZeroFn =
     function(_a) {
         select(
@@ -2245,6 +2287,150 @@ which can be found in the LICENSE file.
     )
 
 #end // macro NormalizedFunctions_4A_4D
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro FirstFundamentalFormFunctions_2A_3D(_D1_U_Fns_2A, _D1_V_Fns_2A)
+
+    Arr_3E(
+        DotFunction_2A_3D(_D1_U_Fns_2A, _D1_U_Fns_2A), // E
+        DotFunction_2A_3D(_D1_U_Fns_2A, _D1_V_Fns_2A), // F
+        DotFunction_2A_3D(_D1_V_Fns_2A, _D1_V_Fns_2A)  // G
+    )
+
+#end // macro FirstFundamentalFormFunctions_2A_3D
+
+
+#macro _SecondFundamentalFormFunctions_2A_3D(_D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
+
+    Arr_3E(
+        DotFunction_2A_3D(_D2_UU_Fns_2A_3D, _Normal_Fns_2A_3D), // L
+        DotFunction_2A_3D(_D2_UV_Fns_2A_3D, _Normal_Fns_2A_3D), // M
+        DotFunction_2A_3D(_D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)  // N
+    )
+
+#end // macro _SecondFundamentalFormFunctions_2A_3D
+
+
+#macro SecondFundamentalFormFunctions_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
+
+    _SecondFundamentalFormFunctions_2A_3D(
+        _D2_UU_Fns_2A_3D,
+        _D2_UV_Fns_2A_3D,
+        _D2_VV_Fns_2A_3D,
+        NormalizedFunctions_2A_3D(
+            CrossFunctions_2A_3D(
+                _D1_U_Fns_2A_3D,
+                _D1_V_Fns_2A_3D
+            )
+        )
+    )
+
+#end // macro SecondFundamentalFormFunctions_2A_3D
+
+
+#macro FundamentalForm1st_Determinant_2A_3D(_FundamentalForm1st_Fns_2A_3D)
+
+    // Formula: E*G - F^2
+
+    SubtractFunction_2A(
+        MultiplyFunction_2A(
+            E_FundamentalFn(_FundamentalForm1st_Fns_2A_3D),
+            G_FundamentalFn(_FundamentalForm1st_Fns_2A_3D)
+        ),
+        PowFunction_Constant_2A(
+            F_FundamentalFn(_FundamentalForm1st_Fns_2A_3D),
+            2
+        )
+    )
+
+#end // macro FundamentalForm1st_Determinant_2A_3D
+
+
+#macro FundamentalForm2nd_Determinant_2A_3D(_FundamentalForm2nd_Fns_2A_3D)
+
+    // Formula: L*N - M^2
+
+    SubtractFunction_2A(
+        MultiplyFunction_2A(
+            L_FundamentalFn(_FundamentalForm2nd_Fns_2A_3D),
+            N_FundamentalFn(_FundamentalForm2nd_Fns_2A_3D)
+        ),
+        PowFunction_Constant_2A(
+            M_FundamentalFn(_FundamentalForm2nd_Fns_2A_3D),
+            2
+        )
+    )
+
+#end // macro FundamentalForm2nd_Determinant_2A_3D
+
+
+#macro _AltGaussianCurvatureFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D, _FundamentalForm2nd_Fns_2A_3D)
+
+    // Formula: (L*N - M^2)/(E*G - F^2)
+
+    DivideFunction_Safe_2A(
+        FundamentalForm2nd_Determinant_2A_3D(_FundamentalForm2nd_Fns_2A_3D),
+        FundamentalForm1st_Determinant_2A_3D(_FundamentalForm1st_Fns_2A_3D)
+    )
+
+#end // macro _AltGaussianCurvatureFunction_2A_3D
+
+
+#macro AltGaussianCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
+
+    _AltGaussianCurvatureFunction_2A_3D(
+        FirstFundamentalFormFunctions_2A_3D(
+            _D1_U_Fns_2A_3D,
+            _D1_V_Fns_2A_3D
+        ),
+        SecondFundamentalFormFunctions_2A_3D(
+            _D1_U_Fns_2A_3D, 
+            _D1_V_Fns_2A_3D,
+            _D2_UU_Fns_2A_3D,
+            _D2_UV_Fns_2A_3D,
+            _D2_VV_Fns_2A_3D
+        )
+    )
+
+#end // macro AltGaussianCurvatureFunction_2A_3D
+
+
+#macro _GaussianCurvatureFunction_2A_3D(_D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
+
+    DivideFunction_Safe_2A(
+        SubtractFunction_2A(
+            MultiplyFunction_2A(
+                DotFunction_2A_3D(_D2_UU_Fns_2A_3D, _Normal_Fns_2A_3D), // L
+                DotFunction_2A_3D(_D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)  // N
+            ),
+            PowFunction_Constant_2A(
+                DotFunction_2A_3D(_D2_UV_Fns_2A_3D, _Normal_Fns_2A_3D), // M
+                2
+            )
+        ),
+        PowFunction_Constant_2A(
+            DotFunction_2A_3D(_Normal_Fns_2A_3D, _Normal_Fns_2A_3D),
+            2
+        )
+    )
+
+#end // macro _GaussianCurvatureFunction_2A_3D
+
+
+#macro GaussianCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
+
+    _GaussianCurvatureFunction_2A_3D(
+        _D2_UU_Fns_2A_3D,
+        _D2_UV_Fns_2A_3D,
+        _D2_VV_Fns_2A_3D,
+        CrossFunctions_2A_3D(
+            _D1_U_Fns_2A_3D,
+            _D1_V_Fns_2A_3D
+         )
+    )
+
+#end // macro GaussianCurvatureFunction_2A_3D
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
