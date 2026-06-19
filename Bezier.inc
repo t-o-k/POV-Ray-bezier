@@ -605,8 +605,9 @@ which can be found in the LICENSE file.
 
 #macro WeightedFunction_1A(_U_Fns_1A_1N, Weights_1N)
 
-    #if (dimensions(_U_Fns_1A_1N) != 1)
-        #error "Is not 1"
+    #local M = dimensions(_U_Fns_1A_1N);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local N = dimensions(Weights_1N);
     #if (N != 1)
@@ -642,11 +643,14 @@ which can be found in the LICENSE file.
 
 #macro WeightedFunction_2A(_U_Fns_1A_1N, _V_Fns_1A_1N, Weights_2N)
 
-    #if (dimensions(_U_Fns_1A_1N) != 1)
-        #error "Is not 1"
-    #end // if
-    #if (dimensions(_V_Fns_1A_1N) != 1)
-        #error "Is not 1"
+    #local M =
+        max(
+            dimensions(_U_Fns_1A_1N),
+            dimensions(_V_Fns_1A_1N)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local N = dimensions(Weights_2N);
     #if (N != 2)
@@ -693,14 +697,15 @@ which can be found in the LICENSE file.
 
 #macro WeightedFunction_3A(_U_Fns_1A_1N, _V_Fns_1A_1N, _W_Fns_1A_1N, Weights_3N)
 
-    #if (dimensions(_U_Fns_1A_1N) != 1)
-        #error "Is not 1"
-    #end // if
-    #if (dimensions(_V_Fns_1A_1N) != 1)
-        #error "Is not 1"
-    #end // if
-    #if (dimensions(_W_Fns_1A_1N) != 1)
-        #error "Is not 1"
+    #local M =
+        max(
+            dimensions(_U_Fns_1A_1N),
+            dimensions(_V_Fns_1A_1N),
+            dimensions(_W_Fns_1A_1N)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local N = dimensions(Weights_3N);
     #if (N != 3)
@@ -758,17 +763,16 @@ which can be found in the LICENSE file.
 
 #macro WeightedFunction_4A(_U_Fns_1A_1N, _V_Fns_1A_1N, _W_Fns_1A_1N, _S_Fns_1A_1N, Weights_4N)
 
-    #if (dimensions(_U_Fns_1A_1N) != 1)
-        #error "Is not 1"
-    #end // if
-    #if (dimensions(_V_Fns_1A_1N) != 1)
-        #error "Is not 1"
-    #end // if
-    #if (dimensions(_W_Fns_1A_1N) != 1)
-        #error "Is not 1"
-    #end // if
-    #if (dimensions(_S_Fns_1A_1N) != 1)
-        #error "Is not 1"
+    #local M =
+        max(
+            dimensions(_U_Fns_1A_1N),
+            dimensions(_V_Fns_1A_1N),
+            dimensions(_W_Fns_1A_1N),
+            dimensions(_S_Fns_1A_1N)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local N = dimensions(Weights_4N);
     #if (N != 4)
