@@ -622,9 +622,6 @@ which can be found in the LICENSE file.
         #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_1A, 1);
-    #if (!((D = 1) | (D = 2) | (D = 3) | (D = 4)))
-        #error "D is neither 1, 2, 3 nor 4"
-    #end // if
 
     #switch (D)
         #case (1)
@@ -648,7 +645,7 @@ which can be found in the LICENSE file.
             )
             #break
         #else
-            #error "!"
+            #error "D is neither 1, 2, 3 nor 4"
     #end // switch
 
 #end // LengthFunction_1A
@@ -752,9 +749,6 @@ which can be found in the LICENSE file.
         #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_2A, 1);
-    #if (!((D = 1) | (D = 2) | (D = 3) | (D = 4)))
-        #error "D is neither 1, 2, 3 nor 4"
-    #end // if
 
     #switch (D)
         #case (1)
@@ -778,7 +772,7 @@ which can be found in the LICENSE file.
             )
             #break
         #else
-            #error "!"
+            #error "D is neither 1, 2, 3 nor 4"
     #end // switch
 
 #end // LengthFunction_2A
@@ -882,9 +876,6 @@ which can be found in the LICENSE file.
         #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_3A, 1);
-    #if (!((D = 1) | (D = 2) | (D = 3) | (D = 4)))
-        #error "D is neither 1, 2, 3 nor 4"
-    #end // if
 
     #switch (D)
         #case (1)
@@ -908,7 +899,7 @@ which can be found in the LICENSE file.
             )
             #break
         #else
-            #error "!"
+            #error "D is neither 1, 2, 3 nor 4"
     #end // switch
 
 #end // LengthFunction_3A
@@ -1012,9 +1003,6 @@ which can be found in the LICENSE file.
         #error "M is not 1"
     #end // if
     #local D = dimension_size(_Fns_4A, 1);
-    #if (!((D = 1) | (D = 2) | (D = 3) | (D = 4)))
-        #error "D is neither 1, 2, 3 nor 4"
-    #end // if
 
     #switch (D)
         #case (1)
@@ -1038,7 +1026,7 @@ which can be found in the LICENSE file.
             )
             #break
         #else
-            #error "!"
+            #error "D is neither 1, 2, 3 nor 4"
     #end // switch
 
 #end // LengthFunction_4A
@@ -3839,9 +3827,6 @@ which can be found in the LICENSE file.
         #error "M is not 1"
     #end // if
     #local D = dimension_size(_Functions, 1);
-    #if (!((D = 1) | (D = 2) | (D = 3) | (D = 4)))
-        #error "D is neither 1, 2, 3 nor 4"
-    #end // if
     #local Amin =
         min(
             dimension_size(Min, 1),
@@ -3860,9 +3845,6 @@ which can be found in the LICENSE file.
         #error "Amin and Amax are not equal"
     #end // if
     #local A = Amin;
-    #if (!((A = 1) | (A = 2) | (A = 3) | (A = 4)))
-        #error "A is neither 1, 2, 3 nor 4"
-    #end // if
     #switch (D)
         #case (1)  // 1D
             #switch (A)
@@ -3895,7 +3877,7 @@ which can be found in the LICENSE file.
                     ;
                     #break
                 #else
-                    #error "!"
+                    #error "A is neither 1, 2, 3 nor 4"
             #end // switch
             #break
         #case (2)  // 2D
@@ -3929,7 +3911,7 @@ which can be found in the LICENSE file.
                     ;
                     #break
                 #else
-                    #error "!"
+                    #error "A is neither 1, 2, 3 nor 4"
             #end // switch
             #break
         #case (3)  // 3D
@@ -3963,7 +3945,7 @@ which can be found in the LICENSE file.
                     ;
                     #break
                 #else
-                    #error "!"
+                    #error "A is neither 1, 2, 3 nor 4"
             #end // switch
             #break
         #case (4)  // 4D
@@ -3997,11 +3979,11 @@ which can be found in the LICENSE file.
                     ;
                     #break
                 #else
-                    #error "!"
+                    #error "A is neither 1, 2, 3 nor 4"
             #end // switch
             #break
         #else
-            #error "!"
+            #error "D is neither 1, 2, 3 nor 4"
     #end // switch
 
 #end // SampleFunctions
