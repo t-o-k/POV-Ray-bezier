@@ -2290,16 +2290,15 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro FirstFundamentalFormFunctions_2A_3D(_D1_U_Fns_2A, _D1_V_Fns_2A)
+#macro FirstFundamentalFormFunctions_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D)
 
     Arr_3E(
-        DotFunction_2A_3D(_D1_U_Fns_2A, _D1_U_Fns_2A), // E
-        DotFunction_2A_3D(_D1_U_Fns_2A, _D1_V_Fns_2A), // F
-        DotFunction_2A_3D(_D1_V_Fns_2A, _D1_V_Fns_2A)  // G
+        DotFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_U_Fns_2A_3D), // E
+        DotFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D), // F
+        DotFunction_2A_3D(_D1_V_Fns_2A_3D, _D1_V_Fns_2A_3D)  // G
     )
 
 #end // macro FirstFundamentalFormFunctions_2A_3D
-
 
 #macro _SecondFundamentalFormFunctions_2A_3D(_D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
 
