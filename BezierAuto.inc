@@ -15,29 +15,29 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro ExtractComponent(VV, vC)
+#macro ExtractComponent(Vectors, vC)
 
-    #local N = dimensions(VV);
+    #local N = dimensions(Vectors);
 
     #switch (N)
         #case (1)  // 1N
             #local CC =
-                ExtractComponent_1N(VV, vC)
+                ExtractComponent_1N(Vectors, vC)
             ;
             #break
         #case (2)  // 2N
             #local CC =
-                ExtractComponent_2N(VV, vC)
+                ExtractComponent_2N(Vectors, vC)
             ;
             #break
         #case (3)  // 3N
             #local CC =
-                ExtractComponent_3N(VV, vC)
+                ExtractComponent_3N(Vectors, vC)
             ;
             #break
         #case (4)  // 4N
             #local CC =
-                ExtractComponent_4N(VV, vC)
+                ExtractComponent_4N(Vectors, vC)
             ;
             #break
         #else
