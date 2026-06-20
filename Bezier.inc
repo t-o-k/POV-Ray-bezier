@@ -895,7 +895,6 @@ which can be found in the LICENSE file.
 #end // macro From_3N_BezierFunctions_3A_2D
 
 
-
 #macro From_4N_BezierFunctions_4A_2D(Points_4N_2D)
 
     #local N = dimensions(Points_4N_2D);
