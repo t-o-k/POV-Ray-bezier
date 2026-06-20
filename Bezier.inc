@@ -420,8 +420,9 @@ which can be found in the LICENSE file.
 
 #macro UniformWeights_1N(DimensionsSizes_I, Constant)
 
-    #if (dimensions(DimensionsSizes_I) != 1)
-        #error "Is not 1"
+    #local M = dimensions(DimensionsSizes_I);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local N = dimension_size(DimensionsSizes_I, 1);
     #if (N != 1)
@@ -441,8 +442,9 @@ which can be found in the LICENSE file.
 
 #macro UniformWeights_2N(DimensionsSizes_IJ, Constant)
 
-    #if (dimensions(DimensionsSizes_IJ) != 1)
-        #error "Is not 1"
+    #local M = dimensions(DimensionsSizes_IJ);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local N = dimension_size(DimensionsSizes_IJ, 1);
     #if (N != 2)
@@ -466,8 +468,9 @@ which can be found in the LICENSE file.
 
 #macro UniformWeights_3N(DimensionsSizes_IJK, Constant)
 
-    #if (dimensions(DimensionsSizes_IJK) != 1)
-        #error "Is not 1"
+    #local M = dimensions(DimensionsSizes_IJK);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local N = dimension_size(DimensionsSizes_IJK, 1);
     #if (N != 3)
@@ -495,8 +498,9 @@ which can be found in the LICENSE file.
 
 #macro UniformWeights_4N(DimensionsSizes_IJKL, Constant)
 
-    #if (dimensions(DimensionsSizes_IJKL) != 1)
-        #error "Is not 1"
+    #local M = dimensions(DimensionsSizes_IJKL);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local N = dimension_size(DimensionsSizes_IJKL, 1);
     #if (N != 4)
@@ -528,8 +532,9 @@ which can be found in the LICENSE file.
 
 #macro UniformWeights(DimensionSizes, Constant)
 
-    #if (dimensions(DimensionSizes) != 1)
-        #error "Is not 1"
+    #local M = dimensions(DimensionSizes);
+    #if (M != 1)
+        #error "M is not 1"
     #end // if
     #local N = dimension_size(DimensionSizes, 1);
     #switch (N)
