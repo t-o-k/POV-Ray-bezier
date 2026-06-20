@@ -131,96 +131,6 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#declare _NoNegativeZeroFn =
-    function(_a) { select(_a, _a, 0, _a) }
-;
-
-// To avoid unnecessary parse warnings about zero power
-#declare PowFn =
-    function(_b, _n) { pow(_b, _n) }
-;
-
-#declare FactFn =
-    function(_n) {
-        prod(_i, 1, _n, _i)
-    }
-;
-
-#declare FactFallingFn =
-    function(_n, _k) {
-        _NoNegativeZeroFn(
-            prod(_i, _n - _k + 1, _n, _i)
-        )
-    }
-;
-
-#declare FactRisingFn =
-    function(_n, _k) {
-        _NoNegativeZeroFn(
-            prod(_i, _n, _n + _k - 1, _i)
-        )
-    }
-;
-
-#declare PermFn =
-    function(_n, _k) {
-        FactFallingFn(_n, _k)
-    }
-;
-
-#declare CombFn =
-    function(_n, _k) {
-        select(
-            _n - 2*_k,
-            FactFallingFn(_n, _n - _k)/FactFn(_n - _k),
-            FactFallingFn(_n, _k)/FactFn(_k)
-        )
-    }
-;
-
-#declare BinomialFn =
-    function(_n, _k) {
-        select(
-            _n - 2*_k,
-            FactFallingFn(_n, _n - _k)/FactFn(_n - _k),
-            FactFallingFn(_n, _k)/FactFn(_k)
-        )
-    }
-;
-
-#declare BernsteinCoefficientFn =
-    function(_p, _k, _n) {
-        PowFn(-1, _p - _k)*CombFn(_n, _p)*CombFn(_p, _k)
-    }
-;
-
-// B(k, n)(t)
-#declare BernsteinFn =
-    function(_k, _n, _t) {
-        sum(
-            _i, _k, _n,
-            BernsteinCoefficientFn(_i, _k, _n)
-            *
-            PowFn(_t, _i)
-        )
-    }
-;
-
-#macro BernsteinFunction(K, N)
-
-    function(_t) {
-        sum(
-            _i, K, N,
-            BernsteinCoefficientFn(_i, K, N)
-            *
-            PowFn(_t, _i)
-        )
-    }
-
-#end // macro BernsteinFunction
-
-// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
-
 #macro u_C(vP)
 
     vP.x
@@ -460,6 +370,20 @@ which can be found in the LICENSE file.
 #end // macro UniformWeights_4N
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
+
+#macro BernsteinFunction(K, N)
+
+    function(_t) {
+        sum(
+            _i, K, N,
+            BernsteinCoefficientFn(_i, K, N)
+            *
+            PowFn(_t, _i)
+        )
+    }
+
+#end // macro BernsteinFunction
+
 
 #macro BernsteinBasisFunction_1A(N, R)
 
