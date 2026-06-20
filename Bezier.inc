@@ -1197,18 +1197,15 @@ which can be found in the LICENSE file.
     #for (I, 1, NewSizeI - 2)
         #local pSum = p0;
         #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
-            #local pSum =
-                pSum
-                +
+            #local EC =
                 ElevationCoefficientFn(
                     NoOfDegrees,
                     SizeI,
                     Io,  // original index
                     I - Io  // shift
                 )
-                *
-                Values_1N[Io]
             ;
+            #local pSum = pSum + EC*Values_1N[Io];
         #end // for
         #local VV_1N[I] = pSum/DI;
     #end // for
@@ -1241,18 +1238,15 @@ which can be found in the LICENSE file.
         #for (I, 1, NewSizeI - 2)
             #local pSum = p0;
             #for (Io, max(0, I - NoOfDegrees), min(SizeI - 1, I))
-                #local pSum =
-                    pSum
-                    +
+                #local EC =
                     ElevationCoefficientFn(
                         NoOfDegrees,
                         SizeI,
                         Io,  // original index
                         I - Io  // shift
                     )
-                    *
-                    Values_2N[Io][J]
                 ;
+                #local pSum = pSum + EC*Values_2N[Io][J];
             #end // for
             #local VV_2N[I][J] = pSum/DI;
         #end // for
@@ -1286,18 +1280,15 @@ which can be found in the LICENSE file.
         #for (J, 1, NewSizeJ - 2)
             #local pSum = p0;
             #for (Jo, max(0, J - NoOfDegrees), min(SizeJ - 1, J))
-                #local pSum =
-                    pSum
-                    +
+                #local EC =
                     ElevationCoefficientFn(
                         NoOfDegrees,
                         SizeJ,
                         Jo,  // original index
                         J - Jo  // shift
                     )
-                    *
-                    Values_2N[I][Jo]
                 ;
+                #local pSum = pSum + EC*Values_2N[I][Jo];
             #end // for
             #local VV_2N[I][J] = pSum/DJ;
         #end // for
@@ -1333,18 +1324,15 @@ which can be found in the LICENSE file.
             #for (I, 1, NewSizeI - 2)
                 #local pSum = p0;
                 #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
-                    #local pSum =
-                        pSum
-                        +
+                    #local EC =
                         ElevationCoefficientFn(
                             NoOfDegrees,
                             SizeI,
                             Io,  // original index
                             I - Io  // shift
                         )
-                        *
-                        Values_3N[Io][J][K]
                     ;
+                    #local pSum = pSum + EC*Values_3N[Io][J][K];
                 #end // for
                 #local VV_3N[I][J][K] = pSum/DI;
             #end // for
@@ -1381,18 +1369,15 @@ which can be found in the LICENSE file.
             #for (J, 1, NewSizeJ - 2)
                 #local pSum = p0;
                 #for (Jo, max(J - NoOfDegrees, 0), min(SizeJ - 1, J))
-                    #local pSum =
-                        pSum
-                        +
+                    #local EC =
                         ElevationCoefficientFn(
                             NoOfDegrees,
                             SizeJ,
                             Jo,  // original index
                             J - Jo // shift
                         )
-                        *
-                        Values_3N[I][Jo][K]
                     ;
+                    #local pSum = pSum + EC*Values_3N[I][Jo][K];
                 #end // for
                 #local VV_3N[I][J][K] = pSum/DJ;
             #end // for
@@ -1429,18 +1414,15 @@ which can be found in the LICENSE file.
             #for (K, 1, NewSizeK - 2)
                 #local pSum = p0;
                 #for (Ko, max(K - NoOfDegrees, 0), min(SizeK - 1, K))
-                    #local pSum =
-                        pSum
-                        +
+                    #local EC =
                         ElevationCoefficientFn(
                             NoOfDegrees,
                             SizeK,
                             Ko,  // original index
                             K - Ko  // shift
                         )
-                        *
-                        Values_3N[I][J][Ko]
                     ;
+                    #local pSum = pSum + EC*Values_3N[I][J][Ko];
                 #end // for
                 #local VV_3N[I][J][K] = pSum/DK;
             #end // for
@@ -1479,18 +1461,15 @@ which can be found in the LICENSE file.
                 #for (I, 1, NewSizeI - 2)
                     #local pSum = p0;
                     #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
-                        #local pSum =
-                            pSum
-                            +
+                        #local EC =
                             ElevationCoefficientFn(
                                 NoOfDegrees,
                                 SizeI,
                                 Io,  // original index
                                 I - Io  // shift
                             )
-                            *
-                            Values_4N[Io][J][K][L]
                         ;
+                        #local pSum = pSum + EC*Values_4N[Io][J][K][L];
                     #end // for
                     #local VV_4N[I][J][K][L] = pSum/DI;
                 #end // for
@@ -1530,18 +1509,15 @@ which can be found in the LICENSE file.
                 #for (J, 1, NewSizeJ - 2)
                     #local pSum = p0;
                     #for (Jo, max(J - NoOfDegrees, 0), min(SizeJ - 1, J))
-                        #local pSum =
-                            pSum
-                            +
+                        #local EC =
                             ElevationCoefficientFn(
                                 NoOfDegrees,
                                 SizeJ,
                                 Jo,  // original index
                                 J - Jo  // shift
                             )
-                            *
-                            Values_4N[I][Jo][K][L]
                         ;
+                        #local pSum = pSum + EC*Values_4N[I][Jo][K][L];
                     #end // for
                     #local VV_4N[I][J][K][L] = pSum/DJ;
                 #end // for
@@ -1581,18 +1557,15 @@ which can be found in the LICENSE file.
                 #for (K, 1, NewSizeK - 2)
                     #local pSum = p0;
                     #for (Ko, max(K - NoOfDegrees, 0), min(SizeK - 1, K))
-                        #local pSum =
-                            pSum
-                            +
+                        #local EC =
                             ElevationCoefficientFn(
                                 NoOfDegrees,
                                 SizeK,
                                 Ko,  // original index
                                 K - Ko  // shift
                             )
-                            *
-                            Values_4N[I][J][Ko][L]
                         ;
+                        #local pSum = pSum + EC*Values_4N[I][J][Ko][L];
                     #end // for
                     #local VV_4N[I][J][K][L] = pSum/DK;
                 #end // for
@@ -1632,18 +1605,15 @@ which can be found in the LICENSE file.
                 #for (L, 1, NewSizeL - 2)
                     #local pSum = p0;
                     #for (Lo, max(L - NoOfDegrees, 0), min(SizeL - 1, L))
-                        #local pSum =
-                            pSum
-                            +
+                        #local EC =
                             ElevationCoefficientFn(
                                 NoOfDegrees,
                                 SizeL,
                                 Lo,  // original index
                                 L - Lo  // shift
                             )
-                            *
-                            Values_4N[I][J][K][Lo]
                         ;
+                        #local pSum = pSum + EC*Values_4N[I][J][K][Lo];
                     #end // for
                     #local VV_4N[I][J][K][L] = pSum/DL;
                 #end // for
