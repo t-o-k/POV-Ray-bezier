@@ -357,9 +357,7 @@ which can be found in the LICENSE file.
 #macro ExtractComponent(VV, vC)
 
     #local N = dimensions(VV);
-    #if (!((N = 1) | (N = 2) | (N = 3) | (N = 4)))
-        #error "N is neither 1, 2, 3 nor 4"
-    #end // if
+
     #switch (N)
         #case (1)  // 1N
             #local CC =
@@ -382,7 +380,7 @@ which can be found in the LICENSE file.
             ;
             #break
         #else
-            #error "!"
+            #error "N is neither 1, 2, 3 nor 4"
     #end // switch
 
     CC
@@ -534,9 +532,6 @@ which can be found in the LICENSE file.
         #error "Is not 1"
     #end // if
     #local N = dimension_size(DimensionSizes, 1);
-    #if (!((N = 1) | (N = 2) | (N = 3) | (N = 4)))
-        #error "N is neither 1, 2, 3 nor 4"
-    #end // if
     #switch (N)
         #case (1)  // 1N
             #local WW =
@@ -567,7 +562,7 @@ which can be found in the LICENSE file.
             ;
             #break
         #else
-            #error "!"
+            #error "N is neither 1, 2, 3 nor 4"
     #end // switch
 
     WW
@@ -919,9 +914,6 @@ which can be found in the LICENSE file.
 #macro BezierFunction(Values)
 
     #local N = dimensions(Values);
-    #if (!((N = 1) | (N = 2) | (N = 3) | (N = 4)))
-        #error "N is neither 1, 2, 3 nor 4"
-    #end // if
 
     #switch (N)
         #case (1)  // 1A_1N
@@ -945,7 +937,7 @@ which can be found in the LICENSE file.
             )
             #break
         #else
-            #error "!"
+            #error "N is neither 1, 2, 3 nor 4"
     #end // switch
 
 #end // macro BezierFunction
@@ -1051,9 +1043,6 @@ which can be found in the LICENSE file.
 #macro RationalBezierFunction(Values, Weights)
 
     #local N = dimensions(Values);
-    #if (!((N = 1) | (N = 2) | (N = 3) | (N = 4)))
-        #error "N is neither 1, 2, 3 nor 4"
-    #end // if
     #if (dimensions(Weights) != N)
         #error "Is not equal to N"
     #end // if
@@ -1080,7 +1069,7 @@ which can be found in the LICENSE file.
             )
             #break
         #else
-            #error "!"
+            #error "N is neither 1, 2, 3 nor 4"
     #end // switch
 
 #end // macro RationalBezierFunction
@@ -2587,9 +2576,6 @@ which can be found in the LICENSE file.
 #macro Der1_BezierFunctions(Values)
 
     #local N = dimensions(Values);
-    #if (!((N = 1) | (N = 2) | (N = 3) | (N = 4)))
-        #error "N is neither 1, 2, 3 nor 4"
-    #end // if
 
     #switch (N)
         #case (1)
@@ -2613,7 +2599,7 @@ which can be found in the LICENSE file.
             )
             #break
         #else
-            #error "!"
+            #error "N is neither 1, 2, 3 nor 4"
     #end // switch
 
 #end // macro Der1_BezierFunctions
@@ -2896,9 +2882,6 @@ which can be found in the LICENSE file.
 #macro Der2_BezierFunctions(Values)
 
     #local N = dimensions(Values);
-    #if (!((N = 1) | (N = 2) | (N = 3) | (N = 4)))
-        #error "N is neither 1, 2, 3 nor 4"
-    #end // if
 
     #switch (N)
         #case (1)
@@ -2922,7 +2905,7 @@ which can be found in the LICENSE file.
             )
             #break
         #else
-            #error "!"
+            #error "N is neither 1, 2, 3 nor 4"
     #end // switch
 
 #end // macro Der2_BezierFunctions
@@ -3538,9 +3521,6 @@ which can be found in the LICENSE file.
 #macro Der1_RationalBezierFunctions(Values, Weights)
 
     #local N = dimensions(Values);
-    #if (!((N = 1) | (N = 2) | (N = 3) | (N = 4)))
-        #error "N is neither 1, 2, 3 nor 4"
-    #end // if
     #if (dimensions(Weights) != N)
         #error "Is not equal to N"
     #end // if
@@ -3567,7 +3547,7 @@ which can be found in the LICENSE file.
             )
             #break
         #else
-            #error "!"
+            #error "N is neither 1, 2, 3 nor 4"
     #end // switch
 
 #end // macro Der1_RationalBezierFunctions
@@ -4265,9 +4245,6 @@ which can be found in the LICENSE file.
 #macro Der2_RationalBezierFunctions(Values, Weights)
 
     #local N = dimensions(Values);
-    #if (!((N = 1) | (N = 2) | (N = 3) | (N = 4)))
-        #error "N is neither 1, 2, 3 nor 4"
-    #end // if
     #if (dimensions(Weights) != N)
         #error "Is not equal to N"
     #end // if
@@ -4294,7 +4271,7 @@ which can be found in the LICENSE file.
             )
             #break
         #else
-            #error "!"
+            #error "N is neither 1, 2, 3 nor 4"
     #end // switch
 
 #end // macro Der2_RationalBezierFunctions
