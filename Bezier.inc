@@ -1866,22 +1866,22 @@ which can be found in the LICENSE file.
 #end // macro _HodographCoefficients
 
 
-#macro Hodograph_I_1N(Values_1N, M)
+#macro Hodograph_I_1N(ValuesOrPoints_1N, M)
 
-    #local N = dimensions(Values_1N);
+    #local N = dimensions(ValuesOrPoints_1N);
     #if (N != 1)
         #error "N is not 1"
     #end // if
     #local CC = _HodographCoefficients(M);
-    #local SizeI = dimension_size(Values_1N, 1);
+    #local SizeI = dimension_size(ValuesOrPoints_1N, 1);
     #local NewSizeI = SizeI - M;   
     #local VV_1N = array[NewSizeI];
-    #local p0 = 0*Values_1N[0];
+    #local p0 = 0*ValuesOrPoints_1N[0];
     #for (I, 0, NewSizeI - 1)
         #local pSum = p0;
         #for (A, 0, M)
             #local pSum =
-                pSum + CC[A]*Values_1N[I+A]
+                pSum + CC[A]*ValuesOrPoints_1N[I+A]
             ;
         #end // for
         #local VV_1N[I] = FactFallingFn(SizeI - 1, M)*pSum;
@@ -1892,24 +1892,24 @@ which can be found in the LICENSE file.
 #end // macro Hodograph_I_1N
 
 
-#macro Hodograph_I_2N(Values_2N, M)
+#macro Hodograph_I_2N(ValuesOrPoints_2N, M)
 
-    #local N = dimensions(Values_2N);
+    #local N = dimensions(ValuesOrPoints_2N);
     #if (N != 2)
         #error "N is not 2"
     #end // if
     #local CC = _HodographCoefficients(M);
-    #local SizeI = dimension_size(Values_2N, 1);
-    #local SizeJ = dimension_size(Values_2N, 2);
+    #local SizeI = dimension_size(ValuesOrPoints_2N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_2N, 2);
     #local NewSizeI = SizeI - M;
     #local VV_2N = array[NewSizeI][SizeJ];
-    #local p0 = 0*Values_2N[0][0];
+    #local p0 = 0*ValuesOrPoints_2N[0][0];
     #for (J, 0, SizeJ - 1)
         #for (I, 0, NewSizeI - 1)
             #local pSum = p0;
             #for (A, 0, M)
                 #local pSum =
-                    pSum + CC[A]*Values_2N[I+A][J]
+                    pSum + CC[A]*ValuesOrPoints_2N[I+A][J]
                 ;
             #end // for
             #local VV_2N[I][J] =
@@ -1923,24 +1923,24 @@ which can be found in the LICENSE file.
 #end // macro Hodograph_I_2N
 
 
-#macro Hodograph_J_2N(Values_2N, M)
+#macro Hodograph_J_2N(ValuesOrPoints_2N, M)
 
-    #local N = dimensions(Values_2N);
+    #local N = dimensions(ValuesOrPoints_2N);
     #if (N != 2)
         #error "N is not 2"
     #end // if
     #local CC = _HodographCoefficients(M);
-    #local SizeI = dimension_size(Values_2N, 1);
-    #local SizeJ = dimension_size(Values_2N, 2);
+    #local SizeI = dimension_size(ValuesOrPoints_2N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_2N, 2);
     #local NewSizeJ = SizeJ - M;
     #local VV_2N = array[SizeI][NewSizeJ];
-    #local p0 = 0*Values_2N[0][0];
+    #local p0 = 0*ValuesOrPoints_2N[0][0];
     #for (I, 0, SizeI - 1)
         #for (J, 0, NewSizeJ - 1)
             #local pSum = p0;
             #for (A, 0, M)
                 #local pSum =
-                    pSum + CC[A]*Values_2N[I][J+A]
+                    pSum + CC[A]*ValuesOrPoints_2N[I][J+A]
                 ;
             #end // for
             #local VV_2N[I][J] =
@@ -1954,26 +1954,26 @@ which can be found in the LICENSE file.
 #end // macro Hodograph_J_2N
 
 
-#macro Hodograph_I_3N(Values_3N, M)
+#macro Hodograph_I_3N(ValuesOrPoints_3N, M)
 
-    #local N = dimensions(Values_3N);
+    #local N = dimensions(ValuesOrPoints_3N);
     #if (N != 3)
         #error "N is not 3"
     #end // if
     #local CC = _HodographCoefficients(M);
-    #local SizeI = dimension_size(Values_3N, 1);
-    #local SizeJ = dimension_size(Values_3N, 2);
-    #local SizeK = dimension_size(Values_3N, 3);
+    #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
     #local NewSizeI = SizeI - M;
     #local VV_3N = array[NewSizeI][SizeJ][SizeK];
-    #local p0 = 0*Values_3N[0][0][0];
+    #local p0 = 0*ValuesOrPoints_3N[0][0][0];
     #for (K, 0, SizeK - 1)
         #for (J, 0, SizeJ - 1)
             #for (I, 0, NewSizeI - 1)
                 #local pSum = p0;
                 #for (A, 0, M)
                     #local pSum =
-                        pSum + CC[A]*Values_3N[I+A][J][K]
+                        pSum + CC[A]*ValuesOrPoints_3N[I+A][J][K]
                     ;
                 #end // for
                 #local VV_3N[I][J][K] =
@@ -1988,26 +1988,26 @@ which can be found in the LICENSE file.
 #end // macro Hodograph_I_3N
 
 
-#macro Hodograph_J_3N(Values_3N, M)
+#macro Hodograph_J_3N(ValuesOrPoints_3N, M)
 
-    #local N = dimensions(Values_3N);
+    #local N = dimensions(ValuesOrPoints_3N);
     #if (N != 3)
         #error "N is not 3"
     #end // if
     #local CC = _HodographCoefficients(M);
-    #local SizeI = dimension_size(Values_3N, 1);
-    #local SizeJ = dimension_size(Values_3N, 2);
-    #local SizeK = dimension_size(Values_3N, 3);
+    #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
     #local NewSizeJ = SizeJ - M;
     #local VV_3N = array[SizeI][NewSizeJ][SizeK];
-    #local p0 = 0*Values_3N[0][0][0];
+    #local p0 = 0*ValuesOrPoints_3N[0][0][0];
     #for (I, 0, SizeI - 1)
         #for (K, 0, SizeK - 1)
             #for (J, 0, NewSizeJ - 1)
                 #local pSum = p0;
                 #for (A, 0, M)
                     #local pSum =
-                        pSum + CC[A]*Values_3N[I][J+A][K]
+                        pSum + CC[A]*ValuesOrPoints_3N[I][J+A][K]
                     ;
                 #end // for
                 #local VV_3N[I][J][K] =
@@ -2022,26 +2022,26 @@ which can be found in the LICENSE file.
 #end // macro Hodograph_J_3N
 
 
-#macro Hodograph_K_3N(Values_3N, M)
+#macro Hodograph_K_3N(ValuesOrPoints_3N, M)
 
-    #local N = dimensions(Values_3N);
+    #local N = dimensions(ValuesOrPoints_3N);
     #if (N != 3)
         #error "N is not 3"
     #end // if
     #local CC = _HodographCoefficients(M);
-    #local SizeI = dimension_size(Values_3N, 1);
-    #local SizeJ = dimension_size(Values_3N, 2);
-    #local SizeK = dimension_size(Values_3N, 3);
+    #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
     #local NewSizeK = SizeK - M;
     #local VV_3N = array[SizeI][SizeJ][NewSizeK];
-    #local p0 = 0*Values_3N[0][0][0];
+    #local p0 = 0*ValuesOrPoints_3N[0][0][0];
     #for (J, 0, SizeJ - 1)
         #for (I, 0, SizeI - 1)
             #for (K, 0, NewSizeK - 1)
                 #local pSum = p0;
                 #for (A, 0, M)
                     #local pSum =
-                        pSum + CC[A]*Values_3N[I][J][K+A]
+                        pSum + CC[A]*ValuesOrPoints_3N[I][J][K+A]
                     ;
                 #end // for
                 #local VV_3N[I][J][K] =
@@ -2056,20 +2056,20 @@ which can be found in the LICENSE file.
 #end // macro Hodograph_K_3N
 
 
-#macro Hodograph_I_4N(Values_4N, M)
+#macro Hodograph_I_4N(ValuesOrPoints_4N, M)
 
-    #local N = dimensions(Values_4N);
+    #local N = dimensions(ValuesOrPoints_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
     #local CC = _HodographCoefficients(M);
-    #local SizeI = dimension_size(Values_4N, 1);
-    #local SizeJ = dimension_size(Values_4N, 2);
-    #local SizeK = dimension_size(Values_4N, 3);
-    #local SizeL = dimension_size(Values_4N, 4);
+    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
+    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
     #local NewSizeI = SizeI - M;
     #local VV_4N = array[NewSizeI][SizeJ][SizeK][SizeL];
-    #local p0 = 0*Values_4N[0][0][0][0];
+    #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
     #for (L, 0, SizeL - 1)
         #for (K, 0, SizeK - 1)
             #for (J, 0, SizeJ - 1)
@@ -2077,7 +2077,7 @@ which can be found in the LICENSE file.
                     #local pSum = p0;
                     #for (A, 0, M)
                         #local pSum =
-                            pSum + CC[A]*Values_4N[I+A][J][K][L]
+                            pSum + CC[A]*ValuesOrPoints_4N[I+A][J][K][L]
                         ;
                     #end // for
                     #local VV_4N[I][J][K][L] =
@@ -2093,20 +2093,20 @@ which can be found in the LICENSE file.
 #end // macro Hodograph_I_4N
 
 
-#macro Hodograph_J_4N(Values_4N, M)
+#macro Hodograph_J_4N(ValuesOrPoints_4N, M)
 
-    #local N = dimensions(Values_4N);
+    #local N = dimensions(ValuesOrPoints_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
     #local CC = _HodographCoefficients(M);
-    #local SizeI = dimension_size(Values_4N, 1);
-    #local SizeJ = dimension_size(Values_4N, 2);
-    #local SizeK = dimension_size(Values_4N, 3);
-    #local SizeL = dimension_size(Values_4N, 4);
+    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
+    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
     #local NewSizeJ = SizeJ - M;
     #local VV_4N = array[SizeI][NewSizeJ][SizeK][SizeL];
-    #local p0 = 0*Values_4N[0][0][0][0];
+    #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
     #for (I, 0, SizeI - 1)
         #for (L, 0, SizeL - 1)
             #for (K, 0, SizeK - 1)
@@ -2114,7 +2114,7 @@ which can be found in the LICENSE file.
                     #local pSum = p0;
                     #for (A, 0, M)
                         #local pSum =
-                            pSum + CC[A]*Values_4N[I][J+A][K][L]
+                            pSum + CC[A]*ValuesOrPoints_4N[I][J+A][K][L]
                         ;
                     #end // for
                     #local VV_4N[I][J][K][L] =
@@ -2130,20 +2130,20 @@ which can be found in the LICENSE file.
 #end // macro Hodograph_J_4N
 
 
-#macro Hodograph_K_4N(Values_4N, M)
+#macro Hodograph_K_4N(ValuesOrPoints_4N, M)
 
-    #local N = dimensions(Values_4N);
+    #local N = dimensions(ValuesOrPoints_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
     #local CC = _HodographCoefficients(M);
-    #local SizeI = dimension_size(Values_4N, 1);
-    #local SizeJ = dimension_size(Values_4N, 2);
-    #local SizeK = dimension_size(Values_4N, 3);
-    #local SizeL = dimension_size(Values_4N, 4);
+    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
+    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
     #local NewSizeK = SizeK - M;
     #local VV_4N = array[SizeI][SizeJ][NewSizeK][SizeL];
-    #local p0 = 0*Values_4N[0][0][0][0];
+    #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
     #for (J, 0, SizeJ - 1)
         #for (I, 0, SizeI - 1)
             #for (L, 0, SizeL - 1)
@@ -2151,7 +2151,7 @@ which can be found in the LICENSE file.
                     #local pSum = p0;
                     #for (A, 0, M)
                         #local pSum =
-                            pSum + CC[A]*Values_4N[I][J][K+A][L]
+                            pSum + CC[A]*ValuesOrPoints_4N[I][J][K+A][L]
                         ;
                     #end // for
                     #local VV_4N[I][J][K][L] =
@@ -2167,20 +2167,20 @@ which can be found in the LICENSE file.
 #end // macro Hodograph_K_4N
 
 
-#macro Hodograph_L_4N(Values_4N, M)
+#macro Hodograph_L_4N(ValuesOrPoints_4N, M)
 
-    #local N = dimensions(Values_4N);
+    #local N = dimensions(ValuesOrPoints_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
     #local CC = _HodographCoefficients(M);
-    #local SizeI = dimension_size(Values_4N, 1);
-    #local SizeJ = dimension_size(Values_4N, 2);
-    #local SizeK = dimension_size(Values_4N, 3);
-    #local SizeL = dimension_size(Values_4N, 4);
+    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
+    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
     #local NewSizeL = SizeL - M;
     #local VV_4N = array[SizeI][SizeJ][SizeK][NewSizeL];
-    #local p0 = 0*Values_4N[0][0][0][0];
+    #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
     #for (K, 0, SizeK - 1)
         #for (J, 0, SizeJ - 1)
             #for (I, 0, SizeI - 1)
@@ -2188,7 +2188,7 @@ which can be found in the LICENSE file.
                     #local pSum = p0;
                     #for (A, 0, M)
                         #local pSum =
-                            pSum + CC[A]*Values_4N[I][J][K][L+A]
+                            pSum + CC[A]*ValuesOrPoints_4N[I][J][K][L+A]
                         ;
                     #end // for
                     #local VV_4N[I][J][K][L] =
