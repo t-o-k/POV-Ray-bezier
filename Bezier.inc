@@ -394,14 +394,11 @@ which can be found in the LICENSE file.
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #local SizeI = I_E(DimensionsSizes_I);
-    #local LastI = SizeI - 1;
-    #local WW_1N = array[SizeI];
-    #for (I, 0, LastI)
-        #local WW_1N[I] = Constant;
-    #end // for
 
-    WW_1N
+    From_Fn_1A_Array_1N(
+        DimensionsSizes_I,
+        function(_i) { Constant }
+    )
 
 #end // macro UniformWeights_1N
 
@@ -416,18 +413,11 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local SizeI = I_E(DimensionsSizes_IJ);
-    #local SizeJ = J_E(DimensionsSizes_IJ);
-    #local LastI = SizeI - 1;
-    #local LastJ = SizeJ - 1;
-    #local WW_2N = array[SizeI][SizeJ];
-    #for (J, 0, LastJ)
-        #for (I, 0, LastI)
-            #local WW_2N[I][J] = Constant;
-        #end // for
-    #end // for
 
-    WW_2N
+    From_Fn_2A_Array_2N(
+        DimensionsSizes_IJ,
+        function(_i, _j) { Constant }
+    )
 
 #end // macro UniformWeights_2N
 
@@ -442,22 +432,11 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = I_E(DimensionsSizes_IJK);
-    #local SizeJ = J_E(DimensionsSizes_IJK);
-    #local SizeK = K_E(DimensionsSizes_IJK);
-    #local LastI = SizeI - 1;
-    #local LastJ = SizeJ - 1;
-    #local LastK = SizeK - 1;
-    #local WW_3N = array[SizeI][SizeJ][SizeK];
-    #for (K, 0, LastK)
-        #for (J, 0, LastJ)
-            #for (I, 0, LastI)
-                #local WW_3N[I][J][K] = Constant;
-            #end // for
-        #end // for
-    #end // for
 
-    WW_3N
+    From_Fn_3A_Array_3N(
+        DimensionsSizes_IJK,
+        function(_i, _j, _k) { Constant }
+    )
 
 #end // macro UniformWeights_3N
 
@@ -472,26 +451,11 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = I_E(DimensionsSizes_IJKL);
-    #local SizeJ = J_E(DimensionsSizes_IJKL);
-    #local SizeK = K_E(DimensionsSizes_IJKL);
-    #local SizeL = L_E(DimensionsSizes_IJKL);
-    #local LastI = SizeI - 1;
-    #local LastJ = SizeJ - 1;
-    #local LastK = SizeK - 1;
-    #local LastL = SizeL - 1;
-    #local WW_4N = array[SizeI][SizeJ][SizeK][SizeL];
-    #for (L, 0, LastL)
-        #for (K, 0, LastK)
-            #for (J, 0, LastJ)
-                #for (I, 0, LastI)
-                    #local WW_4N[I][J][K][L] = Constant;
-                #end // for
-            #end // for
-        #end // for
-    #end // for
 
-    WW_4N
+    From_Fn_4A_Array_4N(
+        DimensionsSizes_IJKL,
+        function(_i, _j, _k, _l) { Constant }
+    )
 
 #end // macro UniformWeights_4N
 
