@@ -838,6 +838,172 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
+#macro From_1N_BezierFunctions_1A_2D(Points_1N_2D)
+
+    #local N = dimensions(Points_1N_2D);
+    #if (N != 1)
+        #error "N is not 1"
+    #end // if
+
+    Arr_2E(
+        From_1N_BezierFunction_1A(
+            From_1N_ExtractComponent_1N(Points_1N_2D, x)
+        ),
+        From_1N_BezierFunction_1A(
+            From_1N_ExtractComponent_1N(Points_1N_2D, y)
+        )
+    )
+
+#end // macro From_1N_BezierFunctions_1A_2D
+
+
+#macro From_2N_BezierFunctions_2A_2D(Points_2N_2D)
+
+    #local N = dimensions(Points_2N_2D);
+    #if (N != 2)
+        #error "N is not 2"
+    #end // if
+
+    Arr_2E(
+        From_2N_BezierFunction_2A(
+            From_2N_ExtractComponent_2N(Points_2N_2D, x)
+        ),
+        From_2N_BezierFunction_2A(
+            From_2N_ExtractComponent_2N(Points_2N_2D, y)
+        )
+    )
+
+#end // macro From_2N_BezierFunctions_2A_2D
+
+
+#macro From_3N_BezierFunctions_3A_2D(Points_3N_2D)
+
+    #local N = dimensions(Points_3N_2D);
+    #if (N != 3)
+        #error "N is not 3"
+    #end // if
+
+    Arr_2E(
+        From_3N_BezierFunction_3A(
+            From_3N_ExtractComponent_3N(Points_3N_2D, x)
+        ),
+        From_3N_BezierFunction_3A(
+            From_3N_ExtractComponent_3N(Points_3N_2D, y)
+        )
+    )
+
+#end // macro From_3N_BezierFunctions_3A_2D
+
+
+
+#macro From_4N_BezierFunctions_4A_2D(Points_4N_2D)
+
+    #local N = dimensions(Points_4N_2D);
+    #if (N != 4)
+        #error "N is not 4"
+    #end // if
+
+    Arr_2E(
+        From_4N_BezierFunction_4A(
+            From_4N_ExtractComponent_4N(Points_4N_2D, x)
+        ),
+        From_4N_BezierFunction_4A(
+            From_4N_ExtractComponent_4N(Points_4N_2D, y)
+        )
+    )
+
+#end // macro From_4N_BezierFunctions_4A_2D
+
+
+#macro From_1N_BezierFunctions_1A_3D(Points_1N_3D)
+
+    #local N = dimensions(Points_1N_3D);
+    #if (N != 1)
+        #error "N is not 1"
+    #end // if
+
+    Arr_3E(
+        From_1N_BezierFunction_1A(
+            From_1N_ExtractComponent_1N(Points_1N_3D, x)
+        ),
+        From_1N_BezierFunction_1A(
+            From_1N_ExtractComponent_1N(Points_1N_3D, y)
+        ),
+        From_1N_BezierFunction_1A(
+            From_1N_ExtractComponent_1N(Points_1N_3D, z)
+        )
+    )
+
+#end // macro From_1N_BezierFunctions_1A_3D
+
+
+#macro From_2N_BezierFunctions_2A_3D(Points_2N_3D)
+
+    #local N = dimensions(Points_2N_3D);
+    #if (N != 2)
+        #error "N is not 2"
+    #end // if
+
+    Arr_3E(
+        From_2N_BezierFunction_2A(
+            From_2N_ExtractComponent_2N(Points_2N_3D, x)
+        ),
+        From_2N_BezierFunction_2A(
+            From_2N_ExtractComponent_2N(Points_2N_3D, y)
+        ),
+        From_2N_BezierFunction_2A(
+            From_2N_ExtractComponent_2N(Points_2N_3D, z)
+        )
+    )
+
+#end // macro From_2N_BezierFunctions_2A_3D
+
+
+#macro From_3N_BezierFunctions_3A_3D(Points_3N_3D)
+
+    #local N = dimensions(Points_3N_3D);
+    #if (N != 3)
+        #error "N is not 3"
+    #end // if
+
+    Arr_3E(
+        From_3N_BezierFunction_3A(
+            From_3N_ExtractComponent_3N(Points_3N_3D, x)
+        ),
+        From_3N_BezierFunction_3A(
+            From_3N_ExtractComponent_3N(Points_3N_3D, y)
+        ),
+        From_3N_BezierFunction_3A(
+            From_3N_ExtractComponent_3N(Points_3N_3D, z)
+        )
+    )
+
+#end // macro From_3N_BezierFunctions_3A_3D
+
+
+#macro From_4N_BezierFunctions_4A_3D(Points_4N_3D)
+
+    #local N = dimensions(Points_4N_3D);
+    #if (N != 4)
+        #error "N is not 4"
+    #end // if
+
+    Arr_3E(
+        From_4N_BezierFunction_4A(
+            From_4N_ExtractComponent_4N(Points_4N_3D, x)
+        ),
+        From_4N_BezierFunction_4A(
+            From_4N_ExtractComponent_4N(Points_4N_3D, y)
+        ),
+        From_4N_BezierFunction_4A(
+            From_4N_ExtractComponent_4N(Points_4N_3D, z)
+        )
+    )
+
+#end // macro From_4N_BezierFunctions_4A_3D
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
 #macro From_1N_RationalBezierFunction_1A(Values_1N, Weights_1N)
 
     #local N = dimensions(Values_1N);
