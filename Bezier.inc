@@ -1626,6 +1626,7 @@ which can be found in the LICENSE file.
 
 #end // macro DegreeElevate_L_4N
 
+
 #macro RationalDegreeElevate_I_1N(Values_1N, Weights_1N, NoOfDegrees)
 
     #local WeightedValues_1N =
