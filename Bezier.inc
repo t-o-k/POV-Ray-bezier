@@ -1112,13 +1112,13 @@ which can be found in the LICENSE file.
 ;
 
 
-#macro DegreeElevate_I_1N(Values_1N, NoOfDegrees)
+#macro DegreeElevate_I_1N(ValuesOrPoints_1N, NoOfDegrees)
 
-    #local N = dimensions(Values_1N);
+    #local N = dimensions(ValuesOrPoints_1N);
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #local SizeI = dimension_size(Values_1N, 1);
+    #local SizeI = dimension_size(ValuesOrPoints_1N, 1);
     #local NewSizeI = SizeI + NoOfDegrees;
     #local VV_1N = array[NewSizeI];
     #local DI =
@@ -1127,8 +1127,8 @@ which can be found in the LICENSE file.
             NoOfDegrees
         )
     ;
-    #local p0 = 0*Values_1N[0];
-    #local VV_1N[0] = Values_1N[0];
+    #local p0 = 0*ValuesOrPoints_1N[0];
+    #local VV_1N[0] = ValuesOrPoints_1N[0];
     #for (I, 1, NewSizeI - 2)
         #local pSum = p0;
         #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
@@ -1140,25 +1140,25 @@ which can be found in the LICENSE file.
                     I - Io  // shift
                 )
             ;
-            #local pSum = pSum + EC*Values_1N[Io];
+            #local pSum = pSum + EC*ValuesOrPoints_1N[Io];
         #end // for
         #local VV_1N[I] = pSum/DI;
     #end // for
-    #local VV_1N[NewSizeI-1] = Values_1N[SizeI-1];
+    #local VV_1N[NewSizeI-1] = ValuesOrPoints_1N[SizeI-1];
 
     VV_1N
 
 #end // macro DegreeElevate_I_1N
 
 
-#macro DegreeElevate_I_2N(Values_2N, NoOfDegrees)
+#macro DegreeElevate_I_2N(ValuesOrPoints_2N, NoOfDegrees)
 
-    #local N = dimensions(Values_2N);
+    #local N = dimensions(ValuesOrPoints_2N);
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local SizeI = dimension_size(Values_2N, 1);
-    #local SizeJ = dimension_size(Values_2N, 2);
+    #local SizeI = dimension_size(ValuesOrPoints_2N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_2N, 2);
     #local NewSizeI = SizeI + NoOfDegrees;
     #local VV_2N = array[NewSizeI][SizeJ];
     #local DI =
@@ -1167,9 +1167,9 @@ which can be found in the LICENSE file.
             NoOfDegrees
         )
     ;
-    #local p0 = 0*Values_2N[0][0];
+    #local p0 = 0*ValuesOrPoints_2N[0][0];
     #for (J, 0, SizeJ - 1)
-        #local VV_2N[0][J] = Values_2N[0][J];
+        #local VV_2N[0][J] = ValuesOrPoints_2N[0][J];
         #for (I, 1, NewSizeI - 2)
             #local pSum = p0;
             #for (Io, max(0, I - NoOfDegrees), min(SizeI - 1, I))
@@ -1181,11 +1181,11 @@ which can be found in the LICENSE file.
                         I - Io  // shift
                     )
                 ;
-                #local pSum = pSum + EC*Values_2N[Io][J];
+                #local pSum = pSum + EC*ValuesOrPoints_2N[Io][J];
             #end // for
             #local VV_2N[I][J] = pSum/DI;
         #end // for
-        #local VV_2N[NewSizeI-1][J] = Values_2N[SizeI-1][J];
+        #local VV_2N[NewSizeI-1][J] = ValuesOrPoints_2N[SizeI-1][J];
     #end // for
 
     VV_2N
@@ -1193,14 +1193,14 @@ which can be found in the LICENSE file.
 #end // macro DegreeElevate_I_2N
 
 
-#macro DegreeElevate_J_2N(Values_2N, NoOfDegrees)
+#macro DegreeElevate_J_2N(ValuesOrPoints_2N, NoOfDegrees)
 
-    #local N = dimensions(Values_2N);
+    #local N = dimensions(ValuesOrPoints_2N);
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local SizeI = dimension_size(Values_2N, 1);
-    #local SizeJ = dimension_size(Values_2N, 2);
+    #local SizeI = dimension_size(ValuesOrPoints_2N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_2N, 2);
     #local NewSizeJ = SizeJ + NoOfDegrees;
     #local VV_2N = array[SizeI][NewSizeJ];
     #local DJ =
@@ -1209,9 +1209,9 @@ which can be found in the LICENSE file.
             NoOfDegrees
         )
     ;
-    #local p0 = 0*Values_2N[0][0];
+    #local p0 = 0*ValuesOrPoints_2N[0][0];
     #for (I, 0, SizeI - 1)
-        #local VV_2N[I][0] = Values_2N[I][0];
+        #local VV_2N[I][0] = ValuesOrPoints_2N[I][0];
         #for (J, 1, NewSizeJ - 2)
             #local pSum = p0;
             #for (Jo, max(0, J - NoOfDegrees), min(SizeJ - 1, J))
@@ -1223,11 +1223,11 @@ which can be found in the LICENSE file.
                         J - Jo  // shift
                     )
                 ;
-                #local pSum = pSum + EC*Values_2N[I][Jo];
+                #local pSum = pSum + EC*ValuesOrPoints_2N[I][Jo];
             #end // for
             #local VV_2N[I][J] = pSum/DJ;
         #end // for
-        #local VV_2N[I][NewSizeJ-1] = Values_2N[I][SizeJ-1];
+        #local VV_2N[I][NewSizeJ-1] = ValuesOrPoints_2N[I][SizeJ-1];
     #end // for
 
     VV_2N
@@ -1235,15 +1235,15 @@ which can be found in the LICENSE file.
 #end // macro DegreeElevate_J_2N
 
 
-#macro DegreeElevate_I_3N(Values_3N, NoOfDegrees)
+#macro DegreeElevate_I_3N(ValuesOrPoints_3N, NoOfDegrees)
 
-    #local N = dimensions(Values_3N);
+    #local N = dimensions(ValuesOrPoints_3N);
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(Values_3N, 1);
-    #local SizeJ = dimension_size(Values_3N, 2);
-    #local SizeK = dimension_size(Values_3N, 3);
+    #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
     #local NewSizeI = SizeI + NoOfDegrees;
     #local VV_3N = array[NewSizeI][SizeJ][SizeK];
     #local DI =
@@ -1252,10 +1252,10 @@ which can be found in the LICENSE file.
             NoOfDegrees
         )
     ;
-    #local p0 = 0*Values_3N[0][0][0];
+    #local p0 = 0*ValuesOrPoints_3N[0][0][0];
     #for (K, 0, SizeK - 1)
         #for (J, 0, SizeJ - 1)
-            #local VV_3N[0][J][K] = Values_3N[0][J][K];
+            #local VV_3N[0][J][K] = ValuesOrPoints_3N[0][J][K];
             #for (I, 1, NewSizeI - 2)
                 #local pSum = p0;
                 #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
@@ -1267,11 +1267,11 @@ which can be found in the LICENSE file.
                             I - Io  // shift
                         )
                     ;
-                    #local pSum = pSum + EC*Values_3N[Io][J][K];
+                    #local pSum = pSum + EC*ValuesOrPoints_3N[Io][J][K];
                 #end // for
                 #local VV_3N[I][J][K] = pSum/DI;
             #end // for
-            #local VV_3N[NewSizeI-1][J][K] = Values_3N[SizeI-1][J][K];
+            #local VV_3N[NewSizeI-1][J][K] = ValuesOrPoints_3N[SizeI-1][J][K];
         #end // for
     #end // for
 
@@ -1280,15 +1280,15 @@ which can be found in the LICENSE file.
 #end // macro DegreeElevate_I_3N
 
 
-#macro DegreeElevate_J_3N(Values_3N, NoOfDegrees)
+#macro DegreeElevate_J_3N(ValuesOrPoints_3N, NoOfDegrees)
 
-    #local N = dimensions(Values_3N);
+    #local N = dimensions(ValuesOrPoints_3N);
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(Values_3N, 1);
-    #local SizeJ = dimension_size(Values_3N, 2);
-    #local SizeK = dimension_size(Values_3N, 3);
+    #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
     #local NewSizeJ = SizeJ + NoOfDegrees;
     #local VV_3N = array[SizeI][NewSizeJ][SizeK];
     #local DJ =
@@ -1297,10 +1297,10 @@ which can be found in the LICENSE file.
             NoOfDegrees
         )
     ;
-    #local p0 = 0*Values_3N[0][0][0];
+    #local p0 = 0*ValuesOrPoints_3N[0][0][0];
     #for (I, 0, SizeI - 1)
         #for (K, 0, SizeK - 1)
-            #local VV_3N[I][0][K] = Values_3N[I][0][K];
+            #local VV_3N[I][0][K] = ValuesOrPoints_3N[I][0][K];
             #for (J, 1, NewSizeJ - 2)
                 #local pSum = p0;
                 #for (Jo, max(J - NoOfDegrees, 0), min(SizeJ - 1, J))
@@ -1312,11 +1312,11 @@ which can be found in the LICENSE file.
                             J - Jo // shift
                         )
                     ;
-                    #local pSum = pSum + EC*Values_3N[I][Jo][K];
+                    #local pSum = pSum + EC*ValuesOrPoints_3N[I][Jo][K];
                 #end // for
                 #local VV_3N[I][J][K] = pSum/DJ;
             #end // for
-            #local VV_3N[I][NewSizeJ-1][K] = Values_3N[I][SizeJ-1][K];
+            #local VV_3N[I][NewSizeJ-1][K] = ValuesOrPoints_3N[I][SizeJ-1][K];
         #end // for
     #end // for
 
@@ -1325,15 +1325,15 @@ which can be found in the LICENSE file.
 #end // macro DegreeElevate_J_3N
 
 
-#macro DegreeElevate_K_3N(Values_3N, NoOfDegrees)
+#macro DegreeElevate_K_3N(ValuesOrPoints_3N, NoOfDegrees)
 
-    #local N = dimensions(Values_3N);
+    #local N = dimensions(ValuesOrPoints_3N);
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(Values_3N, 1);
-    #local SizeJ = dimension_size(Values_3N, 2);
-    #local SizeK = dimension_size(Values_3N, 3);
+    #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
     #local NewSizeK = SizeK + NoOfDegrees;
     #local VV_3N = array[SizeI][SizeJ][NewSizeK];
     #local DK =
@@ -1342,10 +1342,10 @@ which can be found in the LICENSE file.
             NoOfDegrees
         )
     ;
-    #local p0 = 0*Values_3N[0][0][0];
+    #local p0 = 0*ValuesOrPoints_3N[0][0][0];
     #for (J, 0, SizeJ - 1)
         #for (I, 0, SizeI - 1)
-            #local VV_3N[I][J][0] = Values_3N[I][J][0];
+            #local VV_3N[I][J][0] = ValuesOrPoints_3N[I][J][0];
             #for (K, 1, NewSizeK - 2)
                 #local pSum = p0;
                 #for (Ko, max(K - NoOfDegrees, 0), min(SizeK - 1, K))
@@ -1357,11 +1357,11 @@ which can be found in the LICENSE file.
                             K - Ko  // shift
                         )
                     ;
-                    #local pSum = pSum + EC*Values_3N[I][J][Ko];
+                    #local pSum = pSum + EC*ValuesOrPoints_3N[I][J][Ko];
                 #end // for
                 #local VV_3N[I][J][K] = pSum/DK;
             #end // for
-            #local VV_3N[I][J][NewSizeK-1] = Values_3N[I][J][SizeK-1];
+            #local VV_3N[I][J][NewSizeK-1] = ValuesOrPoints_3N[I][J][SizeK-1];
         #end // for
     #end // for
 
@@ -1370,16 +1370,16 @@ which can be found in the LICENSE file.
 #end // macro DegreeElevate_K_3N
 
 
-#macro DegreeElevate_I_4N(Values_4N, NoOfDegrees)
+#macro DegreeElevate_I_4N(ValuesOrPoints_4N, NoOfDegrees)
 
-    #local N = dimensions(Values_4N);
+    #local N = dimensions(ValuesOrPoints_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(Values_4N, 1);
-    #local SizeJ = dimension_size(Values_4N, 2);
-    #local SizeK = dimension_size(Values_4N, 3);
-    #local SizeL = dimension_size(Values_4N, 4);
+    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
+    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
     #local NewSizeI = SizeI + NoOfDegrees;
     #local VV_4N = array[NewSizeI][SizeJ][SizeK][SizeL];
     #local DI =
@@ -1388,11 +1388,11 @@ which can be found in the LICENSE file.
             NoOfDegrees
         )
     ;
-    #local p0 = 0*Values_4N[0][0][0][0];
+    #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
     #for (L, 0, SizeL - 1)
         #for (K, 0, SizeK - 1)
             #for (J, 0, SizeJ - 1)
-                #local VV_4N[0][J][K][L] = Values_4N[0][J][K][L];
+                #local VV_4N[0][J][K][L] = ValuesOrPoints_4N[0][J][K][L];
                 #for (I, 1, NewSizeI - 2)
                     #local pSum = p0;
                     #for (Io, max(I - NoOfDegrees, 0), min(SizeI - 1, I))
@@ -1404,11 +1404,11 @@ which can be found in the LICENSE file.
                                 I - Io  // shift
                             )
                         ;
-                        #local pSum = pSum + EC*Values_4N[Io][J][K][L];
+                        #local pSum = pSum + EC*ValuesOrPoints_4N[Io][J][K][L];
                     #end // for
                     #local VV_4N[I][J][K][L] = pSum/DI;
                 #end // for
-                #local VV_4N[NewSizeI-1][J][K][L] = Values_4N[SizeI-1][J][K][L];
+                #local VV_4N[NewSizeI-1][J][K][L] = ValuesOrPoints_4N[SizeI-1][J][K][L];
             #end // for
         #end // for
     #end // for
@@ -1418,16 +1418,16 @@ which can be found in the LICENSE file.
 #end // macro DegreeElevate_I_4N
 
 
-#macro DegreeElevate_J_4N(Values_4N, NoOfDegrees)
+#macro DegreeElevate_J_4N(ValuesOrPoints_4N, NoOfDegrees)
 
-    #local N = dimensions(Values_4N);
+    #local N = dimensions(ValuesOrPoints_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(Values_4N, 1);
-    #local SizeJ = dimension_size(Values_4N, 2);
-    #local SizeK = dimension_size(Values_4N, 3);
-    #local SizeL = dimension_size(Values_4N, 4);
+    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
+    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
     #local NewSizeJ = SizeJ + NoOfDegrees;
     #local VV_4N = array[SizeI][NewSizeJ][SizeK][SizeL];
     #local DJ =
@@ -1436,11 +1436,11 @@ which can be found in the LICENSE file.
             NoOfDegrees
         )
     ;
-    #local p0 = 0*Values_4N[0][0][0][0];
+    #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
     #for (I, 0, SizeI - 1)
         #for (L, 0, SizeL - 1)
             #for (K, 0, SizeK - 1)
-                #local VV_4N[I][0][K][L] = Values_4N[I][0][K][L];
+                #local VV_4N[I][0][K][L] = ValuesOrPoints_4N[I][0][K][L];
                 #for (J, 1, NewSizeJ - 2)
                     #local pSum = p0;
                     #for (Jo, max(J - NoOfDegrees, 0), min(SizeJ - 1, J))
@@ -1452,11 +1452,11 @@ which can be found in the LICENSE file.
                                 J - Jo  // shift
                             )
                         ;
-                        #local pSum = pSum + EC*Values_4N[I][Jo][K][L];
+                        #local pSum = pSum + EC*ValuesOrPoints_4N[I][Jo][K][L];
                     #end // for
                     #local VV_4N[I][J][K][L] = pSum/DJ;
                 #end // for
-                #local VV_4N[I][NewSizeJ-1][K][L] = Values_4N[I][SizeJ-1][K][L];
+                #local VV_4N[I][NewSizeJ-1][K][L] = ValuesOrPoints_4N[I][SizeJ-1][K][L];
             #end // for
         #end // for
     #end // for
@@ -1466,16 +1466,16 @@ which can be found in the LICENSE file.
 #end // macro DegreeElevate_J_4N
 
 
-#macro DegreeElevate_K_4N(Values_4N, NoOfDegrees)
+#macro DegreeElevate_K_4N(ValuesOrPoints_4N, NoOfDegrees)
 
-    #local N = dimensions(Values_4N);
+    #local N = dimensions(ValuesOrPoints_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(Values_4N, 1);
-    #local SizeJ = dimension_size(Values_4N, 2);
-    #local SizeK = dimension_size(Values_4N, 3);
-    #local SizeL = dimension_size(Values_4N, 4);
+    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
+    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
     #local NewSizeK = SizeK + NoOfDegrees;
     #local VV_4N = array[SizeI][SizeJ][NewSizeK][SizeL];
     #local DK =
@@ -1484,11 +1484,11 @@ which can be found in the LICENSE file.
             NoOfDegrees
         )
     ;
-    #local p0 = 0*Values_4N[0][0][0][0];
+    #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
     #for (J, 0, SizeJ - 1)
         #for (I, 0, SizeI - 1)
             #for (L, 0, SizeL - 1)
-                #local VV_4N[I][J][0][L] = Values_4N[I][J][0][L];
+                #local VV_4N[I][J][0][L] = ValuesOrPoints_4N[I][J][0][L];
                 #for (K, 1, NewSizeK - 2)
                     #local pSum = p0;
                     #for (Ko, max(K - NoOfDegrees, 0), min(SizeK - 1, K))
@@ -1500,11 +1500,11 @@ which can be found in the LICENSE file.
                                 K - Ko  // shift
                             )
                         ;
-                        #local pSum = pSum + EC*Values_4N[I][J][Ko][L];
+                        #local pSum = pSum + EC*ValuesOrPoints_4N[I][J][Ko][L];
                     #end // for
                     #local VV_4N[I][J][K][L] = pSum/DK;
                 #end // for
-                #local VV_4N[I][J][NewSizeK-1][L] = Values_4N[I][J][SizeK-1][L];
+                #local VV_4N[I][J][NewSizeK-1][L] = ValuesOrPoints_4N[I][J][SizeK-1][L];
             #end // for
         #end // for
     #end // for
@@ -1514,16 +1514,16 @@ which can be found in the LICENSE file.
 #end // macro DegreeElevate_K_4N
 
 
-#macro DegreeElevate_L_4N(Values_4N, NoOfDegrees)
+#macro DegreeElevate_L_4N(ValuesOrPoints_4N, NoOfDegrees)
 
-    #local N = dimensions(Values_4N);
+    #local N = dimensions(ValuesOrPoints_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(Values_4N, 1);
-    #local SizeJ = dimension_size(Values_4N, 2);
-    #local SizeK = dimension_size(Values_4N, 3);
-    #local SizeL = dimension_size(Values_4N, 4);
+    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
+    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
+    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
+    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
     #local NewSizeL = SizeL + NoOfDegrees;
     #local VV_4N = array[SizeI][SizeJ][SizeK][NewSizeL];
     #local DL =
@@ -1532,11 +1532,11 @@ which can be found in the LICENSE file.
             NoOfDegrees
         )
     ;
-    #local p0 = 0*Values_4N[0][0][0][0];
+    #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
     #for (K, 0, SizeK - 1)
         #for (J, 0, SizeJ - 1)
             #for (I, 0, SizeI - 1)
-                #local VV_4N[I][J][K][0] = Values_4N[I][J][K][0];
+                #local VV_4N[I][J][K][0] = ValuesOrPoints_4N[I][J][K][0];
                 #for (L, 1, NewSizeL - 2)
                     #local pSum = p0;
                     #for (Lo, max(L - NoOfDegrees, 0), min(SizeL - 1, L))
@@ -1548,11 +1548,11 @@ which can be found in the LICENSE file.
                                 L - Lo  // shift
                             )
                         ;
-                        #local pSum = pSum + EC*Values_4N[I][J][K][Lo];
+                        #local pSum = pSum + EC*ValuesOrPoints_4N[I][J][K][Lo];
                     #end // for
                     #local VV_4N[I][J][K][L] = pSum/DL;
                 #end // for
-                #local VV_4N[I][J][K][NewSizeL-1] = Values_4N[I][J][K][SizeL-1];
+                #local VV_4N[I][J][K][NewSizeL-1] = ValuesOrPoints_4N[I][J][K][SizeL-1];
             #end // for
         #end // for
     #end // for
@@ -1562,17 +1562,17 @@ which can be found in the LICENSE file.
 #end // macro DegreeElevate_L_4N
 
 
-#macro RationalDegreeElevate_I_1N(Values_1N, Weights_1N, NoOfDegrees)
+#macro RationalDegreeElevate_I_1N(ValuesOrPoints_1N, Weights_1N, NoOfDegrees)
 
-    #local WeightedValues_1N =
+    #local WeightedValuesOrPoints_1N =
         MultiplyArrays_1N(
-            Values_1N,
+            ValuesOrPoints_1N,
             Weights_1N
         )
     ;
-    #local ElevatedWeightedValues_1N =
+    #local ElevatedWeightedValuesOrPoints_1N =
         DegreeElevate_I_1N(
-            WeightedValues_1N,
+            WeightedValuesOrPoints_1N,
             NoOfDegrees
         )
     ;
@@ -1584,24 +1584,24 @@ which can be found in the LICENSE file.
     ;
 
     DivideArrays_1N(
-        ElevatedWeightedValues_1N,
+        ElevatedWeightedValuesOrPoints_1N,
         ElevatedWeights_1N
     )
 
 #end // macro RationalDegreeElevate_I_1N
 
 
-#macro RationalDegreeElevate_I_2N(Values_2N, Weights_2N, NoOfDegrees)
+#macro RationalDegreeElevate_I_2N(ValuesOrPoints_2N, Weights_2N, NoOfDegrees)
 
-    #local WeightedValues_2N =
+    #local WeightedValuesOrPoints_2N =
         MultiplyArrays_2N(
-            Values_2N,
+            ValuesOrPoints_2N,
             Weights_2N
         )
     ;
-    #local ElevatedWeightedValues_2N =
+    #local ElevatedWeightedValuesOrPoints_2N =
         DegreeElevate_I_2N(
-            WeightedValues_2N,
+            WeightedValuesOrPoints_2N,
             NoOfDegrees
         )
     ;
@@ -1613,24 +1613,24 @@ which can be found in the LICENSE file.
     ;
 
     DivideArrays_2N(
-        ElevatedWeightedValues_2N,
+        ElevatedWeightedValuesOrPoints_2N,
         ElevatedWeights_2N
     )
 
 #end // macro RationalDegreeElevate_I_2N
 
 
-#macro RationalDegreeElevate_J_2N(Values_2N, Weights_2N, NoOfDegrees)
+#macro RationalDegreeElevate_J_2N(ValuesOrPoints_2N, Weights_2N, NoOfDegrees)
 
-    #local WeightedValues_2N =
+    #local WeightedValuesOrPoints_2N =
         MultiplyArrays_2N(
-            Values_2N,
+            ValuesOrPoints_2N,
             Weights_2N
         )
     ;
-    #local ElevatedWeightedValues_2N =
+    #local ElevatedWeightedValuesOrPoints_2N =
         DegreeElevate_J_2N(
-            WeightedValues_2N,
+            WeightedValuesOrPoints_2N,
             NoOfDegrees
         )
     ;
@@ -1642,24 +1642,24 @@ which can be found in the LICENSE file.
     ;
 
     DivideArrays_2N(
-        ElevatedWeightedValues_2N,
+        ElevatedWeightedValuesOrPoints_2N,
         ElevatedWeights_2N
     )
 
 #end // macro RationalDegreeElevate_J_2N
 
 
-#macro RationalDegreeElevate_I_3N(Values_3N, Weights_3N, NoOfDegrees)
+#macro RationalDegreeElevate_I_3N(ValuesOrPoints_3N, Weights_3N, NoOfDegrees)
 
-    #local WeightedValues_3N =
+    #local WeightedValuesOrPoints_3N =
         MultiplyArrays_3N(
-            Values_3N,
+            ValuesOrPoints_3N,
             Weights_3N
         )
     ;
-    #local ElevatedWeightedValues_3N =
+    #local ElevatedWeightedValuesOrPoints_3N =
         DegreeElevate_I_3N(
-            WeightedValues_3N,
+            WeightedValuesOrPoints_3N,
             NoOfDegrees
         )
     ;
@@ -1671,24 +1671,24 @@ which can be found in the LICENSE file.
     ;
 
     DivideArrays_3N(
-        ElevatedWeightedValues_3N,
+        ElevatedWeightedValuesOrPoints_3N,
         ElevatedWeights_3N
     )
 
 #end // macro RationalDegreeElevate_I_3N
 
 
-#macro RationalDegreeElevate_J_3N(Values_3N, Weights_3N, NoOfDegrees)
+#macro RationalDegreeElevate_J_3N(ValuesOrPoints_3N, Weights_3N, NoOfDegrees)
 
-    #local WeightedValues_3N =
+    #local WeightedValuesOrPoints_3N =
         MultiplyArrays_3N(
-            Values_3N,
+            ValuesOrPoints_3N,
             Weights_3N
         )
     ;
-    #local ElevatedWeightedValues_3N =
+    #local ElevatedWeightedValuesOrPoints_3N =
         DegreeElevate_J_3N(
-            WeightedValues_3N,
+            WeightedValuesOrPoints_3N,
             NoOfDegrees
         )
     ;
@@ -1700,24 +1700,24 @@ which can be found in the LICENSE file.
     ;
 
     DivideArrays_3N(
-        ElevatedWeightedValues_3N,
+        ElevatedWeightedValuesOrPoints_3N,
         ElevatedWeights_3N
     )
 
 #end // macro RationalDegreeElevate_J_3N
 
 
-#macro RationalDegreeElevate_K_3N(Values_3N, Weights_3N, NoOfDegrees)
+#macro RationalDegreeElevate_K_3N(ValuesOrPoints_3N, Weights_3N, NoOfDegrees)
 
-    #local WeightedValues_3N =
+    #local WeightedValuesOrPoints_3N =
         MultiplyArrays_3N(
-            Values_3N,
+            ValuesOrPoints_3N,
             Weights_3N
         )
     ;
-    #local ElevatedWeightedValues_3N =
+    #local ElevatedWeightedValuesOrPoints_3N =
         DegreeElevate_K_3N(
-            WeightedValues_3N,
+            WeightedValuesOrPoints_3N,
             NoOfDegrees
         )
     ;
@@ -1729,24 +1729,24 @@ which can be found in the LICENSE file.
     ;
 
     DivideArrays_3N(
-        ElevatedWeightedValues_3N,
+        ElevatedWeightedValuesOrPoints_3N,
         ElevatedWeights_3N
     )
 
 #end // macro RationalDegreeElevate_K_3N
 
 
-#macro RationalDegreeElevate_I_4N(Values_4N, Weights_4N, NoOfDegrees)
+#macro RationalDegreeElevate_I_4N(ValuesOrPoints_4N, Weights_4N, NoOfDegrees)
 
-    #local WeightedValues_4N =
+    #local WeightedValuesOrPoints_4N =
         MultiplyArrays_4N(
-            Values_4N,
+            ValuesOrPoints_4N,
             Weights_4N
         )
     ;
-    #local ElevatedWeightedValues_4N =
+    #local ElevatedWeightedValuesOrPoints_4N =
         DegreeElevate_I_4N(
-            WeightedValues_4N,
+            WeightedValuesOrPoints_4N,
             NoOfDegrees
         )
     ;
@@ -1758,24 +1758,24 @@ which can be found in the LICENSE file.
     ;
 
     DivideArrays_4N(
-        ElevatedWeightedValues_4N,
+        ElevatedWeightedValuesOrPoints_4N,
         ElevatedWeights_4N
     )
 
 #end // macro RationalDegreeElevate_I_4N
 
 
-#macro RationalDegreeElevate_J_4N(Values_4N, Weights_4N, NoOfDegrees)
+#macro RationalDegreeElevate_J_4N(ValuesOrPoints_4N, Weights_4N, NoOfDegrees)
 
-    #local WeightedValues_4N =
+    #local WeightedValuesOrPoints_4N =
         MultiplyArrays_4N(
-            Values_4N,
+            ValuesOrPoints_4N,
             Weights_4N
         )
     ;
-    #local ElevatedWeightedValues_4N =
+    #local ElevatedWeightedValuesOrPoints_4N =
         DegreeElevate_J_4N(
-            WeightedValues_4N,
+            WeightedValuesOrPoints_4N,
             NoOfDegrees
         )
     ;
@@ -1787,24 +1787,24 @@ which can be found in the LICENSE file.
     ;
 
     DivideArrays_4N(
-        ElevatedWeightedValues_4N,
+        ElevatedWeightedValuesOrPoints_4N,
         ElevatedWeights_4N
     )
 
 #end // macro RationalDegreeElevate_J_4N
 
 
-#macro RationalDegreeElevate_K_4N(Values_4N, Weights_4N, NoOfDegrees)
+#macro RationalDegreeElevate_K_4N(ValuesOrPoints_4N, Weights_4N, NoOfDegrees)
 
-    #local WeightedValues_4N =
+    #local WeightedValuesOrPoints_4N =
         MultiplyArrays_4N(
-            Values_4N,
+            ValuesOrPoints_4N,
             Weights_4N
         )
     ;
-    #local ElevatedWeightedValues_4N =
+    #local ElevatedWeightedValuesOrPoints_4N =
         DegreeElevate_K_4N(
-            WeightedValues_4N,
+            WeightedValuesOrPoints_4N,
             NoOfDegrees
         )
     ;
@@ -1816,24 +1816,24 @@ which can be found in the LICENSE file.
     ;
 
     DivideArrays_4N(
-        ElevatedWeightedValues_4N,
+        ElevatedWeightedValuesOrPoints_4N,
         ElevatedWeights_4N
     )
 
 #end // macro RationalDegreeElevate_K_4N
 
 
-#macro RationalDegreeElevate_L_4N(Values_4N, Weights_4N, NoOfDegrees)
+#macro RationalDegreeElevate_L_4N(ValuesOrPoints_4N, Weights_4N, NoOfDegrees)
 
-    #local WeightedValues_4N =
+    #local WeightedValuesOrPoints_4N =
         MultiplyArrays_4N(
-            Values_4N,
+            ValuesOrPoints_4N,
             Weights_4N
         )
     ;
-    #local ElevatedWeightedValues_4N =
+    #local ElevatedWeightedValuesOrPoints_4N =
         DegreeElevate_L_4N(
-            WeightedValues_4N,
+            WeightedValuesOrPoints_4N,
             NoOfDegrees
         )
     ;
@@ -1845,7 +1845,7 @@ which can be found in the LICENSE file.
     ;
 
     DivideArrays_4N(
-        ElevatedWeightedValues_4N,
+        ElevatedWeightedValuesOrPoints_4N,
         ElevatedWeights_4N
     )
 
