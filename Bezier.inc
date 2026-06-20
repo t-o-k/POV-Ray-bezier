@@ -371,20 +371,6 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
-#macro BernsteinFunction(K, N)
-
-    function(_t) {
-        sum(
-            _i, K, N,
-            BernsteinCoefficientFn(_i, K, N)
-            *
-            PowFn(_t, _i)
-        )
-    }
-
-#end // macro BernsteinFunction
-
-
 #macro BernsteinBasisFunction_1A(N, R)
 
     #local C = BinomialFn(N, R);
