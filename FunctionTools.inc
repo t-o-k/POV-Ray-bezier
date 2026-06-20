@@ -612,6 +612,243 @@ which can be found in the LICENSE file.
 
 #end // macro DivideFunction_Safe_4A
 
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
+#macro WeightedFunction_1A(_U_Fns_1A_1N, Weights_1N)
+
+    #local M = dimensions(_U_Fns_1A_1N);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local N = dimensions(Weights_1N);
+    #if (N != 1)
+        #error "N is not 1"
+    #end // if
+    #local SizeI = dimension_size(Weights_1N, 1);
+    #if (dimension_size(_U_Fns_1A_1N, 1) != SizeI)
+        #error "Is not equal to SizeI"
+    #end // if
+    #local LastI = SizeI - 1;
+
+    function(_u) {
+        0.0
+        #for (I, 0, LastI)
+            #local Q = Weights_1N[I];
+            #switch (Q)
+                #case (0.0)
+                    #break
+                #case (-1.0)
+                    - _U_Fns_1A_1N[I](_u)
+                    #break
+                #case (+1.0)
+                    + _U_Fns_1A_1N[I](_u)
+                    #break
+                #else
+                    + Q*_U_Fns_1A_1N[I](_u)
+            #end // switch
+        #end // for
+    }
+
+#end // macro WeightedFunction_1A
+
+
+#macro WeightedFunction_2A(_U_Fns_1A_1N, _V_Fns_1A_1N, Weights_2N)
+
+    #local M =
+        max(
+            dimensions(_U_Fns_1A_1N),
+            dimensions(_V_Fns_1A_1N)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local N = dimensions(Weights_2N);
+    #if (N != 2)
+        #error "N is not 2"
+    #end // if
+    #local SizeI = dimension_size(Weights_2N, 1);
+    #local SizeJ = dimension_size(Weights_2N, 2);
+    #if (dimension_size(_U_Fns_1A_1N, 1) != SizeI)
+        #error "Is not equal to SizeI"
+    #end // if
+    #if (dimension_size(_V_Fns_1A_1N, 1) != SizeJ)
+        #error "Is not equal to SizeJ"
+    #end // if
+    #local LastI = SizeI - 1;
+    #local LastJ = SizeJ - 1;
+
+    function(_u, _v) {
+        0.0
+        #for (J, 0, LastJ)
+            + _V_Fns_1A_1N[J](_v)*
+            (
+                0.0
+                #for (I, 0, LastI)
+                    #local Q = Weights_2N[I][J];
+                    #switch (Q)
+                        #case (0.0)
+                            #break
+                        #case (-1.0)
+                            - _U_Fns_1A_1N[I](_u)
+                            #break
+                        #case (+1.0)
+                            + _U_Fns_1A_1N[I](_u)
+                            #break
+                        #else
+                            + Q*_U_Fns_1A_1N[I](_u)
+                    #end // switch
+                #end // for
+            )
+        #end // for
+    }
+
+#end // macro WeightedFunction_2A
+
+
+#macro WeightedFunction_3A(_U_Fns_1A_1N, _V_Fns_1A_1N, _W_Fns_1A_1N, Weights_3N)
+
+    #local M =
+        max(
+            dimensions(_U_Fns_1A_1N),
+            dimensions(_V_Fns_1A_1N),
+            dimensions(_W_Fns_1A_1N)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local N = dimensions(Weights_3N);
+    #if (N != 3)
+        #error "N is not 3"
+    #end // if
+    #local SizeI = dimension_size(Weights_3N, 1);
+    #local SizeJ = dimension_size(Weights_3N, 2);
+    #local SizeK = dimension_size(Weights_3N, 3);
+    #if (dimension_size(_U_Fns_1A_1N, 1) != SizeI)
+        #error "Is not equal to SizeI"
+    #end // if
+    #if (dimension_size(_V_Fns_1A_1N, 1) != SizeJ)
+        #error "Is not equal to SizeJ"
+    #end // if
+    #if (dimension_size(_W_Fns_1A_1N, 1) != SizeK)
+        #error "Is not equal to SizeK"
+    #end // if
+    #local LastI = SizeI - 1;
+    #local LastJ = SizeJ - 1;
+    #local LastK = SizeK - 1;
+
+    function(_u, _v, _w) {
+        0.0
+        #for (K, 0, LastK)
+            + _W_Fns_1A_1N[K](_w)*
+            (
+                0.0
+                #for (J, 0, LastJ)
+                    + _V_Fns_1A_1N[J](_v)*
+                    (
+                        0.0
+                        #for (I, 0, LastI)
+                            #local Q = Weights_3N[I][J][K];
+                            #switch (Q)
+                                #case (0.0)
+                                    #break
+                                #case (-1.0)
+                                    - _U_Fns_1A_1N[I](_u)
+                                    #break
+                                #case (+1.0)
+                                    + _U_Fns_1A_1N[I](_u)
+                                    #break
+                                #else
+                                    + Q*_U_Fns_1A_1N[I](_u)
+                            #end // switch
+                        #end // for
+                    )
+                #end // for
+            )
+        #end // for
+    }
+
+#end // macro WeightedFunction_3A
+
+
+#macro WeightedFunction_4A(_U_Fns_1A_1N, _V_Fns_1A_1N, _W_Fns_1A_1N, _S_Fns_1A_1N, Weights_4N)
+
+    #local M =
+        max(
+            dimensions(_U_Fns_1A_1N),
+            dimensions(_V_Fns_1A_1N),
+            dimensions(_W_Fns_1A_1N),
+            dimensions(_S_Fns_1A_1N)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local N = dimensions(Weights_4N);
+    #if (N != 4)
+        #error "N is not 4"
+    #end // if
+    #local SizeI = dimension_size(Weights_4N, 1);
+    #local SizeJ = dimension_size(Weights_4N, 2);
+    #local SizeK = dimension_size(Weights_4N, 3);
+    #local SizeL = dimension_size(Weights_4N, 4);
+    #if (dimension_size(_U_Fns_1A_1N, 1) != SizeI)
+        #error "Is not equal to SizeI"
+    #end // if
+    #if (dimension_size(_V_Fns_1A_1N, 1) != SizeJ)
+        #error "Is not equal to SizeJ"
+    #end // if
+    #if (dimension_size(_W_Fns_1A_1N, 1) != SizeK)
+        #error "Is not equal to SizeK"
+    #end // if
+    #if (dimension_size(_S_Fns_1A_1N, 1) != SizeL)
+        #error "Is not equal to SizeL"
+    #end // if
+    #local LastI = SizeI - 1;
+    #local LastJ = SizeJ - 1;
+    #local LastK = SizeK - 1;
+    #local LastL = SizeL - 1;
+
+    function(_u, _v, _w, _s) {
+        0.0
+        #for (L, 0, LastL)
+            + _S_Fns_1A_1N[L](_s)*
+            (
+                0.0
+                #for (K, 0, LastK)
+                    + _W_Fns_1A_1N[K](_w)*
+                    (
+                        0.0
+                        #for (J, 0, LastJ)
+                            + _V_Fns_1A_1N[J](_v)*
+                            (
+                                0.0
+                                #for (I, 0, LastI)
+                                    #local Q = Weights_4N[I][J][K][L];
+                                    #switch (Q)
+                                        #case (0.0)
+                                            #break
+                                        #case (-1.0)
+                                            - _U_Fns_1A_1N[I](_u)
+                                            #break
+                                        #case (+1.0)
+                                            + _U_Fns_1A_1N[I](_u)
+                                            #break
+                                        #else
+                                            + Q*_U_Fns_1A_1N[I](_u)
+                                    #end // switch
+                                #end // for
+                            )
+                        #end // for
+                    )
+                #end // for
+            )
+        #end // for
+    }
+
+#end // macro WeightedFunction_4A
+
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
 #macro LengthFunction_1A_1D(_Fns_1A_1D)
