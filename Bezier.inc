@@ -913,6 +913,7 @@ which can be found in the LICENSE file.
 
 #end // macro From_4N_BezierFunctions_4A_2D
 
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
 #macro From_1N_BezierFunctions_1A_3D(Points_1N_3D)
 
@@ -1097,6 +1098,215 @@ which can be found in the LICENSE file.
     )
 
 #end // macro From_4N_RationalBezierFunction_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
+#macro From_1N_RationalBezierFunctions_1A_2D(Points_1N_2D, Weights_1N)
+
+    #local N = dimensions(Points_1N_2D);
+    #if (N != 1)
+        #error "N is not 1"
+    #end // if
+    #if (dimensions(Weights_1N) != N)
+        #error "Is not equal to N"
+    #end // if
+
+    Arr_2E(
+        From_1N_RationalBezierFunction_1A(
+            From_1N_ExtractComponent_1N(Points_1N_2D, x),
+            Weights_1N
+        ),
+        From_1N_RationalBezierFunction_1A(
+            From_1N_ExtractComponent_1N(Points_1N_2D, y),
+            Weights_1N
+        )
+    )
+
+#end // macro From_1N_RationalBezierFunctions_1A_2D
+
+
+#macro From_2N_RationalBezierFunctions_2A_2D(Points_2N_2D, Weights_2N)
+
+    #local N = dimensions(Points_2N_2D);
+    #if (N != 2)
+        #error "N is not 2"
+    #end // if
+    #if (dimensions(Weights_2N) != N)
+        #error "Is not equal to N"
+    #end // if
+
+    Arr_2E(
+        From_2N_RationalBezierFunction_2A(
+            From_2N_ExtractComponent_2N(Points_2N_2D, x),
+            Weights_2N
+        ),
+        From_2N_RationalBezierFunction_2A(
+            From_2N_ExtractComponent_2N(Points_2N_2D, y),
+            Weights_2N
+        )
+    )
+
+#end // macro From_2N_RationalBezierFunctions_2A_2D
+
+
+#macro From_3N_RationalBezierFunctions_3A_2D(Points_3N_2D, Weights_3N)
+
+    #local N = dimensions(Points_3N_2D);
+    #if (N != 3)
+        #error "N is not 3"
+    #end // if
+    #if (dimensions(Weights_3N) != N)
+        #error "Is not equal to N"
+    #end // if
+
+    Arr_2E(
+        From_3N_RationalBezierFunction_3A(
+            From_3N_ExtractComponent_3N(Points_3N_2D, x),
+            Weights_3N
+        ),
+        From_3N_RationalBezierFunction_3A(
+            From_3N_ExtractComponent_3N(Points_3N_2D, y),
+            Weights_3N
+        )
+    )
+
+#end // macro From_3N_RationalBezierFunctions_3A_2D
+
+
+#macro From_4N_RationalBezierFunctions_4A_2D(Points_4N_2D, Weights_4N)
+
+    #local N = dimensions(Points_4N_2D);
+    #if (N != 4)
+        #error "N is not 4"
+    #end // if
+    #if (dimensions(Weights_4N) != N)
+        #error "Is not equal to N"
+    #end // if
+
+    Arr_2E(
+        From_4N_RationalBezierFunction_4A(
+            From_4N_ExtractComponent_4N(Points_4N_2D, x),
+            Weights_4N
+        ),
+        From_4N_RationalBezierFunction_4A(
+            From_4N_ExtractComponent_4N(Points_4N_2D, y),
+            Weights_4N
+        )
+    )
+
+#end // macro From_4N_RationalBezierFunctions_4A_2D
+
+
+#macro From_1N_RationalBezierFunctions_1A_3D(Points_1N_3D, Weights_1N)
+
+    #local N = dimensions(Points_1N_3D);
+    #if (N != 1)
+        #error "N is not 1"
+    #end // if
+    #if (dimensions(Weights_1N) != N)
+        #error "Is not equal to N"
+    #end // if
+
+    Arr_3E(
+        From_1N_RationalBezierFunction_1A(
+            From_1N_ExtractComponent_1N(Points_1N_3D, x),
+            Weights_1N
+        ),
+        From_1N_RationalBezierFunction_1A(
+            From_1N_ExtractComponent_1N(Points_1N_3D, y),
+            Weights_1N
+        ),
+        From_1N_RationalBezierFunction_1A(
+            From_1N_ExtractComponent_1N(Points_1N_3D, z),
+            Weights_1N
+        )
+    )
+
+#end // macro From_1N_RationalBezierFunctions_1A_3D
+
+
+#macro From_2N_RationalBezierFunctions_2A_3D(Points_2N_3D, Weights_2N)
+
+    #local N = dimensions(Points_2N_3D);
+    #if (N != 2)
+        #error "N is not 2"
+    #end // if
+    #if (dimensions(Weights_2N) != N)
+        #error "Is not equal to N"
+    #end // if
+
+    Arr_3E(
+        From_2N_RationalBezierFunction_2A(
+            From_2N_ExtractComponent_2N(Points_2N_3D, x),
+            Weights_2N
+        ),
+        From_2N_RationalBezierFunction_2A(
+            From_2N_ExtractComponent_2N(Points_2N_3D, y),
+            Weights_2N
+        ),
+        From_2N_RationalBezierFunction_2A(
+            From_2N_ExtractComponent_2N(Points_2N_3D, z),
+            Weights_2N
+        )
+    )
+
+#end // macro From_2N_RationalBezierFunctions_2A_3D
+
+
+#macro From_3N_RationalBezierFunctions_3A_3D(Points_3N_3D, Weights_3N)
+
+    #local N = dimensions(Points_3N_3D);
+    #if (N != 3)
+        #error "N is not 3"
+    #end // if
+    #if (dimensions(Weights_3N) != N)
+        #error "Is not equal to N"
+    #end // if
+
+    Arr_3E(
+        From_3N_RationalBezierFunction_3A(
+            From_3N_ExtractComponent_3N(Points_3N_3D, x),
+            Weights_3N
+        ),
+        From_3N_RationalBezierFunction_3A(
+            From_3N_ExtractComponent_3N(Points_3N_3D, y),
+            Weights_3N
+        ),
+        From_3N_RationalBezierFunction_3A(
+            From_3N_ExtractComponent_3N(Points_3N_3D, z),
+            Weights_3N
+        )
+    )
+
+#end // macro From_3N_RationalBezierFunctions_3A_3D
+
+
+#macro From_4N_RationalBezierFunctions_4A_3D(Points_4N_3D, Weights_4N)
+
+    #local N = dimensions(Points_4N_3D);
+    #if (N != 4)
+        #error "N is not 4"
+    #end // if
+    #if (dimensions(Weights_4N) != N)
+        #error "Is not equal to N"
+    #end // if
+
+    Arr_3E(
+        From_4N_RationalBezierFunction_4A(
+            From_4N_ExtractComponent_4N(Points_4N_3D, x),
+            Weights_4N
+        ),
+        From_4N_RationalBezierFunction_4A(
+            From_4N_ExtractComponent_4N(Points_4N_3D, y),
+            Weights_4N
+        ),
+        From_4N_RationalBezierFunction_4A(
+            From_4N_ExtractComponent_4N(Points_4N_3D, z),
+            Weights_4N
+        )
+    )
+
+#end // macro From_4N_RationalBezierFunctions_4A_3D
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
