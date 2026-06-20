@@ -18,6 +18,7 @@ which can be found in the LICENSE file.
 #include "ArrayTools.inc"
 #include "FunctionTools.inc"
 #include "Bezier.inc"
+#include "BezierAuto.inc"
 #include "NumericalEstimation.inc"
 #include "VisualizationTools.inc"
 
