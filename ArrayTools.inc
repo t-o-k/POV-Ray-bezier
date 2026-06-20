@@ -44,6 +44,109 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
+#macro From_Fn_1A_Array_1N(DimensionsSizes_I, Fn_1A)
+
+    #local M = dimensions(DimensionsSizes_I);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local N = dimension_size(DimensionsSizes_I, 1);
+    #if (N != 1)
+        #error "N is not 1"
+    #end // if
+    #local SizeI = I_E(DimensionsSizes_I);
+    #local AA_1N = array[SizeI];
+    #for (I, 0, SizeI - 1)
+        #local AA_1N[I] = Fn_1A(I);
+    #end // for
+
+    AA_1N
+
+#end // macro From_Fn_1A_Array_1N
+
+
+#macro From_Fn_2A_Array_2N(DimensionsSizes_IJ, Fn_2A)
+
+    #local M = dimensions(DimensionsSizes_IJ);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local N = dimension_size(DimensionsSizes_IJ, 1);
+    #if (N != 2)
+        #error "N is not 2"
+    #end // if
+    #local SizeI = I_E(DimensionsSizes_IJ);
+    #local SizeJ = J_E(DimensionsSizes_IJ);
+    #local AA_2N = array[SizeI][SizeJ];
+    #for (I, 0, SizeI - 1)
+        #for (J, 0, SizeJ - 1)
+            #local AA_2N[I][J] = Fn_2A(I, J);
+        #end // for
+    #end // for
+
+    AA_2N
+
+#end // macro From_Fn_2A_Array_2N
+
+
+#macro From_Fn_3A_Array_3N(DimensionsSizes_IJK, Fn_3A)
+
+    #local M = dimensions(DimensionsSizes_IJK);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local N = dimension_size(DimensionsSizes_IJK, 1);
+    #if (N != 3)
+        #error "N is not 3"
+    #end // if
+    #local SizeI = I_E(DimensionsSizes_IJK);
+    #local SizeJ = J_E(DimensionsSizes_IJK);
+    #local SizeK = K_E(DimensionsSizes_IJK);
+    #local AA_3N = array[SizeI][SizeJ][SizeK];
+    #for (I, 0, SizeI - 1)
+        #for (J, 0, SizeJ - 1)
+            #for (K, 0, SizeK - 1)
+                #local AA_3N[I][J][K] = Fn_3A(I, J, K);
+            #end // for
+        #end // for
+    #end // for
+
+    AA_3N
+
+#end // macro From_Fn_3A_Array_3N
+
+
+#macro From_Fn_4A_Array_4N(DimensionsSizes_IJKL, Fn_4A)
+
+    #local M = dimensions(DimensionsSizes_IJKL);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local N = dimension_size(DimensionsSizes_IJKL, 1);
+    #if (N != 4)
+        #error "N is not 4"
+    #end // if
+    #local SizeI = I_E(DimensionsSizes_IJKL);
+    #local SizeJ = J_E(DimensionsSizes_IJKL);
+    #local SizeK = K_E(DimensionsSizes_IJKL);
+    #local SizeL = L_E(DimensionsSizes_IJKL);
+    #local AA_4N = array[SizeI][SizeJ][SizeK][SizeL];
+    #for (I, 0, SizeI - 1)
+        #for (J, 0, SizeJ - 1)
+            #for (K, 0, SizeK - 1)
+                #for (L, 0, SizeL - 1)
+                    #local AA_4N[I][J][K][L] = Fn_4A(I, J, K, L);
+                #end // for
+            #end // for
+        #end // for
+    #end // for
+
+    AA_4N
+
+#end // macro From_Fn_4A_Array_4N
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
 #macro MultiplyArrays_1N(Array0_1N, Array1_1N)
 
     #local N0 = dimensions(Array0_1N);
