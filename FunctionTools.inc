@@ -217,7 +217,6 @@ which can be found in the LICENSE file.
 
 #end // macro BernsteinFunction
 
-
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
 #declare DotFn =
