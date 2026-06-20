@@ -250,18 +250,18 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro ExtractComponent_1N(VV_1N, vC)
+#macro ExtractComponent_1N(Vectors_1N, vC)
 
-    #local N = dimensions(VV_1N);
+    #local N = dimensions(Vectors_1N);
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #local SizeI = dimension_size(VV_1N, 1);
+    #local SizeI = dimension_size(Vectors_1N, 1);
     #local LastI = SizeI - 1;
     #local CC_1N = array[SizeI];
     #for (I, 0, LastI)
         #local CC_1N[I] =
-            vdot(VV_1N[I], vC)
+            vdot(Vectors_1N[I], vC)
         ;
     #end // for
 
@@ -270,21 +270,21 @@ which can be found in the LICENSE file.
 #end // macro ExtractComponent_1N
 
 
-#macro ExtractComponent_2N(VV_2N, vC)
+#macro ExtractComponent_2N(Vectors_2N, vC)
 
-    #local N = dimensions(VV_2N);
+    #local N = dimensions(Vectors_2N);
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local SizeI = dimension_size(VV_2N, 1);
-    #local SizeJ = dimension_size(VV_2N, 2);
+    #local SizeI = dimension_size(Vectors_2N, 1);
+    #local SizeJ = dimension_size(Vectors_2N, 2);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local CC_2N = array[SizeI][SizeJ];
     #for (J, 0, LastJ)
         #for (I, 0, LastI)
             #local CC_2N[I][J] =
-                vdot(VV_2N[I][J], vC)
+                vdot(Vectors_2N[I][J], vC)
             ;
         #end // for
     #end // for
@@ -294,15 +294,15 @@ which can be found in the LICENSE file.
 #end // macro ExtractComponent_2N
 
 
-#macro ExtractComponent_3N(VV_3N, vC)
+#macro ExtractComponent_3N(Vectors_3N, vC)
 
-    #local N = dimensions(VV_3N);
+    #local N = dimensions(Vectors_3N);
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(VV_3N, 1);
-    #local SizeJ = dimension_size(VV_3N, 2);
-    #local SizeK = dimension_size(VV_3N, 3);
+    #local SizeI = dimension_size(Vectors_3N, 1);
+    #local SizeJ = dimension_size(Vectors_3N, 2);
+    #local SizeK = dimension_size(Vectors_3N, 3);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
@@ -311,7 +311,7 @@ which can be found in the LICENSE file.
         #for (J, 0, LastJ)
             #for (I, 0, LastI)
                 #local CC_3N[I][J][K] =
-                    vdot(VV_3N[I][J][K], vC)
+                    vdot(Vectors_3N[I][J][K], vC)
                 ;
             #end // for
         #end // for
@@ -322,16 +322,16 @@ which can be found in the LICENSE file.
 #end // macro ExtractComponent_3N
 
 
-#macro ExtractComponent_4N(VV_4N, vC)
+#macro ExtractComponent_4N(Vectors_4N, vC)
 
-    #local N = dimensions(VV_4N);
+    #local N = dimensions(Vectors_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(VV_4N, 1);
-    #local SizeJ = dimension_size(VV_4N, 2);
-    #local SizeK = dimension_size(VV_4N, 3);
-    #local SizeL = dimension_size(VV_4N, 4);
+    #local SizeI = dimension_size(Vectors_4N, 1);
+    #local SizeJ = dimension_size(Vectors_4N, 2);
+    #local SizeK = dimension_size(Vectors_4N, 3);
+    #local SizeL = dimension_size(Vectors_4N, 4);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
@@ -342,7 +342,7 @@ which can be found in the LICENSE file.
             #for (J, 0, LastJ)
                 #for (I, 0, LastI)
                     #local CC_4N[I][J][K][L] =
-                        vdot(VV_4N[I][J][K][L], vC)
+                        vdot(Vectors_4N[I][J][K][L], vC)
                     ;
                 #end // for
             #end // for
