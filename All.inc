@@ -19,6 +19,7 @@ which can be found in the LICENSE file.
 #include "FunctionTools.inc"
 #include "Bezier.inc"
 #include "BezierAuto.inc"
+#cinlude "RationalBezier.inc"
 #include "NumericalEstimation.inc"
 #include "VisualizationTools.inc"
 
