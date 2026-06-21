@@ -20,6 +20,7 @@ which can be found in the LICENSE file.
 #include "Bezier.inc"
 #include "BezierAuto.inc"
 #cinlude "RationalBezier.inc"
+#cinlude "RationalBezierAuto.inc"
 #include "NumericalEstimation.inc"
 #include "VisualizationTools.inc"
 
