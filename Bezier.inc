@@ -1123,20 +1123,25 @@ which can be found in the LICENSE file.
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #local CC = _HodographCoefficients(M);
     #local SizeI = dimension_size(ValuesOrPoints_1N, 1);
-    #local NewSizeI = SizeI - M;   
-    #local VV_1N = array[NewSizeI];
     #local p0 = 0*ValuesOrPoints_1N[0];
-    #for (I, 0, NewSizeI - 1)
-        #local pSum = p0;
-        #for (A, 0, M)
-            #local pSum =
-                pSum + CC[A]*ValuesOrPoints_1N[I+A]
-            ;
+    #if (M < SizeI)
+        #local CC = _HodographCoefficients(M);
+        #local NewSizeI = SizeI - M;   
+        #local VV_1N = array[NewSizeI];
+        #for (I, 0, NewSizeI - 1)
+            #local pSum = p0;
+            #for (A, 0, M)
+                #local pSum =
+                    pSum + CC[A]*ValuesOrPoints_1N[I+A]
+                ;
+            #end // for
+            #local VV_1N[I] = FactFallingFn(SizeI - 1, M)*pSum;
         #end // for
-        #local VV_1N[I] = FactFallingFn(SizeI - 1, M)*pSum;
-    #end // for
+    #else
+        #local VV_1N = array[1];
+        #local VV_1N[0] = p0;
+    #end // if
 
     VV_1N
 
@@ -1149,25 +1154,32 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local CC = _HodographCoefficients(M);
     #local SizeI = dimension_size(ValuesOrPoints_2N, 1);
     #local SizeJ = dimension_size(ValuesOrPoints_2N, 2);
-    #local NewSizeI = SizeI - M;
-    #local VV_2N = array[NewSizeI][SizeJ];
     #local p0 = 0*ValuesOrPoints_2N[0][0];
-    #for (J, 0, SizeJ - 1)
-        #for (I, 0, NewSizeI - 1)
-            #local pSum = p0;
-            #for (A, 0, M)
-                #local pSum =
-                    pSum + CC[A]*ValuesOrPoints_2N[I+A][J]
+    #if (M < SizeI)
+        #local CC = _HodographCoefficients(M);
+        #local NewSizeI = SizeI - M;
+        #local VV_2N = array[NewSizeI][SizeJ];
+        #for (J, 0, SizeJ - 1)
+            #for (I, 0, NewSizeI - 1)
+                #local pSum = p0;
+                #for (A, 0, M)
+                    #local pSum =
+                        pSum + CC[A]*ValuesOrPoints_2N[I+A][J]
+                    ;
+                #end // for
+                #local VV_2N[I][J] =
+                    FactFallingFn(SizeI - 1, M)*pSum
                 ;
             #end // for
-            #local VV_2N[I][J] =
-                FactFallingFn(SizeI - 1, M)*pSum
-            ;
         #end // for
-    #end // for
+    #else
+        #local VV_2N = array[1][SizeJ];
+        #for (J, 0, SizeJ - 1)
+            #local VV_2N[0][J] = p0;
+        #end // for
+    #end // if
 
     VV_2N
 
@@ -1180,25 +1192,32 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local CC = _HodographCoefficients(M);
     #local SizeI = dimension_size(ValuesOrPoints_2N, 1);
     #local SizeJ = dimension_size(ValuesOrPoints_2N, 2);
-    #local NewSizeJ = SizeJ - M;
-    #local VV_2N = array[SizeI][NewSizeJ];
     #local p0 = 0*ValuesOrPoints_2N[0][0];
-    #for (I, 0, SizeI - 1)
-        #for (J, 0, NewSizeJ - 1)
-            #local pSum = p0;
-            #for (A, 0, M)
-                #local pSum =
-                    pSum + CC[A]*ValuesOrPoints_2N[I][J+A]
+    #if (M < SizeJ)
+        #local CC = _HodographCoefficients(M);
+        #local NewSizeJ = SizeJ - M;
+        #local VV_2N = array[SizeI][NewSizeJ];
+        #for (I, 0, SizeI - 1)
+            #for (J, 0, NewSizeJ - 1)
+                #local pSum = p0;
+                #for (A, 0, M)
+                    #local pSum =
+                        pSum + CC[A]*ValuesOrPoints_2N[I][J+A]
+                    ;
+                #end // for
+                #local VV_2N[I][J] =
+                    FactFallingFn(SizeJ - 1, M)*pSum
                 ;
             #end // for
-            #local VV_2N[I][J] =
-                FactFallingFn(SizeJ - 1, M)*pSum
-            ;
         #end // for
-    #end // for
+    #else
+        #local VV_2N = array[SizeI][1];
+        #for (I, 0, SizeI - 1)
+            #local VV_2N[I][0] = p0;
+        #end // for
+    #end // if
 
     VV_2N
 
@@ -1211,28 +1230,37 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local CC = _HodographCoefficients(M);
     #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
     #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
     #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
-    #local NewSizeI = SizeI - M;
-    #local VV_3N = array[NewSizeI][SizeJ][SizeK];
     #local p0 = 0*ValuesOrPoints_3N[0][0][0];
-    #for (K, 0, SizeK - 1)
-        #for (J, 0, SizeJ - 1)
-            #for (I, 0, NewSizeI - 1)
-                #local pSum = p0;
-                #for (A, 0, M)
-                    #local pSum =
-                        pSum + CC[A]*ValuesOrPoints_3N[I+A][J][K]
+    #if (M < SizeI)
+        #local CC = _HodographCoefficients(M);
+        #local NewSizeI = SizeI - M;
+        #local VV_3N = array[NewSizeI][SizeJ][SizeK];
+        #for (K, 0, SizeK - 1)
+            #for (J, 0, SizeJ - 1)
+                #for (I, 0, NewSizeI - 1)
+                    #local pSum = p0;
+                    #for (A, 0, M)
+                        #local pSum =
+                            pSum + CC[A]*ValuesOrPoints_3N[I+A][J][K]
+                        ;
+                    #end // for
+                    #local VV_3N[I][J][K] =
+                        FactFallingFn(SizeI - 1, M)*pSum
                     ;
                 #end // for
-                #local VV_3N[I][J][K] =
-                    FactFallingFn(SizeI - 1, M)*pSum
-                ;
             #end // for
         #end // for
-    #end // for
+    #else
+        #local VV_3N = array[1][SizeJ][SizeK];
+        #for (K, 0, SizeK - 1)
+            #for (J, 0, SizeJ - 1)
+                #local VV_3N[0][J][K] = p0;
+            #end // for
+        #end // for
+    #end // if
 
     VV_3N
 
@@ -1245,28 +1273,37 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local CC = _HodographCoefficients(M);
     #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
     #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
     #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
-    #local NewSizeJ = SizeJ - M;
-    #local VV_3N = array[SizeI][NewSizeJ][SizeK];
     #local p0 = 0*ValuesOrPoints_3N[0][0][0];
-    #for (I, 0, SizeI - 1)
-        #for (K, 0, SizeK - 1)
-            #for (J, 0, NewSizeJ - 1)
-                #local pSum = p0;
-                #for (A, 0, M)
-                    #local pSum =
-                        pSum + CC[A]*ValuesOrPoints_3N[I][J+A][K]
+    #if (M < SizeJ)
+        #local CC = _HodographCoefficients(M);
+        #local NewSizeJ = SizeJ - M;
+        #local VV_3N = array[SizeI][NewSizeJ][SizeK];
+        #for (I, 0, SizeI - 1)
+            #for (K, 0, SizeK - 1)
+                #for (J, 0, NewSizeJ - 1)
+                    #local pSum = p0;
+                    #for (A, 0, M)
+                        #local pSum =
+                            pSum + CC[A]*ValuesOrPoints_3N[I][J+A][K]
+                        ;
+                    #end // for
+                    #local VV_3N[I][J][K] =
+                        FactFallingFn(SizeJ - 1, M)*pSum
                     ;
                 #end // for
-                #local VV_3N[I][J][K] =
-                    FactFallingFn(SizeJ - 1, M)*pSum
-                ;
             #end // for
         #end // for
-    #end // for
+    #else
+        #local VV_3N = array[SizeI][1][SizeK];
+        #for (I, 0, SizeI - 1)
+            #for (K, 0, SizeK - 1)
+                #local VV_3N[I][0][K] = p0;
+            #end // for
+        #end // for
+    #end // if
 
     VV_3N
 
@@ -1279,28 +1316,37 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local CC = _HodographCoefficients(M);
     #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
     #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
     #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
-    #local NewSizeK = SizeK - M;
-    #local VV_3N = array[SizeI][SizeJ][NewSizeK];
     #local p0 = 0*ValuesOrPoints_3N[0][0][0];
-    #for (J, 0, SizeJ - 1)
-        #for (I, 0, SizeI - 1)
-            #for (K, 0, NewSizeK - 1)
-                #local pSum = p0;
-                #for (A, 0, M)
-                    #local pSum =
-                        pSum + CC[A]*ValuesOrPoints_3N[I][J][K+A]
+    #if (M < SizeK)
+        #local CC = _HodographCoefficients(M);
+        #local NewSizeK = SizeK - M;
+        #local VV_3N = array[SizeI][SizeJ][NewSizeK];
+        #for (J, 0, SizeJ - 1)
+            #for (I, 0, SizeI - 1)
+                #for (K, 0, NewSizeK - 1)
+                    #local pSum = p0;
+                    #for (A, 0, M)
+                        #local pSum =
+                            pSum + CC[A]*ValuesOrPoints_3N[I][J][K+A]
+                        ;
+                    #end // for
+                    #local VV_3N[I][J][K] =
+                        FactFallingFn(SizeK - 1, M)*pSum
                     ;
                 #end // for
-                #local VV_3N[I][J][K] =
-                    FactFallingFn(SizeK - 1, M)*pSum
-                ;
             #end // for
         #end // for
-    #end // for
+    #else
+        #local VV_3N = array[SizeI][SizeJ][1];
+        #for (J, 0, SizeJ - 1)
+            #for (I, 0, SizeI - 1)
+                #local VV_3N[I][J][0] = p0;
+            #end // for
+        #end // for
+    #end // if
 
     VV_3N
 
@@ -1313,31 +1359,42 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local CC = _HodographCoefficients(M);
     #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
     #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
     #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
     #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
-    #local NewSizeI = SizeI - M;
-    #local VV_4N = array[NewSizeI][SizeJ][SizeK][SizeL];
     #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
-    #for (L, 0, SizeL - 1)
-        #for (K, 0, SizeK - 1)
-            #for (J, 0, SizeJ - 1)
-                #for (I, 0, NewSizeI - 1)
-                    #local pSum = p0;
-                    #for (A, 0, M)
-                        #local pSum =
-                            pSum + CC[A]*ValuesOrPoints_4N[I+A][J][K][L]
+    #if (M < SizeI)
+        #local CC = _HodographCoefficients(M);
+        #local NewSizeI = SizeI - M;
+        #local VV_4N = array[NewSizeI][SizeJ][SizeK][SizeL];
+        #for (L, 0, SizeL - 1)
+            #for (K, 0, SizeK - 1)
+                #for (J, 0, SizeJ - 1)
+                    #for (I, 0, NewSizeI - 1)
+                        #local pSum = p0;
+                        #for (A, 0, M)
+                            #local pSum =
+                                pSum + CC[A]*ValuesOrPoints_4N[I+A][J][K][L]
+                            ;
+                        #end // for
+                        #local VV_4N[I][J][K][L] =
+                            FactFallingFn(SizeI - 1, M)*pSum
                         ;
                     #end // for
-                    #local VV_4N[I][J][K][L] =
-                        FactFallingFn(SizeI - 1, M)*pSum
-                    ;
                 #end // for
             #end // for
         #end // for
-    #end // for
+    #else
+        #local VV_4N = array[1][SizeJ][SizeK][SizeL];
+        #for (L, 0, SizeL - 1)
+            #for (K, 0, SizeK - 1)
+                #for (J, 0, SizeJ - 1)
+                    #local VV_4N[0][J][K][L] = p0;
+                #end // for
+            #end // for
+        #end // for
+    #end // if
 
     VV_4N
 
@@ -1350,31 +1407,42 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local CC = _HodographCoefficients(M);
     #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
     #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
     #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
     #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
-    #local NewSizeJ = SizeJ - M;
-    #local VV_4N = array[SizeI][NewSizeJ][SizeK][SizeL];
     #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
-    #for (I, 0, SizeI - 1)
-        #for (L, 0, SizeL - 1)
-            #for (K, 0, SizeK - 1)
-                #for (J, 0, NewSizeJ - 1)
-                    #local pSum = p0;
-                    #for (A, 0, M)
-                        #local pSum =
-                            pSum + CC[A]*ValuesOrPoints_4N[I][J+A][K][L]
+    #if (M < SizeJ)
+        #local CC = _HodographCoefficients(M);
+        #local NewSizeJ = SizeJ - M;
+        #local VV_4N = array[SizeI][NewSizeJ][SizeK][SizeL];
+        #for (I, 0, SizeI - 1)
+            #for (L, 0, SizeL - 1)
+                #for (K, 0, SizeK - 1)
+                    #for (J, 0, NewSizeJ - 1)
+                        #local pSum = p0;
+                        #for (A, 0, M)
+                            #local pSum =
+                                pSum + CC[A]*ValuesOrPoints_4N[I][J+A][K][L]
+                            ;
+                        #end // for
+                        #local VV_4N[I][J][K][L] =
+                            FactFallingFn(SizeJ - 1, M)*pSum
                         ;
                     #end // for
-                    #local VV_4N[I][J][K][L] =
-                        FactFallingFn(SizeJ - 1, M)*pSum
-                    ;
                 #end // for
             #end // for
         #end // for
-    #end // for
+    #else
+        #local VV_4N = array[SizeI][1][SizeK][SizeL];
+        #for (I, 0, SizeI - 1)
+            #for (L, 0, SizeL - 1)
+                #for (K, 0, SizeK - 1)
+                    #local VV_4N[I][0][K][L] = p0;
+                #end // for
+            #end // for
+        #end // for
+    #end // if
 
     VV_4N
 
@@ -1387,31 +1455,42 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local CC = _HodographCoefficients(M);
     #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
     #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
     #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
     #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
-    #local NewSizeK = SizeK - M;
-    #local VV_4N = array[SizeI][SizeJ][NewSizeK][SizeL];
     #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
-    #for (J, 0, SizeJ - 1)
-        #for (I, 0, SizeI - 1)
-            #for (L, 0, SizeL - 1)
-                #for (K, 0, NewSizeK - 1)
-                    #local pSum = p0;
-                    #for (A, 0, M)
-                        #local pSum =
-                            pSum + CC[A]*ValuesOrPoints_4N[I][J][K+A][L]
+    #if (M < SizeK)
+        #local CC = _HodographCoefficients(M);
+        #local NewSizeK = SizeK - M;
+        #local VV_4N = array[SizeI][SizeJ][NewSizeK][SizeL];
+        #for (J, 0, SizeJ - 1)
+            #for (I, 0, SizeI - 1)
+                #for (L, 0, SizeL - 1)
+                    #for (K, 0, NewSizeK - 1)
+                        #local pSum = p0;
+                        #for (A, 0, M)
+                            #local pSum =
+                                pSum + CC[A]*ValuesOrPoints_4N[I][J][K+A][L]
+                            ;
+                        #end // for
+                        #local VV_4N[I][J][K][L] =
+                            FactFallingFn(SizeK - 1, M)*pSum
                         ;
                     #end // for
-                    #local VV_4N[I][J][K][L] =
-                        FactFallingFn(SizeK - 1, M)*pSum
-                    ;
                 #end // for
             #end // for
         #end // for
-    #end // for
+    #else
+        #local VV_4N = array[SizeI][SizeJ][1][SizeL];
+        #for (J, 0, SizeJ - 1)
+            #for (I, 0, SizeI - 1)
+                #for (L, 0, SizeL - 1)
+                    #local VV_4N[I][J][0][L] = p0;
+                #end // for
+            #end // for
+        #end // for
+    #end // if
 
     VV_4N
 
@@ -1424,31 +1503,42 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local CC = _HodographCoefficients(M);
     #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
     #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
     #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
     #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
-    #local NewSizeL = SizeL - M;
-    #local VV_4N = array[SizeI][SizeJ][SizeK][NewSizeL];
     #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
-    #for (K, 0, SizeK - 1)
-        #for (J, 0, SizeJ - 1)
-            #for (I, 0, SizeI - 1)
-                #for (L, 0, NewSizeL - 1)
-                    #local pSum = p0;
-                    #for (A, 0, M)
-                        #local pSum =
-                            pSum + CC[A]*ValuesOrPoints_4N[I][J][K][L+A]
+    #if (M < SizeL)
+        #local CC = _HodographCoefficients(M);
+        #local NewSizeL = SizeL - M;
+        #local VV_4N = array[SizeI][SizeJ][SizeK][NewSizeL];
+        #for (K, 0, SizeK - 1)
+            #for (J, 0, SizeJ - 1)
+                #for (I, 0, SizeI - 1)
+                    #for (L, 0, NewSizeL - 1)
+                        #local pSum = p0;
+                        #for (A, 0, M)
+                            #local pSum =
+                                pSum + CC[A]*ValuesOrPoints_4N[I][J][K][L+A]
+                            ;
+                        #end // for
+                        #local VV_4N[I][J][K][L] =
+                            FactFallingFn(SizeL - 1, M)*pSum
                         ;
                     #end // for
-                    #local VV_4N[I][J][K][L] =
-                        FactFallingFn(SizeL - 1, M)*pSum
-                    ;
                 #end // for
             #end // for
         #end // for
-    #end // for
+    #else
+        #local VV_4N = array[SizeI][SizeJ][SizeK][1];
+        #for (K, 0, SizeK - 1)
+            #for (J, 0, SizeJ - 1)
+                #for (I, 0, SizeI - 1)
+                    #local VV_4N[I][J][K][0] = p0;
+                #end // for
+            #end // for
+        #end // for
+    #end // if
 
     VV_4N
 
