@@ -160,7 +160,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro ExtractComponent_1N(Vectors_1N, vC)
+#macro From_1N_ExtractComponent_1N(Vectors_1N, vC)
 
     #local N = dimensions(Vectors_1N);
     #if (N != 1)
@@ -177,10 +177,10 @@ which can be found in the LICENSE file.
 
     CC_1N
 
-#end // macro ExtractComponent_1N
+#end // macro From_1N_ExtractComponent_1N
 
 
-#macro ExtractComponent_2N(Vectors_2N, vC)
+#macro From_2N_ExtractComponent_2N(Vectors_2N, vC)
 
     #local N = dimensions(Vectors_2N);
     #if (N != 2)
@@ -201,10 +201,10 @@ which can be found in the LICENSE file.
 
     CC_2N
 
-#end // macro ExtractComponent_2N
+#end // macro From_2N_ExtractComponent_2N
 
 
-#macro ExtractComponent_3N(Vectors_3N, vC)
+#macro From_3N_ExtractComponent_3N(Vectors_3N, vC)
 
     #local N = dimensions(Vectors_3N);
     #if (N != 3)
@@ -229,10 +229,10 @@ which can be found in the LICENSE file.
 
     CC_3N
 
-#end // macro ExtractComponent_3N
+#end // macro From_3N_ExtractComponent_3N
 
 
-#macro ExtractComponent_4N(Vectors_4N, vC)
+#macro From_4N_ExtractComponent_4N(Vectors_4N, vC)
 
     #local N = dimensions(Vectors_4N);
     #if (N != 4)
@@ -261,7 +261,7 @@ which can be found in the LICENSE file.
 
     CC_4N
 
-#end // macro ExtractComponent_4N
+#end // macro From_4N_ExtractComponent_4N
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
