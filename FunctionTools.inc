@@ -192,6 +192,7 @@ which can be found in the LICENSE file.
     }
 ;
 
+
 // B(N, R)(t)
 #macro BernsteinFunction(N, R)
 
