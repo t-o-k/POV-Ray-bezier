@@ -198,10 +198,10 @@ which can be found in the LICENSE file.
 
     function(_t) {
         sum(
-            _i, R, N,
-            BernsteinCoefficientFn(_i, N, R)
+            _p, R, N,
+            BernsteinCoefficientFn(_p, N, R)
             *
-            PowFn(_t, _i)
+            PowFn(_t, _p)
         )
     }
 
