@@ -192,18 +192,6 @@ which can be found in the LICENSE file.
     }
 ;
 
-// B(k, n)(t)
-#declare BernsteinFn =
-    function(_k, _n, _t) {
-        sum(
-            _i, _k, _n,
-            BernsteinCoefficientFn(_i, _k, _n)
-            *
-            PowFn(_t, _i)
-        )
-    }
-;
-
 // B(N, R)(t)
 #macro BernsteinFunction(N, R)
 
