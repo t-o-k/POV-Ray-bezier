@@ -109,6 +109,7 @@ which can be found in the LICENSE file.
 
 #end // M_FundamentalFn
 
+
 #macro N_FundamentalFn(Array)
 
     Array[2]
