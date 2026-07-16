@@ -203,13 +203,13 @@ which can be found in the LICENSE file.
     }
 ;
 
-
-#macro BernsteinFunction(K, N)
+// B(N, R)(t)
+#macro BernsteinFunction(N, R)
 
     function(_t) {
         sum(
-            _i, K, N,
-            BernsteinCoefficientFn(_i, K, N)
+            _i, R, N,
+            BernsteinCoefficientFn(_i, R, N)
             *
             PowFn(_t, _i)
         )
