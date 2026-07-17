@@ -233,8 +233,8 @@ which can be found in the LICENSE file.
     }
 ;
 
-#declare BernsteinCoefficientFn =
-    function(_p, _n, _r) {
+#declare _BernsteinCoefficientFn =
+    function(n, _r, _p) {
         PowFn(-1, _p - _r)*CombFn(_n, _p)*CombFn(_p, _r)
     }
 ;
@@ -245,7 +245,7 @@ which can be found in the LICENSE file.
     function(_t) {
         sum(
             _p, R, N,
-            BernsteinCoefficientFn(_p, N, R)
+            _BernsteinCoefficientFn(N, R, _p)
             *
             PowFn(_t, _p)
         )
