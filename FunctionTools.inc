@@ -240,7 +240,10 @@ which can be found in the LICENSE file.
 ;
 
 
-#macro BernsteinFunction(N, R)
+/*
+Inefficient and numerically unstable version
+
+#macro BernsteinFunction_1A(N, R)
 
     function(_t) {
         sum(
@@ -251,7 +254,118 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // macro BernsteinFunction
+#end // macro BernsteinFunction_1A
+*/
+
+
+/*
+Inefficient and numerically unstable version
+
+#macro BernsteinFunction_1A(N, R)
+
+    #local C = BinomialFn(N, R);
+    #local M = N - R;
+
+    function(_t) { C*PowFn(_t, R)*PowFn(1 - _t, M) }
+
+#end // macro BernsteinFunction_1A
+*/
+
+
+/*
+Numerically unstable version
+
+#macro BernsteinFunction_1A(N, R)
+
+    function(_t) {
+        0.0
+        #for (P, R, N)
+            #local C = _BernsteinCoefficientFn(N, R, P);
+            + C*PowFn(_t, P)
+        #end // for
+    }
+
+#end // macro BernsteinFunction_1A
+*/
+
+
+#macro _HornerRecurse(Coefficients, I)
+
+    #if (I > 0)
+        (_HornerRecurse(Coefficients, I - 1)*_t + Coefficients[I])
+    #else
+        Coefficients[0]
+    #end // if
+
+#end // macro _HornerRecurse
+
+
+#macro HornerPolynomialFunction_1A(Coefficients)
+
+    #local Size = dimension_size(Coefficients, 1);
+
+    function(_t) {
+        _HornerRecurse(Coefficients, Size - 1)
+    }
+
+#end // macro HornerPolynomialFunction_1A
+
+
+#macro BernsteinFunction_1A(N, R)
+
+    #if (R < 0)
+        #error "Polynomial index R cannot be negative."
+    #end // if
+    #if (R > N)
+        #error "Polynomial index R cannot exceed degree N."
+    #end // if
+
+    #local Size = N + 1;
+    #local Coeffs = array[Size];
+    #for (I, 0, N - R)
+        #local P = N - I; 
+        #local Coeffs[I] = _BernsteinCoefficientFn(N, R, P);
+    #end // for
+    #for (I, N - R + 1, N)
+        #local Coeffs[I] = 0.0;
+    #end // for
+
+    HornerPolynomialFunction_1A(Coeffs)
+
+#end // macro BernsteinFunction_1A
+
+
+#macro DerBernsteinFunction_1A(N, R, D)
+
+    #if (R < 0)
+        #error "Polynomial index R cannot be negative."
+    #end // if
+    #if (R > N)
+        #error "Polynomial index R cannot exceed degree N."
+    #end // if
+    #if (D < 0)
+        #error "Derivation order D cannot be negative."
+    #end // if
+
+    #local S = max(R, D);
+    #if (S > N)
+        #local Coeffs = array[1] { 0.0 };
+    #else
+        #local Size = N - D + 1;
+        #local Coeffs = array[Size];
+        #for (I, 0, N - S)
+            #local P = N - I; 
+            #local C = _BernsteinCoefficientFn(N, R, P);
+            #local Coeffs[I] = C*FactFallingFn(P, D);
+        #end // for
+        #for (I, N - S + 1, N - D)
+            #local Coeffs[I] = 0.0;
+        #end // for
+    #end // if
+
+    HornerPolynomialFunction_1A(Coeffs)
+
+#end // macro DerBernsteinFunction_1A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
