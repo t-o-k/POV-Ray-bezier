@@ -140,22 +140,53 @@ which can be found in the LICENSE file.
 
 #declare FactFn =
     function(_n) {
-        prod(_i, 1, _n, _i)
+        select(
+            _n,
+            0,
+            prod(_i, 1, _n, _i)
+        )
     }
 ;
 
 #declare FactFallingFn =
     function(_n, _k) {
-        _NoNegativeZeroFn(
-            prod(_i, _n - _k + 1, _n, _i)
+        select(
+            _k,
+            0,
+            select(
+                _n,
+                _NoNegativeZeroFn(
+                    prod(_i, _n - _k + 1, _n, _i)
+                ), 
+                select(
+                    _n - _k,
+                    0,
+                    _NoNegativeZeroFn(
+                        prod(_i, _n - _k + 1, _n, _i)
+                    )
+                )
+            )
         )
     }
 ;
-
 #declare FactRisingFn =
     function(_n, _k) {
-        _NoNegativeZeroFn(
-            prod(_i, _n, _n + _k - 1, _i)
+        select(
+            _k,
+            0,
+            select(
+                _n,
+                select(
+                    _n + _k - 1, 
+                    _NoNegativeZeroFn(
+                        prod(_i, _n, _n + _k - 1, _i)
+                    ),
+                    0
+                ),
+                _NoNegativeZeroFn(
+                    prod(_i, _n, _n + _k - 1, _i)
+                )
+            )
         )
     }
 ;
@@ -169,9 +200,17 @@ which can be found in the LICENSE file.
 #declare CombFn =
     function(_n, _k) {
         select(
-            _n - 2*_k,
-            FactFallingFn(_n, _n - _k)/FactFn(_n - _k),
-            FactFallingFn(_n, _k)/FactFn(_k)
+            _k,
+            0,
+            select(
+                _n - _k,
+                0,
+                select(
+                    _n - 2*_k,
+                    FactFallingFn(_n, _n - _k)/FactFn(_n - _k),
+                    FactFallingFn(_n, _k)/FactFn(_k)
+                )
+            )
         )
     }
 ;
@@ -179,9 +218,17 @@ which can be found in the LICENSE file.
 #declare BinomialFn =
     function(_n, _k) {
         select(
-            _n - 2*_k,
-            FactFallingFn(_n, _n - _k)/FactFn(_n - _k),
-            FactFallingFn(_n, _k)/FactFn(_k)
+            _k,
+            0,
+            select(
+                _n - _k,
+                0,
+                select(
+                    _n - 2*_k,
+                    FactFallingFn(_n, _n - _k)/FactFn(_n - _k),
+                    FactFallingFn(_n, _k)/FactFn(_k)
+                )
+            )
         )
     }
 ;
@@ -193,7 +240,6 @@ which can be found in the LICENSE file.
 ;
 
 
-// B(N, R)(t)
 #macro BernsteinFunction(N, R)
 
     function(_t) {
