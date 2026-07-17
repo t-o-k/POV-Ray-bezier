@@ -234,7 +234,7 @@ which can be found in the LICENSE file.
 ;
 
 #declare _BernsteinCoefficientFn =
-    function(n, _r, _p) {
+    function(_n, _r, _p) {
         PowFn(-1, _p - _r)*CombFn(_n, _p)*CombFn(_p, _r)
     }
 ;
