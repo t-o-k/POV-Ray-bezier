@@ -371,25 +371,11 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro BernsteinBasisFunction_1A(N, R)
-
-    #local C = BinomialFn(N, R);
-    #local M = N - R;
-
-    function(_t) { C*PowFn(_t, R)*PowFn(1 - _t, M) }
-
-#end // macro BernsteinBasisFunction_1A
-
-
 #macro BernsteinBasisFunctions_1A_1N(Degree)
 
     #local _Fns_1A_1N = array[Degree+1];
     #for (I, 0, Degree)
-        #local _Fns_1A_1N[I] =
-            BernsteinBasisFunction_1A(
-                Degree, I
-            )
-        ;
+        #local _Fns_1A_1N[I] = BernsteinFunction_1A(Degree, I);
     #end // for
 
     _Fns_1A_1N
