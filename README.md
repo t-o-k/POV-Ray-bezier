@@ -8,7 +8,7 @@ It works with POV-Ray v3.7. It may also work with POV-Ray v3.8, but that has not
 
 **_NB: This is work in progress, so anything may change at any time._**
 
-Here is what it provides:
+Here is some of what it provides:
 
 ## Mathematical foundations
 
@@ -26,6 +26,11 @@ Here is what it provides:
 - Numerical derivatives via central differences (Est_Der*)
 - Analytical derivatives via hodograph control polygons (Hodograph_*)
 
+## Differential Geometry & Curvature
+
+- **Fundamental Forms**: Calculates coefficients for the First ($E, F, G$) and Second ($L, M, N$) Fundamental Forms of parametric surfaces.
+- **Curvature Analysis**: Provides explicit function object macros for Gaussian Curvature ($K$) and Mean Curvature ($H$) using both normalized and unnormalized methods.
+
 ## Control point manipulation
 
 - Array arithmetic: MultiplyArrays_*N, DivideArrays_*N, AddArrays_*N
@@ -42,6 +47,7 @@ Here is what it provides:
 
 ## Naming conventions
 
-- _?N suffix = number of array dimensions (1N through 4N)
-- _?A suffix = number of function parameters / arity (1A through 4A)
-- _?D suffix = coordinate space dimension (2D or 3D)
+- `_?N` suffix = number of array dimensions (1N through 4N)
+- `_?A` suffix = number of function parameters / arity (1A through 4A)
+- `_?D` suffix = coordinate space dimension (2D or 3D)
+- `_?A_?D` suffix = combination of function arity and coordinate space (e.g., `_2A_3D` represents a 2-parameter surface in 3D space)
