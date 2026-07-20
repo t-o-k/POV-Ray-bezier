@@ -3371,6 +3371,7 @@ This does not work:
 
 #end // macro FundamentalForm2nd_Determinant_2A_3D
 
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
 #macro _AltGaussianCurvatureFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D, _FundamentalForm2nd_Fns_2A_3D)
 
@@ -3574,6 +3575,323 @@ This does not work:
     )
 
 #end // macro GaussianCurvatureFunction_2A_3D
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+/*
+This does not work:
+
+#macro _AltMeanCurvatureFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D, _FundamentalForm2nd_Fns_2A_3D)
+
+    #local M =
+        max(
+            dimensions(_FundamentalForm1st_Fns_2A_3D),
+            dimensions(_FundamentalForm2nd_Fns_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local MinD =
+        min(
+            dimension_size(_FundamentalForm1st_Fns_2A_3D, 1),
+            dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MinD != 3)
+        #error "MinD is not 3"
+    #end // if
+    #local MaxD =
+        max(
+            dimension_size(_FundamentalForm1st_Fns_2A_3D, 1),
+            dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MaxD != 3)
+        #error "MaxD is not 3"
+    #end // if
+
+    // Formula: (E*N + G*L - 2*F*M)/(2*(E*G - F^2))
+
+    DivideFunction_Safe_2A(
+        SubtractFunction_2A(
+            AddFunction_2A(
+                MultiplyFunction_2A(
+                    E_FundamentalFn(_FundamentalForm1st_Fns_2A_3D),
+                    N_FundamentalFn(_FundamentalForm2nd_Fns_2A_3D)
+                ),
+                MultiplyFunction_2A(
+                    G_FundamentalFn(_FundamentalForm1st_Fns_2A_3D),
+                    L_FundamentalFn(_FundamentalForm2nd_Fns_2A_3D)
+                )
+            ),
+            MultiplyFunction_Constant_2A(
+                MultiplyFunction_2A(
+                    F_FundamentalFn(_FundamentalForm1st_Fns_2A_3D),
+                    M_FundamentalFn(_FundamentalForm2nd_Fns_2A_3D)
+                ),
+                2
+            )
+        ),
+        MultiplyFunction_Constant_2A(
+            FundamentalForm1st_Determinant_2A_3D(
+                _FundamentalForm1st_Fns_2A_3D
+            ),
+            2
+        )
+    )
+
+#end // macro _AltMeanCurvatureFunction_2A_3D
+*/
+
+
+#macro _AltMeanCurvatureFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D, _FundamentalForm2nd_Fns_2A_3D)
+
+    #local M =
+        max(
+            dimensions(_FundamentalForm1st_Fns_2A_3D),
+            dimensions(_FundamentalForm2nd_Fns_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local MinD =
+        min(
+            dimension_size(_FundamentalForm1st_Fns_2A_3D, 1),
+            dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MinD != 3)
+        #error "MinD is not 3"
+    #end // if
+    #local MaxD =
+        max(
+            dimension_size(_FundamentalForm1st_Fns_2A_3D, 1),
+            dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MaxD != 3)
+        #error "MaxD is not 3"
+    #end // if
+
+    // Formula: (E*N + G*L - 2*F*M)/(2*(E*G - F^2))
+
+    DivideFunction_Safe_2A(
+        SubtractFunction_2A(
+            AddFunction_2A(
+                MultiplyFunction_2A(
+                    _FundamentalForm1st_Fns_2A_3D[0], // E
+                    _FundamentalForm2nd_Fns_2A_3D[2]  // N
+                ),
+                MultiplyFunction_2A(
+                    _FundamentalForm1st_Fns_2A_3D[2], // G
+                    _FundamentalForm2nd_Fns_2A_3D[0]  // L
+                )
+            ),
+            MultiplyFunction_Constant_2A(
+                MultiplyFunction_2A(
+                    _FundamentalForm1st_Fns_2A_3D[1], // F
+                    _FundamentalForm2nd_Fns_2A_3D[1]  // M
+                ),
+                2
+            )
+        ),
+        MultiplyFunction_Constant_2A(
+            FundamentalForm1st_Determinant_2A_3D(
+                _FundamentalForm1st_Fns_2A_3D
+            ),
+            2
+        )
+    )
+
+#end // macro _AltMeanCurvatureFunction_2A_3D
+
+
+#macro AltMeanCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
+
+    #local M =
+        max(
+            dimensions(_D1_U_Fns_2A_3D),
+            dimensions(_D1_V_Fns_2A_3D),
+            dimensions(_D2_UU_Fns_2A_3D),
+            dimensions(_D2_UV_Fns_2A_3D),
+            dimensions(_D2_VV_Fns_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local MinD =
+        min(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MinD != 3)
+        #error "MinD is not 3"
+    #end // if
+    #local MaxD =
+        max(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MaxD != 3)
+        #error "MaxD is not 3"
+    #end // if
+
+    _AltMeanCurvatureFunction_2A_3D(
+        FirstFundamentalFormFunctions_2A_3D(
+            _D1_U_Fns_2A_3D,
+            _D1_V_Fns_2A_3D
+        ),
+        SecondFundamentalFormFunctions_2A_3D(
+            _D1_U_Fns_2A_3D, 
+            _D1_V_Fns_2A_3D,
+            _D2_UU_Fns_2A_3D,
+            _D2_UV_Fns_2A_3D,
+            _D2_VV_Fns_2A_3D
+        )
+    )
+
+#end // macro AltMeanCurvatureFunction_2A_3D
+
+
+#macro _MeanCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
+
+     #local M =
+        max(
+            dimensions(_D1_U_Fns_2A_3D),
+            dimensions(_D1_V_Fns_2A_3D),
+            dimensions(_D2_UU_Fns_2A_3D),
+            dimensions(_D2_UV_Fns_2A_3D),
+            dimensions(_D2_VV_Fns_2A_3D),
+            dimensions(_Normal_Fns_2A_3D)
+       )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local MinD =
+        min(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1),
+            dimension_size(_Normal_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MinD != 3)
+        #error "MinD is not 3"
+    #end // if
+    #local MaxD =
+        max(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1),
+            dimension_size(_Normal_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MaxD != 3)
+        #error "MaxD is not 3"
+    #end // if
+
+    // Formula: (E*N + G*L - 2*F*M)/(2*(N.N)^1.5)
+
+    DivideFunction_Safe_2A(
+        SubtractFunction_2A(
+            AddFunction_2A(
+                MultiplyFunction_2A(
+                    DotFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_U_Fns_2A_3D),   // E
+                    DotFunction_2A_3D(_D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D) // N
+                ),
+                MultiplyFunction_2A(
+                    DotFunction_2A_3D(_D1_V_Fns_2A_3D, _D1_V_Fns_2A_3D),   // G
+                    DotFunction_2A_3D(_D2_UU_Fns_2A_3D, _Normal_Fns_2A_3D) // L
+                )
+            ),
+            MultiplyFunction_Constant_2A(
+                MultiplyFunction_2A(
+                    DotFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D),   // F
+                    DotFunction_2A_3D(_D2_UV_Fns_2A_3D, _Normal_Fns_2A_3D) // M
+                ),
+                2
+            )
+        ),
+        MultiplyFunction_Constant_2A(
+            PowFunction_Constant_2A(
+                DotFunction_2A_3D(_Normal_Fns_2A_3D, _Normal_Fns_2A_3D),
+                1.5
+            ),
+            2
+        )
+    )
+
+#end // macro _MeanCurvatureFunction_2A_3D
+
+
+#macro MeanCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
+
+    #local M =
+        max(
+            dimensions(_D1_U_Fns_2A_3D),
+            dimensions(_D1_V_Fns_2A_3D),
+            dimensions(_D2_UU_Fns_2A_3D),
+            dimensions(_D2_UV_Fns_2A_3D),
+            dimensions(_D2_VV_Fns_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local MinD =
+        min(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MinD != 3)
+        #error "MinD is not 3"
+    #end // if
+    #local MaxD =
+        max(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1)
+        )
+    ;
+    #if (MaxD != 3)
+        #error "MaxD is not 3"
+    #end // if
+
+    _MeanCurvatureFunction_2A_3D(
+        _D1_U_Fns_2A_3D,
+        _D1_V_Fns_2A_3D,
+        _D2_UU_Fns_2A_3D,
+        _D2_UV_Fns_2A_3D,
+        _D2_VV_Fns_2A_3D,
+        CrossFunctions_2A_3D(
+            _D1_U_Fns_2A_3D,
+            _D1_V_Fns_2A_3D
+        )
+    )
+
+#end // macro MeanCurvatureFunction_2A_3D
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
