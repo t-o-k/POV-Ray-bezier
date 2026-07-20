@@ -2891,6 +2891,8 @@ Numerically unstable version
 
 #end // macro SecondFundamentalFormFunctions_2A_3D
 
+/*
+This does not work:
 
 #macro FundamentalForm1st_Determinant_2A_3D(_FundamentalForm1st_Fns_2A_3D)
 
@@ -2917,7 +2919,38 @@ Numerically unstable version
     )
 
 #end // macro FundamentalForm1st_Determinant_2A_3D
+*/
 
+
+#macro FundamentalForm1st_Determinant_2A_3D(_FundamentalForm1st_Fns_2A_3D)
+
+    #local M = dimensions(_FundamentalForm1st_Fns_2A_3D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_FundamentalForm1st_Fns_2A_3D, 1);
+    #if (D != 3)
+        #error "D is not 3"
+    #end // if
+
+    // Formula: E*G - F^2
+
+    SubtractFunction_2A(
+        MultiplyFunction_2A(
+            _FundamentalForm1st_Fns_2A_3D[0], // E
+            _FundamentalForm1st_Fns_2A_3D[2]  // G
+        ),
+        PowFunction_Constant_2A(
+            _FundamentalForm1st_Fns_2A_3D[1], // F
+            2
+        )
+    )
+
+#end // macro FundamentalForm1st_Determinant_2A_3D
+
+
+/*
+This does not work:
 
 #macro FundamentalForm2nd_Determinant_2A_3D(_FundamentalForm2nd_Fns_2A_3D)
 
@@ -2939,6 +2972,34 @@ Numerically unstable version
         ),
         PowFunction_Constant_2A(
             M_FundamentalFn(_FundamentalForm2nd_Fns_2A_3D),
+            2
+        )
+    )
+
+#end // macro FundamentalForm2nd_Determinant_2A_3D
+*/
+
+
+#macro FundamentalForm2nd_Determinant_2A_3D(_FundamentalForm2nd_Fns_2A_3D)
+
+    #local M = dimensions(_FundamentalForm2nd_Fns_2A_3D);
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local D = dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1);
+    #if (D != 3)
+        #error "D is not 3"
+    #end // if
+
+    // Formula: L*N - M^2
+
+    SubtractFunction_2A(
+        MultiplyFunction_2A(
+            _FundamentalForm2nd_Fns_2A_3D[0],
+            _FundamentalForm2nd_Fns_2A_3D[2]
+        ),
+        PowFunction_Constant_2A(
+            _FundamentalForm2nd_Fns_2A_3D[1],
             2
         )
     )
