@@ -932,6 +932,203 @@ Numerically unstable version
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
+#macro _QuadraticRootsFunctions_1A(B_Fn_1A, SqrtDiscr_Fn_1A, Num_Fn_1A)
+
+    Arr_2E(
+        DivideFunction_Safe_1A(
+            AddFunction_1A(
+                B_Fn_1A,
+                SqrtDiscr_Fn_1A
+            ),
+            Num_Fn_1A
+        ),
+        DivideFunction_Safe_1A(
+            SubtractFunction_1A(
+                B_Fn_1A,
+                SqrtDiscr_Fn_1A
+            ),
+            Num_Fn_1A
+        )
+    )
+
+#end // macro _QuadraticRootsFunctions_1A
+
+
+#macro QuadraticRootsFunctions_1A(A_Fn_1A, B_Fn_1A, C_Fn_1A)
+
+    _QuadraticRootsFunctions_1A(
+        B_Fn_1A,
+        Sqrt_Safe_Function_1A(
+            SubtractFunction_1A(
+                SqFunction_1A(
+                    B_Fn_1A
+                ),
+                MultiplyFunction_Constant_1A(
+                    MultiplyFunction_1A(
+                        A_Fn_1A,
+                        C_Fn_1A
+                    ),
+                    4
+                )
+            )
+        ),
+        MultiplyFunction_Constant_1A(
+            A_Fn_1A,
+            2
+        )
+    )
+
+#end // macro QuadraticRootsFunctions_1A
+
+
+#macro _QuadraticRootsFunctions_2A(B_Fn_2A, SqrtDiscr_Fn_2A, Num_Fn_2A)
+
+    Arr_2E(
+        DivideFunction_Safe_2A(
+            AddFunction_2A(
+                B_Fn_2A,
+                SqrtDiscr_Fn_2A
+            ),
+            Num_Fn_2A
+        ),
+        DivideFunction_Safe_2A(
+            SubtractFunction_2A(
+                B_Fn_2A,
+                SqrtDiscr_Fn_2A
+            ),
+            Num_Fn_2A
+        )
+    )
+
+#end // macro _QuadraticRootsFunctions_2A
+
+
+#macro QuadraticRootsFunctions_2A(A_Fn_2A, B_Fn_2A, C_Fn_2A)
+
+    _QuadraticRootsFunctions_2A(
+        B_Fn_2A,
+        Sqrt_Safe_Function_2A(
+            SubtractFunction_2A(
+                SqFunction_2A(
+                    B_Fn_2A
+                ),
+                MultiplyFunction_Constant_2A(
+                    MultiplyFunction_2A(
+                        A_Fn_2A,
+                        C_Fn_2A
+                    ),
+                    4
+                )
+            )
+        ),
+        MultiplyFunction_Constant_2A(
+            A_Fn_2A,
+            2
+        )
+    )
+
+#end // macro QuadraticRootsFunctions_2A
+
+
+#macro _QuadraticRootsFunctions_3A(B_Fn_3A, SqrtDiscr_Fn_3A, Num_Fn_3A)
+
+    Arr_2E(
+        DivideFunction_Safe_3A(
+            AddFunction_3A(
+                B_Fn_3A,
+                SqrtDiscr_Fn_3A
+            ),
+            Num_Fn_3A
+        ),
+        DivideFunction_Safe_3A(
+            SubtractFunction_3A(
+                B_Fn_3A,
+                SqrtDiscr_Fn_3A
+            ),
+            Num_Fn_3A
+        )
+    )
+
+#end // macro _QuadraticRootsFunctions_3A
+
+
+#macro QuadraticRootsFunctions_3A(A_Fn_3A, B_Fn_3A, C_Fn_3A)
+
+    _QuadraticRootsFunctions_3A(
+        B_Fn_3A,
+        Sqrt_Safe_Function_3A(
+            SubtractFunction_3A(
+                SqFunction_3A(
+                    B_Fn_3A
+                ),
+                MultiplyFunction_Constant_3A(
+                    MultiplyFunction_3A(
+                        A_Fn_3A,
+                        C_Fn_3A
+                    ),
+                    4
+                )
+            )
+        ),
+        MultiplyFunction_Constant_3A(
+            A_Fn_3A,
+            2
+        )
+    )
+
+#end // macro QuadraticRootsFunctions_3A
+
+
+#macro _QuadraticRootsFunctions_4A(B_Fn_4A, SqrtDiscr_Fn_4A, Num_Fn_4A)
+
+    Arr_2E(
+        DivideFunction_Safe_4A(
+            AddFunction_4A(
+                B_Fn_4A,
+                SqrtDiscr_Fn_4A
+            ),
+            Num_Fn_4A
+        ),
+        DivideFunction_Safe_4A(
+            SubtractFunction_4A(
+                B_Fn_4A,
+                SqrtDiscr_Fn_4A
+            ),
+            Num_Fn_4A
+        )
+    )
+
+#end // macro _QuadraticRootsFunctions_4A
+
+
+#macro QuadraticRootsFunctions_4A(A_Fn_4A, B_Fn_4A, C_Fn_4A)
+
+    _QuadraticRootsFunctions_4A(
+        B_Fn_4A,
+        Sqrt_Safe_Function_4A(
+            SubtractFunction_4A(
+                SqFunction_4A(
+                    B_Fn_4A
+                ),
+                MultiplyFunction_Constant_4A(
+                    MultiplyFunction_4A(
+                        A_Fn_4A,
+                        C_Fn_4A
+                    ),
+                    4
+                )
+            )
+        ),
+        MultiplyFunction_Constant_4A(
+            A_Fn_4A,
+            2
+        )
+    )
+
+#end // macro QuadraticRootsFunctions_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
 #macro WeightedFunction_1A(_U_Fns_1A_1N, Weights_1N)
 
     #local M = dimensions(_U_Fns_1A_1N);
