@@ -879,7 +879,7 @@ Numerically unstable version
 #end // macro DivideFunction_4A
 
 
-#macro DivideFunction_Safe_1A(_Num_Fn_1A, _Den_Fn_1A)
+#macro Divide_Safe_Function_1A(_Num_Fn_1A, _Den_Fn_1A)
 
     function(_u) {
         _Num_Fn_1A(_u)
@@ -889,10 +889,10 @@ Numerically unstable version
         )
     }
 
-#end // macro DivideFunction_Safe_1A
+#end // macro Divide_Safe_Function_1A
 
 
-#macro DivideFunction_Safe_2A(_Num_Fn_2A, _Den_Fn_2A)
+#macro Divide_Safe_Function_2A(_Num_Fn_2A, _Den_Fn_2A)
 
     function(_u, _v) {
         _Num_Fn_2A(_u, _v)
@@ -902,10 +902,10 @@ Numerically unstable version
         )
     }
 
-#end // macro DivideFunction_Safe_2A
+#end // macro Divide_Safe_Function_2A
 
 
-#macro DivideFunction_Safe_3A(_Num_Fn_3A, _Den_Fn_3A)
+#macro Divide_Safe_Function_3A(_Num_Fn_3A, _Den_Fn_3A)
 
     function(_u, _v, _w) {
         _Num_Fn_3A(_u, _v, _w)
@@ -915,10 +915,10 @@ Numerically unstable version
         )
     }
 
-#end // macro DivideFunction_Safe_3A
+#end // macro Divide_Safe_Function_3A
 
 
-#macro DivideFunction_Safe_4A(_Num_Fn_4A, _Den_Fn_4A)
+#macro Divide_Safe_Function_4A(_Num_Fn_4A, _Den_Fn_4A)
 
     function(_u, _v, _w, _s) {
         _Num_Fn_4A(_u, _v, _w, _s)
@@ -928,21 +928,21 @@ Numerically unstable version
         )
     }
 
-#end // macro DivideFunction_Safe_4A
+#end // macro Divide_Safe_Function_4A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
 #macro _QuadraticRootsFunctions_1A(B_Fn_1A, SqrtDiscr_Fn_1A, Num_Fn_1A)
 
     Arr_2E(
-        DivideFunction_Safe_1A(
+        Divide_Safe_Function_1A(
             AddFunction_1A(
                 B_Fn_1A,
                 SqrtDiscr_Fn_1A
             ),
             Num_Fn_1A
         ),
-        DivideFunction_Safe_1A(
+        Divide_Safe_Function_1A(
             SubtractFunction_1A(
                 B_Fn_1A,
                 SqrtDiscr_Fn_1A
@@ -984,14 +984,14 @@ Numerically unstable version
 #macro _QuadraticRootsFunctions_2A(B_Fn_2A, SqrtDiscr_Fn_2A, Num_Fn_2A)
 
     Arr_2E(
-        DivideFunction_Safe_2A(
+        Divide_Safe_Function_2A(
             AddFunction_2A(
                 B_Fn_2A,
                 SqrtDiscr_Fn_2A
             ),
             Num_Fn_2A
         ),
-        DivideFunction_Safe_2A(
+        Divide_Safe_Function_2A(
             SubtractFunction_2A(
                 B_Fn_2A,
                 SqrtDiscr_Fn_2A
@@ -1033,14 +1033,14 @@ Numerically unstable version
 #macro _QuadraticRootsFunctions_3A(B_Fn_3A, SqrtDiscr_Fn_3A, Num_Fn_3A)
 
     Arr_2E(
-        DivideFunction_Safe_3A(
+        Divide_Safe_Function_3A(
             AddFunction_3A(
                 B_Fn_3A,
                 SqrtDiscr_Fn_3A
             ),
             Num_Fn_3A
         ),
-        DivideFunction_Safe_3A(
+        Divide_Safe_Function_3A(
             SubtractFunction_3A(
                 B_Fn_3A,
                 SqrtDiscr_Fn_3A
@@ -1082,14 +1082,14 @@ Numerically unstable version
 #macro _QuadraticRootsFunctions_4A(B_Fn_4A, SqrtDiscr_Fn_4A, Num_Fn_4A)
 
     Arr_2E(
-        DivideFunction_Safe_4A(
+        Divide_Safe_Function_4A(
             AddFunction_4A(
                 B_Fn_4A,
                 SqrtDiscr_Fn_4A
             ),
             Num_Fn_4A
         ),
-        DivideFunction_Safe_4A(
+        Divide_Safe_Function_4A(
             SubtractFunction_4A(
                 B_Fn_4A,
                 SqrtDiscr_Fn_4A
@@ -3405,7 +3405,7 @@ This does not work:
 
     // Formula: (L*N - M^2)/(E*G - F^2)
 
-    DivideFunction_Safe_2A(
+    Divide_Safe_Function_2A(
         FundamentalForm2nd_Determinant_2A_3D(_FundamentalForm2nd_Fns_2A_3D),
         FundamentalForm1st_Determinant_2A_3D(_FundamentalForm1st_Fns_2A_3D)
     )
@@ -3505,7 +3505,7 @@ This does not work:
         #error "MaxD is not 3"
     #end // if
 
-    DivideFunction_Safe_2A(
+    Divide_Safe_Function_2A(
         SubtractFunction_2A(
             MultiplyFunction_2A(
                 DotFunction_2A_3D(_D2_UU_Fns_2A_3D, _Normal_Fns_2A_3D), // L
@@ -3613,7 +3613,7 @@ This does not work:
 
     // Formula: (E*N + G*L - 2*F*M)/(2*(E*G - F^2))
 
-    DivideFunction_Safe_2A(
+    Divide_Safe_Function_2A(
         SubtractFunction_2A(
             AddFunction_2A(
                 MultiplyFunction_2A(
@@ -3677,7 +3677,7 @@ This does not work:
 
     // Formula: (E*N + G*L - 2*F*M)/(2*(E*G - F^2))
 
-    DivideFunction_Safe_2A(
+    Divide_Safe_Function_2A(
         SubtractFunction_2A(
             AddFunction_2A(
                 MultiplyFunction_2A(
@@ -3808,7 +3808,7 @@ This does not work:
 
     // Formula: (E*N + G*L - 2*F*M)/(2*(N.N)^1.5)
 
-    DivideFunction_Safe_2A(
+    Divide_Safe_Function_2A(
         SubtractFunction_2A(
             AddFunction_2A(
                 MultiplyFunction_2A(
