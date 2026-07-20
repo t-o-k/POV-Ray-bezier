@@ -3259,7 +3259,7 @@ Numerically unstable version
 /*
 This does not work:
 
-#macro FundamentalForm1st_Determinant_2A_3D(_FundamentalForm1st_Fns_2A_3D)
+#macro FundamentalForm1stDetFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D)
 
     #local M = dimensions(_FundamentalForm1st_Fns_2A_3D);
     #if (M != 1)
@@ -3283,11 +3283,11 @@ This does not work:
         )
     )
 
-#end // macro FundamentalForm1st_Determinant_2A_3D
+#end // macro FundamentalForm1stDetFunction_2A_3D
 */
 
 
-#macro FundamentalForm1st_Determinant_2A_3D(_FundamentalForm1st_Fns_2A_3D)
+#macro FundamentalForm1stDetFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D)
 
     #local M = dimensions(_FundamentalForm1st_Fns_2A_3D);
     #if (M != 1)
@@ -3311,13 +3311,13 @@ This does not work:
         )
     )
 
-#end // macro FundamentalForm1st_Determinant_2A_3D
+#end // macro FundamentalForm1stDetFunction_2A_3D
 
 
 /*
 This does not work:
 
-#macro FundamentalForm2nd_Determinant_2A_3D(_FundamentalForm2nd_Fns_2A_3D)
+#macro FundamentalForm2ndDetFunction_2A_3D(_FundamentalForm2nd_Fns_2A_3D)
 
     #local M = dimensions(_FundamentalForm2nd_Fns_2A_3D);
     #if (M != 1)
@@ -3341,11 +3341,11 @@ This does not work:
         )
     )
 
-#end // macro FundamentalForm2nd_Determinant_2A_3D
+#end // macro FundamentalForm2ndDetFunction_2A_3D
 */
 
 
-#macro FundamentalForm2nd_Determinant_2A_3D(_FundamentalForm2nd_Fns_2A_3D)
+#macro FundamentalForm2ndDetFunction_2A_3D(_FundamentalForm2nd_Fns_2A_3D)
 
     #local M = dimensions(_FundamentalForm2nd_Fns_2A_3D);
     #if (M != 1)
@@ -3369,7 +3369,7 @@ This does not work:
         )
     )
 
-#end // macro FundamentalForm2nd_Determinant_2A_3D
+#end // macro FundamentalForm2ndDetFunction_2A_3D
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
@@ -3406,8 +3406,8 @@ This does not work:
     // Formula: (L*N - M^2)/(E*G - F^2)
 
     Divide_Safe_Function_2A(
-        FundamentalForm2nd_Determinant_2A_3D(_FundamentalForm2nd_Fns_2A_3D),
-        FundamentalForm1st_Determinant_2A_3D(_FundamentalForm1st_Fns_2A_3D)
+        FundamentalForm2ndDetFunction_2A_3D(_FundamentalForm2nd_Fns_2A_3D),
+        FundamentalForm1stDetFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D)
     )
 
 #end // macro _AltGaussianCurvatureFunction_2A_3D
@@ -3634,7 +3634,7 @@ This does not work:
             )
         ),
         MultiplyFunction_Constant_2A(
-            FundamentalForm1st_Determinant_2A_3D(
+            FundamentalForm1stDetFunction_2A_3D(
                 _FundamentalForm1st_Fns_2A_3D
             ),
             2
@@ -3698,7 +3698,7 @@ This does not work:
             )
         ),
         MultiplyFunction_Constant_2A(
-            FundamentalForm1st_Determinant_2A_3D(
+            FundamentalForm1stDetFunction_2A_3D(
                 _FundamentalForm1st_Fns_2A_3D
             ),
             2
