@@ -393,6 +393,64 @@ Numerically unstable version
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
+#macro MinFunction_Constant_1A(_Fn_1A, Const)
+
+    function(_u) { min(_Fn_1A(_u), Const) }
+
+#end // macro MinFunction_Constant_1A
+
+
+#macro MinFunction_Constant_2A(_Fn_2A, Const)
+
+    function(_u, _v) { min(_Fn_2A(_u, _v), Const) }
+
+#end // macro MinFunction_Constant_2A
+
+
+#macro MinFunction_Constant_3A(_Fn_3A, Const)
+
+    function(_u, _v, _w) { min(_Fn_3A(_u, _v, _w), Const) }
+
+#end // macro MinFunction_Constant_3A
+
+
+#macro MinFunction_Constant_4A(_Fn_4A, Const)
+
+    function(_u, _v, _w, _s) { min(_Fn_4A(_u, _v, _w, _s), Const) }
+
+#end // macro MinFunction_Constant_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro MaxFunction_Constant_1A(_Fn_1A, Const)
+
+    function(_u) { max(_Fn_1A(_u), Const) }
+
+#end // macro MaxFunction_Constant_1A
+
+
+#macro MaxFunction_Constant_2A(_Fn_2A, Const)
+
+    function(_u, _v) { max(_Fn_2A(_u, _v), Const) }
+
+#end // macro MaxFunction_Constant_2A
+
+
+#macro MaxFunction_Constant_3A(_Fn_3A, Const)
+
+    function(_u, _v, _w) { max(_Fn_3A(_u, _v, _w), Const) }
+
+#end // macro MaxFunction_Constant_3A
+
+
+#macro MaxFunction_Constant_4A(_Fn_4A, Const)
+
+    function(_u, _v, _w, _s) { max(_Fn_4A(_u, _v, _w, _s), Const) }
+
+#end // macro MaxFunction_Constant_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
 #macro MultiplyFunction_Constant_1A(_Fn_1A, Const)
 
     function(_u) {
@@ -529,6 +587,116 @@ Numerically unstable version
     }
 
 #end // macro PowFunction_Constant_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro SqrtFunction_1A(_Fn_1A)
+
+    PowFunction_Constant_1A(_Fn_1A, 0.5)
+
+#end // macro SqrtFunction_1A
+
+
+#macro SqrtFunction_2A(_Fn_2A)
+
+    PowFunction_Constant_2A(_Fn_2A, 0.5)
+
+#end // macro SqrtFunction_2A
+
+
+#macro SqrtFunction_3A(_Fn_3A)
+
+    PowFunction_Constant_3A(_Fn_3A, 0.5)
+
+#end // macro SqrtFunction_3A
+
+
+#macro SqrtFunction_4A(_Fn_4A)
+
+    PowFunction_Constant_4A(_Fn_4A, 0.5)
+
+#end // macro SqrtFunction_4A
+
+
+#macro Sqrt_Safe_Function_1A(_Fn_1A)
+
+    PowFunction_Constant_1A(
+        MaxFunction_Constant_1A(
+            _Fn_1A,
+            0.0
+        ),
+        0.5
+    )
+
+#end // macro Sqrt_Safe_Function_1A
+
+
+#macro Sqrt_Safe_Function_2A(_Fn_2A)
+
+    PowFunction_Constant_2A(
+        MaxFunction_Constant_2A(
+            _Fn_2A,
+            0.0
+        ),
+        0.5
+    )
+
+#end // macro Sqrt_Safe_Function_2A
+
+
+#macro Sqrt_Safe_Function_3A(_Fn_3A)
+
+    PowFunction_Constant_3A(
+        MaxFunction_Constant_3A(
+            _Fn_3A,
+            0.0
+        ),
+        0.5
+    )
+
+#end // macro Sqrt_Safe_Function_3A
+
+
+#macro Sqrt_Safe_Function_4A(_Fn_4A)
+
+    PowFunction_Constant_4A(
+        MaxFunction_Constant_4A(
+            _Fn_4A,
+            0.0
+        ),
+        0.5
+    )
+
+#end // macro Sqrt_Safe_Function_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro SqFunction_1A(_Fn_1A)
+
+    PowFunction_Constant_1A(_Fn_1A, 2)
+
+#end // macro SqFunction_1A
+
+
+#macro SqFunction_2A(_Fn_2A)
+
+    PowFunction_Constant_2A(_Fn_2A, 2)
+
+#end // macro SqFunction_2A
+
+
+#macro SqFunction_3A(_Fn_3A)
+
+    PowFunction_Constant_3A(_Fn_3A, 2)
+
+#end // macro SqFunction_3A
+
+
+#macro SqFunction_4A(_Fn_4A)
+
+    PowFunction_Constant_4A(_Fn_4A, 2)
+
+#end // macro SqFunction_4A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
