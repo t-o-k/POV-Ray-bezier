@@ -3160,40 +3160,6 @@ Numerically unstable version
 
 #macro _SecondFundamentalFormFunctions_2A_3D(_D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
 
-    #local M =
-        max(
-            dimensions(_D2_UU_Fns_2A_3D),
-            dimensions(_D2_UV_Fns_2A_3D),
-            dimensions(_D2_VV_Fns_2A_3D),
-            dimensions(_Normal_Fns_2A_3D)
-        )
-    ;
-    #if (M != 1)
-        #error "M is not 1"
-    #end // if
-    #local MinD =
-        min(
-            dimension_size(_D2_UU_Fns_2A_3D, 1),
-            dimension_size(_D2_UV_Fns_2A_3D, 1),
-            dimension_size(_D2_VV_Fns_2A_3D, 1),
-            dimension_size(_Normal_Fns_2A_3D, 1)
-       )
-    ;
-    #if (MinD != 3)
-        #error "MinD is not 3"
-    #end // if
-    #local MaxD =
-        max(
-            dimension_size(_D2_UU_Fns_2A_3D, 1),
-            dimension_size(_D2_UV_Fns_2A_3D, 1),
-            dimension_size(_D2_VV_Fns_2A_3D, 1),
-            dimension_size(_Normal_Fns_2A_3D, 1)
-       )
-    ;
-    #if (MaxD != 3)
-        #error "MaxD is not 3"
-    #end // if
-
     Arr_3E(
         DotFunction_2A_3D(_D2_UU_Fns_2A_3D, _Normal_Fns_2A_3D), // L
         DotFunction_2A_3D(_D2_UV_Fns_2A_3D, _Normal_Fns_2A_3D), // M
@@ -3471,40 +3437,6 @@ This does not work:
 
 #macro _GaussianCurvatureFunction_2A_3D(_D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
 
-    #local M =
-        max(
-            dimensions(_D2_UU_Fns_2A_3D),
-            dimensions(_D2_UV_Fns_2A_3D),
-            dimensions(_D2_VV_Fns_2A_3D),
-            dimensions(_Normal_Fns_2A_3D)
-        )
-    ;
-    #if (M != 1)
-        #error "M is not 1"
-    #end // if
-    #local MinD =
-        min(
-            dimension_size(_D2_UU_Fns_2A_3D, 1),
-            dimension_size(_D2_UV_Fns_2A_3D, 1),
-            dimension_size(_D2_VV_Fns_2A_3D, 1),
-            dimension_size(_Normal_Fns_2A_3D, 1)
-       )
-    ;
-    #if (MinD != 3)
-        #error "MinD is not 3"
-    #end // if
-    #local MaxD =
-        max(
-            dimension_size(_D2_UU_Fns_2A_3D, 1),
-            dimension_size(_D2_UV_Fns_2A_3D, 1),
-            dimension_size(_D2_VV_Fns_2A_3D, 1),
-            dimension_size(_Normal_Fns_2A_3D, 1)
-       )
-    ;
-    #if (MaxD != 3)
-        #error "MaxD is not 3"
-    #end // if
-
     Divide_Safe_Function_2A(
         SubtractFunction_2A(
             MultiplyFunction_2A(
@@ -3765,48 +3697,6 @@ This does not work:
 
 
 #macro _MeanCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
-
-     #local M =
-        max(
-            dimensions(_D1_U_Fns_2A_3D),
-            dimensions(_D1_V_Fns_2A_3D),
-            dimensions(_D2_UU_Fns_2A_3D),
-            dimensions(_D2_UV_Fns_2A_3D),
-            dimensions(_D2_VV_Fns_2A_3D),
-            dimensions(_Normal_Fns_2A_3D)
-       )
-    ;
-    #if (M != 1)
-        #error "M is not 1"
-    #end // if
-    #local MinD =
-        min(
-            dimension_size(_D1_U_Fns_2A_3D, 1),
-            dimension_size(_D1_V_Fns_2A_3D, 1),
-            dimension_size(_D2_UU_Fns_2A_3D, 1),
-            dimension_size(_D2_UV_Fns_2A_3D, 1),
-            dimension_size(_D2_VV_Fns_2A_3D, 1),
-            dimension_size(_Normal_Fns_2A_3D, 1)
-       )
-    ;
-    #if (MinD != 3)
-        #error "MinD is not 3"
-    #end // if
-    #local MaxD =
-        max(
-            dimension_size(_D1_U_Fns_2A_3D, 1),
-            dimension_size(_D1_V_Fns_2A_3D, 1),
-            dimension_size(_D2_UU_Fns_2A_3D, 1),
-            dimension_size(_D2_UV_Fns_2A_3D, 1),
-            dimension_size(_D2_VV_Fns_2A_3D, 1),
-            dimension_size(_Normal_Fns_2A_3D, 1)
-       )
-    ;
-    #if (MaxD != 3)
-        #error "MaxD is not 3"
-    #end // if
-
-    // Formula: (E*N + G*L - 2*F*M)/(2*(N.N)^1.5)
 
     Divide_Safe_Function_2A(
         SubtractFunction_2A(
