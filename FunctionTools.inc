@@ -3087,9 +3087,9 @@ This does not work:
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_FundamentalForm1st_Fns_2A_3D, 1);
-    #if (D != 3)
-        #error "D is not 3"
+    #local N = dimension_size(_FundamentalForm1st_Fns_2A_3D, 1);
+    #if (N != 3)
+        #error "N is not 3"
     #end // if
 
     // Formula: E*G - F^2
@@ -3114,9 +3114,9 @@ This does not work:
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_FundamentalForm1st_Fns_2A_3D, 1);
-    #if (D != 3)
-        #error "D is not 3"
+    #local N = dimension_size(_FundamentalForm1st_Fns_2A_3D, 1);
+    #if (N != 3)
+        #error "N is not 3"
     #end // if
 
     // Formula: E*G - F^2
@@ -3143,9 +3143,9 @@ This does not work:
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1);
-    #if (D != 3)
-        #error "D is not 3"
+    #local N = dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1);
+    #if (N != 3)
+        #error "N is not 3"
     #end // if
 
     // Formula: L*N - M^2
@@ -3170,9 +3170,9 @@ This does not work:
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local D = dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1);
-    #if (D != 3)
-        #error "D is not 3"
+    #local N = dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1);
+    #if (N != 3)
+        #error "N is not 3"
     #end // if
 
     // Formula: L*N - M^2
