@@ -3202,23 +3202,23 @@ This does not work:
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local MinD =
+    #local MinN =
         min(
             dimension_size(_FundamentalForm1st_Fns_2A_3D, 1),
             dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1)
        )
     ;
-    #if (MinD != 3)
-        #error "MinD is not 3"
+    #if (MinN != 3)
+        #error "MinN is not 3"
     #end // if
-    #local MaxD =
+    #local MaxN =
         max(
             dimension_size(_FundamentalForm1st_Fns_2A_3D, 1),
             dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1)
        )
     ;
-    #if (MaxD != 3)
-        #error "MaxD is not 3"
+    #if (MaxN != 3)
+        #error "MaxN is not 3"
     #end // if
 
     // Formula: (L*N - M^2)/(E*G - F^2)
