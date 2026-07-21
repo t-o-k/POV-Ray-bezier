@@ -3099,9 +3099,8 @@ This does not work:
             E_FundamentalFn(_FundamentalForm1st_Fns_2A_3D),
             G_FundamentalFn(_FundamentalForm1st_Fns_2A_3D)
         ),
-        PowFunction_Constant_2A(
-            F_FundamentalFn(_FundamentalForm1st_Fns_2A_3D),
-            2
+        SqFunction_2A(
+            F_FundamentalFn(_FundamentalForm1st_Fns_2A_3D)
         )
     )
 
@@ -3127,9 +3126,8 @@ This does not work:
             _FundamentalForm1st_Fns_2A_3D[0], // E
             _FundamentalForm1st_Fns_2A_3D[2]  // G
         ),
-        PowFunction_Constant_2A(
-            _FundamentalForm1st_Fns_2A_3D[1], // F
-            2
+        SqFunction_2A(
+            _FundamentalForm1st_Fns_2A_3D[1] // F
         )
     )
 
@@ -3157,9 +3155,8 @@ This does not work:
             L_FundamentalFn(_FundamentalForm2nd_Fns_2A_3D),
             N_FundamentalFn(_FundamentalForm2nd_Fns_2A_3D)
         ),
-        PowFunction_Constant_2A(
-            M_FundamentalFn(_FundamentalForm2nd_Fns_2A_3D),
-            2
+        SqFunction_2A(
+            M_FundamentalFn(_FundamentalForm2nd_Fns_2A_3D)
         )
     )
 
@@ -3185,9 +3182,8 @@ This does not work:
             _FundamentalForm2nd_Fns_2A_3D[0],
             _FundamentalForm2nd_Fns_2A_3D[2]
         ),
-        PowFunction_Constant_2A(
-            _FundamentalForm2nd_Fns_2A_3D[1],
-            2
+        SqFunction_2A(
+            _FundamentalForm2nd_Fns_2A_3D[1]
         )
     )
 
@@ -3304,9 +3300,8 @@ This does not work:
                 2
             )
         ),
-        PowFunction_Constant_2A(
-            DotFunction_2A_3D(_Normal_Fns_2A_3D, _Normal_Fns_2A_3D),
-            2
+        SqFunction_2A(
+            DotFunction_2A_3D(_Normal_Fns_2A_3D, _Normal_Fns_2A_3D)
         )
     )
 
