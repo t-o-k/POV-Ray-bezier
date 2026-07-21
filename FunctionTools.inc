@@ -3195,7 +3195,7 @@ This does not work:
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro _AltGaussianCurvatureFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D, _FundamentalForm2nd_Fns_2A_3D)
+#macro GaussianCurvatureFromForms_Function_2A_3D(_FundamentalForm1st_Fns_2A_3D, _FundamentalForm2nd_Fns_2A_3D)
 
     #local M =
         max(
@@ -3232,7 +3232,7 @@ This does not work:
         FundamentalForm1stDetFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D)
     )
 
-#end // macro _AltGaussianCurvatureFunction_2A_3D
+#end // macro GaussianCurvatureFromForms_Function_2A_3D
 
 
 #macro AltGaussianCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
@@ -3274,7 +3274,7 @@ This does not work:
         #error "MaxD is not 3"
     #end // if
 
-    _AltGaussianCurvatureFunction_2A_3D(
+    GaussianCurvatureFromForms_Function_2A_3D(
         FirstFundamentalFormFunctions_2A_3D(
             _D1_U_Fns_2A_3D,
             _D1_V_Fns_2A_3D
@@ -3369,7 +3369,7 @@ This does not work:
 /*
 This does not work:
 
-#macro _AltMeanCurvatureFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D, _FundamentalForm2nd_Fns_2A_3D)
+#macro MeanCurvatureFromForms_Function_2A_3D(_FundamentalForm1st_Fns_2A_3D, _FundamentalForm2nd_Fns_2A_3D)
 
     #local M =
         max(
@@ -3429,11 +3429,11 @@ This does not work:
         )
     )
 
-#end // macro _AltMeanCurvatureFunction_2A_3D
+#end // macro MeanCurvatureFromForms_Function_2A_3D
 */
 
 
-#macro _AltMeanCurvatureFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D, _FundamentalForm2nd_Fns_2A_3D)
+#macro MeanCurvatureFromForms_Function_2A_3D(_FundamentalForm1st_Fns_2A_3D, _FundamentalForm2nd_Fns_2A_3D)
 
     #local M =
         max(
@@ -3493,7 +3493,7 @@ This does not work:
         )
     )
 
-#end // macro _AltMeanCurvatureFunction_2A_3D
+#end // macro MeanCurvatureFromForms_Function_2A_3D
 
 
 #macro AltMeanCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
@@ -3535,7 +3535,7 @@ This does not work:
         #error "MaxD is not 3"
     #end // if
 
-    _AltMeanCurvatureFunction_2A_3D(
+    MeanCurvatureFromForms_Function_2A_3D(
         FirstFundamentalFormFunctions_2A_3D(
             _D1_U_Fns_2A_3D,
             _D1_V_Fns_2A_3D
