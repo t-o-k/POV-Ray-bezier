@@ -965,15 +965,15 @@ Numerically unstable version
 
     Arr_2E(
         Divide_Safe_Function_1A(
-            AddFunction_1A(
-                B_Fn_1A,
-                SqrtDiscr_Fn_1A
+            SubtractFunction_1A(
+                SqrtDiscr_Fn_1A,
+                B_Fn_1A
             ),
             Num_Fn_1A
         ),
         Divide_Safe_Function_1A(
             SubtractFunction_1A(
-                B_Fn_1A,
+                NegateFunction_1A(B_Fn_1A),
                 SqrtDiscr_Fn_1A
             ),
             Num_Fn_1A
@@ -1014,15 +1014,15 @@ Numerically unstable version
 
     Arr_2E(
         Divide_Safe_Function_2A(
-            AddFunction_2A(
-                B_Fn_2A,
-                SqrtDiscr_Fn_2A
+            SubtractFunction_2A(
+                SqrtDiscr_Fn_2A,
+                B_Fn_2A
             ),
             Num_Fn_2A
         ),
         Divide_Safe_Function_2A(
             SubtractFunction_2A(
-                B_Fn_2A,
+                NegateFunction_2A(B_Fn_2A),
                 SqrtDiscr_Fn_2A
             ),
             Num_Fn_2A
@@ -1063,15 +1063,15 @@ Numerically unstable version
 
     Arr_2E(
         Divide_Safe_Function_3A(
-            AddFunction_3A(
-                B_Fn_3A,
-                SqrtDiscr_Fn_3A
+            SubtractFunction_3A(
+                SqrtDiscr_Fn_3A,
+                B_Fn_3A
             ),
             Num_Fn_3A
         ),
         Divide_Safe_Function_3A(
             SubtractFunction_3A(
-                B_Fn_3A,
+                NegateFunction_3A(B_Fn_3A),
                 SqrtDiscr_Fn_3A
             ),
             Num_Fn_3A
@@ -1112,15 +1112,15 @@ Numerically unstable version
 
     Arr_2E(
         Divide_Safe_Function_4A(
-            AddFunction_4A(
-                B_Fn_4A,
-                SqrtDiscr_Fn_4A
+            SubtractFunction_4A(
+                SqrtDiscr_Fn_4A,
+                B_Fn_4A
             ),
             Num_Fn_4A
         ),
         Divide_Safe_Function_4A(
             SubtractFunction_4A(
-                B_Fn_4A,
+                NegateFunction_4A(B_Fn_4A),
                 SqrtDiscr_Fn_4A
             ),
             Num_Fn_4A
