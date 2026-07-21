@@ -3295,9 +3295,8 @@ This does not work:
                 DotFunction_2A_3D(_D2_UU_Fns_2A_3D, _Normal_Fns_2A_3D), // L
                 DotFunction_2A_3D(_D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)  // N
             ),
-            PowFunction_Constant_2A(
-                DotFunction_2A_3D(_D2_UV_Fns_2A_3D, _Normal_Fns_2A_3D), // M
-                2
+            SqFunction_2A(
+                DotFunction_2A_3D(_D2_UV_Fns_2A_3D, _Normal_Fns_2A_3D)  // M
             )
         ),
         SqFunction_2A(
