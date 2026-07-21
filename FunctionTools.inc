@@ -745,6 +745,35 @@ Numerically unstable version
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
+#macro NegateFunction_1A(_Fn_1A)
+
+    function(_u) { -_Fn_1A(_u) }
+
+#end // macro NegateFunction_1A
+
+
+#macro NegateFunction_2A(_Fn_2A)
+
+    function(_u, _v) { -_Fn_2A(_u, _v) }
+
+#end // macro NegateFunction_2A
+
+
+#macro NegateFunction_3A(_Fn_3A)
+
+    function(_u, _v, _w) { -_Fn_3A(_u, _v, _w) }
+
+#end // macro NegateFunction_3A
+
+
+#macro NegateFunction_4A(_Fn_4A)
+
+    function(_u, _v, _w, _s) { -_Fn_4A(_u, _v, _w, _s) }
+
+#end // macro NegateFunction_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
 #macro AddFunction_1A(_Fn0_1A, _Fn1_1A)
 
     function(_u) {
