@@ -3484,7 +3484,7 @@ This does not work:
             )
         ),
         MultiplyFunction_Constant_2A(
-            FundamentalForm1stDetFunction_2A_3D(
+            FundamentalFormDetFunction_2A_3D(
                 _FundamentalForm1st_Fns_2A_3D
             ),
             2
