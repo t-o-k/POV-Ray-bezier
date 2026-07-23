@@ -3314,6 +3314,7 @@ This does not work:
 
 #end // macro _GaussianCurvatureFunction_2A_3D
 
+
 #macro GaussianCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
 
     #local M =
