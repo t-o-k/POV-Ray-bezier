@@ -3137,32 +3137,6 @@ This does not work:
 */
 
 
-#macro FundamentalForm1stDetFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D)
-
-    #local M = dimensions(_FundamentalForm1st_Fns_2A_3D);
-    #if (M != 1)
-        #error "M is not 1"
-    #end // if
-    #local N = dimension_size(_FundamentalForm1st_Fns_2A_3D, 1);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-
-    // Formula: E*G - F^2
-
-    SubtractFunction_2A(
-        MultiplyFunction_2A(
-            _FundamentalForm1st_Fns_2A_3D[0], // E
-            _FundamentalForm1st_Fns_2A_3D[2]  // G
-        ),
-        SqFunction_2A(
-            _FundamentalForm1st_Fns_2A_3D[1] // F
-        )
-    )
-
-#end // macro FundamentalForm1stDetFunction_2A_3D
-
-
 /*
 This does not work:
 
@@ -3192,31 +3166,32 @@ This does not work:
 #end // macro FundamentalForm2ndDetFunction_2A_3D
 */
 
+#macro FundamentalFormDetFunction_2A_3D(_FundamentalForm_Fns_2A_3D)
 
-#macro FundamentalForm2ndDetFunction_2A_3D(_FundamentalForm2nd_Fns_2A_3D)
-
-    #local M = dimensions(_FundamentalForm2nd_Fns_2A_3D);
+    #local M = dimensions(_FundamentalForm_Fns_2A_3D);
     #if (M != 1)
         #error "M is not 1"
     #end // if
-    #local N = dimension_size(_FundamentalForm2nd_Fns_2A_3D, 1);
+    #local N = dimension_size(_FundamentalForm_Fns_2A_3D, 1);
     #if (N != 3)
         #error "N is not 3"
     #end // if
 
-    // Formula: L*N - M^2
+    // Formula: [0]*[2] - [1]^2
+    // For 1st form: E*G - F^2
+    // For 2nd form: L*N - M^2
 
     SubtractFunction_2A(
         MultiplyFunction_2A(
-            _FundamentalForm2nd_Fns_2A_3D[0],
-            _FundamentalForm2nd_Fns_2A_3D[2]
+            _FundamentalForm_Fns_2A_3D[0],
+            _FundamentalForm_Fns_2A_3D[2]
         ),
         SqFunction_2A(
-            _FundamentalForm2nd_Fns_2A_3D[1]
+            _FundamentalForm_Fns_2A_3D[1]
         )
     )
 
-#end // macro FundamentalForm2ndDetFunction_2A_3D
+#end // macro FundamentalFormDetFunction_2A_3D
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
@@ -3253,8 +3228,8 @@ This does not work:
     // Formula: (L*N - M^2)/(E*G - F^2)
 
     Divide_Safe_Function_2A(
-        FundamentalForm2ndDetFunction_2A_3D(_FundamentalForm2nd_Fns_2A_3D),
-        FundamentalForm1stDetFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D)
+        FundamentalFormDetFunction_2A_3D(_FundamentalForm2nd_Fns_2A_3D),
+        FundamentalFormDetFunction_2A_3D(_FundamentalForm1st_Fns_2A_3D)
     )
 
 #end // macro GaussianCurvatureFromForms_Function_2A_3D
