@@ -3293,23 +3293,26 @@ This does not work:
 
 #macro _GaussianCurvatureFunction_2A_3D(_D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
 
+    // Note: _Normal_Fns_2A_3D must be an unnormalized normal vector
+    // Identity: |Normal|^2 = E*G - F^2
+    // Formula:  ((L*|Normal|)*(N*|Normal|) - (M*|Normal|)^2) / |Normal|^4 = (L*N - M^2) / |Normal|^2
+
     Divide_Safe_Function_2A(
         SubtractFunction_2A(
             MultiplyFunction_2A(
-                DotFunction_2A_3D(_D2_UU_Fns_2A_3D, _Normal_Fns_2A_3D), // L
-                DotFunction_2A_3D(_D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)  // N
+                DotFunction_2A_3D(_D2_UU_Fns_2A_3D, _Normal_Fns_2A_3D), // L * |Normal|
+                DotFunction_2A_3D(_D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)  // N * |Normal|
             ),
             SqFunction_2A(
-                DotFunction_2A_3D(_D2_UV_Fns_2A_3D, _Normal_Fns_2A_3D)  // M
+                DotFunction_2A_3D(_D2_UV_Fns_2A_3D, _Normal_Fns_2A_3D)  // M * |Normal|
             )
         ),
         SqFunction_2A(
-            DotFunction_2A_3D(_Normal_Fns_2A_3D, _Normal_Fns_2A_3D)
+            DotFunction_2A_3D(_Normal_Fns_2A_3D, _Normal_Fns_2A_3D)  // |Normal|^2
         )
     )
 
 #end // macro _GaussianCurvatureFunction_2A_3D
-
 
 #macro GaussianCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
 
