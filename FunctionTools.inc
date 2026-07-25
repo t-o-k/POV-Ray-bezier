@@ -3291,6 +3291,90 @@ This does not work:
 #end // macro AltGaussianCurvatureFunction_2A_3D
 
 
+#macro _GaussianCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
+
+    // Formula:  (L*N - M^2)/(E*G - F^2)
+
+    Divide_Safe_Function_2A(
+        SubtractFunction_2A(
+            MultiplyFunction_2A(
+                DotFunction_2A_3D(_D2_UU_Fns_2A_3D, _Normal_Fns_2A_3D), // L
+                DotFunction_2A_3D(_D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)  // N
+            ),
+            SqFunction_2A(
+                DotFunction_2A_3D(_D2_UV_Fns_2A_3D, _Normal_Fns_2A_3D)  // M
+            )
+        ),
+        SubtractFunction_2A(
+            MultiplyFunction_2A(
+                DotFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_U_Fns_2A_3D), // E
+                DotFunction_2A_3D(_D1_V_Fns_2A_3D, _D1_V_Fns_2A_3D)  // G
+            ),
+            SqFunction_2A(
+                DotFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D)  // F
+            )
+        )
+    )
+
+#end // macro _GaussianCurvatureFunction_2A_3D
+
+
+#macro GaussianCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
+
+    #local M =
+        max(
+            dimensions(_D1_U_Fns_2A_3D),
+            dimensions(_D1_V_Fns_2A_3D),
+            dimensions(_D2_UU_Fns_2A_3D),
+            dimensions(_D2_UV_Fns_2A_3D),
+            dimensions(_D2_VV_Fns_2A_3D)
+        )
+    ;
+    #if (M != 1)
+        #error "M is not 1"
+    #end // if
+    #local MinD =
+        min(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1)
+       )
+    ;
+    #if (MinD != 3)
+        #error "MinD is not 3"
+    #end // if
+    #local MaxD =
+        max(
+            dimension_size(_D1_U_Fns_2A_3D, 1),
+            dimension_size(_D1_V_Fns_2A_3D, 1),
+            dimension_size(_D2_UU_Fns_2A_3D, 1),
+            dimension_size(_D2_UV_Fns_2A_3D, 1),
+            dimension_size(_D2_VV_Fns_2A_3D, 1)
+        )
+    ;
+    #if (MaxD != 3)
+        #error "MaxD is not 3"
+    #end // if
+
+    _GaussianCurvatureFunction_2A_3D(
+        _D1_U_Fns_2A_3D,
+        _D1_V_Fns_2A_3D,
+        _D2_UU_Fns_2A_3D,
+        _D2_UV_Fns_2A_3D,
+        _D2_VV_Fns_2A_3D,
+        NormalizedFunctions_2A_3D(
+            CrossFunctions_2A_3D(
+                _D1_U_Fns_2A_3D,
+                _D1_V_Fns_2A_3D
+            )
+        )
+    )
+
+#end // macro GaussianCurvatureFunction_2A_3D
+
+
 #macro _GaussianCurvatureOptimizedFunction_2A_3D(_D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
 
     // Note: _Normal_Fns_2A_3D must be an unnormalized normal vector
