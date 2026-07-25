@@ -3225,7 +3225,7 @@ This does not work:
         #error "MaxN is not 3"
     #end // if
 
-    // Formula: (L*N - M^2)/(E*G - F^2)
+    // Formula: (L*N - M^2) / (E*G - F^2)
 
     Divide_Safe_Function_2A(
         FundamentalFormDetFunction_2A_3D(_FundamentalForm2nd_Fns_2A_3D),
@@ -3293,7 +3293,7 @@ This does not work:
 
 #macro _GaussianCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
 
-    // Formula:  (L*N - M^2)/(E*G - F^2)
+    // Formula:  (L*N - M^2) / (E*G - F^2)
 
     Divide_Safe_Function_2A(
         SubtractFunction_2A(
@@ -3485,7 +3485,7 @@ This does not work:
         #error "MaxD is not 3"
     #end // if
 
-    // Formula: (E*N + G*L - 2*F*M)/(2*(E*G - F^2))
+    // Formula: (E*N + G*L - 2*F*M) / (2*(E*G - F^2))
 
     Divide_Safe_Function_2A(
         SubtractFunction_2A(
@@ -3549,7 +3549,7 @@ This does not work:
         #error "MaxD is not 3"
     #end // if
 
-    // Formula: (E*N + G*L - 2*F*M)/(2*(E*G - F^2))
+    // Formula: (E*N + G*L - 2*F*M) / (2*(E*G - F^2))
 
     Divide_Safe_Function_2A(
         SubtractFunction_2A(
