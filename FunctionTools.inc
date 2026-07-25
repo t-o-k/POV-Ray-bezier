@@ -3291,7 +3291,7 @@ This does not work:
 #end // macro AltGaussianCurvatureFunction_2A_3D
 
 
-#macro _GaussianCurvatureFunction_2A_3D(_D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
+#macro _GaussianCurvatureOptimizedFunction_2A_3D(_D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
 
     // Note: _Normal_Fns_2A_3D must be an unnormalized normal vector
     // Identity: |Normal|^2 = E*G - F^2
@@ -3312,10 +3312,10 @@ This does not work:
         )
     )
 
-#end // macro _GaussianCurvatureFunction_2A_3D
+#end // macro _GaussianCurvatureOptimizedFunction_2A_3D
 
 
-#macro GaussianCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
+#macro GaussianCurvatureOptimizedFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
 
     #local M =
         max(
@@ -3354,7 +3354,7 @@ This does not work:
         #error "MaxD is not 3"
     #end // if
 
-    _GaussianCurvatureFunction_2A_3D(
+    _GaussianCurvatureOptimizedFunction_2A_3D(
         _D2_UU_Fns_2A_3D,
         _D2_UV_Fns_2A_3D,
         _D2_VV_Fns_2A_3D,
@@ -3364,7 +3364,7 @@ This does not work:
         )
     )
 
-#end // macro GaussianCurvatureFunction_2A_3D
+#end // macro GaussianCurvatureOptimizedFunction_2A_3D
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
