@@ -3235,7 +3235,7 @@ This does not work:
 #end // macro GaussianCurvatureFromForms_Function_2A_3D
 
 
-#macro AltGaussianCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
+#macro GaussianCurvatureExplicitFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
 
     #local M =
         max(
@@ -3288,7 +3288,7 @@ This does not work:
         )
     )
 
-#end // macro AltGaussianCurvatureFunction_2A_3D
+#end // macro GaussianCurvatureExplicitFunction_2A_3D
 
 
 #macro _GaussianCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
@@ -3582,7 +3582,7 @@ This does not work:
 #end // macro MeanCurvatureFromForms_Function_2A_3D
 
 
-#macro AltMeanCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
+#macro MeanCurvatureExplicitFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
 
     #local M =
         max(
@@ -3635,7 +3635,7 @@ This does not work:
         )
     )
 
-#end // macro AltMeanCurvatureFunction_2A_3D
+#end // macro MeanCurvatureExplicitFunction_2A_3D
 
 
 #macro _MeanCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
