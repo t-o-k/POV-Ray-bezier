@@ -3638,41 +3638,45 @@ This does not work:
 #end // macro AltMeanCurvatureFunction_2A_3D
 
 
-#macro _MeanCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
+#macro _MeanCurvatureOptimizedFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D)
+
+    // Note: _Normal_Fns_2A_3D must be an unnormalized normal vector
+    // Identity: |Normal|^2 = E*G - F^2, |Normal|^3 = (E*G - F^2)^1.5
+    // Formula:  (E*(N*|Normal|) + G*(L*|Normal|) - 2*F*(M*|Normal|)) / (2*|Normal|^3) = (E*N + G*L - 2*F*M) / (2*(E*G - F^2))
 
     Divide_Safe_Function_2A(
         SubtractFunction_2A(
             AddFunction_2A(
                 MultiplyFunction_2A(
                     DotFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_U_Fns_2A_3D),   // E
-                    DotFunction_2A_3D(_D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D) // N
+                    DotFunction_2A_3D(_D2_VV_Fns_2A_3D, _Normal_Fns_2A_3D) // N * |Normal|
                 ),
                 MultiplyFunction_2A(
                     DotFunction_2A_3D(_D1_V_Fns_2A_3D, _D1_V_Fns_2A_3D),   // G
-                    DotFunction_2A_3D(_D2_UU_Fns_2A_3D, _Normal_Fns_2A_3D) // L
+                    DotFunction_2A_3D(_D2_UU_Fns_2A_3D, _Normal_Fns_2A_3D) // L * |Normal|
                 )
             ),
             MultiplyFunction_Constant_2A(
                 MultiplyFunction_2A(
                     DotFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D),   // F
-                    DotFunction_2A_3D(_D2_UV_Fns_2A_3D, _Normal_Fns_2A_3D) // M
+                    DotFunction_2A_3D(_D2_UV_Fns_2A_3D, _Normal_Fns_2A_3D) // M * |Normal|
                 ),
                 2
             )
         ),
         MultiplyFunction_Constant_2A(
             PowFunction_Constant_2A(
-                DotFunction_2A_3D(_Normal_Fns_2A_3D, _Normal_Fns_2A_3D),
+                DotFunction_2A_3D(_Normal_Fns_2A_3D, _Normal_Fns_2A_3D),   // |Normal|^2
                 1.5
             ),
             2
         )
     )
 
-#end // macro _MeanCurvatureFunction_2A_3D
+#end // macro _MeanCurvatureOptimizedFunction_2A_3D
 
 
-#macro MeanCurvatureFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
+#macro MeanCurvatureOptimizedFunction_2A_3D(_D1_U_Fns_2A_3D, _D1_V_Fns_2A_3D, _D2_UU_Fns_2A_3D, _D2_UV_Fns_2A_3D, _D2_VV_Fns_2A_3D)
 
     #local M =
         max(
@@ -3711,7 +3715,7 @@ This does not work:
         #error "MaxD is not 3"
     #end // if
 
-    _MeanCurvatureFunction_2A_3D(
+    _MeanCurvatureOptimizedFunction_2A_3D(
         _D1_U_Fns_2A_3D,
         _D1_V_Fns_2A_3D,
         _D2_UU_Fns_2A_3D,
@@ -3723,7 +3727,7 @@ This does not work:
         )
     )
 
-#end // macro MeanCurvatureFunction_2A_3D
+#end // macro MeanCurvatureOptimizedFunction_2A_3D
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
