@@ -2084,7 +2084,7 @@ which can be found in the LICENSE file.
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #if (dimension_size(Values_1N, 1) < 3)
+    #if (dimension_size(Values_1N, 1) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2119,7 +2119,7 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 1) < 3)
+    #if (dimension_size(Values_2N, 1) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2138,7 +2138,7 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 2) < 3)
+    #if (dimension_size(Values_2N, 2) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2176,7 +2176,7 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) < 3)
+    #if (dimension_size(Values_3N, 1) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2195,7 +2195,7 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 2) < 3)
+    #if (dimension_size(Values_3N, 2) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2214,7 +2214,7 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 3) < 3)
+    #if (dimension_size(Values_3N, 3) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2255,7 +2255,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 3)
+    #if (dimension_size(Values_4N, 1) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2274,7 +2274,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 3)
+    #if (dimension_size(Values_4N, 2) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2293,7 +2293,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 3)
+    #if (dimension_size(Values_4N, 3) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2312,7 +2312,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 3)
+    #if (dimension_size(Values_4N, 4) < 4)
         #error "Is less than 4"
     #end // if
 
