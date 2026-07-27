@@ -1532,7 +1532,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro From_1N_Der1U_BezierFunction_1A(Values_1N)
+#macro From_1N_DerU_BezierFunction_1A(Values_1N)
 
     #local N = dimensions(Values_1N);
     #if (N != 1)
@@ -1548,7 +1548,7 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_1N_Der1U_BezierFunction_1A
+#end // macro From_1N_DerU_BezierFunction_1A
 
 
 #macro Der1_BezierFunctions_1A(Values_1N)
@@ -1559,7 +1559,7 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_1E(
-        From_1N_Der1U_BezierFunction_1A(
+        From_1N_DerU_BezierFunction_1A(
             Values_1N
         )
     )
@@ -1567,7 +1567,7 @@ which can be found in the LICENSE file.
 #end // macro Der1_BezierFunctions_1A
 
 
-#macro From_2N_Der1U_BezierFunction_2A(Values_2N)
+#macro From_2N_DerU_BezierFunction_2A(Values_2N)
 
     #local N = dimensions(Values_2N);
     #if (N != 2)
@@ -1583,10 +1583,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_2N_Der1U_BezierFunction_2A
+#end // macro From_2N_DerU_BezierFunction_2A
 
 
-#macro From_2N_Der1V_BezierFunction_2A(Values_2N)
+#macro From_2N_DerV_BezierFunction_2A(Values_2N)
 
     #local N = dimensions(Values_2N);
     #if (N != 2)
@@ -1602,7 +1602,7 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_2N_Der1V_BezierFunction_2A
+#end // macro From_2N_DerV_BezierFunction_2A
 
 
 #macro Der1_BezierFunctions_2A(Values_2N)
@@ -1613,10 +1613,10 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_2E(
-        From_2N_Der1U_BezierFunction_2A(
+        From_2N_DerU_BezierFunction_2A(
             Values_2N
         ),
-        From_2N_Der1V_BezierFunction_2A(
+        From_2N_DerV_BezierFunction_2A(
             Values_2N
         )
     )
@@ -1624,7 +1624,7 @@ which can be found in the LICENSE file.
 #end // macro Der1_BezierFunctions_2A
 
 
-#macro From_3N_Der1U_BezierFunction_3A(Values_3N)
+#macro From_3N_DerU_BezierFunction_3A(Values_3N)
 
     #local N = dimensions(Values_3N);
     #if (N != 3)
@@ -1640,10 +1640,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_3N_Der1U_BezierFunction_3A
+#end // macro From_3N_DerU_BezierFunction_3A
 
 
-#macro From_3N_Der1V_BezierFunction_3A(Values_3N)
+#macro From_3N_DerV_BezierFunction_3A(Values_3N)
 
     #local N = dimensions(Values_3N);
     #if (N != 3)
@@ -1659,10 +1659,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_3N_Der1V_BezierFunction_3A
+#end // macro From_3N_DerV_BezierFunction_3A
 
 
-#macro From_3N_Der1W_BezierFunction_3A(Values_3N)
+#macro From_3N_DerW_BezierFunction_3A(Values_3N)
 
     #local N = dimensions(Values_3N);
     #if (N != 3)
@@ -1678,7 +1678,7 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_3N_Der1W_BezierFunction_3A
+#end // macro From_3N_DerW_BezierFunction_3A
 
 
 #macro Der1_BezierFunctions_3A(Values_3N)
@@ -1689,13 +1689,13 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_3E(
-        From_3N_Der1U_BezierFunction_3A(
+        From_3N_DerU_BezierFunction_3A(
             Values_3N
         ),
-        From_3N_Der1V_BezierFunction_3A(
+        From_3N_DerV_BezierFunction_3A(
             Values_3N
         ),
-        From_3N_Der1W_BezierFunction_3A(
+        From_3N_DerW_BezierFunction_3A(
             Values_3N
         )
     )
@@ -1703,7 +1703,7 @@ which can be found in the LICENSE file.
 #end // macro Der1_BezierFunctions_3A
 
 
-#macro From_4N_Der1U_BezierFunction_4A(Values_4N)
+#macro From_4N_DerU_BezierFunction_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -1719,10 +1719,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_4N_Der1U_BezierFunction_4A
+#end // macro From_4N_DerU_BezierFunction_4A
 
 
-#macro From_4N_Der1V_BezierFunction_4A(Values_4N)
+#macro From_4N_DerV_BezierFunction_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -1738,10 +1738,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_4N_Der1V_BezierFunction_4A
+#end // macro From_4N_DerV_BezierFunction_4A
 
 
-#macro From_4N_Der1W_BezierFunction_4A(Values_4N)
+#macro From_4N_DerW_BezierFunction_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -1757,10 +1757,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_4N_Der1W_BezierFunction_4A
+#end // macro From_4N_DerW_BezierFunction_4A
 
 
-#macro From_4N_Der1S_BezierFunction_4A(Values_4N)
+#macro From_4N_DerS_BezierFunction_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -1776,7 +1776,7 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_4N_Der1S_BezierFunction_4A
+#end // macro From_4N_DerS_BezierFunction_4A
 
 
 #macro Der1_BezierFunctions_4A(Values_4N)
@@ -1787,16 +1787,16 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_4E(
-        From_4N_Der1U_BezierFunction_4A(
+        From_4N_DerU_BezierFunction_4A(
             Values_4N
         ),
-        From_4N_Der1V_BezierFunction_4A(
+        From_4N_DerV_BezierFunction_4A(
             Values_4N
         ),
-        From_4N_Der1W_BezierFunction_4A(
+        From_4N_DerW_BezierFunction_4A(
             Values_4N
         ),
-        From_4N_Der1S_BezierFunction_4A(
+        From_4N_DerS_BezierFunction_4A(
             Values_4N
         )
     )
@@ -1805,7 +1805,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro From_1N_Der2U_BezierFunction_1A(Values_1N)
+#macro From_1N_DerUU_BezierFunction_1A(Values_1N)
 
     #local N = dimensions(Values_1N);
     #if (N != 1)
@@ -1821,7 +1821,7 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_1N_Der2U_BezierFunction_1A
+#end // macro From_1N_DerUU_BezierFunction_1A
 
 
 #macro Der2_BezierFunctions_1A(Values_1N)
@@ -1832,7 +1832,7 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_1E(
-        From_1N_Der2U_BezierFunction_1A(
+        From_1N_DerUU_BezierFunction_1A(
             Values_1N
         )
     )
@@ -1840,7 +1840,7 @@ which can be found in the LICENSE file.
 #end // macro Der2_BezierFunctions_1A
 
 
-#macro From_2N_Der2U_BezierFunction_2A(Values_2N)
+#macro From_2N_DerUU_BezierFunction_2A(Values_2N)
 
     #local N = dimensions(Values_2N);
     #if (N != 2)
@@ -1856,10 +1856,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_2N_Der2U_BezierFunction_2A
+#end // macro From_2N_DerUU_BezierFunction_2A
 
 
-#macro From_2N_Der2V_BezierFunction_2A(Values_2N)
+#macro From_2N_DerVV_BezierFunction_2A(Values_2N)
 
     #local N = dimensions(Values_2N);
     #if (N != 2)
@@ -1875,7 +1875,7 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_2N_Der2V_BezierFunction_2A
+#end // macro From_2N_DerVV_BezierFunction_2A
 
 
 #macro Der2_BezierFunctions_2A(Values_2N)
@@ -1886,10 +1886,10 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_2E(
-        From_2N_Der2U_BezierFunction_2A(
+        From_2N_DerUU_BezierFunction_2A(
             Values_2N
         ),
-        From_2N_Der2V_BezierFunction_2A(
+        From_2N_DerVV_BezierFunction_2A(
             Values_2N
         )
     )
@@ -1897,7 +1897,7 @@ which can be found in the LICENSE file.
 #end // macro Der2_BezierFunctions_2A
 
 
-#macro From_3N_Der2U_BezierFunction_3A(Values_3N)
+#macro From_3N_DerUU_BezierFunction_3A(Values_3N)
 
     #local N = dimensions(Values_3N);
     #if (N != 3)
@@ -1913,10 +1913,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_3N_Der2U_BezierFunction_3A
+#end // macro From_3N_DerUU_BezierFunction_3A
 
 
-#macro From_3N_Der2V_BezierFunction_3A(Values_3N)
+#macro From_3N_DerVV_BezierFunction_3A(Values_3N)
 
     #local N = dimensions(Values_3N);
     #if (N != 3)
@@ -1932,10 +1932,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_3N_Der2V_BezierFunction_3A
+#end // macro From_3N_DerVV_BezierFunction_3A
 
 
-#macro From_3N_Der2W_BezierFunction_3A(Values_3N)
+#macro From_3N_DerWW_BezierFunction_3A(Values_3N)
 
     #local N = dimensions(Values_3N);
     #if (N != 3)
@@ -1951,7 +1951,7 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_3N_Der2W_BezierFunction_3A
+#end // macro From_3N_DerWW_BezierFunction_3A
 
 
 #macro Der2_BezierFunctions_3A(Values_3N)
@@ -1962,13 +1962,13 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_3E(
-        From_3N_Der2U_BezierFunction_3A(
+        From_3N_DerUU_BezierFunction_3A(
             Values_3N
         ),
-        From_3N_Der2V_BezierFunction_3A(
+        From_3N_DerVV_BezierFunction_3A(
             Values_3N
         ),
-        From_3N_Der2W_BezierFunction_3A(
+        From_3N_DerWW_BezierFunction_3A(
             Values_3N
         )
     )
@@ -1976,7 +1976,7 @@ which can be found in the LICENSE file.
 #end // macro Der2_BezierFunctions_3A
 
 
-#macro From_4N_Der2U_BezierFunction_4A(Values_4N)
+#macro From_4N_DerUU_BezierFunction_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -1992,10 +1992,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_4N_Der2U_BezierFunction_4A
+#end // macro From_4N_DerUU_BezierFunction_4A
 
 
-#macro From_4N_Der2V_BezierFunction_4A(Values_4N)
+#macro From_4N_DerVV_BezierFunction_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -2011,10 +2011,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_4N_Der2V_BezierFunction_4A
+#end // macro From_4N_DerVV_BezierFunction_4A
 
 
-#macro From_4N_Der2W_BezierFunction_4A(Values_4N)
+#macro From_4N_DerWW_BezierFunction_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -2030,10 +2030,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_4N_Der2W_BezierFunction_4A
+#end // macro From_4N_DerWW_BezierFunction_4A
 
 
-#macro From_4N_Der2S_BezierFunction_4A(Values_4N)
+#macro From_4N_DerSS_BezierFunction_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -2049,7 +2049,7 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_4N_Der2S_BezierFunction_4A
+#end // macro From_4N_DerSS_BezierFunction_4A
 
 
 #macro Der2_BezierFunctions_4A(Values_4N)
@@ -2060,16 +2060,16 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_4E(
-        From_4N_Der2U_BezierFunction_4A(
+        From_4N_DerUU_BezierFunction_4A(
             Values_4N
         ),
-        From_4N_Der2V_BezierFunction_4A(
+        From_4N_DerVV_BezierFunction_4A(
             Values_4N
         ),
-        From_4N_Der2W_BezierFunction_4A(
+        From_4N_DerWW_BezierFunction_4A(
             Values_4N
         ),
-        From_4N_Der2S_BezierFunction_4A(
+        From_4N_DerSS_BezierFunction_4A(
             Values_4N
         )
     )
@@ -2078,7 +2078,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro From_1N_Der3U_BezierFunction_1A(Values_1N)
+#macro From_1N_DerUUU_BezierFunction_1A(Values_1N)
 
     #local N = dimensions(Values_1N);
     #if (N != 1)
@@ -2094,7 +2094,7 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_1N_Der3U_BezierFunction_1A
+#end // macro From_1N_DerUUU_BezierFunction_1A
 
 
 #macro Der3_BezierFunctions_1A(Values_1N)
@@ -2105,7 +2105,7 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_1E(
-        From_1N_Der3U_BezierFunction_1A(
+        From_1N_DerUUU_BezierFunction_1A(
             Values_1N
         )
     )
@@ -2113,7 +2113,7 @@ which can be found in the LICENSE file.
 #end // macro Der3_BezierFunctions_1A
 
 
-#macro From_2N_Der3U_BezierFunction_2A(Values_2N)
+#macro From_2N_DerUUU_BezierFunction_2A(Values_2N)
 
     #local N = dimensions(Values_2N);
     #if (N != 2)
@@ -2129,10 +2129,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_2N_Der3U_BezierFunction_2A
+#end // macro From_2N_DerUUU_BezierFunction_2A
 
 
-#macro From_2N_Der3V_BezierFunction_2A(Values_2N)
+#macro From_2N_DerVVV_BezierFunction_2A(Values_2N)
 
     #local N = dimensions(Values_2N);
     #if (N != 2)
@@ -2148,7 +2148,7 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_2N_Der3V_BezierFunction_2A
+#end // macro From_2N_DerVVV_BezierFunction_2A
 
 
 #macro Der3_BezierFunctions_2A(Values_2N)
@@ -2159,10 +2159,10 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_2E(
-        From_2N_Der3U_BezierFunction_2A(
+        From_2N_DerUUU_BezierFunction_2A(
             Values_2N
         ),
-        From_2N_Der3V_BezierFunction_2A(
+        From_2N_DerVVV_BezierFunction_2A(
             Values_2N
         )
     )
@@ -2170,7 +2170,7 @@ which can be found in the LICENSE file.
 #end // macro Der3_BezierFunctions_2A
 
 
-#macro From_3N_Der3U_BezierFunction_3A(Values_3N)
+#macro From_3N_DerUUU_BezierFunction_3A(Values_3N)
 
     #local N = dimensions(Values_3N);
     #if (N != 3)
@@ -2186,10 +2186,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_3N_Der3U_BezierFunction_3A
+#end // macro From_3N_DerUUU_BezierFunction_3A
 
 
-#macro From_3N_Der3V_BezierFunction_3A(Values_3N)
+#macro From_3N_DerVVV_BezierFunction_3A(Values_3N)
 
     #local N = dimensions(Values_3N);
     #if (N != 3)
@@ -2205,10 +2205,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_3N_Der3V_BezierFunction_3A
+#end // macro From_3N_DerVVV_BezierFunction_3A
 
 
-#macro From_3N_Der3W_BezierFunction_3A(Values_3N)
+#macro From_3N_DerWWW_BezierFunction_3A(Values_3N)
 
     #local N = dimensions(Values_3N);
     #if (N != 3)
@@ -2224,7 +2224,7 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_3N_Der3W_BezierFunction_3A
+#end // macro From_3N_DerWWW_BezierFunction_3A
 
 
 #macro Der3_BezierFunctions_3A(Values_3N)
@@ -2235,13 +2235,13 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_3E(
-        From_3N_Der3U_BezierFunction_3A(
+        From_3N_DerUUU_BezierFunction_3A(
             Values_3N
         ),
-        From_3N_Der3V_BezierFunction_3A(
+        From_3N_DerVVV_BezierFunction_3A(
             Values_3N
         ),
-        From_3N_Der3W_BezierFunction_3A(
+        From_3N_DerWWW_BezierFunction_3A(
             Values_3N
         )
     )
@@ -2249,7 +2249,7 @@ which can be found in the LICENSE file.
 #end // macro Der3_BezierFunctions_3A
 
 
-#macro From_4N_Der3U_BezierFunction_4A(Values_4N)
+#macro From_4N_DerUUU_BezierFunction_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -2265,10 +2265,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_4N_Der3U_BezierFunction_4A
+#end // macro From_4N_DerUUU_BezierFunction_4A
 
 
-#macro From_4N_Der3V_BezierFunction_4A(Values_4N)
+#macro From_4N_DerVVV_BezierFunction_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -2284,10 +2284,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_4N_Der3V_BezierFunction_4A
+#end // macro From_4N_DerVVV_BezierFunction_4A
 
 
-#macro From_4N_Der3W_BezierFunction_4A(Values_4N)
+#macro From_4N_DerWWW_BezierFunction_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -2303,10 +2303,10 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_4N_Der3W_BezierFunction_4A
+#end // macro From_4N_DerWWW_BezierFunction_4A
 
 
-#macro From_4N_Der3S_BezierFunction_4A(Values_4N)
+#macro From_4N_DerSSS_BezierFunction_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -2322,7 +2322,7 @@ which can be found in the LICENSE file.
         )
     )
     
-#end // macro From_4N_Der3S_BezierFunction_4A
+#end // macro From_4N_DerSSS_BezierFunction_4A
 
 
 #macro Der3_BezierFunctions_4A(Values_4N)
@@ -2333,16 +2333,16 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_4E(
-        From_4N_Der3U_BezierFunction_4A(
+        From_4N_DerUUU_BezierFunction_4A(
             Values_4N
         ),
-        From_4N_Der3V_BezierFunction_4A(
+        From_4N_DerVVV_BezierFunction_4A(
             Values_4N
         ),
-        From_4N_Der3W_BezierFunction_4A(
+        From_4N_DerWWW_BezierFunction_4A(
             Values_4N
         ),
-        From_4N_Der3S_BezierFunction_4A(
+        From_4N_DerSSS_BezierFunction_4A(
             Values_4N
         )
     )
