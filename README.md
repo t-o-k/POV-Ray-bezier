@@ -1,6 +1,6 @@
 # Bézier Geometry for POV-Ray
 
-The `Bezier.inc` library is a POV-Ray SDL toolkit for working with Bézier curves, surfaces, and higher-dimensional analogues.
+This library is a POV-Ray SDL toolkit for working with Bézier curves, surfaces, and higher-dimensional analogues.
 It is aimed at advanced POV-Ray users who need precise mathematical control over curved geometry.
 
 It works with POV-Ray v3.7. It may also work with POV-Ray v3.8, but that has not been tested. 
@@ -22,9 +22,11 @@ Here is some of what it provides:
 - Both polynomial and rational (weighted) Bézier forms
 
 ## Differentiation
+The library provides high-performance analytical and numerical differentiation.
 
-- Numerical derivatives via central differences (Est_Der*)
-- Analytical derivatives via hodograph control polygons (Hodograph_*)
+- **Polynomial Forms (`Bezier.inc`)**: Fully supports all ordinary, partial, and cross-derivatives up to the 3rd order (including multi-variable cross-derivatives like `DerUV`, `DerUVW`, `DerWSS`, etc.) via nested directional hodographs across 1A, 2A, 3A, and 4A functions.
+- **Rational Forms (`RationalBezier.inc`)**: Fully supports 1st and 2nd-order ordinary and partial derivatives (`DerU`, `DerV`, `DerUU`, `DerVV`) via nested directional hodographs across 1A, 2A, 3A, and 4A functions.
+- **Numerical Derivatives (`NumericalEstimation.inc`)**: Provides numerical differentiation via central differences (`Est_Der*`) across functions for alternative validation or fallback scenarios.
 
 ## Differential Geometry & Curvature
 
@@ -51,3 +53,5 @@ Here is some of what it provides:
 - `_?A` suffix = number of function parameters / arity (1A through 4A)
 - `_?D` suffix = coordinate space dimension (2D or 3D)
 - `_?A_?D` suffix = combination of function arity and coordinate space (e.g., `_2A_3D` represents a 2-parameter surface in 3D space)
+- Macros use explicit variable repetition to indicate the derivative order and direction (e.g., `DerU` for 1st-order, `DerUU` for 2nd-order, and `DerUUU` for 3rd-order derivatives).
+
