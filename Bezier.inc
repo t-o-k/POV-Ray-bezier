@@ -15,6 +15,35 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
+#macro DimSize_I(Array)
+
+    dimension_size(Array, 1)
+
+#end // macro DimSize_I
+
+
+#macro DimSize_J(Array)
+
+    dimension_size(Array, 2)
+
+#end // macro DimSize_J
+
+
+#macro DimSize_K(Array)
+
+    dimension_size(Array, 3)
+
+#end // macro DimSize_K
+
+
+#macro DimSize_L(Array)
+
+    dimension_size(Array, 4)
+
+#end // macro DimSize_L
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
 #macro Arr_1E(E0)
 
     array[1] { E0 }
@@ -279,7 +308,7 @@ which can be found in the LICENSE file.
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #local SizeI = dimension_size(Vectors_1N, 1);
+    #local SizeI = DimSize_I(Vectors_1N);
     #local LastI = SizeI - 1;
     #local CC_1N = array[SizeI];
     #for (I, 0, LastI)
@@ -299,8 +328,8 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local SizeI = dimension_size(Vectors_2N, 1);
-    #local SizeJ = dimension_size(Vectors_2N, 2);
+    #local SizeI = DimSize_I(Vectors_2N);
+    #local SizeJ = DimSize_J(Vectors_2N);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local CC_2N = array[SizeI][SizeJ];
@@ -323,9 +352,9 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(Vectors_3N, 1);
-    #local SizeJ = dimension_size(Vectors_3N, 2);
-    #local SizeK = dimension_size(Vectors_3N, 3);
+    #local SizeI = DimSize_I(Vectors_3N);
+    #local SizeJ = DimSize_J(Vectors_3N);
+    #local SizeK = DimSize_K(Vectors_3N);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
@@ -351,10 +380,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(Vectors_4N, 1);
-    #local SizeJ = dimension_size(Vectors_4N, 2);
-    #local SizeK = dimension_size(Vectors_4N, 3);
-    #local SizeL = dimension_size(Vectors_4N, 4);
+    #local SizeI = DimSize_I(Vectors_4N);
+    #local SizeJ = DimSize_J(Vectors_4N);
+    #local SizeK = DimSize_K(Vectors_4N);
+    #local SizeL = DimSize_L(Vectors_4N);
     #local LastI = SizeI - 1;
     #local LastJ = SizeJ - 1;
     #local LastK = SizeK - 1;
@@ -503,7 +532,7 @@ which can be found in the LICENSE file.
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #local SizeI = dimension_size(Values_1N, 1);
+    #local SizeI = DimSize_I(Values_1N);
 
     WeightedFunction_1A(
         BernsteinBasisFunctions_1A_1N(SizeI - 1),
@@ -519,8 +548,8 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local SizeI = dimension_size(Values_2N, 1);
-    #local SizeJ = dimension_size(Values_2N, 2);
+    #local SizeI = DimSize_I(Values_2N);
+    #local SizeJ = DimSize_J(Values_2N);
 
     WeightedFunction_2A(
         BernsteinBasisFunctions_1A_1N(SizeI - 1),
@@ -537,9 +566,9 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(Values_3N, 1);
-    #local SizeJ = dimension_size(Values_3N, 2);
-    #local SizeK = dimension_size(Values_3N, 3);
+    #local SizeI = DimSize_I(Values_3N);
+    #local SizeJ = DimSize_J(Values_3N);
+    #local SizeK = DimSize_K(Values_3N);
 
     WeightedFunction_3A(
         BernsteinBasisFunctions_1A_1N(SizeI - 1),
@@ -557,10 +586,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(Values_4N, 1);
-    #local SizeJ = dimension_size(Values_4N, 2);
-    #local SizeK = dimension_size(Values_4N, 3);
-    #local SizeL = dimension_size(Values_4N, 4);
+    #local SizeI = DimSize_I(Values_4N);
+    #local SizeJ = DimSize_J(Values_4N);
+    #local SizeK = DimSize_K(Values_4N);
+    #local SizeL = DimSize_L(Values_4N);
 
     WeightedFunction_4A(
         BernsteinBasisFunctions_1A_1N(SizeI - 1),
@@ -757,7 +786,7 @@ which can be found in the LICENSE file.
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_1N, 1);
+    #local SizeI = DimSize_I(ValuesOrPoints_1N);
     #local NewSizeI = SizeI + NoOfDegrees;
     #local VV_1N = array[NewSizeI];
     #local DI =
@@ -796,8 +825,8 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_2N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_2N, 2);
+    #local SizeI = DimSize_I(ValuesOrPoints_2N);
+    #local SizeJ = DimSize_J(ValuesOrPoints_2N);
     #local NewSizeI = SizeI + NoOfDegrees;
     #local VV_2N = array[NewSizeI][SizeJ];
     #local DI =
@@ -838,8 +867,8 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_2N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_2N, 2);
+    #local SizeI = DimSize_I(ValuesOrPoints_2N);
+    #local SizeJ = DimSize_J(ValuesOrPoints_2N);
     #local NewSizeJ = SizeJ + NoOfDegrees;
     #local VV_2N = array[SizeI][NewSizeJ];
     #local DJ =
@@ -880,9 +909,9 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
+    #local SizeI = DimSize_I(ValuesOrPoints_3N);
+    #local SizeJ = DimSize_J(ValuesOrPoints_3N);
+    #local SizeK = DimSize_K(ValuesOrPoints_3N);
     #local NewSizeI = SizeI + NoOfDegrees;
     #local VV_3N = array[NewSizeI][SizeJ][SizeK];
     #local DI =
@@ -925,9 +954,9 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
+    #local SizeI = DimSize_I(ValuesOrPoints_3N);
+    #local SizeJ = DimSize_J(ValuesOrPoints_3N);
+    #local SizeK = DimSize_K(ValuesOrPoints_3N);
     #local NewSizeJ = SizeJ + NoOfDegrees;
     #local VV_3N = array[SizeI][NewSizeJ][SizeK];
     #local DJ =
@@ -970,9 +999,9 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
+    #local SizeI = DimSize_I(ValuesOrPoints_3N);
+    #local SizeJ = DimSize_J(ValuesOrPoints_3N);
+    #local SizeK = DimSize_K(ValuesOrPoints_3N);
     #local NewSizeK = SizeK + NoOfDegrees;
     #local VV_3N = array[SizeI][SizeJ][NewSizeK];
     #local DK =
@@ -1015,10 +1044,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
-    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
+    #local SizeI = DimSize_I(ValuesOrPoints_4N);
+    #local SizeJ = DimSize_J(ValuesOrPoints_4N);
+    #local SizeK = DimSize_K(ValuesOrPoints_4N);
+    #local SizeL = DimSize_L(ValuesOrPoints_4N);
     #local NewSizeI = SizeI + NoOfDegrees;
     #local VV_4N = array[NewSizeI][SizeJ][SizeK][SizeL];
     #local DI =
@@ -1063,10 +1092,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
-    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
+    #local SizeI = DimSize_I(ValuesOrPoints_4N);
+    #local SizeJ = DimSize_J(ValuesOrPoints_4N);
+    #local SizeK = DimSize_K(ValuesOrPoints_4N);
+    #local SizeL = DimSize_L(ValuesOrPoints_4N);
     #local NewSizeJ = SizeJ + NoOfDegrees;
     #local VV_4N = array[SizeI][NewSizeJ][SizeK][SizeL];
     #local DJ =
@@ -1111,10 +1140,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
-    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
+    #local SizeI = DimSize_I(ValuesOrPoints_4N);
+    #local SizeJ = DimSize_J(ValuesOrPoints_4N);
+    #local SizeK = DimSize_K(ValuesOrPoints_4N);
+    #local SizeL = DimSize_L(ValuesOrPoints_4N);
     #local NewSizeK = SizeK + NoOfDegrees;
     #local VV_4N = array[SizeI][SizeJ][NewSizeK][SizeL];
     #local DK =
@@ -1159,10 +1188,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
-    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
+    #local SizeI = DimSize_I(ValuesOrPoints_4N);
+    #local SizeJ = DimSize_J(ValuesOrPoints_4N);
+    #local SizeK = DimSize_K(ValuesOrPoints_4N);
+    #local SizeL = DimSize_L(ValuesOrPoints_4N);
     #local NewSizeL = SizeL + NoOfDegrees;
     #local VV_4N = array[SizeI][SizeJ][SizeK][NewSizeL];
     #local DL =
@@ -1222,7 +1251,7 @@ which can be found in the LICENSE file.
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_1N, 1);
+    #local SizeI = DimSize_I(ValuesOrPoints_1N);
     #local p0 = 0*ValuesOrPoints_1N[0];
     #if (M < SizeI)
         #local CC = _HodographCoefficients(M);
@@ -1253,8 +1282,8 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_2N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_2N, 2);
+    #local SizeI =  DimSize_I(ValuesOrPoints_2N);
+    #local SizeJ =  DimSize_J(ValuesOrPoints_2N);
     #local p0 = 0*ValuesOrPoints_2N[0][0];
     #if (M < SizeI)
         #local CC = _HodographCoefficients(M);
@@ -1291,8 +1320,8 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_2N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_2N, 2);
+    #local SizeI =  DimSize_I(ValuesOrPoints_2N);
+    #local SizeJ =  DimSize_J(ValuesOrPoints_2N);
     #local p0 = 0*ValuesOrPoints_2N[0][0];
     #if (M < SizeJ)
         #local CC = _HodographCoefficients(M);
@@ -1329,9 +1358,9 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
+    #local SizeI =  DimSize_I(ValuesOrPoints_3N);
+    #local SizeJ =  DimSize_J(ValuesOrPoints_3N);
+    #local SizeK =  DimSize_K(ValuesOrPoints_3N);
     #local p0 = 0*ValuesOrPoints_3N[0][0][0];
     #if (M < SizeI)
         #local CC = _HodographCoefficients(M);
@@ -1372,9 +1401,9 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
+    #local SizeI =  DimSize_I(ValuesOrPoints_3N);
+    #local SizeJ =  DimSize_J(ValuesOrPoints_3N);
+    #local SizeK =  DimSize_K(ValuesOrPoints_3N);
     #local p0 = 0*ValuesOrPoints_3N[0][0][0];
     #if (M < SizeJ)
         #local CC = _HodographCoefficients(M);
@@ -1415,9 +1444,9 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_3N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_3N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_3N, 3);
+    #local SizeI =  DimSize_I(ValuesOrPoints_3N);
+    #local SizeJ =  DimSize_J(ValuesOrPoints_3N);
+    #local SizeK =  DimSize_K(ValuesOrPoints_3N);
     #local p0 = 0*ValuesOrPoints_3N[0][0][0];
     #if (M < SizeK)
         #local CC = _HodographCoefficients(M);
@@ -1458,10 +1487,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
-    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
+    #local SizeI = DimSize_I(ValuesOrPoints_4N);
+    #local SizeJ = DimSize_J(ValuesOrPoints_4N);
+    #local SizeK = DimSize_K(ValuesOrPoints_4N);
+    #local SizeL = DimSize_L(ValuesOrPoints_4N);
     #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
     #if (M < SizeI)
         #local CC = _HodographCoefficients(M);
@@ -1506,10 +1535,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
-    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
+    #local SizeI = DimSize_I(ValuesOrPoints_4N);
+    #local SizeJ = DimSize_J(ValuesOrPoints_4N);
+    #local SizeK = DimSize_K(ValuesOrPoints_4N);
+    #local SizeL = DimSize_L(ValuesOrPoints_4N);
     #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
     #if (M < SizeJ)
         #local CC = _HodographCoefficients(M);
@@ -1554,10 +1583,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
-    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
+    #local SizeI = DimSize_I(ValuesOrPoints_4N);
+    #local SizeJ = DimSize_J(ValuesOrPoints_4N);
+    #local SizeK = DimSize_K(ValuesOrPoints_4N);
+    #local SizeL = DimSize_L(ValuesOrPoints_4N);
     #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
     #if (M < SizeK)
         #local CC = _HodographCoefficients(M);
@@ -1602,10 +1631,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #local SizeI = dimension_size(ValuesOrPoints_4N, 1);
-    #local SizeJ = dimension_size(ValuesOrPoints_4N, 2);
-    #local SizeK = dimension_size(ValuesOrPoints_4N, 3);
-    #local SizeL = dimension_size(ValuesOrPoints_4N, 4);
+    #local SizeI = DimSize_I(ValuesOrPoints_4N);
+    #local SizeJ = DimSize_J(ValuesOrPoints_4N);
+    #local SizeK = DimSize_K(ValuesOrPoints_4N);
+    #local SizeL = DimSize_L(ValuesOrPoints_4N);
     #local p0 = 0*ValuesOrPoints_4N[0][0][0][0];
     #if (M < SizeL)
         #local CC = _HodographCoefficients(M);
@@ -1651,7 +1680,7 @@ which can be found in the LICENSE file.
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #if (dimension_size(Values_1N, 1) < 2)
+    #if (DimSize_I(Values_1N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -1686,7 +1715,7 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 1) < 2)
+    #if (DimSize_I(Values_2N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -1705,7 +1734,7 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 2) < 2)
+    #if (DimSize_J(Values_2N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -1743,7 +1772,7 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) < 2)
+    #if (DimSize_I(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -1762,7 +1791,7 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 2) < 2)
+    #if (DimSize_J(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -1781,7 +1810,7 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 3) < 2)
+    #if (DimSize_K(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -1822,7 +1851,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 2)
+    #if (DimSize_I(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -1841,7 +1870,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 2)
+    #if (DimSize_J(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -1860,7 +1889,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 2)
+    #if (DimSize_K(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -1879,7 +1908,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 2)
+    #if (DimSize_L(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -1924,7 +1953,7 @@ which can be found in the LICENSE file.
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #if (dimension_size(Values_1N, 1) < 3)
+    #if (DimSize_I(Values_1N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -1959,7 +1988,7 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 1) < 3)
+    #if (DimSize_I(Values_2N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -1978,10 +2007,10 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 1) < 2)
+    #if (DimSize_I(Values_2N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_2N, 2) < 2)
+    #if (DimSize_J(Values_2N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2003,7 +2032,7 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 2) < 3)
+    #if (DimSize_J(Values_2N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -2044,7 +2073,7 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) < 3)
+    #if (DimSize_I(Values_3N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -2063,10 +2092,10 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) < 2)
+    #if (DimSize_I(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_3N, 2) < 2)
+    #if (DimSize_J(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2088,10 +2117,10 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) < 2)
+    #if (DimSize_I(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_3N, 3) < 2)
+    #if (DimSize_K(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2113,7 +2142,7 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 2) < 3)
+    #if (DimSize_J(Values_3N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -2132,10 +2161,10 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 2) < 2)
+    #if (DimSize_J(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_3N, 3) < 2)
+    #if (DimSize_K(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2157,7 +2186,7 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 3) < 3)
+    #if (DimSize_K(Values_3N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -2207,7 +2236,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 3)
+    #if (DimSize_I(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -2226,10 +2255,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 2)
+    #if (DimSize_I(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 2)
+    #if (DimSize_J(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2251,10 +2280,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 2)
+    #if (DimSize_I(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 2)
+    #if (DimSize_K(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2276,10 +2305,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 2)
+    #if (DimSize_I(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 2)
+    #if (DimSize_L(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2301,7 +2330,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 3)
+    #if (DimSize_J(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -2320,10 +2349,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 2)
+    #if (DimSize_J(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 2)
+    #if (DimSize_K(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2345,10 +2374,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 2)
+    #if (DimSize_J(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 2)
+    #if (DimSize_L(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2370,7 +2399,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 3)
+    #if (DimSize_K(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -2389,10 +2418,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 2)
+    #if (DimSize_K(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 2)
+    #if (DimSize_L(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2414,7 +2443,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 3)
+    #if (DimSize_L(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -2477,7 +2506,7 @@ which can be found in the LICENSE file.
     #if (N != 1)
         #error "N is not 1"
     #end // if
-    #if (dimension_size(Values_1N, 1) < 4)
+    #if (DimSize_I(Values_1N) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2512,7 +2541,7 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 1) < 4)
+    #if (DimSize_I(Values_2N) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2531,10 +2560,10 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 1) < 3)
+    #if (DimSize_I(Values_2N) < 3)
         #error "Is less than 3"
     #end // if
-    #if (dimension_size(Values_2N, 2) < 2)
+    #if (DimSize_J(Values_2N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2556,10 +2585,10 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 1) < 2)
+    #if (DimSize_I(Values_2N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_2N, 2) < 3)
+    #if (DimSize_J(Values_2N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -2581,7 +2610,7 @@ which can be found in the LICENSE file.
     #if (N != 2)
         #error "N is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 2) < 4)
+    #if (DimSize_J(Values_2N) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2625,7 +2654,7 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) < 4)
+    #if (DimSize_I(Values_3N) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2644,10 +2673,10 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) < 3)
+    #if (DimSize_I(Values_3N) < 3)
         #error "Is less than 3"
     #end // if
-    #if (dimension_size(Values_3N, 2) < 2)
+    #if (DimSize_J(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2669,10 +2698,10 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) < 3)
+    #if (DimSize_I(Values_3N) < 3)
         #error "Is less than 3"
     #end // if
-    #if (dimension_size(Values_3N, 3) < 2)
+    #if (DimSize_K(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2694,10 +2723,10 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) < 2)
+    #if (DimSize_I(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_3N, 2) < 3)
+    #if (DimSize_J(Values_3N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -2719,13 +2748,13 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) < 2)
+    #if (DimSize_I(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_3N, 2) < 2)
+    #if (DimSize_J(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_3N, 3) < 2)
+    #if (DimSize_K(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2750,10 +2779,10 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) < 2)
+    #if (DimSize_I(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_3N, 3) < 3)
+    #if (DimSize_K(Values_3N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -2775,7 +2804,7 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 2) < 4)
+    #if (DimSize_J(Values_3N) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2794,10 +2823,10 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 2) < 3)
+    #if (DimSize_J(Values_3N) < 3)
         #error "Is less than 3"
     #end // if
-    #if (dimension_size(Values_3N, 3) < 2)
+    #if (DimSize_K(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2819,10 +2848,10 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 2) < 2)
+    #if (DimSize_J(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_3N, 3) < 3)
+    #if (DimSize_K(Values_3N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -2844,7 +2873,7 @@ which can be found in the LICENSE file.
     #if (N != 3)
         #error "N is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 3) < 4)
+    #if (DimSize_K(Values_3N) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2885,7 +2914,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 4)
+    #if (DimSize_I(Values_4N) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -2904,10 +2933,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 3)
+    #if (DimSize_I(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 2)
+    #if (DimSize_J(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2929,10 +2958,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 3)
+    #if (DimSize_I(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 2)
+    #if (DimSize_K(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2954,10 +2983,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 3)
+    #if (DimSize_I(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 2)
+    #if (DimSize_L(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -2979,10 +3008,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 2)
+    #if (DimSize_I(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 3)
+    #if (DimSize_J(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -3004,13 +3033,13 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 2)
+    #if (DimSize_I(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 2)
+    #if (DimSize_J(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 2)
+    #if (DimSize_K(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -3035,13 +3064,13 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 2)
+    #if (DimSize_I(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 2)
+    #if (DimSize_J(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 2)
+    #if (DimSize_L(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -3066,10 +3095,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 2)
+    #if (DimSize_I(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 3)
+    #if (DimSize_K(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -3091,13 +3120,13 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 2)
+    #if (DimSize_I(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 2)
+    #if (DimSize_K(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 2)
+    #if (DimSize_L(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -3122,10 +3151,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 2)
+    #if (DimSize_I(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 3)
+    #if (DimSize_L(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -3147,7 +3176,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 4)
+    #if (DimSize_J(Values_4N) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -3166,10 +3195,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 3)
+    #if (DimSize_J(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 2)
+    #if (DimSize_K(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -3191,10 +3220,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 3)
+    #if (DimSize_J(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 2)
+    #if (DimSize_L(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -3216,10 +3245,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 2)
+    #if (DimSize_J(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 3)
+    #if (DimSize_K(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -3241,13 +3270,13 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 2)
+    #if (DimSize_J(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 2)
+    #if (DimSize_K(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 2)
+    #if (DimSize_L(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -3272,10 +3301,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 2)
+    #if (DimSize_J(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 3)
+    #if (DimSize_L(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -3297,7 +3326,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 4)
+    #if (DimSize_K(Values_4N) < 4)
         #error "Is less than 4"
     #end // if
 
@@ -3316,10 +3345,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 3)
+    #if (DimSize_K(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 2)
+    #if (DimSize_L(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
 
@@ -3341,10 +3370,10 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 2)
+    #if (DimSize_K(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 3)
+    #if (DimSize_L(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
 
@@ -3366,7 +3395,7 @@ which can be found in the LICENSE file.
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 4)
+    #if (DimSize_L(Values_4N) < 4)
         #error "Is less than 4"
     #end // if
 
