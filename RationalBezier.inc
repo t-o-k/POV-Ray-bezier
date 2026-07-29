@@ -1198,6 +1198,18 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_4N) != 4)
         #error "Is not 4"
     #end // if
+    #if (DimSize_I(Values_4N) != DimSize_I(Weights_4N))
+        #error "Are not equal"
+    #end // if
+    #if (DimSize_J(Values_4N) != DimSize_J(Weights_4N))
+        #error "Are not equal"
+    #end // if
+    #if (DimSize_K(Values_4N) != DimSize_K(Weights_4N))
+        #error "Are not equal"
+    #end // if
+    #if (DimSize_L(Values_4N) != DimSize_L(Weights_4N))
+        #error "Are not equal"
+    #end // if
 
     Arr_4E(
         From_4N_DerU_RationalBezierFunction_4A(
@@ -1279,6 +1291,9 @@ which can be found in the LICENSE file.
     #end // if
     #if (dimensions(Weights_1N) != 1)
         #error "Is not 1"
+    #end // if
+    #if (DimSize_I(Values_1N) != DimSize_I(Weights_1N))
+        #error "Are not equal"
     #end // if
 
     Arr_1E(
@@ -1411,6 +1426,12 @@ which can be found in the LICENSE file.
     #end // if
     #if (dimensions(Weights_2N) != 2)
         #error "Is not 2"
+    #end // if
+    #if (DimSize_I(Values_2N) != DimSize_I(Weights_2N))
+        #error "Are not equal"
+    #end // if
+    #if (DimSize_J(Values_2N) != DimSize_J(Weights_2N))
+        #error "Are not equal"
     #end // if
 
     Arr_2E(
@@ -1611,6 +1632,15 @@ which can be found in the LICENSE file.
     #end // if
     #if (dimensions(Weights_3N) != 3)
         #error "Is not 3"
+    #end // if
+    #if (DimSize_I(Values_3N) != DimSize_I(Weights_3N))
+        #error "Are not equal"
+    #end // if
+    #if (DimSize_J(Values_3N) != DimSize_J(Weights_3N))
+        #error "Are not equal"
+    #end // if
+    #if (DimSize_K(Values_3N) != DimSize_K(Weights_3N))
+        #error "Are not equal"
     #end // if
 
     Arr_3E(
@@ -1885,6 +1915,18 @@ which can be found in the LICENSE file.
     #end // if
     #if (dimensions(Weights_4N) != 4)
         #error "Is not 4"
+    #end // if
+    #if (DimSize_I(Values_4N) != DimSize_I(Weights_4N))
+        #error "Are not equal"
+    #end // if
+    #if (DimSize_J(Values_4N) != DimSize_J(Weights_4N))
+        #error "Are not equal"
+    #end // if
+    #if (DimSize_K(Values_4N) != DimSize_K(Weights_4N))
+        #error "Are not equal"
+    #end // if
+    #if (DimSize_L(Values_4N) != DimSize_L(Weights_4N))
+        #error "Are not equal"
     #end // if
 
     Arr_4E(
