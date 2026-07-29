@@ -621,10 +621,10 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_1N) != 1)
         #error "Is not 1"
     #end // if
-    #if (dimension_size(Values_1N, 1) != dimension_size(Weights_1N, 1))
+    #if (DimSize_I(Values_1N) != DimSize_I(Weights_1N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_1N, 1) < 2)
+    #if (DimSize_I(Values_1N) < 2)
         #error "Is less than 2"
     #end // if
     #local WeightedValues_1N =
@@ -664,7 +664,7 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_1N) != 1)
         #error "Is not 1"
     #end // if
-    #if (dimension_size(Values_1N, 1) != dimension_size(Weights_1N, 1))
+    #if (DimSize_I(Values_1N) != DimSize_I(Weights_1N))
         #error "Are not equal"
     #end // if
 
@@ -687,13 +687,13 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_2N) != 2)
         #error "Is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 1) != dimension_size(Weights_2N, 1))
+    #if (DimSize_I(Values_2N) != DimSize_I(Weights_2N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_2N, 2) != dimension_size(Weights_2N, 2))
+    #if (DimSize_J(Values_2N) != DimSize_J(Weights_2N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_2N, 1) < 2)
+    #if (DimSize_I(Values_2N) < 2)
         #error "Is less than 2"
     #end // if
     #local WeightedValues_2N =
@@ -733,13 +733,13 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_2N) != 2)
         #error "Is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 1) != dimension_size(Weights_2N, 1))
+    #if (DimSize_I(Values_2N) != DimSize_I(Weights_2N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_2N, 2) != dimension_size(Weights_2N, 2))
+    #if (DimSize_J(Values_2N) != DimSize_J(Weights_2N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_2N, 2) < 2)
+    #if (DimSize_J(Values_2N) < 2)
         #error "Is less than 2"
     #end // if
     #local WeightedValues_2N =
@@ -779,10 +779,10 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_2N) != 2)
         #error "Is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 1) != dimension_size(Weights_2N, 1))
+    #if (DimSize_I(Values_2N) != DimSize_I(Weights_2N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_2N, 2) != dimension_size(Weights_2N, 2))
+    #if (DimSize_J(Values_2N) != DimSize_J(Weights_2N))
         #error "Are not equal"
     #end // if
 
@@ -808,16 +808,16 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_3N) != 3)
         #error "Is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) != dimension_size(Weights_3N, 1))
+    #if (DimSize_I(Values_3N) != DimSize_I(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 2) != dimension_size(Weights_3N, 2))
+    #if (DimSize_J(Values_3N) != DimSize_J(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 3) != dimension_size(Weights_3N, 3))
+    #if (DimSize_K(Values_3N) != DimSize_K(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 1) < 2)
+    #if (DimSize_I(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
     #local WeightedValues_3N =
@@ -857,16 +857,16 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_3N) != 3)
         #error "Is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) != dimension_size(Weights_3N, 1))
+    #if (DimSize_I(Values_3N) != DimSize_I(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 2) != dimension_size(Weights_3N, 2))
+    #if (DimSize_J(Values_3N) != DimSize_J(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 3) != dimension_size(Weights_3N, 3))
+    #if (DimSize_K(Values_3N) != DimSize_K(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 2) < 2)
+    #if (DimSize_J(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
     #local WeightedValues_3N =
@@ -906,16 +906,16 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_3N) != 3)
         #error "Is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) != dimension_size(Weights_3N, 1))
+    #if (DimSize_I(Values_3N) != DimSize_I(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 2) != dimension_size(Weights_3N, 2))
+    #if (DimSize_J(Values_3N) != DimSize_J(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 3) != dimension_size(Weights_3N, 3))
+    #if (DimSize_K(Values_3N) != DimSize_K(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 3) < 2)
+    #if (DimSize_K(Values_3N) < 2)
         #error "Is less than 2"
     #end // if
     #local WeightedValues_3N =
@@ -955,13 +955,13 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_3N) != 3)
         #error "Is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) != dimension_size(Weights_3N, 1))
+    #if (DimSize_I(Values_3N) != DimSize_I(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 2) != dimension_size(Weights_3N, 2))
+    #if (DimSize_J(Values_3N) != DimSize_J(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 3) != dimension_size(Weights_3N, 3))
+    #if (DimSize_K(Values_3N) != DimSize_K(Weights_3N))
         #error "Are not equal"
     #end // if
 
@@ -990,19 +990,19 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_4N) != 4)
         #error "Is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) != dimension_size(Weights_4N, 1))
+    #if (DimSize_I(Values_4N) != DimSize_I(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 2) != dimension_size(Weights_4N, 2))
+    #if (DimSize_J(Values_4N) != DimSize_J(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 3) != dimension_size(Weights_4N, 3))
+    #if (DimSize_K(Values_4N) != DimSize_K(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 4) != dimension_size(Weights_4N, 4))
+    #if (DimSize_L(Values_4N) != DimSize_L(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 2)
+    #if (DimSize_I(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
     #local WeightedValues_4N =
@@ -1042,19 +1042,19 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_4N) != 4)
         #error "Is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) != dimension_size(Weights_4N, 1))
+    #if (DimSize_I(Values_4N) != DimSize_I(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 2) != dimension_size(Weights_4N, 2))
+    #if (DimSize_J(Values_4N) != DimSize_J(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 3) != dimension_size(Weights_4N, 3))
+    #if (DimSize_K(Values_4N) != DimSize_K(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 4) != dimension_size(Weights_4N, 4))
+    #if (DimSize_L(Values_4N) != DimSize_L(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 2)
+    #if (DimSize_J(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
     #local WeightedValues_4N =
@@ -1094,19 +1094,19 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_4N) != 4)
         #error "Is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) != dimension_size(Weights_4N, 1))
+    #if (DimSize_I(Values_4N) != DimSize_I(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 2) != dimension_size(Weights_4N, 2))
+    #if (DimSize_J(Values_4N) != DimSize_J(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 3) != dimension_size(Weights_4N, 3))
+    #if (DimSize_K(Values_4N) != DimSize_K(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 4) != dimension_size(Weights_4N, 4))
+    #if (DimSize_L(Values_4N) != DimSize_L(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 2)
+    #if (DimSize_K(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
     #local WeightedValues_4N =
@@ -1146,19 +1146,19 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_4N) != 4)
         #error "Is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) != dimension_size(Weights_4N, 1))
+    #if (DimSize_I(Values_4N) != DimSize_I(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 2) != dimension_size(Weights_4N, 2))
+    #if (DimSize_J(Values_4N) != DimSize_J(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 3) != dimension_size(Weights_4N, 3))
+    #if (DimSize_K(Values_4N) != DimSize_K(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 4) != dimension_size(Weights_4N, 4))
+    #if (DimSize_L(Values_4N) != DimSize_L(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 2)
+    #if (DimSize_L(Values_4N) < 2)
         #error "Is less than 2"
     #end // if
     #local WeightedValues_4N =
@@ -1227,10 +1227,10 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_1N) != 1)
         #error "Is not 1"
     #end // if
-    #if (dimension_size(Values_1N, 1) != dimension_size(Weights_1N, 1))
+    #if (DimSize_I(Values_1N) != DimSize_I(Weights_1N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_1N, 1) < 3)
+    #if (DimSize_I(Values_1N) < 3)
         #error "Is less than 3"
     #end // if
     #local WeightedValues_1N =
@@ -1300,13 +1300,13 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_2N) != 2)
         #error "Is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 1) != dimension_size(Weights_2N, 1))
+    #if (DimSize_I(Values_2N) != DimSize_I(Weights_2N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_2N, 2) != dimension_size(Weights_2N, 2))
+    #if (DimSize_J(Values_2N) != DimSize_J(Weights_2N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_2N, 1) < 3)
+    #if (DimSize_I(Values_2N) < 3)
         #error "Is less than 3"
     #end // if
     #local WeightedValues_2N =
@@ -1356,13 +1356,13 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_2N) != 2)
         #error "Is not 2"
     #end // if
-    #if (dimension_size(Values_2N, 1) != dimension_size(Weights_2N, 1))
+    #if (DimSize_I(Values_2N) != DimSize_I(Weights_2N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_2N, 2) != dimension_size(Weights_2N, 2))
+    #if (DimSize_J(Values_2N) != DimSize_J(Weights_2N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_2N, 2) < 3)
+    #if (DimSize_J(Values_2N) < 3)
         #error "Is less than 3"
     #end // if
     #local WeightedValues_2N =
@@ -1435,16 +1435,16 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_3N) != 3)
         #error "Is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) != dimension_size(Weights_3N, 1))
+    #if (DimSize_I(Values_3N) != DimSize_I(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 2) != dimension_size(Weights_3N, 2))
+    #if (DimSize_J(Values_3N) != DimSize_J(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 3) != dimension_size(Weights_3N, 3))
+    #if (DimSize_K(Values_3N) != DimSize_K(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 1) < 3)
+    #if (DimSize_I(Values_3N) < 3)
         #error "Is less than 3"
     #end // if
     #local WeightedValues_3N =
@@ -1494,16 +1494,16 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_3N) != 3)
         #error "Is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) != dimension_size(Weights_3N, 1))
+    #if (DimSize_I(Values_3N) != DimSize_I(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 2) != dimension_size(Weights_3N, 2))
+    #if (DimSize_J(Values_3N) != DimSize_J(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 3) != dimension_size(Weights_3N, 3))
+    #if (DimSize_K(Values_3N) != DimSize_K(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 2) < 3)
+    #if (DimSize_J(Values_3N) < 3)
         #error "Is less than 3"
     #end // if
     #local WeightedValues_3N =
@@ -1553,16 +1553,16 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_3N) != 3)
         #error "Is not 3"
     #end // if
-    #if (dimension_size(Values_3N, 1) != dimension_size(Weights_3N, 1))
+    #if (DimSize_I(Values_3N) != DimSize_I(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 2) != dimension_size(Weights_3N, 2))
+    #if (DimSize_J(Values_3N) != DimSize_J(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 3) != dimension_size(Weights_3N, 3))
+    #if (DimSize_K(Values_3N) != DimSize_K(Weights_3N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_3N, 3) < 3)
+    #if (DimSize_K(Values_3N) < 3)
         #error "Is less than 3"
     #end // if
     #local WeightedValues_3N =
@@ -1638,19 +1638,19 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_4N) != 4)
         #error "Is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) != dimension_size(Weights_4N, 1))
+    #if (DimSize_I(Values_4N) != DimSize_I(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 2) != dimension_size(Weights_4N, 2))
+    #if (DimSize_J(Values_4N) != DimSize_J(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 3) != dimension_size(Weights_4N, 3))
+    #if (DimSize_K(Values_4N) != DimSize_K(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 4) != dimension_size(Weights_4N, 4))
+    #if (DimSize_L(Values_4N) != DimSize_L(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 1) < 3)
+    #if (DimSize_I(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
     #local WeightedValues_4N =
@@ -1700,19 +1700,19 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_4N) != 4)
         #error "Is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) != dimension_size(Weights_4N, 1))
+    #if (DimSize_I(Values_4N) != DimSize_I(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 2) != dimension_size(Weights_4N, 2))
+    #if (DimSize_J(Values_4N) != DimSize_J(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 3) != dimension_size(Weights_4N, 3))
+    #if (DimSize_K(Values_4N) != DimSize_K(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 4) != dimension_size(Weights_4N, 4))
+    #if (DimSize_L(Values_4N) != DimSize_L(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 2) < 3)
+    #if (DimSize_J(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
     #local WeightedValues_4N =
@@ -1762,19 +1762,19 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_4N) != 4)
         #error "Is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) != dimension_size(Weights_4N, 1))
+    #if (DimSize_I(Values_4N) != DimSize_I(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 2) != dimension_size(Weights_4N, 2))
+    #if (DimSize_J(Values_4N) != DimSize_J(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 3) != dimension_size(Weights_4N, 3))
+    #if (DimSize_K(Values_4N) != DimSize_K(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 4) != dimension_size(Weights_4N, 4))
+    #if (DimSize_L(Values_4N) != DimSize_L(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 3) < 3)
+    #if (DimSize_K(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
     #local WeightedValues_4N =
@@ -1824,19 +1824,19 @@ which can be found in the LICENSE file.
     #if (dimensions(Weights_4N) != 4)
         #error "Is not 4"
     #end // if
-    #if (dimension_size(Values_4N, 1) != dimension_size(Weights_4N, 1))
+    #if (DimSize_I(Values_4N) != DimSize_I(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 2) != dimension_size(Weights_4N, 2))
+    #if (DimSize_J(Values_4N) != DimSize_J(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 3) != dimension_size(Weights_4N, 3))
+    #if (DimSize_K(Values_4N) != DimSize_K(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 4) != dimension_size(Weights_4N, 4))
+    #if (DimSize_L(Values_4N) != DimSize_L(Weights_4N))
         #error "Are not equal"
     #end // if
-    #if (dimension_size(Values_4N, 4) < 3)
+    #if (DimSize_L(Values_4N) < 3)
         #error "Is less than 3"
     #end // if
     #local WeightedValues_4N =
