@@ -213,3 +213,32 @@ which can be found in the LICENSE file.
 #end // macro s_E
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro I_E(Array)
+
+    Array[0]
+
+#end // macro I_E
+
+
+#macro J_E(Array)
+
+    Array[1]
+
+#end // macro J_E
+
+
+#macro K_E(Array)
+
+    Array[2]
+
+#end // macro K_E
+
+
+#macro L_E(Array)
+
+    Array[3]
+
+#end // macro L_E
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
