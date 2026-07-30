@@ -15,6 +15,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
+#include "Utils.inc"
 #include "ArrayTools.inc"
 #include "FunctionTools.inc"
 #include "Bezier.inc"
