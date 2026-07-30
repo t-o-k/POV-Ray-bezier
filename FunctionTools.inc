@@ -3771,20 +3771,147 @@ This does not work:
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
+#declare _Der1_RationalFn =
+    function(_n, _d, _n1, _d1) {
+        (_n1 - _n/_d*_d1)/_d
+    }
+;
+
+#declare _Der11_RationalFn =
+    function(_n, _d, _n1, _d1, _n11, _d11) {
+        (
+            _n11
+            -
+            (
+                _n*_d11
+                +
+                (_n1 - _n/_d*_d1)
+                *
+                _d1*2
+            )/_d
+        )/_d
+    }
+;
+
+#declare _Der12_RationalFn =
+    function(_n, _d, _n1, _d1, _n2, _d2, _n12, _d12) {
+        (
+            _n12 
+            - 
+            (
+                _n*_d12 
+                + 
+                _n1*_d2 
+                + 
+                _n2*_d1 
+                - 
+                2*_n/_d*_d1*_d2
+            )/_d
+        )/_d
+    }
+;
+
+#declare _Der111_RationalFn =
+    function(_n, _d, _n1, _d1, _n11, _d11, _n111, _d111) {
+        (
+            _n111
+            -
+            (
+                _n*_d111
+                +
+                3*(_n11*_d1 + _n1*_d11)
+                -
+                6*(_n1*_d1 + _n*(_d11 - _d1*_d1/_d))*_d1/_d
+            )/_d
+        )/_d
+    }
+;
+
+#declare _Der112_RationalFn =
+    function(_n, _d, _n1, _d1, _n2, _d2, _n11, _d11, _n12, _d12, _n112, _d112) {
+        (
+            _n112
+            -
+            (
+                _n*_d112
+                +
+                _n11*_d2 + _n2*_d11
+                +
+                (
+                    _n12*_d1 + _n1*_d12
+                    -
+                    (
+                        _n*(_d2*_d11 + _d1*(2*_d12 - 3*_d1*_d2/_d))
+                        +
+                        (2*_n1*_d2 + _n2*_d1)*_d1
+                    )/_d
+                )*2
+            )/_d
+        )/_d
+    }
+;
+
+#declare _Der122_RationalFn =
+    function(_n, _d, _n1, _d1, _n2, _d2, _n12, _d12, _n22, _d22, _n122, _d122) {
+        (
+            _n122
+            -
+            (
+                _n*_d122
+                +
+                _n22*_d1 + _n1*_d22
+                +
+                (
+                    _n12*_d2 + _n2*_d12
+                    -
+                    (
+                        _n*(_d1*_d22 + _d2*(2*_d12 - 3*_d1*_d2/_d))
+                        +
+                        (2*_n2*_d1 + _n1*_d2)*_d2
+                    )/_d
+                )*2
+            )/_d
+        )/_d
+    }
+;
+
+#declare _Der123_RationalFn =
+    function(_n, _d, _n1, _d1, _n2, _d2, _n3, _d3, _n12, _d12, _n13, _d13, _n23, _d23, _n123, _d123) {
+        (
+            _n123
+            -
+            (
+                _n*_d123
+                +
+                _n12*_d3 + _n13*_d2 + _n23*_d1
+                +
+                _n1*_d23 + _n2*_d13 + _n3*_d12
+                +
+                (
+                    6*_n*_d1*_d2*_d3/_d
+                    -
+                    (
+                        _n*(_d1*_d23 + _d2*_d13 + _d3*_d12)
+                        +
+                        _n1*_d2*_d3 + _n2*_d1*_d3 + _n3*_d1*_d2
+                    )*2
+                )/_d
+            )/_d
+        )/_d
+    }
+;
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
 #macro Der1_RationalFunction_1A(_NumFn_1A, _DenFn_1A, _D1NumFn_1A, _D1DenFn_1A)
 
     function(_u) {
-        (
-            _D1NumFn_1A(_u)
-            -
+        _Der1_RationalFn(
+            _NumFn_1A(_u),
+            _DenFn_1A(_u),
+            _D1NumFn_1A(_u),
             _D1DenFn_1A(_u)
-            *
-            _NumFn_1A(_u)
-            /
-            _DenFn_1A(_u)
         )
-        /
-        _DenFn_1A(_u)
     }
 
 #end // macro Der1_RationalFunction_1A
@@ -3793,17 +3920,12 @@ This does not work:
 #macro Der1_RationalFunction_2A(_NumFn_2A, _DenFn_2A, _D1NumFn_2A, _D1DenFn_2A)
 
     function(_u, _v) {
-        (
-            _D1NumFn_2A(_u, _v)
-            -
+        _Der1_RationalFn(
+            _NumFn_2A(_u, _v),
+            _DenFn_2A(_u, _v),
+            _D1NumFn_2A(_u, _v),
             _D1DenFn_2A(_u, _v)
-            *
-            _NumFn_2A(_u, _v)
-            /
-            _DenFn_2A(_u, _v)
         )
-        /
-        _DenFn_2A(_u, _v)
     }
 
 #end // macro Der1_RationalFunction_2A
@@ -3812,17 +3934,12 @@ This does not work:
 #macro Der1_RationalFunction_3A(_NumFn_3A, _DenFn_3A, _D1NumFn_3A, _D1DenFn_3A)
 
     function(_u, _v, _w) {
-        (
-            _D1NumFn_3A(_u, _v, _w)
-            -
+        _Der1_RationalFn(
+            _NumFn_3A(_u, _v, _w),
+            _DenFn_3A(_u, _v, _w),
+            _D1NumFn_3A(_u, _v, _w),
             _D1DenFn_3A(_u, _v, _w)
-            *
-            _NumFn_3A(_u, _v, _w)
-            /
-            _DenFn_3A(_u, _v, _w)
         )
-        /
-        _DenFn_3A(_u, _v, _w)
     }
 
 #end // macro Der1_RationalFunction_3A
@@ -3831,17 +3948,12 @@ This does not work:
 #macro Der1_RationalFunction_4A(_NumFn_4A, _DenFn_4A, _D1NumFn_4A, _D1DenFn_4A)
 
     function(_u, _v, _w, _s) {
-        (
-            _D1NumFn_4A(_u, _v, _w, _s)
-            -
+        _Der1_RationalFn(
+            _NumFn_4A(_u, _v, _w, _s),
+            _DenFn_4A(_u, _v, _w, _s),
+            _D1NumFn_4A(_u, _v, _w, _s),
             _D1DenFn_4A(_u, _v, _w, _s)
-            *
-            _NumFn_4A(_u, _v, _w, _s)
-            /
-            _DenFn_4A(_u, _v, _w, _s)
         )
-        /
-        _DenFn_4A(_u, _v, _w, _s)
     }
 
 #end // macro Der1_RationalFunction_4A
@@ -3851,17 +3963,14 @@ This does not work:
 #macro Der2_RationalFunction_1A(_NumFn_1A, _DenFn_1A, _D1NumFn_1A, _D1DenFn_1A, _D2NumFn_1A, _D2DenFn_1A)
 
     function(_u) {
-        (
-            _D2NumFn_1A(_u)*pow(_DenFn_1A(_u), 2)
-            -
-            (
-                2*_D1NumFn_1A(_u)*_D1DenFn_1A(_u)
-                +
-                _NumFn_1A(_u)*_D2DenFn_1A(_u)
-            )*_DenFn_1A(_u)
-            +
-            2*_NumFn_1A(_u)*pow(_D1DenFn_1A(_u), 2)
-        )/pow(_DenFn_1A(_u), 3)
+        _Der11_RationalFn(
+            _NumFn_1A(_u),
+            _DenFn_1A(_u),
+            _D1NumFn_1A(_u),
+            _D1DenFn_1A(_u),
+            _D2NumFn_1A(_u),
+            _D2DenFn_1A(_u)
+        )
     }
 
 #end // macro Der2_RationalFunction_1A
@@ -3870,17 +3979,14 @@ This does not work:
 #macro Der2_RationalFunction_2A(_NumFn_2A, _DenFn_2A, _D1NumFn_2A, _D1DenFn_2A, _D2NumFn_2A, _D2DenFn_2A)
 
     function(_u, _v) {
-        (
-            _D2NumFn_2A(_u, _v)*pow(_DenFn_2A(_u, _v), 2)
-            -
-            (
-                2*_D1NumFn_2A(_u, _v)*_D1DenFn_2A(_u, _v)
-                +
-                _NumFn_2A(_u, _v)*_D2DenFn_2A(_u, _v)
-            )*_DenFn_2A(_u, _v)
-            + 
-            2*_NumFn_2A(_u, _v)*pow(_D1DenFn_2A(_u, _v), 2)
-        )/pow(_DenFn_2A(_u, _v), 3)
+        _Der11_RationalFn(
+            _NumFn_2A(_u, _v),
+            _DenFn_2A(_u, _v),
+            _D1NumFn_2A(_u, _v),
+            _D1DenFn_2A(_u, _v),
+            _D2NumFn_2A(_u, _v),
+            _D2DenFn_2A(_u, _v)
+        )
     }
 
 #end // macro Der2_RationalFunction_2A
@@ -3889,17 +3995,14 @@ This does not work:
 #macro Der2_RationalFunction_3A(_NumFn_3A, _DenFn_3A, _D1NumFn_3A, _D1DenFn_3A, _D2NumFn_3A, _D2DenFn_3A)
 
     function(_u, _v, _w) {
-        (
-            _D2NumFn_3A(_u, _v, _w)*pow(_DenFn_3A(_u, _v, _w), 2)
-            -
-            (
-                2*_D1NumFn_3A(_u, _v, _w)*_D1DenFn_3A(_u, _v, _w)
-                +
-                _NumFn_3A(_u, _v, _w)*_D2DenFn_3A(_u, _v, _w)
-            )*_DenFn_3A(_u, _v, _w)
-            + 
-            2*_NumFn_3A(_u, _v, _w)*pow(_D1DenFn_3A(_u, _v, _w), 2)
-        )/pow(_DenFn_3A(_u, _v, _w), 3)
+        _Der11_RationalFn(
+            _NumFn_3A(_u, _v, _w),
+            _DenFn_3A(_u, _v, _w),
+            _D1NumFn_3A(_u, _v, _w),
+            _D1DenFn_3A(_u, _v, _w),
+            _D2NumFn_3A(_u, _v, _w),
+            _D2DenFn_3A(_u, _v, _w)
+        )
     }
 
 #end // macro Der2_RationalFunction_3A
@@ -3908,17 +4011,14 @@ This does not work:
 #macro Der2_RationalFunction_4A(_NumFn_4A, _DenFn_4A, _D1NumFn_4A, _D1DenFn_4A, _D2NumFn_4A, _D2DenFn_4A)
 
     function(_u, _v, _w, _s) {
-        (
-            _D2NumFn_4A(_u, _v, _w, _s)*pow(_DenFn_4A(_u, _v, _w, _s), 2)
-            -
-            (
-                2*_D1NumFn_4A(_u, _v, _w, _s)*_D1DenFn_4A(_u, _v, _w, _s)
-                +
-                _NumFn_4A(_u, _v, _w, _s)*_D2DenFn_4A(_u, _v, _w, _s)
-            )*_DenFn_4A(_u, _v, _w, _s)
-            + 
-            2*_NumFn_4A(_u, _v, _w, _s)*pow(_D1DenFn_4A(_u, _v, _w, _s), 2)
-        )/pow(_DenFn_4A(_u, _v, _w, _s), 3)
+        _Der11_RationalFn(
+            _NumFn_4A(_u, _v, _w, _s),
+            _DenFn_4A(_u, _v, _w, _s),
+            _D1NumFn_4A(_u, _v, _w, _s),
+            _D1DenFn_4A(_u, _v, _w, _s),
+            _D2NumFn_4A(_u, _v, _w, _s),
+            _D2DenFn_4A(_u, _v, _w, _s)
+        )
     }
 
 #end // macro Der2_RationalFunction_4A
