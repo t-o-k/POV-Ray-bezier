@@ -17,35 +17,6 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Arr_1E(E0)
-
-    array[1] { E0 }
-
-#end // macro Arr_1E
-
-
-#macro Arr_2E(E0, E1)
-
-    array[2] { E0, E1 }
-
-#end // macro Arr_2E
-
-
-#macro Arr_3E(E0, E1, E2)
-
-    array[3] { E0, E1, E2 }
-
-#end // macro Arr_3E
-
-
-#macro Arr_4E(E0, E1, E2, E3)
-
-    array[4] { E0, E1, E2, E3 }
-
-#end // macro Arr_4E
-
-// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
-
 #macro Est_Der1U_Function_1A(_Function_1A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
