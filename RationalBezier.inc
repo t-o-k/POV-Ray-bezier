@@ -1251,7 +1251,7 @@ which can be found in the LICENSE file.
         )
     ;
 
-    Der2_RationalFunction_1A(
+    Der11_RationalFunction_1A(
         From_1N_BezierFunction_1A(
             WeightedValues_1N
         ),
@@ -1330,7 +1330,7 @@ which can be found in the LICENSE file.
         )
     ;
 
-    Der2_RationalFunction_2A(
+    Der11_RationalFunction_2A(
         From_2N_BezierFunction_2A(
             WeightedValues_2N
         ),
@@ -1386,7 +1386,7 @@ which can be found in the LICENSE file.
         )
     ;
 
-    Der2_RationalFunction_2A(
+    Der11_RationalFunction_2A(
         From_2N_BezierFunction_2A(
             WeightedValues_2N
         ),
@@ -1474,7 +1474,7 @@ which can be found in the LICENSE file.
         )
     ;
 
-    Der2_RationalFunction_3A(
+    Der11_RationalFunction_3A(
         From_3N_BezierFunction_3A(
             WeightedValues_3N
         ),
@@ -1533,7 +1533,7 @@ which can be found in the LICENSE file.
         )
     ;
 
-    Der2_RationalFunction_3A(
+    Der11_RationalFunction_3A(
         From_3N_BezierFunction_3A(
             WeightedValues_3N
         ),
@@ -1592,7 +1592,7 @@ which can be found in the LICENSE file.
         )
     ;
 
-    Der2_RationalFunction_3A(
+    Der11_RationalFunction_3A(
         From_3N_BezierFunction_3A(
             WeightedValues_3N
         ),
@@ -1689,7 +1689,7 @@ which can be found in the LICENSE file.
         )
     ;
 
-    Der2_RationalFunction_4A(
+    Der11_RationalFunction_4A(
         From_4N_BezierFunction_4A(
             WeightedValues_4N
         ),
@@ -1751,7 +1751,7 @@ which can be found in the LICENSE file.
         )
     ;
 
-    Der2_RationalFunction_4A(
+    Der11_RationalFunction_4A(
         From_4N_BezierFunction_4A(
             WeightedValues_4N
         ),
@@ -1813,7 +1813,7 @@ which can be found in the LICENSE file.
         )
     ;
 
-    Der2_RationalFunction_4A(
+    Der11_RationalFunction_4A(
         From_4N_BezierFunction_4A(
             WeightedValues_4N
         ),
@@ -1875,7 +1875,7 @@ which can be found in the LICENSE file.
         )
     ;
 
-    Der2_RationalFunction_4A(
+    Der11_RationalFunction_4A(
         From_4N_BezierFunction_4A(
             WeightedValues_4N
         ),
