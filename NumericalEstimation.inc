@@ -1244,6 +1244,282 @@ which can be found in the LICENSE file.
 #end // macro Est_DerUUU_Function_4A
 
 
+#macro Est_DerUUV_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH2 = pow(H, 3)*2;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u + H, _v + H, _w, _s)
+                -
+                _Function_4A(_u + H, _v - H, _w, _s)
+            )
+            -
+            (
+                _Function_4A(_u, _v + H, _w, _s)
+                -
+                _Function_4A(_u, _v - H, _w, _s)
+            )*2
+            +
+            (
+                _Function_4A(_u - H, _v + H, _w, _s)
+                -
+                _Function_4A(_u - H, _v - H, _w, _s)
+            )
+        )/HHH2
+    }
+
+#end // macro Est_DerUUV_Function_4A
+
+
+#macro Est_DerUUW_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH2 = pow(H, 3)*2;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u + H, _v, _w + H, _s)
+                -
+                _Function_4A(_u + H, _v, _w - H, _s)
+            )
+            -
+            (
+                _Function_4A(_u, _v, _w + H, _s)
+                -
+                _Function_4A(_u, _v, _w - H, _s)
+            )*2
+            +
+            (
+                _Function_4A(_u - H, _v, _w + H, _s)
+                -
+                _Function_4A(_u - H, _v, _w - H, _s)
+            )
+        )/HHH2
+    }
+
+#end // macro Est_DerUUW_Function_4A
+
+
+#macro Est_DerUUS_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH2 = pow(H, 3)*2;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u + H, _v, _w, _s + H)
+                -
+                _Function_4A(_u + H, _v, _w, _s - H)
+            )
+            -
+            (
+                _Function_4A(_u, _v, _w, _s + H)
+                -
+                _Function_4A(_u, _v, _w, _s - H)
+            )*2
+            +
+            (
+                _Function_4A(_u - H, _v, _w, _s + H)
+                -
+                _Function_4A(_u - H, _v, _w, _s - H)
+            )
+        )/HHH2
+    }
+
+#end // macro Est_DerUUS_Function_4A
+
+
+#macro Est_DerUVV_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH2 = pow(H, 3)*2;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u + H, _v + H, _w, _s)
+                -
+                _Function_4A(_u - H, _v + H, _w, _s)
+            )
+            -
+            (
+                _Function_4A(_u + H, _v, _w, _s)
+                -
+                _Function_4A(_u - H, _v, _w, _s)
+            )*2
+            +
+            (
+                _Function_4A(_u + H, _v - H, _w, _s)
+                -
+                _Function_4A(_u - H, _v - H, _w, _s)
+            )
+        )/HHH2
+    }
+
+#end // macro Est_DerUVV_Function_4A
+
+
+#macro Est_DerUVW_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH8 = pow(H, 3)*8;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u + H, _v + H, _w + H, _s)
+                -
+                _Function_4A(_u + H, _v + H, _w - H, _s)
+                -
+                _Function_4A(_u + H, _v - H, _w + H, _s)
+                +
+                _Function_4A(_u + H, _v - H, _w - H, _s)
+            )
+            -
+            (
+                _Function_4A(_u - H, _v + H, _w + H, _s)
+                -
+                _Function_4A(_u - H, _v + H, _w - H, _s)
+                -
+                _Function_4A(_u - H, _v - H, _w + H, _s)
+                +
+                _Function_4A(_u - H, _v - H, _w - H, _s)
+            )
+        )/HHH8
+    }
+
+#end // macro Est_DerUVW_Function_4A
+
+
+#macro Est_DerUVS_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH8 = pow(H, 3)*8;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u + H, _v + H, _w, _s + H)
+                -
+                _Function_4A(_u + H, _v + H, _w, _s - H)
+                -
+                _Function_4A(_u + H, _v - H, _w, _s + H)
+                +
+                _Function_4A(_u + H, _v - H, _w, _s - H)
+            )
+            -
+            (
+                _Function_4A(_u - H, _v + H, _w, _s + H)
+                -
+                _Function_4A(_u - H, _v + H, _w, _s - H)
+                -
+                _Function_4A(_u - H, _v - H, _w, _s + H)
+                +
+                _Function_4A(_u - H, _v - H, _w, _s - H)
+            )
+        )/HHH8
+    }
+
+#end // macro Est_DerUVS_Function_4A
+
+
+#macro Est_DerUWW_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH2 = pow(H, 3)*2;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u + H, _v, _w + H, _s)
+                -
+                _Function_4A(_u - H, _v, _w + H, _s)
+            )
+            -
+            (
+                _Function_4A(_u + H, _v, _w, _s)
+                -
+                _Function_4A(_u - H, _v, _w, _s)
+            )*2
+            +
+            (
+                _Function_4A(_u + H, _v, _w - H, _s)
+                -
+                _Function_4A(_u - H, _v, _w - H, _s)
+            )
+        )/HHH2
+    }
+
+#end // macro Est_DerUWW_Function_4A
+
+
+#macro Est_DerUWS_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH8 = pow(H, 3)*8;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u + H, _v, _w + H, _s + H)
+                -
+                _Function_4A(_u + H, _v, _w + H, _s - H)
+                -
+                _Function_4A(_u + H, _v, _w - H, _s + H)
+                +
+                _Function_4A(_u + H, _v, _w - H, _s - H)
+            )
+            -
+            (
+                _Function_4A(_u - H, _v, _w + H, _s + H)
+                -
+                _Function_4A(_u - H, _v, _w + H, _s - H)
+                -
+                _Function_4A(_u - H, _v, _w - H, _s + H)
+                +
+                _Function_4A(_u - H, _v, _w - H, _s - H)
+            )
+        )/HHH8
+    }
+
+#end // macro Est_DerUWS_Function_4A
+
+
+#macro Est_DerUSS_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH2 = pow(H, 3)*2;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u + H, _v, _w, _s + H)
+                -
+                _Function_4A(_u - H, _v, _w, _s + H)
+            )
+            -
+            (
+                _Function_4A(_u + H, _v, _w, _s)
+                -
+                _Function_4A(_u - H, _v, _w, _s)
+            )*2
+            +
+            (
+                _Function_4A(_u + H, _v, _w, _s - H)
+                -
+                _Function_4A(_u - H, _v, _w, _s - H)
+            )
+        )/HHH2
+    }
+
+#end // macro Est_DerUSS_Function_4A
+
+
 #macro Est_DerVVV_Function_4A(_Function_4A)
 
     #local H = NUM_DIFF_STEP_SIZE;
@@ -1269,6 +1545,158 @@ which can be found in the LICENSE file.
 #end // macro Est_DerVVV_Function_4A
 
 
+#macro Est_DerVVW_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH2 = pow(H, 3)*2;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u, _v + H, _w + H, _s)
+                -
+                _Function_4A(_u, _v + H, _w - H, _s)
+            )
+            -
+            (
+                _Function_4A(_u, _v, _w + H, _s)
+                -
+                _Function_4A(_u, _v, _w - H, _s)
+            )*2
+            +
+            (
+                _Function_4A(_u, _v - H, _w + H, _s)
+                -
+                _Function_4A(_u, _v - H, _w - H, _s)
+            )
+        )/HHH2
+    }
+
+#end // macro Est_DerVVW_Function_4A
+
+
+#macro Est_DerVVS_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH2 = pow(H, 3)*2;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u, _v + H, _w, _s + H)
+                -
+                _Function_4A(_u, _v + H, _w, _s - H)
+            )
+            -
+            (
+                _Function_4A(_u, _v, _w, _s + H)
+                -
+                _Function_4A(_u, _v, _w, _s - H)
+            )*2
+            +
+            (
+                _Function_4A(_u, _v - H, _w, _s + H)
+                -
+                _Function_4A(_u, _v - H, _w, _s - H)
+            )
+        )/HHH2
+    }
+
+#end // macro Est_DerVVS_Function_4A
+
+
+#macro Est_DerVWW_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH2 = pow(H, 3)*2;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u, _v + H, _w + H, _s)
+                -
+                _Function_4A(_u, _v - H, _w + H, _s)
+            )
+            -
+            (
+                _Function_4A(_u, _v + H, _w, _s)
+                -
+                _Function_4A(_u, _v - H, _w, _s)
+            )*2
+            +
+            (
+                _Function_4A(_u, _v + H, _w - H, _s)
+                -
+                _Function_4A(_u, _v - H, _w - H, _s)
+            )
+        )/HHH2
+    }
+
+#end // macro Est_DerVWW_Function_4A
+
+
+#macro Est_DerVWS_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH8 = pow(H, 3)*8;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u, _v + H, _w + H, _s + H)
+                -
+                _Function_4A(_u, _v + H, _w + H, _s - H)
+                -
+                _Function_4A(_u, _v + H, _w - H, _s + H)
+                +
+                _Function_4A(_u, _v + H, _w - H, _s - H)
+            )
+            -
+            (
+                _Function_4A(_u, _v - H, _w + H, _s + H)
+                -
+                _Function_4A(_u, _v - H, _w + H, _s - H)
+                -
+                _Function_4A(_u, _v - H, _w - H, _s + H)
+                +
+                _Function_4A(_u, _v - H, _w - H, _s - H)
+            )
+        )/HHH8
+    }
+
+#end // macro Est_DerVWS_Function_4A
+
+
+#macro Est_DerVSS_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH2 = pow(H, 3)*2;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u, _v + H, _w, _s + H)
+                -
+                _Function_4A(_u, _v - H, _w, _s + H)
+            )
+            -
+            (
+                _Function_4A(_u, _v + H, _w, _s)
+                -
+                _Function_4A(_u, _v - H, _w, _s)
+            )*2
+            +
+            (
+                _Function_4A(_u, _v + H, _w, _s - H)
+                -
+                _Function_4A(_u, _v - H, _w, _s - H)
+            )
+        )/HHH2
+    }
+
+#end // macro Est_DerVSS_Function_4A
+
+
 #macro Est_DerWWW_Function_4A(_Function_4A)
 
     #local H = NUM_DIFF_STEP_SIZE;
@@ -1292,6 +1720,66 @@ which can be found in the LICENSE file.
     }
 
 #end // macro Est_DerWWW_Function_4A
+
+
+#macro Est_DerWWS_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH2 = pow(H, 3)*2;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u, _v, _w + H, _s + H)
+                -
+                _Function_4A(_u, _v, _w + H, _s - H)
+            )
+            -
+            (
+                _Function_4A(_u, _v, _w, _s + H)
+                -
+                _Function_4A(_u, _v, _w, _s - H)
+            )*2
+            +
+            (
+                _Function_4A(_u, _v, _w - H, _s + H)
+                -
+                _Function_4A(_u, _v, _w - H, _s - H)
+            )
+        )/HHH2
+    }
+
+#end // macro Est_DerWWS_Function_4A
+
+
+#macro Est_DerWSS_Function_4A(_Function_4A)
+
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HHH2 = pow(H, 3)*2;
+
+    function(_u, _v, _w, _s) {
+        (
+            (
+                _Function_4A(_u, _v, _w + H, _s + H)
+                -
+                _Function_4A(_u, _v, _w - H, _s + H)
+            )
+            -
+            (
+                _Function_4A(_u, _v, _w + H, _s)
+                -
+                _Function_4A(_u, _v, _w - H, _s)
+            )*2
+            +
+            (
+                _Function_4A(_u, _v, _w + H, _s - H)
+                -
+                _Function_4A(_u, _v, _w - H, _s - H)
+            )
+        )/HHH2
+    }
+
+#end // macro Est_DerWSS_Function_4A
 
 
 #macro Est_DerSSS_Function_4A(_Function_4A)
@@ -1321,10 +1809,26 @@ which can be found in the LICENSE file.
 
 #macro Est_Der3_Functions_4A(_Function_4A)
 
-    Arr_4E(
+    Arr_20E(
         Est_DerUUU_Function_4A(_Function_4A),
+        Est_DerUUV_Function_4A(_Function_4A),
+        Est_DerUUW_Function_4A(_Function_4A),
+        Est_DerUUS_Function_4A(_Function_4A),
+        Est_DerUVV_Function_4A(_Function_4A),
+        Est_DerUVW_Function_4A(_Function_4A),
+        Est_DerUVS_Function_4A(_Function_4A),
+        Est_DerUWW_Function_4A(_Function_4A),
+        Est_DerUWS_Function_4A(_Function_4A),
+        Est_DerUSS_Function_4A(_Function_4A),
         Est_DerVVV_Function_4A(_Function_4A),
+        Est_DerVVW_Function_4A(_Function_4A),
+        Est_DerVVS_Function_4A(_Function_4A),
+        Est_DerVWW_Function_4A(_Function_4A),
+        Est_DerVWS_Function_4A(_Function_4A),
+        Est_DerVSS_Function_4A(_Function_4A),
         Est_DerWWW_Function_4A(_Function_4A),
+        Est_DerWWS_Function_4A(_Function_4A),
+        Est_DerWSS_Function_4A(_Function_4A),
         Est_DerSSS_Function_4A(_Function_4A)
     )
 
