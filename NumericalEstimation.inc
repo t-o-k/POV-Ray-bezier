@@ -17,7 +17,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Est_Der1U_Function_1A(_Function_1A)
+#macro Est_DerU_Function_1A(_Function_1A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -30,13 +30,13 @@ which can be found in the LICENSE file.
         )/H2
     }
 
-#end // macro Est_Der1U_Function_1A
+#end // macro Est_DerU_Function_1A
 
 
 #macro Est_Der1_Functions_1A(_Function_1A)
 
     Arr_1E(
-        Est_Der1U_Function_1A(_Function_1A)
+        Est_DerU_Function_1A(_Function_1A)
     )
 
 #end // macro Est_Der1_Functions_1A
@@ -52,7 +52,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Est_Der1U_Function_2A(_Function_2A)
+#macro Est_DerU_Function_2A(_Function_2A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -65,10 +65,10 @@ which can be found in the LICENSE file.
         )/H2
     }
 
-#end // macro Est_Der1U_Function_2A
+#end // macro Est_DerU_Function_2A
 
 
-#macro Est_Der1V_Function_2A(_Function_2A)
+#macro Est_DerV_Function_2A(_Function_2A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -81,14 +81,14 @@ which can be found in the LICENSE file.
         )/H2
     }
 
-#end // macro Est_Der1V_Function_2A
+#end // macro Est_DerV_Function_2A
 
 
 #macro Est_Der1_Functions_2A(_Function_2A)
 
     Arr_2E(
-        Est_Der1U_Function_2A(_Function_2A),
-        Est_Der1V_Function_2A(_Function_2A)
+        Est_DerU_Function_2A(_Function_2A),
+        Est_DerV_Function_2A(_Function_2A)
     )
 
 #end // macro Est_Der1_Functions_2A
@@ -104,7 +104,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Est_Der1U_Function_3A(_Function_3A)
+#macro Est_DerU_Function_3A(_Function_3A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -117,10 +117,10 @@ which can be found in the LICENSE file.
         )/H2
     }
 
-#end // macro Est_Der1U_Function_3A
+#end // macro Est_DerU_Function_3A
 
 
-#macro Est_Der1V_Function_3A(_Function_3A)
+#macro Est_DerV_Function_3A(_Function_3A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -133,10 +133,10 @@ which can be found in the LICENSE file.
         )/H2
     }
 
-#end // macro Est_Der1V_Function_3A
+#end // macro Est_DerV_Function_3A
 
 
-#macro Est_Der1W_Function_3A(_Function_3A)
+#macro Est_DerW_Function_3A(_Function_3A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -149,15 +149,15 @@ which can be found in the LICENSE file.
         )/H2
     }
 
-#end // macro Est_Der1W_Function_3A
+#end // macro Est_DerW_Function_3A
 
 
 #macro Est_Der1_Functions_3A(_Function_3A)
 
     Arr_3E(
-        Est_Der1U_Function_3A(_Function_3A),
-        Est_Der1V_Function_3A(_Function_3A),
-        Est_Der1W_Function_3A(_Function_3A)
+        Est_DerU_Function_3A(_Function_3A),
+        Est_DerV_Function_3A(_Function_3A),
+        Est_DerW_Function_3A(_Function_3A)
     )
 
 #end // macro Est_Der1_Functions_3A
@@ -173,7 +173,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Est_Der1U_Function_4A(_Function_4A)
+#macro Est_DerU_Function_4A(_Function_4A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -186,10 +186,10 @@ which can be found in the LICENSE file.
         )/H2
     }
 
-#end // macro Est_Der1U_Function_4A
+#end // macro Est_DerU_Function_4A
 
 
-#macro Est_Der1V_Function_4A(_Function_4A)
+#macro Est_DerV_Function_4A(_Function_4A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -202,10 +202,10 @@ which can be found in the LICENSE file.
         )/H2
     }
 
-#end // macro Est_Der1V_Function_4A
+#end // macro Est_DerV_Function_4A
 
 
-#macro Est_Der1W_Function_4A(_Function_4A)
+#macro Est_DerW_Function_4A(_Function_4A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -218,10 +218,10 @@ which can be found in the LICENSE file.
         )/H2
     }
 
-#end // macro Est_Der1W_Function_4A
+#end // macro Est_DerW_Function_4A
 
 
-#macro Est_Der1S_Function_4A(_Function_4A)
+#macro Est_DerS_Function_4A(_Function_4A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -234,16 +234,16 @@ which can be found in the LICENSE file.
         )/H2
     }
 
-#end // macro Est_Der1S_Function_4A
+#end // macro Est_DerS_Function_4A
 
 
 #macro Est_Der1_Functions_4A(_Function_4A)
 
     Arr_4E(
-        Est_Der1U_Function_4A(_Function_4A),
-        Est_Der1V_Function_4A(_Function_4A),
-        Est_Der1W_Function_4A(_Function_4A),
-        Est_Der1S_Function_4A(_Function_4A)
+        Est_DerU_Function_4A(_Function_4A),
+        Est_DerV_Function_4A(_Function_4A),
+        Est_DerW_Function_4A(_Function_4A),
+        Est_DerS_Function_4A(_Function_4A)
     )
 
 #end // macro Est_Der1_Functions_4A
@@ -259,7 +259,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Est_Der2U_Function_1A(_Function_1A)
+#macro Est_DerUU_Function_1A(_Function_1A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local HH = pow(H1, 2);
@@ -276,20 +276,20 @@ which can be found in the LICENSE file.
         )/HH
     }
 
-#end // macro Est_Der2U_Function_1A
+#end // macro Est_DerUU_Function_1A
 
 
 #macro Est_Der2_Functions_1A(_Function_1A)
 
     Arr_1E(
-        Est_Der2U_Function_1A(_Function_1A)
+        Est_DerUU_Function_1A(_Function_1A)
     )
 
 #end // macro Est_Der2_Functions_1A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Est_Der2U_Function_2A(_Function_2A)
+#macro Est_DerUU_Function_2A(_Function_2A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local HH = pow(H1, 2);
@@ -306,10 +306,10 @@ which can be found in the LICENSE file.
         )/HH
     }
 
-#end // macro Est_Der2U_Function_2A
+#end // macro Est_DerUU_Function_2A
 
 
-#macro Est_Der2V_Function_2A(_Function_2A)
+#macro Est_DerVV_Function_2A(_Function_2A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local HH = pow(H1, 2);
@@ -326,21 +326,21 @@ which can be found in the LICENSE file.
         )/HH
     }
 
-#end // macro Est_Der2V_Function_2A
+#end // macro Est_DerVV_Function_2A
 
 
 #macro Est_Der2_Functions_2A(_Function_2A)
 
     Arr_2E(
-        Est_Der2U_Function_2A(_Function_2A),
-        Est_Der2V_Function_2A(_Function_2A)
+        Est_DerUU_Function_2A(_Function_2A),
+        Est_DerVV_Function_2A(_Function_2A)
     )
 
 #end // macro Est_Der2_Functions_2A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Est_Der2U_Function_3A(_Function_3A)
+#macro Est_DerUU_Function_3A(_Function_3A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local HH = pow(H1, 2);
@@ -357,10 +357,10 @@ which can be found in the LICENSE file.
         )/HH
     }
 
-#end // macro Est_Der2U_Function_3A
+#end // macro Est_DerUU_Function_3A
 
 
-#macro Est_Der2V_Function_3A(_Function_3A)
+#macro Est_DerVV_Function_3A(_Function_3A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local HH = pow(H1, 2);
@@ -377,10 +377,10 @@ which can be found in the LICENSE file.
         )/HH
     }
 
-#end // macro Est_Der2V_Function_3A
+#end // macro Est_DerVV_Function_3A
 
 
-#macro Est_Der2W_Function_3A(_Function_3A)
+#macro Est_DerWW_Function_3A(_Function_3A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local HH = pow(H1, 2);
@@ -397,22 +397,22 @@ which can be found in the LICENSE file.
         )/HH
     }
 
-#end // Est_Der2W_Function_3A
+#end // Est_DerWW_Function_3A
 
 
 #macro Est_Der2_Functions_3A(_Function_3A)
 
     Arr_3E(
-        Est_Der2U_Function_3A(_Function_3A),
-        Est_Der2V_Function_3A(_Function_3A),
-        Est_Der2W_Function_3A(_Function_3A)
+        Est_DerUU_Function_3A(_Function_3A),
+        Est_DerVV_Function_3A(_Function_3A),
+        Est_DerWW_Function_3A(_Function_3A)
     )
 
 #end // macro Est_Der2_Functions_3A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Est_Der2U_Function_4A(_Function_4A)
+#macro Est_DerUU_Function_4A(_Function_4A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local HH = pow(H1, 2);
@@ -429,10 +429,10 @@ which can be found in the LICENSE file.
         )/HH
     }
 
-#end // macro Est_Der2U_Function_4A
+#end // macro Est_DerUU_Function_4A
 
 
-#macro Est_Der2V_Function_4A(_Function_4A)
+#macro Est_DerVV_Function_4A(_Function_4A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local HH = pow(H1, 2);
@@ -449,10 +449,10 @@ which can be found in the LICENSE file.
         )/HH
     }
 
-#end // macro Est_Der2V_Function_4A
+#end // macro Est_DerVV_Function_4A
 
 
-#macro Est_Der2W_Function_4A(_Function_4A)
+#macro Est_DerWW_Function_4A(_Function_4A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local HH = pow(H1, 2);
@@ -469,10 +469,10 @@ which can be found in the LICENSE file.
         )/HH
     }
 
-#end // macro Est_Der2W_Function_4A
+#end // macro Est_DerWW_Function_4A
 
 
-#macro Est_Der2S_Function_4A(_Function_4A)
+#macro Est_DerSS_Function_4A(_Function_4A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local HH = pow(H1, 2);
@@ -489,23 +489,23 @@ which can be found in the LICENSE file.
         )/HH
     }
 
-#end // macro Est_Der2S_Function_4A
+#end // macro Est_DerSS_Function_4A
 
 
 #macro Est_Der2_Functions_4A(_Function_4A)
 
     Arr_4E(
-        Est_Der2U_Function_4A(_Function_4A),
-        Est_Der2V_Function_4A(_Function_4A),
-        Est_Der2W_Function_4A(_Function_4A),
-        Est_Der2S_Function_4A(_Function_4A)
+        Est_DerUU_Function_4A(_Function_4A),
+        Est_DerVV_Function_4A(_Function_4A),
+        Est_DerWW_Function_4A(_Function_4A),
+        Est_DerSS_Function_4A(_Function_4A)
     )
 
 #end // macro Est_Der2_Functions_4A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Est_Der3U_Function_1A(_Function_1A)
+#macro Est_DerUUU_Function_1A(_Function_1A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -527,20 +527,20 @@ which can be found in the LICENSE file.
         )/HHH2
     }
 
-#end // macro Est_Der3U_Function_1A
+#end // macro Est_DerUUU_Function_1A
 
 
 #macro Est_Der3_Functions_1A(_Function_1A)
 
     Arr_1E(
-        Est_Der3U_Function_1A(_Function_1A)
+        Est_DerUUU_Function_1A(_Function_1A)
     )
 
 #end // macro Est_Der3_Functions_1A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Est_Der3U_Function_2A(_Function_2A)
+#macro Est_DerUUU_Function_2A(_Function_2A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -562,10 +562,10 @@ which can be found in the LICENSE file.
         )/HHH2
     }
 
-#end // macro Est_Der3U_Function_2A
+#end // macro Est_DerUUU_Function_2A
 
 
-#macro Est_Der3V_Function_2A(_Function_2A)
+#macro Est_DerVVV_Function_2A(_Function_2A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -587,21 +587,21 @@ which can be found in the LICENSE file.
         )/HHH2
     }
 
-#end // macro Est_Der3V_Function_2A
+#end // macro Est_DerVVV_Function_2A
 
 
 #macro Est_Der3_Functions_2A(_Function_2A)
 
     Arr_2E(
-        Est_Der3U_Function_2A(_Function_2A),
-        Est_Der3V_Function_2A(_Function_2A)
+        Est_DerUUU_Function_2A(_Function_2A),
+        Est_DerVVV_Function_2A(_Function_2A)
     )
 
 #end // macro Est_Der3_Functions_2A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Est_Der3U_Function_3A(_Function_3A)
+#macro Est_DerUUU_Function_3A(_Function_3A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -623,10 +623,10 @@ which can be found in the LICENSE file.
         )/HHH2
     }
 
-#end // macro Est_Der3U_Function_3A
+#end // macro Est_DerUUU_Function_3A
 
 
-#macro Est_Der3V_Function_3A(_Function_3A)
+#macro Est_DerVVV_Function_3A(_Function_3A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -648,10 +648,10 @@ which can be found in the LICENSE file.
         )/HHH2
     }
 
-#end // macro Est_Der3V_Function_3A
+#end // macro Est_DerVVV_Function_3A
 
 
-#macro Est_Der3W_Function_3A(_Function_3A)
+#macro Est_DerWWW_Function_3A(_Function_3A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -673,22 +673,22 @@ which can be found in the LICENSE file.
         )/HHH2
     }
 
-#end // macro Est_Der3W_Function_3A
+#end // macro Est_DerWWW_Function_3A
 
 
 #macro Est_Der3_Functions_3A(_Function_3A)
 
     Arr_3E(
-        Est_Der3U_Function_3A(_Function_3A),
-        Est_Der3V_Function_3A(_Function_3A),
-        Est_Der3W_Function_3A(_Function_3A)
+        Est_DerUUU_Function_3A(_Function_3A),
+        Est_DerVVV_Function_3A(_Function_3A),
+        Est_DerWWW_Function_3A(_Function_3A)
     )
 
 #end // macro Est_Der3_Functions_3A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
 
-#macro Est_Der3U_Function_4A(_Function_4A)
+#macro Est_DerUUU_Function_4A(_Function_4A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -710,10 +710,10 @@ which can be found in the LICENSE file.
         )/HHH2
     }
 
-#end // macro Est_Der3U_Function_4A
+#end // macro Est_DerUUU_Function_4A
 
 
-#macro Est_Der3V_Function_4A(_Function_4A)
+#macro Est_DerVVV_Function_4A(_Function_4A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -735,10 +735,10 @@ which can be found in the LICENSE file.
         )/HHH2
     }
 
-#end // macro Est_Der3V_Function_4A
+#end // macro Est_DerVVV_Function_4A
 
 
-#macro Est_Der3W_Function_4A(_Function_4A)
+#macro Est_DerWWW_Function_4A(_Function_4A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -760,10 +760,10 @@ which can be found in the LICENSE file.
         )/HHH2
     }
 
-#end // macro Est_Der3W_Function_4A
+#end // macro Est_DerWWW_Function_4A
 
 
-#macro Est_Der3S_Function_4A(_Function_4A)
+#macro Est_DerSSS_Function_4A(_Function_4A)
 
     #local H1 = NUM_DIFF_STEP_SIZE;
     #local H2 = H1*2;
@@ -785,16 +785,16 @@ which can be found in the LICENSE file.
         )/HHH2
     }
 
-#end // macro Est_Der3S_Function_4A
+#end // macro Est_DerSSS_Function_4A
 
 
 #macro Est_Der3_Functions_4A(_Function_4A)
 
     Arr_4E(
-        Est_Der3U_Function_4A(_Function_4A),
-        Est_Der3V_Function_4A(_Function_4A),
-        Est_Der3W_Function_4A(_Function_4A),
-        Est_Der3S_Function_4A(_Function_4A)
+        Est_DerUUU_Function_4A(_Function_4A),
+        Est_DerVVV_Function_4A(_Function_4A),
+        Est_DerWWW_Function_4A(_Function_4A),
+        Est_DerSSS_Function_4A(_Function_4A)
     )
 
 #end // macro Est_Der3_Functions_4A
