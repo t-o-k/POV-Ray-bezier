@@ -17,35 +17,6 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro x_E(Array)
-
-    Array[0]
-
-#end // macro x_E
-
-
-#macro y_E(Array)
-
-    Array[1]
-
-#end // macro y_E
-
-
-#macro z_E(Array)
-
-    Array[2]
-
-#end // macro z_E
-
-
-#macro t_E(Array)
-
-    Array[3]
-
-#end // macro t_E
-
-// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
-
 #macro E_FundamentalFn(Array)
 
     Array[0]
