@@ -19,14 +19,14 @@ which can be found in the LICENSE file.
 
 #macro Est_DerU_Function_1A(_Function_1A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
 
     function(_u) {
         (
-            _Function_1A(_u + H1)
+            _Function_1A(_u + H)
             -
-            _Function_1A(_u - H1)
+            _Function_1A(_u - H)
         )/H2
     }
 
@@ -54,14 +54,14 @@ which can be found in the LICENSE file.
 
 #macro Est_DerU_Function_2A(_Function_2A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
 
     function(_u, _v) {
         (
-            _Function_2A(_u + H1, _v)
+            _Function_2A(_u + H, _v)
             -
-            _Function_2A(_u - H1, _v)
+            _Function_2A(_u - H, _v)
         )/H2
     }
 
@@ -70,14 +70,14 @@ which can be found in the LICENSE file.
 
 #macro Est_DerV_Function_2A(_Function_2A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
 
     function(_u, _v) {
         (
-            _Function_2A(_u, _v + H1)
+            _Function_2A(_u, _v + H)
             -
-            _Function_2A(_u, _v - H1)
+            _Function_2A(_u, _v - H)
         )/H2
     }
 
@@ -106,14 +106,14 @@ which can be found in the LICENSE file.
 
 #macro Est_DerU_Function_3A(_Function_3A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
 
     function(_u, _v, _w) {
         (
-            _Function_3A(_u + H1, _v, _w)
+            _Function_3A(_u + H, _v, _w)
             -
-            _Function_3A(_u - H1, _v, _w)
+            _Function_3A(_u - H, _v, _w)
         )/H2
     }
 
@@ -122,14 +122,14 @@ which can be found in the LICENSE file.
 
 #macro Est_DerV_Function_3A(_Function_3A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
 
     function(_u, _v, _w) {
         (
-            _Function_3A(_u, _v + H1, _w)
+            _Function_3A(_u, _v + H, _w)
             -
-            _Function_3A(_u, _v - H1, _w)
+            _Function_3A(_u, _v - H, _w)
         )/H2
     }
 
@@ -138,14 +138,14 @@ which can be found in the LICENSE file.
 
 #macro Est_DerW_Function_3A(_Function_3A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
 
     function(_u, _v, _w) {
         (
-            _Function_3A(_u, _v, _w + H1)
+            _Function_3A(_u, _v, _w + H)
             -
-            _Function_3A(_u, _v, _w - H1)
+            _Function_3A(_u, _v, _w - H)
         )/H2
     }
 
@@ -175,14 +175,14 @@ which can be found in the LICENSE file.
 
 #macro Est_DerU_Function_4A(_Function_4A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
 
     function(_u, _v, _w, _s) {
         (
-            _Function_4A(_u + H1, _v, _w, _s)
+            _Function_4A(_u + H, _v, _w, _s)
             -
-            _Function_4A(_u - H1, _v, _w, _s)
+            _Function_4A(_u - H, _v, _w, _s)
         )/H2
     }
 
@@ -191,14 +191,14 @@ which can be found in the LICENSE file.
 
 #macro Est_DerV_Function_4A(_Function_4A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
 
     function(_u, _v, _w, _s) {
         (
-            _Function_4A(_u, _v + H1, _w, _s)
+            _Function_4A(_u, _v + H, _w, _s)
             -
-            _Function_4A(_u, _v - H1, _w, _s)
+            _Function_4A(_u, _v - H, _w, _s)
         )/H2
     }
 
@@ -207,14 +207,14 @@ which can be found in the LICENSE file.
 
 #macro Est_DerW_Function_4A(_Function_4A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
 
     function(_u, _v, _w, _s) {
         (
-            _Function_4A(_u, _v, _w + H1, _s)
+            _Function_4A(_u, _v, _w + H, _s)
             -
-            _Function_4A(_u, _v, _w - H1, _s)
+            _Function_4A(_u, _v, _w - H, _s)
         )/H2
     }
 
@@ -223,14 +223,14 @@ which can be found in the LICENSE file.
 
 #macro Est_DerS_Function_4A(_Function_4A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
 
     function(_u, _v, _w, _s) {
         (
-            _Function_4A(_u, _v, _w, _s + H1)
+            _Function_4A(_u, _v, _w, _s + H)
             -
-            _Function_4A(_u, _v, _w, _s - H1)
+            _Function_4A(_u, _v, _w, _s - H)
         )/H2
     }
 
@@ -261,15 +261,15 @@ which can be found in the LICENSE file.
 
 #macro Est_DerUU_Function_1A(_Function_1A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local HH = pow(H1, 2);
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HH = pow(H, 2);
 
     function(_u) {
         (
             (
-                _Function_1A(_u + H1)
+                _Function_1A(_u + H)
                 +
-                _Function_1A(_u - H1)
+                _Function_1A(_u - H)
             )
             -
             _Function_1A(_u)*2
@@ -291,15 +291,15 @@ which can be found in the LICENSE file.
 
 #macro Est_DerUU_Function_2A(_Function_2A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local HH = pow(H1, 2);
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HH = pow(H, 2);
 
     function(_u, _v) {
         (
             (
-                _Function_2A(_u + H1, _v)
+                _Function_2A(_u + H, _v)
                 +
-                _Function_2A(_u - H1, _v)
+                _Function_2A(_u - H, _v)
             )
             -
             _Function_2A(_u, _v)*2
@@ -311,15 +311,15 @@ which can be found in the LICENSE file.
 
 #macro Est_DerVV_Function_2A(_Function_2A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local HH = pow(H1, 2);
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HH = pow(H, 2);
 
     function(_u, _v) {
         (
             (
-                _Function_2A(_u, _v + H1)
+                _Function_2A(_u, _v + H)
                 +
-                _Function_2A(_u, _v - H1)
+                _Function_2A(_u, _v - H)
             )
             -
             _Function_2A(_u, _v)*2
@@ -342,15 +342,15 @@ which can be found in the LICENSE file.
 
 #macro Est_DerUU_Function_3A(_Function_3A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local HH = pow(H1, 2);
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HH = pow(H, 2);
 
     function(_u, _v, _w) {
         (
             (
-                _Function_3A(_u + H1, _v, _w)
+                _Function_3A(_u + H, _v, _w)
                 +
-                _Function_3A(_u - H1, _v, _w)
+                _Function_3A(_u - H, _v, _w)
             )
             -
             _Function_3A(_u, _v, _w)*2
@@ -362,15 +362,15 @@ which can be found in the LICENSE file.
 
 #macro Est_DerVV_Function_3A(_Function_3A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local HH = pow(H1, 2);
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HH = pow(H, 2);
 
     function(_u, _v, _w) {
         (
             (
-                _Function_3A(_u, _v + H1, _w)
+                _Function_3A(_u, _v + H, _w)
                 +
-                _Function_3A(_u, _v - H1, _w)
+                _Function_3A(_u, _v - H, _w)
             )
             -
             _Function_3A(_u, _v, _w)*2
@@ -382,15 +382,15 @@ which can be found in the LICENSE file.
 
 #macro Est_DerWW_Function_3A(_Function_3A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local HH = pow(H1, 2);
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HH = pow(H, 2);
 
     function(_u, _v, _w) {
         (
             (
-                _Function_3A(_u, _v, _w + H1)
+                _Function_3A(_u, _v, _w + H)
                 +
-                _Function_3A(_u, _v, _w - H1)
+                _Function_3A(_u, _v, _w - H)
             )
             -
             _Function_3A(_u, _v, _w)*2
@@ -414,15 +414,15 @@ which can be found in the LICENSE file.
 
 #macro Est_DerUU_Function_4A(_Function_4A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local HH = pow(H1, 2);
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HH = pow(H, 2);
 
     function(_u, _v, _w, _s) {
         (
             (
-                _Function_4A(_u + H1, _v, _w, _s)
+                _Function_4A(_u + H, _v, _w, _s)
                 +
-                _Function_4A(_u - H1, _v, _w, _s)
+                _Function_4A(_u - H, _v, _w, _s)
             )
             -
             _Function_4A(_u, _v, _w, _s)*2
@@ -434,15 +434,15 @@ which can be found in the LICENSE file.
 
 #macro Est_DerVV_Function_4A(_Function_4A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local HH = pow(H1, 2);
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HH = pow(H, 2);
 
     function(_u, _v, _w, _s) {
         (
             (
-                _Function_4A(_u, _v + H1, _w, _s)
+                _Function_4A(_u, _v + H, _w, _s)
                 +
-                _Function_4A(_u, _v - H1, _w, _s)
+                _Function_4A(_u, _v - H, _w, _s)
             )
             -
             _Function_4A(_u, _v, _w, _s)*2
@@ -454,15 +454,15 @@ which can be found in the LICENSE file.
 
 #macro Est_DerWW_Function_4A(_Function_4A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local HH = pow(H1, 2);
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HH = pow(H, 2);
 
     function(_u, _v, _w, _s) {
         (
             (
-                _Function_4A(_u, _v, _w + H1, _s)
+                _Function_4A(_u, _v, _w + H, _s)
                 +
-                _Function_4A(_u, _v, _w - H1, _s)
+                _Function_4A(_u, _v, _w - H, _s)
             )
             -
             _Function_4A(_u, _v, _w, _s)*2
@@ -474,15 +474,15 @@ which can be found in the LICENSE file.
 
 #macro Est_DerSS_Function_4A(_Function_4A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local HH = pow(H1, 2);
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local HH = pow(H, 2);
 
     function(_u, _v, _w, _s) {
         (
             (
-                _Function_4A(_u, _v, _w, _s + H1)
+                _Function_4A(_u, _v, _w, _s + H)
                 +
-                _Function_4A(_u, _v, _w, _s - H1)
+                _Function_4A(_u, _v, _w, _s - H)
             )
             -
             _Function_4A(_u, _v, _w, _s)*2
@@ -507,16 +507,16 @@ which can be found in the LICENSE file.
 
 #macro Est_DerUUU_Function_1A(_Function_1A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
-    #local HHH2 = pow(H1, 3)*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
+    #local HHH2 = pow(H, 3)*2;
 
     function(_u) {
         (
             (
-                _Function_1A(_u - H1)
+                _Function_1A(_u - H)
                 -
-                _Function_1A(_u + H1)
+                _Function_1A(_u + H)
             )*2
             +
             (
@@ -542,16 +542,16 @@ which can be found in the LICENSE file.
 
 #macro Est_DerUUU_Function_2A(_Function_2A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
-    #local HHH2 = pow(H1, 3)*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
+    #local HHH2 = pow(H, 3)*2;
 
     function(_u, _v) {
         (
             (
-                _Function_2A(_u - H1, _v)
+                _Function_2A(_u - H, _v)
                 -
-                _Function_2A(_u + H1, _v)
+                _Function_2A(_u + H, _v)
             )*2
             +
             (
@@ -567,16 +567,16 @@ which can be found in the LICENSE file.
 
 #macro Est_DerVVV_Function_2A(_Function_2A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
-    #local HHH2 = pow(H1, 3)*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
+    #local HHH2 = pow(H, 3)*2;
 
     function(_u, _v) {
         (
             (
-                _Function_2A(_u, _v - H1)
+                _Function_2A(_u, _v - H)
                 -
-                _Function_2A(_u, _v + H1)
+                _Function_2A(_u, _v + H)
             )*2
             +
             (
@@ -603,16 +603,16 @@ which can be found in the LICENSE file.
 
 #macro Est_DerUUU_Function_3A(_Function_3A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
-    #local HHH2 = pow(H1, 3)*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
+    #local HHH2 = pow(H, 3)*2;
 
     function(_u, _v, _w) {
         (
             (
-                _Function_3A(_u - H1, _v, _w)
+                _Function_3A(_u - H, _v, _w)
                 -
-                _Function_3A(_u + H1, _v, _w)
+                _Function_3A(_u + H, _v, _w)
             )*2
             +
             (
@@ -628,16 +628,16 @@ which can be found in the LICENSE file.
 
 #macro Est_DerVVV_Function_3A(_Function_3A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
-    #local HHH2 = pow(H1, 3)*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
+    #local HHH2 = pow(H, 3)*2;
 
     function(_u, _v, _w) {
         (
             (
-                _Function_3A(_u, _v - H1, _w)
+                _Function_3A(_u, _v - H, _w)
                 -
-                _Function_3A(_u, _v + H1, _w)
+                _Function_3A(_u, _v + H, _w)
             )*2
             +
             (
@@ -653,16 +653,16 @@ which can be found in the LICENSE file.
 
 #macro Est_DerWWW_Function_3A(_Function_3A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
-    #local HHH2 = pow(H1, 3)*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
+    #local HHH2 = pow(H, 3)*2;
 
     function(_u, _v, _w) {
         (
             (
-                _Function_3A(_u, _v, _w - H1)
+                _Function_3A(_u, _v, _w - H)
                 -
-                _Function_3A(_u, _v, _w + H1)
+                _Function_3A(_u, _v, _w + H)
             )*2
             +
             (
@@ -690,16 +690,16 @@ which can be found in the LICENSE file.
 
 #macro Est_DerUUU_Function_4A(_Function_4A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
-    #local HHH2 = pow(H1, 3)*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
+    #local HHH2 = pow(H, 3)*2;
 
     function(_u, _v, _w, _s) {
         (
             (
-                _Function_4A(_u - H1, _v, _w, _s)
+                _Function_4A(_u - H, _v, _w, _s)
                 -
-                _Function_4A(_u + H1, _v, _w, _s)
+                _Function_4A(_u + H, _v, _w, _s)
             )*2
             +
             (
@@ -715,16 +715,16 @@ which can be found in the LICENSE file.
 
 #macro Est_DerVVV_Function_4A(_Function_4A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
-    #local HHH2 = pow(H1, 3)*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
+    #local HHH2 = pow(H, 3)*2;
 
     function(_u, _v, _w, _s) {
         (
             (
-                _Function_4A(_u, _v - H1, _w, _s)
+                _Function_4A(_u, _v - H, _w, _s)
                 -
-                _Function_4A(_u, _v + H1, _w, _s)
+                _Function_4A(_u, _v + H, _w, _s)
             )*2
             +
             (
@@ -740,16 +740,16 @@ which can be found in the LICENSE file.
 
 #macro Est_DerWWW_Function_4A(_Function_4A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
-    #local HHH2 = pow(H1, 3)*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
+    #local HHH2 = pow(H, 3)*2;
 
     function(_u, _v, _w, _s) {
         (
             (
-                _Function_4A(_u, _v, _w - H1, _s)
+                _Function_4A(_u, _v, _w - H, _s)
                 -
-                _Function_4A(_u, _v, _w + H1, _s)
+                _Function_4A(_u, _v, _w + H, _s)
             )*2
             +
             (
@@ -765,16 +765,16 @@ which can be found in the LICENSE file.
 
 #macro Est_DerSSS_Function_4A(_Function_4A)
 
-    #local H1 = NUM_DIFF_STEP_SIZE;
-    #local H2 = H1*2;
-    #local HHH2 = pow(H1, 3)*2;
+    #local H = NUM_DIFF_STEP_SIZE;
+    #local H2 = H*2;
+    #local HHH2 = pow(H, 3)*2;
 
     function(_u, _v, _w, _s) {
         (
             (
-                _Function_4A(_u, _v, _w, _s - H1)
+                _Function_4A(_u, _v, _w, _s - H)
                 -
-                _Function_4A(_u, _v, _w, _s + H1)
+                _Function_4A(_u, _v, _w, _s + H)
             )*2
             +
             (
