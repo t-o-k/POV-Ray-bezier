@@ -3,7 +3,7 @@
 
 https://github.com/t-o-k/POV-Ray-bezier
 
-Copyright (c) 2026 Tor Olav Kristensen, http://subcube.com
+Copyright (c) 2025-2026 Tor Olav Kristensen, http://subcube.com
 
 Use of this source code is governed by the GNU Lesser General Public License version 3,
 which can be found in the LICENSE file.
