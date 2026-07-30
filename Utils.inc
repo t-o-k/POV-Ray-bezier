@@ -184,3 +184,32 @@ which can be found in the LICENSE file.
 #end // macro DimSize_L
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro u_E(Array)
+
+    Array[0]
+
+#end // macro u_E
+
+
+#macro v_E(Array)
+
+    Array[1]
+
+#end // macro v_E
+
+
+#macro w_E(Array)
+
+    Array[2]
+
+#end // macro w_E
+
+
+#macro s_E(Array)
+
+    Array[3]
+
+#end // macro s_E
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
