@@ -3960,7 +3960,7 @@ This does not work:
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro Der2_RationalFunction_1A(_NumFn_1A, _DenFn_1A, _D1NumFn_1A, _D1DenFn_1A, _D2NumFn_1A, _D2DenFn_1A)
+#macro Der11_RationalFunction_1A(_NumFn_1A, _DenFn_1A, _D1NumFn_1A, _D1DenFn_1A, _D11NumFn_1A, _D11DenFn_1A)
 
     function(_u) {
         _Der11_RationalFn(
@@ -3968,15 +3968,15 @@ This does not work:
             _DenFn_1A(_u),
             _D1NumFn_1A(_u),
             _D1DenFn_1A(_u),
-            _D2NumFn_1A(_u),
-            _D2DenFn_1A(_u)
+            _D11NumFn_1A(_u),
+            _D11DenFn_1A(_u)
         )
     }
 
-#end // macro Der2_RationalFunction_1A
+#end // macro Der11_RationalFunction_1A
 
 
-#macro Der2_RationalFunction_2A(_NumFn_2A, _DenFn_2A, _D1NumFn_2A, _D1DenFn_2A, _D2NumFn_2A, _D2DenFn_2A)
+#macro Der11_RationalFunction_2A(_NumFn_2A, _DenFn_2A, _D1NumFn_2A, _D1DenFn_2A, _D11NumFn_2A, _D11DenFn_2A)
 
     function(_u, _v) {
         _Der11_RationalFn(
@@ -3984,15 +3984,15 @@ This does not work:
             _DenFn_2A(_u, _v),
             _D1NumFn_2A(_u, _v),
             _D1DenFn_2A(_u, _v),
-            _D2NumFn_2A(_u, _v),
-            _D2DenFn_2A(_u, _v)
+            _D11NumFn_2A(_u, _v),
+            _D11DenFn_2A(_u, _v)
         )
     }
 
-#end // macro Der2_RationalFunction_2A
+#end // macro Der11_RationalFunction_2A
 
 
-#macro Der2_RationalFunction_3A(_NumFn_3A, _DenFn_3A, _D1NumFn_3A, _D1DenFn_3A, _D2NumFn_3A, _D2DenFn_3A)
+#macro Der11_RationalFunction_3A(_NumFn_3A, _DenFn_3A, _D1NumFn_3A, _D1DenFn_3A, _D11NumFn_3A, _D11DenFn_3A)
 
     function(_u, _v, _w) {
         _Der11_RationalFn(
@@ -4000,15 +4000,15 @@ This does not work:
             _DenFn_3A(_u, _v, _w),
             _D1NumFn_3A(_u, _v, _w),
             _D1DenFn_3A(_u, _v, _w),
-            _D2NumFn_3A(_u, _v, _w),
-            _D2DenFn_3A(_u, _v, _w)
+            _D11NumFn_3A(_u, _v, _w),
+            _D11DenFn_3A(_u, _v, _w)
         )
     }
 
-#end // macro Der2_RationalFunction_3A
+#end // macro Der11_RationalFunction_3A
 
 
-#macro Der2_RationalFunction_4A(_NumFn_4A, _DenFn_4A, _D1NumFn_4A, _D1DenFn_4A, _D2NumFn_4A, _D2DenFn_4A)
+#macro Der11_RationalFunction_4A(_NumFn_4A, _DenFn_4A, _D1NumFn_4A, _D1DenFn_4A, _D11NumFn_4A, _D11DenFn_4A)
 
     function(_u, _v, _w, _s) {
         _Der11_RationalFn(
@@ -4016,12 +4016,12 @@ This does not work:
             _DenFn_4A(_u, _v, _w, _s),
             _D1NumFn_4A(_u, _v, _w, _s),
             _D1DenFn_4A(_u, _v, _w, _s),
-            _D2NumFn_4A(_u, _v, _w, _s),
-            _D2DenFn_4A(_u, _v, _w, _s)
+            _D11NumFn_4A(_u, _v, _w, _s),
+            _D11DenFn_4A(_u, _v, _w, _s)
         )
     }
 
-#end // macro Der2_RationalFunction_4A
+#end // macro Der11_RationalFunction_4A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
