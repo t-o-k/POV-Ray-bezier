@@ -271,3 +271,32 @@ which can be found in the LICENSE file.
 #end // macro t_E
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
+
+#macro u_C(vP)
+
+    vP.x
+
+#end // macro u_C
+
+
+#macro v_C(vP)
+
+    vP.y
+
+#end // macro v_C
+
+
+#macro w_C(vP)
+
+    vP.z
+
+#end // macro w_C
+
+
+#macro s_C(vP)
+
+    vP.t
+
+#end // macro s_C
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
