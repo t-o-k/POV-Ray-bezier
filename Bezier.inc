@@ -1387,6 +1387,133 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
+#macro HodographDerive_1N(ValuesOrPoints_1N, DerivationString)
+
+    #local N = dimensions(ValuesOrPoints_1N);
+    #if (N != 1)
+        #error "N is not 1"
+    #end // if
+    #local PP_1N = ValuesOrPoints_1N;
+    #local DerStr = strlwr(DerivationString)
+    #local Length = strlen(DerStr);
+    #if (Length > 0)
+        #for (M, 1, Length)
+            #local Char = substr(DerStr, M, 1)
+            #switch (asc(Char))
+                #case (asc("u"))
+                    #local PP_1N = Hodograph_I_1N(PP_1N, 1);
+                    #break
+                #else
+                    #error "Invalid character in derivation string"
+            #end // switch
+        #end // for
+    #end //if
+
+    PP_1N
+
+#end // macro HodographDerive_1N
+
+
+#macro HodographDerive_2N(ValuesOrPoints_2N, DerivationString)
+
+    #local N = dimensions(ValuesOrPoints_2N);
+    #if (N != 2)
+        #error "N is not 2"
+    #end // if
+    #local PP_2N = ValuesOrPoints_2N;
+    #local DerStr = strlwr(DerivationString)
+    #local Length = strlen(DerStr);
+    #if (Length > 0)
+        #for (M, 1, Length)
+            #local Char = substr(DerStr, M, 1)
+            #switch (asc(Char))
+                #case (asc("u"))
+                    #local PP_2N = Hodograph_I_2N(PP_2N, 1);
+                    #break
+                #case (asc("v"))
+                    #local PP_2N = Hodograph_J_2N(PP_2N, 1);
+                    #break
+                #else
+                    #error "Invalid character in derivation string"
+            #end // switch
+        #end // for
+    #end //if
+
+    PP_2N
+
+#end // macro HodographDerive_2N
+
+
+#macro HodographDerive_3N(ValuesOrPoints_3N, DerivationString)
+
+    #local N = dimensions(ValuesOrPoints_3N);
+    #if (N != 3)
+        #error "N is not 3"
+    #end // if
+    #local PP_3N = ValuesOrPoints_3N;
+    #local DerStr = strlwr(DerivationString)
+    #local Length = strlen(DerStr);
+    #if (Length > 0)
+        #for (M, 1, Length)
+            #local Char = substr(DerStr, M, 1)
+            #switch (asc(Char))
+                #case (asc("u"))
+                    #local PP_3N = Hodograph_I_3N(PP_3N, 1);
+                    #break
+                #case (asc("v"))
+                    #local PP_3N = Hodograph_J_3N(PP_3N, 1);
+                    #break
+                #case (asc("w"))
+                    #local PP_3N = Hodograph_K_3N(PP_3N, 1);
+                    #break
+                #else
+                    #error "Invalid character in derivation string"
+            #end // switch
+        #end // for
+    #end //if
+
+    PP_3N
+
+#end // macro HodographDerive_3N
+
+
+#macro HodographDerive_4N(ValuesOrPoints_4N, DerivationString)
+
+    #local N = dimensions(ValuesOrPoints_4N);
+    #if (N != 4)
+        #error "N is not 4"
+    #end // if
+    #local PP_4N = ValuesOrPoints_4N;
+    #local DerStr = strlwr(DerivationString)
+    #local Length = strlen(DerStr);
+    #if (Length > 0)
+        #for (M, 1, Length)
+            #local Char = substr(DerStr, M, 1)
+            #switch (asc(Char))
+                #case (asc("u"))
+                    #local PP_4N = Hodograph_I_4N(PP_4N, 1);
+                    #break
+                #case (asc("v"))
+                    #local PP_4N = Hodograph_J_4N(PP_4N, 1);
+                    #break
+                #case (asc("w"))
+                    #local PP_4N = Hodograph_K_4N(PP_4N, 1);
+                    #break
+                #case (asc("s"))
+                    #local PP_4N = Hodograph_L_4N(PP_4N, 1);
+                    #break
+                #else
+                    #error "Invalid character in derivation string"
+            #end // switch
+        #end // for
+    #end //if
+
+    PP_4N
+
+#end // macro HodographDerive_4N
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
 #macro From_1N_DerU_BezierFunction_1A(Values_1N)
 
     #local N = dimensions(Values_1N);
