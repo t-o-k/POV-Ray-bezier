@@ -1514,26 +1514,56 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro From_1N_DerU_BezierFunction_1A(Values_1N)
-
-    #local N = dimensions(Values_1N);
-    #if (N != 1)
-        #error "N is not 1"
-    #end // if
-    #if (DimSize_I(Values_1N) < 2)
-        #error "Is less than 2"
-    #end // if
+#macro From_1N_Der_BezierFunction_1A(Values_1N, DerivationString)
 
     From_1N_BezierFunction_1A(
-        Hodograph_I_1N(
-            Values_1N, 1
+        HodographDerive_1N(
+            Values_1N,
+            DerivationString
         )
     )
-    
-#end // macro From_1N_DerU_BezierFunction_1A
+
+#end // macro From_1N_Der_BezierFunction_1A
 
 
-#macro Der1_BezierFunctions_1A(Values_1N)
+#macro From_2N_Der_BezierFunction_2A(Values_2N, DerivationString)
+
+    From_2N_BezierFunction_2A(
+        HodographDerive_2N(
+            Values_2N,
+            DerivationString
+        )
+    )
+
+#end // macro From_2N_Der_BezierFunction_2A
+
+
+#macro From_3N_Der_BezierFunction_3A(Values_3N, DerivationString)
+
+    From_3N_BezierFunction_3A(
+        HodographDerive_3N(
+            Values_3N,
+            DerivationString
+        )
+    )
+
+#end // macro From_3N_Der_BezierFunction_3A
+
+
+#macro From_4N_Der_BezierFunction_4A(Values_4N, DerivationString)
+
+    From_4N_BezierFunction_4A(
+        HodographDerive_4N(
+            Values_4N,
+            DerivationString
+        )
+    )
+
+#end // macro From_4N_Der_BezierFunction_4A
+
+// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
+
+#macro From_1N_Der1_BezierFunctions_1A(Values_1N)
 
     #local N = dimensions(Values_1N);
     #if (N != 1)
@@ -1541,53 +1571,41 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_1E(
-        From_1N_DerU_BezierFunction_1A(
-            Values_1N
-        )
+        From_1N_Der_BezierFunction_1A(Values_1N, "u")
     )
 
-#end // macro Der1_BezierFunctions_1A
+#end // macro From_1N_Der1_BezierFunctions_1A
 
 
-#macro From_2N_DerU_BezierFunction_2A(Values_2N)
+#macro From_1N_Der2_BezierFunctions_1A(Values_1N)
 
-    #local N = dimensions(Values_2N);
-    #if (N != 2)
-        #error "N is not 2"
-    #end // if
-    #if (DimSize_I(Values_2N) < 2)
-        #error "Is less than 2"
+    #local N = dimensions(Values_1N);
+    #if (N != 1)
+        #error "N is not 1"
     #end // if
 
-    From_2N_BezierFunction_2A(
-        Hodograph_I_2N(
-            Values_2N, 1
-        )
+    Arr_1E(
+        From_1N_Der_BezierFunction_1A(Values_1N, "uu")
     )
-    
-#end // macro From_2N_DerU_BezierFunction_2A
+
+#end // macro From_1N_Der2_BezierFunctions_1A
 
 
-#macro From_2N_DerV_BezierFunction_2A(Values_2N)
+#macro From_1N_Der3_BezierFunctions_1A(Values_1N)
 
-    #local N = dimensions(Values_2N);
-    #if (N != 2)
-        #error "N is not 2"
-    #end // if
-    #if (DimSize_J(Values_2N) < 2)
-        #error "Is less than 2"
+    #local N = dimensions(Values_1N);
+    #if (N != 1)
+        #error "N is not 1"
     #end // if
 
-    From_2N_BezierFunction_2A(
-        Hodograph_J_2N(
-            Values_2N, 1
-        )
+    Arr_1E(
+        From_1N_Der_BezierFunction_1A(Values_1N, "uuu")
     )
-    
-#end // macro From_2N_DerV_BezierFunction_2A
+
+#end // macro From_1N_Der3_BezierFunctions_1A
 
 
-#macro Der1_BezierFunctions_2A(Values_2N)
+#macro From_2N_Der1_BezierFunctions_2A(Values_2N)
 
     #local N = dimensions(Values_2N);
     #if (N != 2)
@@ -1595,451 +1613,63 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_2E(
-        From_2N_DerU_BezierFunction_2A(
-            Values_2N
-        ),
-        From_2N_DerV_BezierFunction_2A(
-            Values_2N
-        )
+        From_2N_Der_BezierFunction_2A(Values_2N, "u"),
+        From_2N_Der_BezierFunction_2A(Values_2N, "v")
     )
 
-#end // macro Der1_BezierFunctions_2A
+#end // macro From_2N_Der1_BezierFunctions_2A
 
 
-#macro From_3N_DerU_BezierFunction_3A(Values_3N)
+#macro From_2N_Der2_BezierFunctions_2A(Values_2N)
 
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_I(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_I_3N(
-            Values_3N, 1
-        )
-    )
-    
-#end // macro From_3N_DerU_BezierFunction_3A
-
-
-#macro From_3N_DerV_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_J(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_J_3N(
-            Values_3N, 1
-        )
-    )
-    
-#end // macro From_3N_DerV_BezierFunction_3A
-
-
-#macro From_3N_DerW_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_K(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_K_3N(
-            Values_3N, 1
-        )
-    )
-    
-#end // macro From_3N_DerW_BezierFunction_3A
-
-
-#macro Der1_BezierFunctions_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
+    #local N = dimensions(Values_2N);
+    #if (N != 2)
+        #error "N is not 2"
     #end // if
 
     Arr_3E(
-        From_3N_DerU_BezierFunction_3A(
-            Values_3N
-        ),
-        From_3N_DerV_BezierFunction_3A(
-            Values_3N
-        ),
-        From_3N_DerW_BezierFunction_3A(
-            Values_3N
-        )
+        From_2N_Der_BezierFunction_2A(Values_2N, "uu"),
+        From_2N_Der_BezierFunction_2A(Values_2N, "uv"),
+        From_2N_Der_BezierFunction_2A(Values_2N, "vv")
     )
 
-#end // macro Der1_BezierFunctions_3A
+#end // macro From_2N_Der2_BezierFunctions_2A
 
 
-#macro From_4N_DerU_BezierFunction_4A(Values_4N)
+#macro From_2N_Der3_BezierFunctions_2A(Values_2N)
 
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_I_4N(
-            Values_4N, 1
-        )
-    )
-    
-#end // macro From_4N_DerU_BezierFunction_4A
-
-
-#macro From_4N_DerV_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_J(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_J_4N(
-            Values_4N, 1
-        )
-    )
-    
-#end // macro From_4N_DerV_BezierFunction_4A
-
-
-#macro From_4N_DerW_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_K(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_K_4N(
-            Values_4N, 1
-        )
-    )
-    
-#end // macro From_4N_DerW_BezierFunction_4A
-
-
-#macro From_4N_DerS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_L(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Values_4N, 1
-        )
-    )
-    
-#end // macro From_4N_DerS_BezierFunction_4A
-
-
-#macro Der1_BezierFunctions_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
+    #local N = dimensions(Values_2N);
+    #if (N != 2)
+        #error "N is not 2"
     #end // if
 
     Arr_4E(
-        From_4N_DerU_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerV_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerW_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerS_BezierFunction_4A(
-            Values_4N
-        )
+        From_2N_Der_BezierFunction_2A(Values_2N, "uuu"),
+        From_2N_Der_BezierFunction_2A(Values_2N, "uuv"),
+        From_2N_Der_BezierFunction_2A(Values_2N, "uvv"),
+        From_2N_Der_BezierFunction_2A(Values_2N, "vvv")
     )
 
-#end // macro Der1_BezierFunctions_4A
-
-// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
-
-#macro From_1N_DerUU_BezierFunction_1A(Values_1N)
-
-    #local N = dimensions(Values_1N);
-    #if (N != 1)
-        #error "N is not 1"
-    #end // if
-    #if (DimSize_I(Values_1N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_1N_BezierFunction_1A(
-        Hodograph_I_1N(
-            Values_1N, 2
-        )
-    )
-    
-#end // macro From_1N_DerUU_BezierFunction_1A
+#end // macro From_2N_Der3_BezierFunctions_2A
 
 
-#macro Der2_BezierFunctions_1A(Values_1N)
+#macro From_3N_Der1_BezierFunctions_3A(Values_3N)
 
-    #local N = dimensions(Values_1N);
-    #if (N != 1)
-        #error "N is not 1"
-    #end // if
-
-    Arr_1E(
-        From_1N_DerUU_BezierFunction_1A(
-            Values_1N
-        )
-    )
-
-#end // macro Der2_BezierFunctions_1A
-
-
-#macro From_2N_DerUU_BezierFunction_2A(Values_2N)
-
-    #local N = dimensions(Values_2N);
-    #if (N != 2)
-        #error "N is not 2"
-    #end // if
-    #if (DimSize_I(Values_2N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_2N_BezierFunction_2A(
-        Hodograph_I_2N(
-            Values_2N, 2
-        )
-    )
-    
-#end // macro From_2N_DerUU_BezierFunction_2A
-
-
-#macro From_2N_DerUV_BezierFunction_2A(Values_2N)
-
-    #local N = dimensions(Values_2N);
-    #if (N != 2)
-        #error "N is not 2"
-    #end // if
-    #if (DimSize_I(Values_2N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_J(Values_2N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_2N_BezierFunction_2A(
-        Hodograph_J_2N(
-            Hodograph_I_2N(
-                Values_2N, 1
-            ),
-            1
-        )
-    )
-
-#end // macro From_2N_DerUV_BezierFunction_2A
-
-
-#macro From_2N_DerVV_BezierFunction_2A(Values_2N)
-
-    #local N = dimensions(Values_2N);
-    #if (N != 2)
-        #error "N is not 2"
-    #end // if
-    #if (DimSize_J(Values_2N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_2N_BezierFunction_2A(
-        Hodograph_J_2N(
-            Values_2N, 2
-        )
-    )
-    
-#end // macro From_2N_DerVV_BezierFunction_2A
-
-
-#macro Der2_BezierFunctions_2A(Values_2N)
-
-    #local N = dimensions(Values_2N);
-    #if (N != 2)
-        #error "N is not 2"
+    #local N = dimensions(Values_3N);
+    #if (N != 3)
+        #error "N is not 3"
     #end // if
 
     Arr_3E(
-        From_2N_DerUU_BezierFunction_2A(
-            Values_2N
-        ),
-        From_2N_DerUV_BezierFunction_2A(
-            Values_2N
-        ),
-        From_2N_DerVV_BezierFunction_2A(
-            Values_2N
-        )
-    )
+        From_3N_Der_BezierFunction_3A(Values_3N, "u"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "v"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "w")
+    ) 
 
-#end // macro Der2_BezierFunctions_2A
+#end // macro From_3N_Der1_BezierFunctions_3A
 
 
-#macro From_3N_DerUU_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_I(Values_3N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_I_3N(
-            Values_3N, 2
-        )
-    )
-    
-#end // macro From_3N_DerUU_BezierFunction_3A
-
-
-#macro From_3N_DerUV_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_I(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_J(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_J_3N(
-            Hodograph_I_3N(
-                Values_3N, 1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_3N_DerUV_BezierFunction_3A
-
-
-#macro From_3N_DerUW_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_I(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_K(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_K_3N(
-            Hodograph_I_3N(
-                Values_3N, 1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_3N_DerUW_BezierFunction_3A
-
-
-#macro From_3N_DerVV_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_J(Values_3N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_J_3N(
-            Values_3N, 2
-        )
-    )
-    
-#end // macro From_3N_DerVV_BezierFunction_3A
-
-
-#macro From_3N_DerVW_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_J(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_K(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_K_3N(
-            Hodograph_J_3N(
-                Values_3N, 1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_3N_DerVW_BezierFunction_3A
-
-
-#macro From_3N_DerWW_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_K(Values_3N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_K_3N(
-            Values_3N, 2
-        )
-    )
-    
-#end // macro From_3N_DerWW_BezierFunction_3A
-
-
-#macro Der2_BezierFunctions_3A(Values_3N)
+#macro From_3N_Der2_BezierFunctions_3A(Values_3N)
 
     #local N = dimensions(Values_3N);
     #if (N != 3)
@@ -2047,256 +1677,58 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_6E(
-        From_3N_DerUU_BezierFunction_3A(
-            Values_3N
-        ),
-        From_3N_DerUV_BezierFunction_3A(
-            Values_3N
-        ),
-        From_3N_DerUW_BezierFunction_3A(
-            Values_3N
-        ),
-        From_3N_DerVV_BezierFunction_3A(
-            Values_3N
-        ),
-        From_3N_DerVW_BezierFunction_3A(
-            Values_3N
-        ),
-        From_3N_DerWW_BezierFunction_3A(
-            Values_3N
-        )
-    )
+        From_3N_Der_BezierFunction_3A(Values_3N, "uu"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "uv"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "uw"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "vv"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "vw"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "ww")
+    ) 
 
-#end // macro Der2_BezierFunctions_3A
+#end // macro From_3N_Der2_BezierFunctions_3A
 
 
-#macro From_4N_DerUU_BezierFunction_4A(Values_4N)
+#macro From_3N_Der3_BezierFunctions_3A(Values_3N)
+
+    #local N = dimensions(Values_3N);
+    #if (N != 3)
+        #error "N is not 3"
+    #end // if
+
+    Arr_10E(
+        From_3N_Der_BezierFunction_3A(Values_3N, "uuu"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "uuv"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "uuw"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "uvv"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "uvw"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "uww"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "vvv"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "vvw"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "vww"),
+        From_3N_Der_BezierFunction_3A(Values_3N, "www")
+    ) 
+
+#end // macro From_3N_Der3_BezierFunctions_3A
+
+
+#macro From_4N_Der1_BezierFunctions_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
         #error "N is not 4"
     #end // if
-    #if (DimSize_I(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
 
-    From_4N_BezierFunction_4A(
-        Hodograph_I_4N(
-            Values_4N, 2
-        )
+    Arr_4E(
+        From_4N_Der_BezierFunction_4A(Values_4N, "u"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "v"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "w"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "s")
     )
-    
-#end // macro From_4N_DerUU_BezierFunction_4A
+
+#end // macro From_4N_Der1_BezierFunctions_4A
 
 
-#macro From_4N_DerUV_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_J(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_J_4N(
-            Hodograph_I_4N(
-                Values_4N, 1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerUV_BezierFunction_4A
-
-
-#macro From_4N_DerUW_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_K(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_K_4N(
-            Hodograph_I_4N(
-                Values_4N, 1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerUW_BezierFunction_4A
-
-
-#macro From_4N_DerUS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_L(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Hodograph_I_4N(
-                Values_4N, 1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerUS_BezierFunction_4A
-
-
-#macro From_4N_DerVV_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_J(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_J_4N(
-            Values_4N, 2
-        )
-    )
-    
-#end // macro From_4N_DerVV_BezierFunction_4A
-
-
-#macro From_4N_DerVW_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_J(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_K(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_K_4N(
-            Hodograph_J_4N(
-                Values_4N, 1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerVW_BezierFunction_4A
-
-
-#macro From_4N_DerVS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_J(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_L(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Hodograph_J_4N(
-                Values_4N, 1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerVS_BezierFunction_4A
-
-
-#macro From_4N_DerWW_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_K(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_K_4N(
-            Values_4N, 2
-        )
-    )
-    
-#end // macro From_4N_DerWW_BezierFunction_4A
-
-
-#macro From_4N_DerWS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_K(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_L(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Hodograph_K_4N(
-                Values_4N, 1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerWS_BezierFunction_4A
-
-
-#macro From_4N_DerSS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_L(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Values_4N, 2
-        )
-    )
-    
-#end // macro From_4N_DerSS_BezierFunction_4A
-
-
-#macro Der2_BezierFunctions_4A(Values_4N)
+#macro From_4N_Der2_BezierFunctions_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -2304,951 +1736,22 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_10E(
-        From_4N_DerUU_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerUV_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerUW_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerUS_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerVV_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerVW_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerVS_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerWW_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerWS_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerSS_BezierFunction_4A(
-            Values_4N
-        )
+        From_4N_Der_BezierFunction_4A(Values_4N, "uu"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "uv"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "uw"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "us"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "vv"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "vw"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "vs"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "ww"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "ws"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "ss")
     )
 
-#end // macro Der2_BezierFunctions_4A
+#end // macro From_4N_Der2_BezierFunctions_4A
 
-// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
 
-#macro From_1N_DerUUU_BezierFunction_1A(Values_1N)
-
-    #local N = dimensions(Values_1N);
-    #if (N != 1)
-        #error "N is not 1"
-    #end // if
-    #if (DimSize_I(Values_1N) < 4)
-        #error "Is less than 4"
-    #end // if
-
-    From_1N_BezierFunction_1A(
-        Hodograph_I_1N(
-            Values_1N, 3
-        )
-    )
-    
-#end // macro From_1N_DerUUU_BezierFunction_1A
-
-
-#macro Der3_BezierFunctions_1A(Values_1N)
-
-    #local N = dimensions(Values_1N);
-    #if (N != 1)
-        #error "N is not 1"
-    #end // if
-
-    Arr_1E(
-        From_1N_DerUUU_BezierFunction_1A(
-            Values_1N
-        )
-    )
-
-#end // macro Der3_BezierFunctions_1A
-
-
-#macro From_2N_DerUUU_BezierFunction_2A(Values_2N)
-
-    #local N = dimensions(Values_2N);
-    #if (N != 2)
-        #error "N is not 2"
-    #end // if
-    #if (DimSize_I(Values_2N) < 4)
-        #error "Is less than 4"
-    #end // if
-
-    From_2N_BezierFunction_2A(
-        Hodograph_I_2N(
-            Values_2N, 3
-        )
-    )
-    
-#end // macro From_2N_DerUUU_BezierFunction_2A
-
-
-#macro From_2N_DerUUV_BezierFunction_2A(Values_2N)
-
-    #local N = dimensions(Values_2N);
-    #if (N != 2)
-        #error "N is not 2"
-    #end // if
-    #if (DimSize_I(Values_2N) < 3)
-        #error "Is less than 3"
-    #end // if
-    #if (DimSize_J(Values_2N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_2N_BezierFunction_2A(
-        Hodograph_J_2N(
-            Hodograph_I_2N(
-                Values_2N, 2
-            ),
-            1
-        )
-    )
-    
-#end // macro From_2N_DerUUV_BezierFunction_2A
-
-
-#macro From_2N_DerUVV_BezierFunction_2A(Values_2N)
-
-    #local N = dimensions(Values_2N);
-    #if (N != 2)
-        #error "N is not 2"
-    #end // if
-    #if (DimSize_I(Values_2N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_J(Values_2N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_2N_BezierFunction_2A(
-        Hodograph_J_2N(
-            Hodograph_I_2N(
-                Values_2N, 1
-            ),
-            2
-        )
-    )
-    
-#end // macro From_2N_DerUVV_BezierFunction_2A
-
-
-#macro From_2N_DerVVV_BezierFunction_2A(Values_2N)
-
-    #local N = dimensions(Values_2N);
-    #if (N != 2)
-        #error "N is not 2"
-    #end // if
-    #if (DimSize_J(Values_2N) < 4)
-        #error "Is less than 4"
-    #end // if
-
-    From_2N_BezierFunction_2A(
-        Hodograph_J_2N(
-            Values_2N, 3
-        )
-    )
-    
-#end // macro From_2N_DerVVV_BezierFunction_2A
-
-
-#macro Der3_BezierFunctions_2A(Values_2N)
-
-    #local N = dimensions(Values_2N);
-    #if (N != 2)
-        #error "N is not 2"
-    #end // if
-
-    Arr_4E(
-        From_2N_DerUUU_BezierFunction_2A(
-            Values_2N
-        ),
-        From_2N_DerUUV_BezierFunction_2A(
-            Values_2N
-        ),
-        From_2N_DerUVV_BezierFunction_2A(
-            Values_2N
-        ),
-        From_2N_DerVVV_BezierFunction_2A(
-            Values_2N
-        )
-    )
-
-#end // macro Der3_BezierFunctions_2A
-
-
-#macro From_3N_DerUUU_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_I(Values_3N) < 4)
-        #error "Is less than 4"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_I_3N(
-            Values_3N, 3
-        )
-    )
-    
-#end // macro From_3N_DerUUU_BezierFunction_3A
-
-
-#macro From_3N_DerUUV_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_I(Values_3N) < 3)
-        #error "Is less than 3"
-    #end // if
-    #if (DimSize_J(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_J_3N(
-            Hodograph_I_3N(
-                Values_3N, 2
-            ),
-            1
-        )
-    )
-    
-#end // macro From_3N_DerUUV_BezierFunction_3A
-
-
-#macro From_3N_DerUUW_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_I(Values_3N) < 3)
-        #error "Is less than 3"
-    #end // if
-    #if (DimSize_K(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_K_3N(
-            Hodograph_I_3N(
-                Values_3N, 2
-            ),
-            1
-        )
-    )
-    
-#end // macro From_3N_DerUUW_BezierFunction_3A
-
-
-#macro From_3N_DerUVV_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_I(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_J(Values_3N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_J_3N(
-            Hodograph_I_3N(
-                Values_3N, 1
-            ),
-            2
-        )
-    )
-    
-#end // macro From_3N_DerUVV_BezierFunction_3A
-
-
-#macro From_3N_DerUVW_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_I(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_J(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_K(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_K_3N(
-            Hodograph_J_3N(
-                Hodograph_I_3N(
-                    Values_3N, 1
-                ),
-                1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_3N_DerUVW_BezierFunction_3A
-
-
-#macro From_3N_DerUWW_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_I(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_K(Values_3N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_K_3N(
-            Hodograph_I_3N(
-                Values_3N, 1
-            ),
-            2
-        )
-    )
-    
-#end // macro From_3N_DerUWW_BezierFunction_3A
-
-
-#macro From_3N_DerVVV_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_J(Values_3N) < 4)
-        #error "Is less than 4"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_J_3N(
-            Values_3N, 3
-        )
-    )
-    
-#end // macro From_3N_DerVVV_BezierFunction_3A
-
-
-#macro From_3N_DerVVW_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_J(Values_3N) < 3)
-        #error "Is less than 3"
-    #end // if
-    #if (DimSize_K(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_K_3N(
-            Hodograph_J_3N(
-                Values_3N, 2
-            ),
-            1
-        )
-    )
-    
-#end // macro From_3N_DerVVW_BezierFunction_3A
-
-
-#macro From_3N_DerVWW_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_J(Values_3N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_K(Values_3N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_K_3N(
-            Hodograph_J_3N(
-                Values_3N, 1
-            ),
-            2
-        )
-    )
-    
-#end // macro From_3N_DerVWW_BezierFunction_3A
-
-
-#macro From_3N_DerWWW_BezierFunction_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-    #if (DimSize_K(Values_3N) < 4)
-        #error "Is less than 4"
-    #end // if
-
-    From_3N_BezierFunction_3A(
-        Hodograph_K_3N(
-            Values_3N, 3
-        )
-    )
-    
-#end // macro From_3N_DerWWW_BezierFunction_3A
-
-
-#macro Der3_BezierFunctions_3A(Values_3N)
-
-    #local N = dimensions(Values_3N);
-    #if (N != 3)
-        #error "N is not 3"
-    #end // if
-
-    Arr_3E(
-        From_3N_DerUUU_BezierFunction_3A(
-            Values_3N
-        ),
-        From_3N_DerVVV_BezierFunction_3A(
-            Values_3N
-        ),
-        From_3N_DerWWW_BezierFunction_3A(
-            Values_3N
-        )
-    )
-
-#end // macro Der3_BezierFunctions_3A
-
-
-#macro From_4N_DerUUU_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 4)
-        #error "Is less than 4"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_I_4N(
-            Values_4N, 3
-        )
-    )
-    
-#end // macro From_4N_DerUUU_BezierFunction_4A
-
-
-#macro From_4N_DerUUV_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-    #if (DimSize_J(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_J_4N(
-            Hodograph_I_4N(
-                Values_4N, 2
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerUUV_BezierFunction_4A
-
-
-#macro From_4N_DerUUW_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-    #if (DimSize_K(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_K_4N(
-            Hodograph_I_4N(
-                Values_4N, 2
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerUUW_BezierFunction_4A
-
-
-#macro From_4N_DerUUS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-    #if (DimSize_L(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Hodograph_I_4N(
-                Values_4N, 2
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerUUS_BezierFunction_4A
-
-
-#macro From_4N_DerUVV_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_J(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_J_4N(
-            Hodograph_I_4N(
-                Values_4N, 1
-            ),
-            2
-        )
-    )
-    
-#end // macro From_4N_DerUVV_BezierFunction_4A
-
-
-#macro From_4N_DerUVW_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_J(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_K(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_K_4N(
-            Hodograph_J_4N(
-                Hodograph_I_4N(
-                    Values_4N, 1
-                ),
-                1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerUVW_BezierFunction_4A
-
-
-#macro From_4N_DerUVS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_J(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_L(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Hodograph_J_4N(
-                Hodograph_I_4N(
-                    Values_4N, 1
-                ),
-                1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerUVS_BezierFunction_4A
-
-
-#macro From_4N_DerUWW_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_K(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_K_4N(
-            Hodograph_I_4N(
-                Values_4N, 1
-            ),
-            2
-        )
-    )
-    
-#end // macro From_4N_DerUWW_BezierFunction_4A
-
-
-#macro From_4N_DerUWS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_K(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_L(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Hodograph_K_4N(
-                Hodograph_I_4N(
-                    Values_4N, 1
-                ),
-                1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerUWS_BezierFunction_4A
-
-
-#macro From_4N_DerUSS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_I(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_L(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Hodograph_I_4N(
-                Values_4N, 1
-            ),
-            2
-        )
-    )
-    
-#end // macro From_4N_DerUSS_BezierFunction_4A
-
-
-#macro From_4N_DerVVV_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_J(Values_4N) < 4)
-        #error "Is less than 4"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_J_4N(
-            Values_4N, 3
-        )
-    )
-    
-#end // macro From_4N_DerVVV_BezierFunction_4A
-
-
-#macro From_4N_DerVVW_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_J(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-    #if (DimSize_K(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_K_4N(
-            Hodograph_J_4N(
-                Values_4N, 2
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerVVW_BezierFunction_4A
-
-
-#macro From_4N_DerVVS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_J(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-    #if (DimSize_L(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Hodograph_J_4N(
-                Values_4N, 2
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerVVS_BezierFunction_4A
-
-
-#macro From_4N_DerVWW_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_J(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_K(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_K_4N(
-            Hodograph_J_4N(
-                Values_4N, 1
-            ),
-            2
-        )
-    )
-    
-#end // macro From_4N_DerVWW_BezierFunction_4A
-
-
-#macro From_4N_DerVWS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_J(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_K(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_L(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Hodograph_K_4N(
-                Hodograph_J_4N(
-                    Values_4N, 1
-                ),
-                1
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerVWS_BezierFunction_4A
-
-
-#macro From_4N_DerVSS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_J(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_L(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Hodograph_J_4N(
-                Values_4N, 1
-            ),
-            2
-        )
-    )
-    
-#end // macro From_4N_DerVSS_BezierFunction_4A
-
-
-#macro From_4N_DerWWW_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_K(Values_4N) < 4)
-        #error "Is less than 4"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_K_4N(
-            Values_4N, 3
-        )
-    )
-    
-#end // macro From_4N_DerWWW_BezierFunction_4A
-
-
-#macro From_4N_DerWWS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_K(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-    #if (DimSize_L(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Hodograph_K_4N(
-                Values_4N, 2
-            ),
-            1
-        )
-    )
-    
-#end // macro From_4N_DerWWS_BezierFunction_4A
-
-
-#macro From_4N_DerWSS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_K(Values_4N) < 2)
-        #error "Is less than 2"
-    #end // if
-    #if (DimSize_L(Values_4N) < 3)
-        #error "Is less than 3"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Hodograph_K_4N(
-                Values_4N, 1
-            ),
-            2
-        )
-    )
-    
-#end // macro From_4N_DerWSS_BezierFunction_4A
-
-
-#macro From_4N_DerSSS_BezierFunction_4A(Values_4N)
-
-    #local N = dimensions(Values_4N);
-    #if (N != 4)
-        #error "N is not 4"
-    #end // if
-    #if (DimSize_L(Values_4N) < 4)
-        #error "Is less than 4"
-    #end // if
-
-    From_4N_BezierFunction_4A(
-        Hodograph_L_4N(
-            Values_4N, 3
-        )
-    )
-    
-#end // macro From_4N_DerSSS_BezierFunction_4A
-
-
-#macro Der3_BezierFunctions_4A(Values_4N)
+#macro From_4N_Der3_BezierFunctions_4A(Values_4N)
 
     #local N = dimensions(Values_4N);
     #if (N != 4)
@@ -3256,68 +1759,28 @@ which can be found in the LICENSE file.
     #end // if
 
     Arr_20E(
-        From_4N_DerUUU_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerUUV_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerUUW_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerUUS_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerUVV_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerUVW_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerUVS_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerUWW_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerUWS_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerUSS_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerVVV_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerVVW_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerVVS_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerVWW_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerVWS_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerVSS_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerWWW_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerWWS_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerWSS_BezierFunction_4A(
-            Values_4N
-        ),
-        From_4N_DerSSS_BezierFunction_4A(
-            Values_4N
-        )
+        From_4N_Der_BezierFunction_4A(Values_4N, "uuu"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "uuv"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "uuw"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "uus"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "uvv"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "uvw"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "uvs"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "uww"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "uws"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "uss"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "vvv"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "vvw"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "vvs"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "vww"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "vws"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "vss"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "www"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "wws"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "wss"),
+        From_4N_Der_BezierFunction_4A(Values_4N, "sss")
     )
 
-#end // macro Der3_BezierFunctions_4A
+#end // macro From_4N_Der3_BezierFunctions_4A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A ======= B
