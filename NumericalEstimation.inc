@@ -764,16 +764,16 @@ which can be found in the LICENSE file.
     function(_u) {
         (
             (
-                _Function_1A(_u - H)
-                -
-                _Function_1A(_u + H)
-            )*2
-            +
-            (
                 _Function_1A(_u + H2)
                 -
                 _Function_1A(_u - H2)
             )
+            -
+            (
+                _Function_1A(_u + H)
+                -
+                _Function_1A(_u - H)
+            )*2
         )/HHH2
     }
 
@@ -799,16 +799,16 @@ which can be found in the LICENSE file.
     function(_u, _v) {
         (
             (
-                _Function_2A(_u - H, _v)
-                -
-                _Function_2A(_u + H, _v)
-            )*2
-            +
-            (
                 _Function_2A(_u + H2, _v)
                 -
                 _Function_2A(_u - H2, _v)
             )
+            -
+            (
+                _Function_2A(_u + H, _v)
+                -
+                _Function_2A(_u - H, _v)
+            )*2
         )/HHH2
     }
 
@@ -884,16 +884,16 @@ which can be found in the LICENSE file.
     function(_u, _v) {
         (
             (
-                _Function_2A(_u, _v - H)
-                -
-                _Function_2A(_u, _v + H)
-            )*2
-            +
-            (
                 _Function_2A(_u, _v + H2)
                 -
                 _Function_2A(_u, _v - H2)
             )
+            -
+            (
+                _Function_2A(_u, _v + H)
+                -
+                _Function_2A(_u, _v - H)
+            )*2
         )/HHH2
     }
 
@@ -922,16 +922,16 @@ which can be found in the LICENSE file.
     function(_u, _v, _w) {
         (
             (
-                _Function_3A(_u - H, _v, _w)
-                -
-                _Function_3A(_u + H, _v, _w)
-            )*2
-            +
-            (
                 _Function_3A(_u + H2, _v, _w)
                 -
                 _Function_3A(_u - H2, _v, _w)
             )
+            -
+            (
+                _Function_3A(_u + H, _v, _w)
+                -
+                _Function_3A(_u - H, _v, _w)
+            )*2
         )/HHH2
     }
 
@@ -1099,16 +1099,16 @@ which can be found in the LICENSE file.
     function(_u, _v, _w) {
         (
             (
-                _Function_3A(_u, _v - H, _w)
-                -
-                _Function_3A(_u, _v + H, _w)
-            )*2
-            +
-            (
                 _Function_3A(_u, _v + H2, _w)
                 -
                 _Function_3A(_u, _v - H2, _w)
             )
+            -
+            (
+                _Function_3A(_u, _v + H, _w)
+                -
+                _Function_3A(_u, _v - H, _w)
+            )*2
         )/HHH2
     }
 
@@ -1184,16 +1184,16 @@ which can be found in the LICENSE file.
     function(_u, _v, _w) {
         (
             (
-                _Function_3A(_u, _v, _w - H)
-                -
-                _Function_3A(_u, _v, _w + H)
-            )*2
-            +
-            (
                 _Function_3A(_u, _v, _w + H2)
                 -
                 _Function_3A(_u, _v, _w - H2)
             )
+            -
+            (
+                _Function_3A(_u, _v, _w + H)
+                -
+                _Function_3A(_u, _v, _w - H)
+            )*2
         )/HHH2
     }
 
@@ -1228,16 +1228,16 @@ which can be found in the LICENSE file.
     function(_u, _v, _w, _s) {
         (
             (
-                _Function_4A(_u - H, _v, _w, _s)
-                -
-                _Function_4A(_u + H, _v, _w, _s)
-            )*2
-            +
-            (
                 _Function_4A(_u + H2, _v, _w, _s)
                 -
                 _Function_4A(_u - H2, _v, _w, _s)
             )
+            -
+            (
+                _Function_4A(_u + H, _v, _w, _s)
+                -
+                _Function_4A(_u - H, _v, _w, _s)
+            )*2
         )/HHH2
     }
 
@@ -1529,16 +1529,16 @@ which can be found in the LICENSE file.
     function(_u, _v, _w, _s) {
         (
             (
-                _Function_4A(_u, _v - H, _w, _s)
-                -
-                _Function_4A(_u, _v + H, _w, _s)
-            )*2
-            +
-            (
                 _Function_4A(_u, _v + H2, _w, _s)
                 -
                 _Function_4A(_u, _v - H2, _w, _s)
             )
+            -
+            (
+                _Function_4A(_u, _v + H, _w, _s)
+                -
+                _Function_4A(_u, _v - H, _w, _s)
+            )*2
         )/HHH2
     }
 
@@ -1706,16 +1706,16 @@ which can be found in the LICENSE file.
     function(_u, _v, _w, _s) {
         (
             (
-                _Function_4A(_u, _v, _w - H, _s)
-                -
-                _Function_4A(_u, _v, _w + H, _s)
-            )*2
-            +
-            (
                 _Function_4A(_u, _v, _w + H2, _s)
                 -
                 _Function_4A(_u, _v, _w - H2, _s)
             )
+            -
+            (
+                _Function_4A(_u, _v, _w + H, _s)
+                -
+                _Function_4A(_u, _v, _w - H, _s)
+            )*2
         )/HHH2
     }
 
@@ -1791,16 +1791,16 @@ which can be found in the LICENSE file.
     function(_u, _v, _w, _s) {
         (
             (
-                _Function_4A(_u, _v, _w, _s - H)
-                -
-                _Function_4A(_u, _v, _w, _s + H)
-            )*2
-            +
-            (
                 _Function_4A(_u, _v, _w, _s + H2)
                 -
                 _Function_4A(_u, _v, _w, _s - H2)
             )
+            -
+            (
+                _Function_4A(_u, _v, _w, _s + H)
+                -
+                _Function_4A(_u, _v, _w, _s - H)
+            )*2
         )/HHH2
     }
 
