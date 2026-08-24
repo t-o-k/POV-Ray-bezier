@@ -2551,7 +2551,7 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // macro _Est_Der_Function_3A
+#end // macro Est_Der_Function_3A
 
 
 #macro Est_Der_Function_4A(_Function_4A, DerivationString)
@@ -3261,6 +3261,6 @@ which can be found in the LICENSE file.
         )
     }
 
-#end // macro _Est_Der_Function_4A
+#end // macro Est_Der_Function_4A
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= A
